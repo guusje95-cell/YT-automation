@@ -1,0 +1,5 @@
+niche,label,n_videos_rel,n_videos_year,median_views_rel,median_views_year,median_vpd_year,n_year_ge_100k,small_channel_hits_50k,small_channel_share_year,median_subs_competitors,median_channel_median_views,median_duration_min_year,distinct_channels_year,rpm_low,rpm_high
+deep_business_cases,Business case studies (Western companies),155,157,109096,22020,610.4199020427666,63,7,0.04,662500.0,223750.0,13.9,120,5,12
+deep_space,Space explainers,158,155,878264.5,105813,1702.076923076923,80,18,0.14,521000.0,335250.0,25.0,103,3,8
+deep_science_how,How things work / science of everyday,119,120,362392,7026,65.28571428571429,34,8,0.07,762500.0,164500.0,10.6,106,4,10
+deep_history_events,"Single-event history explainers (disasters, mysteries)",113,118,277707,116858.5,2051.229194042926,60,6,0.06,1285000.0,274250.0,27.4,91,3,8

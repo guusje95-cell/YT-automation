@@ -1,0 +1,18 @@
+# Second-pass deep dive on the strongest candidates (broader query sets).
+niches:
+  deep_business_cases:
+    label: "Business case studies (Western companies)"
+    queries: ["why this company failed", "how this company makes money", "the rise and fall of", "company documentary", "what happened to company", "business breakdown", "how big companies make money explained", "why is this company so successful"]
+    rpm_band: [5, 12]
+  deep_space:
+    label: "Space explainers"
+    queries: ["space explained", "black hole explained", "what is inside jupiter", "scale of the universe", "james webb telescope discovery explained", "what if earth", "strangest planets", "how stars die"]
+    rpm_band: [3, 8]
+  deep_science_how:
+    label: "How things work / science of everyday"
+    queries: ["how does it work explained", "the science of", "why does this happen science explained", "how electricity works", "how gps works", "how nuclear power works"]
+    rpm_band: [4, 10]
+  deep_history_events:
+    label: "Single-event history explainers (disasters, mysteries)"
+    queries: ["what really happened", "the disaster that changed history", "history mystery explained", "volcano eruption history documentary", "the worst disaster in history", "forgotten history explained"]
+    rpm_band: [3, 8]

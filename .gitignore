@@ -1,0 +1,15 @@
+# secrets
+.env
+*.token.json
+client_secret*.json
+config/secrets/
+# large / regenerable
+models/
+.cache/
+content/*/build/
+output/**/*.mp4
+!output/**/*preview*.mp4
+output/**/*.wav
+__pycache__/
+*.pyc
+logs/*.log

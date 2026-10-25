@@ -1,0 +1,24 @@
+niche,label,n_videos_rel,n_videos_year,median_views_rel,median_views_year,median_vpd_year,n_year_ge_100k,small_channel_hits_50k,small_channel_share_year,median_subs_competitors,median_channel_median_views,median_duration_min_year,distinct_channels_year,rpm_low,rpm_high
+personal_finance_us,"Personal finance / investing (US, English)",59,59,246595,72836,428.32397563015166,27,3,0.05,585000.0,105000.0,15.3,52,8,20
+personal_finance_nl,Personal finance in Dutch (NL/BE),60,60,13742.5,3438.0,23.33377135348226,6,7,0.22,38600.0,10750.0,9.1,46,3,9
+economics_explainers,"Economics explainers (countries, inflation, markets)",60,60,784160.0,61903.5,1087.4014454664914,28,2,0.03,1135000.0,176750.0,13.8,43,6,14
+business_case_studies,Business case studies / company histories,60,60,401325.0,153129.0,2676.2744300523536,33,17,0.32,250500.0,162000.0,16.4,39,6,14
+geography_geopolitics,Geography & geopolitics explainers (maps),59,60,562550,13445.5,115.68864980289092,18,0,0.03,394000.0,88000.0,11.6,45,4,9
+history_docs,History documentaries (narrated),59,53,993331,381104,4763.852387209811,50,1,0.02,1050000.0,113750.0,85.2,40,3,8
+sleep_history,Long-form 'history for sleep' narration,51,47,180104,119204,1169.5597897503285,27,22,0.68,94700.0,21250.0,148.3,14,2,6
+space_astronomy,Space & astronomy explainers,58,58,823228.5,175755.5,2143.3475689881734,37,13,0.26,521000.0,178500.0,60.2,40,3,8
+science_explainers,General science explainers,60,59,1386792.5,107454.0,685.5723629196034,29,3,0.07,1914999.5,166750.0,23.0,40,3,8
+engineering_megaprojects,Engineering & megaprojects,59,60,783467,285860.5,2513.4526938239155,38,6,0.1,1470000.0,211250.0,21.4,33,4,10
+aviation_disasters,Aviation accident breakdowns,57,57,514095,197339,1990.3964082347786,36,5,0.16,849000.0,364000.0,42.9,27,3,8
+maritime_disasters,Shipwrecks & maritime disasters,53,50,668261,75235.0,608.1706401351605,23,8,0.2,144100.0,76750.0,40.6,35,3,7
+mythology,Mythology & folklore storytelling,59,57,249663,142111,1169.5597897503285,31,6,0.12,433000.0,202750.0,72.6,44,2,6
+true_crime,True crime / unsolved mysteries,60,60,501026.5,40294.0,3123.309523809524,23,11,0.3,61700.0,16750.0,50.3,37,3,7
+psychology,Psychology explainers,60,60,721495.5,4724.0,53.12089356110381,21,7,0.13,227000.0,18050.0,11.6,52,4,10
+nature_animals,Nature & animal documentaries,58,55,1195215.5,580640,5331.968626806833,39,5,0.15,222000.0,103250.0,120.7,30,2,6
+tech_explainers,Tech / AI explainers,59,60,888684,177128.5,1062.277505674352,35,5,0.08,453500.0,67250.0,12.9,48,5,12
+software_tutorials,Software tutorials (Excel / Python),57,59,1472290,99836,895.4784374626687,29,4,0.07,625000.0,42000.0,19.6,42,8,18
+philosophy_stoicism,Philosophy / stoicism,56,59,758919.0,35783,209.8179087666604,21,8,0.25,87300.0,8600.0,33.5,41,3,7
+data_comparisons,Data/size comparisons & stats animations,58,59,575903.5,20728.5,2099.108081471748,16,14,0.27,40900.0,57250.0,5.8,48,1.5,4
+reddit_stories,Reddit story narration,57,54,173197,45851.0,905.7579938677179,19,3,0.35,226000.0,25250.0,50.4,21,1,4
+ambient_sleep,Ambient / sleep sounds,60,60,9137148.0,173395.5,2642.9889399912395,37,11,0.18,60700.0,8325.0,635.0,44,0.5,3
+learn_dutch,Learn Dutch (for expats),48,50,111142.5,5208.5,33.802640635754955,4,7,0.52,24250.0,8525.0,23.1,25,3,8

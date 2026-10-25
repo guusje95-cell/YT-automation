@@ -1,0 +1,114 @@
+"""Text-to-speech providers.
+
+Each provider turns a list of sentences into per-sentence WAV clips so that
+captions and visual cuts can be timed exactly from clip durations (no forced
+alignment needed). Add a provider by implementing `synthesize(text) -> (samples, sr)`.
+
+- kokoro   : local Kokoro-82M ONNX (Apache-2.0 weights). Free, runs on CPU.
+- elevenlabs: optional paid upgrade (needs ELEVENLABS_API_KEY). Not used unless configured.
+"""
+from __future__ import annotations
+
+import io
+import re
+from functools import lru_cache
+from pathlib import Path
+
+import numpy as np
+import soundfile as sf
+
+from ytauto.core import config
+from ytauto.core.log import get_logger
+from ytauto.core.retry import retry
+
+log = get_logger(__name__)
+
+SR = 24000
+
+
+class KokoroTTS:
+    name = "kokoro"
+
+    def __init__(self, voice: str = "bm_george", speed: float = 1.0, lang: str = "en-gb"):
+        from kokoro_onnx import Kokoro
+        m = config.MODELS_DIR
+        if not (m / "kokoro-v1.0.onnx").exists():
+            raise RuntimeError("Kokoro model missing; run scripts/fetch_models.sh")
+        self.k = _kokoro(str(m / "kokoro-v1.0.onnx"), str(m / "voices-v1.0.bin"))
+        self.voice, self.speed, self.lang = voice, speed, lang
+
+    def synthesize(self, text: str) -> tuple[np.ndarray, int]:
+        samples, sr = self.k.create(text, voice=self.voice, speed=self.speed, lang=self.lang)
+        return samples.astype(np.float32), sr
+
+
+@lru_cache
+def _kokoro(model: str, voices: str):
+    from kokoro_onnx import Kokoro
+    return Kokoro(model, voices)
+
+
+class ElevenLabsTTS:
+    name = "elevenlabs"
+
+    def __init__(self, voice: str, model: str = "eleven_multilingual_v2", **_):
+        self.key = config.secret("ELEVENLABS_API_KEY", required=True)
+        self.voice, self.model = voice, model
+
+    @retry(attempts=4, base_delay=2.0)
+    def synthesize(self, text: str) -> tuple[np.ndarray, int]:
+        import requests
+        r = requests.post(
+            f"https://api.elevenlabs.io/v1/text-to-speech/{self.voice}?output_format=pcm_24000",
+            headers={"xi-api-key": self.key}, json={"text": text, "model_id": self.model}, timeout=120)
+        r.raise_for_status()
+        pcm = np.frombuffer(r.content, dtype="<i2").astype(np.float32) / 32768.0
+        return pcm, 24000
+
+
+PROVIDERS = {"kokoro": KokoroTTS, "elevenlabs": ElevenLabsTTS}
+
+
+def get_provider(spec_voice: dict | None = None):
+    cfg = dict(config.get("voice", {}) or {})
+    cfg.update(spec_voice or {})
+    name = cfg.pop("provider", "kokoro")
+    return PROVIDERS[name](**cfg)
+
+
+_ABBREV = re.compile(r"\b(Mr|Mrs|Ms|Dr|St|vs|etc|e\.g|i\.e|approx|Jr|Sr|No)\.$", re.I)
+
+
+def split_sentences(text: str) -> list[str]:
+    """Sentence splitter that keeps abbreviations and decimals intact."""
+    text = re.sub(r"\s+", " ", text.strip())
+    parts, buf = [], ""
+    for tok in re.split(r"(?<=[.!?])\s+", text):
+        buf = f"{buf} {tok}".strip() if buf else tok
+        if _ABBREV.search(buf):
+            continue
+        parts.append(buf)
+        buf = ""
+    if buf:
+        parts.append(buf)
+    return [p for p in parts if p]
+
+
+def pronounce(text: str, lexicon: dict[str, str]) -> str:
+    """Apply a spoken-form lexicon (e.g. 'km' -> 'kilometres') before synthesis."""
+    for k, v in lexicon.items():
+        text = re.sub(rf"(?<![\w]){re.escape(k)}(?![\w])", v, text)
+    return text
+
+
+def trim_silence(x: np.ndarray, sr: int, thresh: float = 0.01, pad_s: float = 0.04) -> np.ndarray:
+    idx = np.where(np.abs(x) > thresh)[0]
+    if len(idx) == 0:
+        return x
+    pad = int(pad_s * sr)
+    return x[max(idx[0] - pad, 0): min(idx[-1] + pad, len(x))]
+
+
+def write_wav(path: Path, x: np.ndarray, sr: int) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    sf.write(path, x, sr, subtype="PCM_16")

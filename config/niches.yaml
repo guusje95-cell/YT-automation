@@ -1,0 +1,97 @@
+# Candidate niches for market scanning. Each niche: evergreen queries
+# (relevance-sorted) and the same queries filtered to uploads from the last year.
+# rpm_band: assumed creator RPM range in USD for English long-form, from
+# public creator reports (see research/monetization_assumptions.md). Estimates only.
+niches:
+  personal_finance_us:
+    label: "Personal finance / investing (US, English)"
+    queries: ["index funds explained", "how to invest for beginners", "credit score explained"]
+    rpm_band: [8, 20]
+  personal_finance_nl:
+    label: "Personal finance in Dutch (NL/BE)"
+    queries: ["beleggen voor beginners", "box 3 uitgelegd", "hypotheek uitgelegd"]
+    rpm_band: [3, 9]
+  economics_explainers:
+    label: "Economics explainers (countries, inflation, markets)"
+    queries: ["economics explained", "why is this country so rich", "how inflation works explained"]
+    rpm_band: [6, 14]
+  business_case_studies:
+    label: "Business case studies / company histories"
+    queries: ["rise and fall of company documentary", "how this company makes money", "business case study"]
+    rpm_band: [6, 14]
+  geography_geopolitics:
+    label: "Geography & geopolitics explainers (maps)"
+    queries: ["geopolitics explained", "geography explained", "why are borders so weird"]
+    rpm_band: [4, 9]
+  history_docs:
+    label: "History documentaries (narrated)"
+    queries: ["history documentary", "medieval history explained", "ancient history documentary"]
+    rpm_band: [3, 8]
+  sleep_history:
+    label: "Long-form 'history for sleep' narration"
+    queries: ["boring history for sleep", "history to fall asleep to", "sleepy history documentary"]
+    rpm_band: [2, 6]
+  space_astronomy:
+    label: "Space & astronomy explainers"
+    queries: ["space documentary", "black holes explained", "how big is the universe"]
+    rpm_band: [3, 8]
+  science_explainers:
+    label: "General science explainers"
+    queries: ["science explained", "quantum physics explained simply", "how the human body works"]
+    rpm_band: [3, 8]
+  engineering_megaprojects:
+    label: "Engineering & megaprojects"
+    queries: ["megaprojects documentary", "how was it built engineering", "engineering explained"]
+    rpm_band: [4, 10]
+  aviation_disasters:
+    label: "Aviation accident breakdowns"
+    queries: ["plane crash explained", "air crash investigation documentary", "aviation disaster breakdown"]
+    rpm_band: [3, 8]
+  maritime_disasters:
+    label: "Shipwrecks & maritime disasters"
+    queries: ["shipwreck documentary", "maritime disaster explained", "sinking ship documentary"]
+    rpm_band: [3, 7]
+  mythology:
+    label: "Mythology & folklore storytelling"
+    queries: ["greek mythology explained", "norse mythology stories", "mythology documentary"]
+    rpm_band: [2, 6]
+  true_crime:
+    label: "True crime / unsolved mysteries"
+    queries: ["true crime documentary", "unsolved mysteries documentary", "cold case explained"]
+    rpm_band: [3, 7]
+  psychology:
+    label: "Psychology explainers"
+    queries: ["psychology explained", "cognitive biases explained", "why do we procrastinate psychology"]
+    rpm_band: [4, 10]
+  nature_animals:
+    label: "Nature & animal documentaries"
+    queries: ["deep sea creatures documentary", "animal facts documentary", "wildlife documentary"]
+    rpm_band: [2, 6]
+  tech_explainers:
+    label: "Tech / AI explainers"
+    queries: ["how does ai work explained", "tech explained", "how computers work"]
+    rpm_band: [5, 12]
+  software_tutorials:
+    label: "Software tutorials (Excel / Python)"
+    queries: ["excel tutorial", "excel formulas tips", "python tutorial for beginners"]
+    rpm_band: [8, 18]
+  philosophy_stoicism:
+    label: "Philosophy / stoicism"
+    queries: ["stoicism explained", "philosophy explained", "marcus aurelius lessons"]
+    rpm_band: [3, 7]
+  data_comparisons:
+    label: "Data/size comparisons & stats animations"
+    queries: ["size comparison", "country comparison data", "population comparison"]
+    rpm_band: [1.5, 4]
+  reddit_stories:
+    label: "Reddit story narration"
+    queries: ["reddit stories", "aita reddit stories", "reddit stories full"]
+    rpm_band: [1, 4]
+  ambient_sleep:
+    label: "Ambient / sleep sounds"
+    queries: ["rain sounds for sleeping", "relaxing sleep music", "brown noise sleep"]
+    rpm_band: [0.5, 3]
+  learn_dutch:
+    label: "Learn Dutch (for expats)"
+    queries: ["learn dutch", "dutch for beginners", "dutch grammar explained"]
+    rpm_band: [3, 8]

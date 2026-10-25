@@ -1,0 +1,27 @@
+# Scores 1-10 per criterion. Judgement informed by research/niche_metrics_*.csv,
+# the deep scan, asset-licensing research and policy review. See niche_scoring.md.
+weights: {demand: 15, monetization: 20, competition: 15, automation: 20, cost: 10, sustainability: 10, policy: 10}
+scores:
+  space_astronomy:          {demand: 9, monetization: 6, competition: 8, automation: 9, cost: 9, sustainability: 9, policy: 8}
+  business_case_studies:    {demand: 8, monetization: 8, competition: 6, automation: 7, cost: 8, sustainability: 6, policy: 7}
+  science_explainers:       {demand: 8, monetization: 6, competition: 4, automation: 7, cost: 7, sustainability: 9, policy: 8}
+  history_docs:             {demand: 9, monetization: 5, competition: 4, automation: 7, cost: 7, sustainability: 9, policy: 7}
+  economics_explainers:     {demand: 7, monetization: 7, competition: 3, automation: 7, cost: 8, sustainability: 6, policy: 7}
+  sleep_history:            {demand: 6, monetization: 4, competition: 6, automation: 9, cost: 9, sustainability: 8, policy: 4}
+  maritime_disasters:       {demand: 6, monetization: 5, competition: 6, automation: 6, cost: 7, sustainability: 8, policy: 6}
+  engineering_megaprojects: {demand: 8, monetization: 6, competition: 5, automation: 5, cost: 6, sustainability: 7, policy: 7}
+  geography_geopolitics:    {demand: 6, monetization: 6, competition: 3, automation: 7, cost: 8, sustainability: 7, policy: 7}
+  psychology:               {demand: 6, monetization: 6, competition: 4, automation: 7, cost: 8, sustainability: 7, policy: 6}
+  mythology:                {demand: 6, monetization: 4, competition: 5, automation: 7, cost: 7, sustainability: 9, policy: 7}
+  personal_finance_us:      {demand: 7, monetization: 8, competition: 3, automation: 6, cost: 8, sustainability: 6, policy: 4}
+  data_comparisons:         {demand: 6, monetization: 3, competition: 7, automation: 9, cost: 9, sustainability: 6, policy: 6}
+  aviation_disasters:       {demand: 7, monetization: 5, competition: 6, automation: 4, cost: 5, sustainability: 7, policy: 5}
+  tech_explainers:          {demand: 7, monetization: 6, competition: 4, automation: 6, cost: 7, sustainability: 4, policy: 7}
+  nature_animals:           {demand: 9, monetization: 4, competition: 6, automation: 4, cost: 5, sustainability: 8, policy: 5}
+  software_tutorials:       {demand: 7, monetization: 8, competition: 3, automation: 3, cost: 6, sustainability: 5, policy: 8}
+  philosophy_stoicism:      {demand: 5, monetization: 4, competition: 5, automation: 7, cost: 8, sustainability: 8, policy: 5}
+  true_crime:               {demand: 7, monetization: 4, competition: 7, automation: 5, cost: 7, sustainability: 6, policy: 3}
+  personal_finance_nl:      {demand: 2, monetization: 6, competition: 6, automation: 5, cost: 7, sustainability: 6, policy: 5}
+  learn_dutch:              {demand: 2, monetization: 5, competition: 6, automation: 4, cost: 7, sustainability: 8, policy: 8}
+  reddit_stories:           {demand: 6, monetization: 2, competition: 5, automation: 9, cost: 9, sustainability: 3, policy: 2}
+  ambient_sleep:            {demand: 8, monetization: 1, competition: 4, automation: 9, cost: 9, sustainability: 8, policy: 2}
