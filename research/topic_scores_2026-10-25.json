@@ -1,0 +1,68 @@
+[
+ {
+  "topic": "What is inside the Sun",
+  "query": "what is inside the sun",
+  "asset_query": "Sun solar flare SDO",
+  "demand_raw": 78224.5,
+  "n_100k": 9,
+  "assets_raw": 25,
+  "demand_score": 9.5,
+  "assets_score": 10.0,
+  "score": 9.7
+ },
+ {
+  "topic": "What Webb found at the edge of the universe",
+  "query": "james webb earliest galaxies",
+  "asset_query": "Webb deep field galaxies",
+  "demand_raw": 82600.5,
+  "n_100k": 9,
+  "assets_raw": 0,
+  "demand_score": 10.0,
+  "assets_score": 0.0,
+  "score": 6.0
+ },
+ {
+  "topic": "Saturn rings are disappearing",
+  "query": "saturn rings disappearing",
+  "asset_query": "Saturn rings Cassini",
+  "demand_raw": 601.5,
+  "n_100k": 5,
+  "assets_raw": 25,
+  "demand_score": 0.1,
+  "assets_score": 10.0,
+  "score": 4.06
+ },
+ {
+  "topic": "How big is the Sun really",
+  "query": "how big is the sun",
+  "asset_query": "Sun SDO",
+  "demand_raw": 131.5,
+  "n_100k": 3,
+  "assets_raw": 25,
+  "demand_score": 0.0,
+  "assets_score": 10.0,
+  "score": 4.0
+ },
+ {
+  "topic": "Strangest moons in the solar system",
+  "query": "strangest moons solar system",
+  "asset_query": "moon Cassini Enceladus",
+  "demand_raw": 308,
+  "n_100k": 3,
+  "assets_raw": 25,
+  "demand_score": 0.0,
+  "assets_score": 10.0,
+  "score": 4.0
+ },
+ {
+  "topic": "Great Red Spot is shrinking",
+  "query": "great red spot shrinking",
+  "asset_query": "Great Red Spot Hubble",
+  "demand_raw": 99,
+  "n_100k": 3,
+  "assets_raw": 13,
+  "demand_score": 0.0,
+  "assets_score": 5.2,
+  "score": 2.08
+ }
+]

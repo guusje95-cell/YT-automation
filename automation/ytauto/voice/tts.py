@@ -69,9 +69,15 @@ class ElevenLabsTTS:
 PROVIDERS = {"kokoro": KokoroTTS, "elevenlabs": ElevenLabsTTS}
 
 
+_NON_PROVIDER_KEYS = {"sentence_gap_s", "paragraph_gap_s", "scene_gap_s"}
+
+
 def get_provider(spec_voice: dict | None = None):
+    """Build the TTS provider from settings.yaml `voice`, overridden by a spec's `voice` block."""
     cfg = dict(config.get("voice", {}) or {})
     cfg.update(spec_voice or {})
+    for k in _NON_PROVIDER_KEYS:
+        cfg.pop(k, None)
     name = cfg.pop("provider", "kokoro")
     return PROVIDERS[name](**cfg)
 

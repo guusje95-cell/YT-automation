@@ -1,0 +1,504 @@
+1
+00:00:00,400 --> 00:00:05,736
+The sunlight reaching your eyes right now
+left the surface of the Sun about eight
+
+2
+00:00:05,736 --> 00:00:06,526
+minutes ago.
+
+3
+00:00:06,806 --> 00:00:12,453
+But the energy carried by that light began
+its journey much earlier, deep in the
+
+4
+00:00:12,453 --> 00:00:18,312
+core, and estimates for how long it took
+to work its way out run from about 170,000
+
+5
+00:00:18,312 --> 00:00:20,147
+years to around a million.
+
+6
+00:00:20,427 --> 00:00:22,435
+So what is it travelling through?
+
+7
+00:00:22,715 --> 00:00:28,374
+The Sun has no solid surface and no crust,
+but it does have layers, each with its own
+
+8
+00:00:28,374 --> 00:00:28,773
+rules.
+
+9
+00:00:29,053 --> 00:00:34,575
+Let's go from the centre to the edge, one
+layer at a time, and end with one of the
+
+10
+00:00:34,575 --> 00:00:40,300
+strangest open questions in solar physics:
+why the Sun's outer atmosphere is hundreds
+
+11
+00:00:40,300 --> 00:00:42,522
+of times hotter than its surface.
+
+12
+00:00:43,422 --> 00:00:45,184
+First, a sense of scale.
+
+13
+00:00:45,464 --> 00:00:51,693
+The Sun is about 1.4 million kilometres
+across, roughly a hundred times wider than
+
+14
+00:00:51,693 --> 00:00:52,149
+Earth.
+
+15
+00:00:52,429 --> 00:00:55,970
+You could fit about 1.3 million Earths
+inside it.
+
+16
+00:00:56,250 --> 00:01:00,965
+And it holds 99.8 percent of all the mass
+in the solar system.
+
+17
+00:01:01,245 --> 00:01:05,758
+Everything else, every planet, moon and
+asteroid, is the leftovers.
+
+18
+00:01:06,038 --> 00:01:08,347
+All of that mass is pulling inward.
+
+19
+00:01:08,627 --> 00:01:13,743
+The only reason the Sun does not collapse
+is that something in the middle is pushing
+
+20
+00:01:13,743 --> 00:01:14,048
+back.
+
+21
+00:01:14,948 --> 00:01:19,327
+Layer one is the core, the innermost
+quarter of the Sun's radius.
+
+22
+00:01:19,607 --> 00:01:25,325
+The temperature here is about 15 million
+degrees Celsius, and the material is
+
+23
+00:01:25,325 --> 00:01:30,671
+packed to around 150 grams per cubic
+centimetre, roughly eight times the
+
+24
+00:01:30,671 --> 00:01:31,859
+density of gold.
+
+25
+00:01:32,139 --> 00:01:37,636
+Under those conditions, hydrogen nuclei
+collide hard enough to fuse into helium,
+
+26
+00:01:37,636 --> 00:01:38,804
+releasing energy.
+
+27
+00:01:39,084 --> 00:01:41,471
+The burning is concentrated here.
+
+28
+00:01:41,751 --> 00:01:46,852
+By the edge of the core, about 175,000
+kilometres from the centre, the
+
+29
+00:01:46,852 --> 00:01:51,588
+temperature has dropped to roughly half,
+and fusion almost stops.
+
+30
+00:01:51,868 --> 00:01:55,471
+That energy is the push that holds the
+whole star up.
+
+31
+00:01:55,751 --> 00:01:59,991
+Most of it comes from a chain of reactions
+that starts with hydrogen.
+
+32
+00:02:00,271 --> 00:02:05,383
+But a small share, about one percent,
+comes from a different route that uses
+
+33
+00:02:05,383 --> 00:02:08,007
+carbon, nitrogen and oxygen as helpers.
+
+34
+00:02:08,287 --> 00:02:11,405
+For decades that second route was only
+theory.
+
+35
+00:02:11,685 --> 00:02:18,114
+Then, in 2020, the Borexino experiment,
+buried under a mountain in Italy, detected
+
+36
+00:02:18,114 --> 00:02:19,525
+neutrinos from it.
+
+37
+00:02:19,805 --> 00:02:24,979
+Neutrinos barely interact with anything,
+so they fly straight out of the core, and
+
+38
+00:02:24,979 --> 00:02:29,395
+catching them is the closest thing we have
+to looking directly inside.
+
+39
+00:02:29,675 --> 00:02:34,491
+For years, detectors caught fewer solar
+neutrinos than theory predicted.
+
+40
+00:02:34,771 --> 00:02:39,886
+That puzzle was finally resolved when
+physicists discovered that neutrinos have
+
+41
+00:02:39,886 --> 00:02:43,511
+mass, which lets them change type on their
+way to Earth.
+
+42
+00:02:44,411 --> 00:02:49,604
+Layer two is the radiative zone, from
+about a quarter of the way out to about
+
+43
+00:02:49,604 --> 00:02:51,627
+seventy percent of the radius.
+
+44
+00:02:51,907 --> 00:02:55,591
+Here, energy travels as light, but not in
+a straight line.
+
+45
+00:02:55,871 --> 00:03:01,642
+The plasma is so dense that each bit of
+light is absorbed and re-emitted again and
+
+46
+00:03:01,642 --> 00:03:03,613
+again, in random directions.
+
+47
+00:03:03,893 --> 00:03:08,989
+It is like trying to leave a stadium crowd
+where every person you bump into spins you
+
+48
+00:03:08,989 --> 00:03:09,409
+around.
+
+49
+00:03:09,689 --> 00:03:15,513
+Across this zone, the temperature falls
+from about 7 million degrees to about 2
+
+50
+00:03:15,513 --> 00:03:21,779
+million, and the density drops from around
+20 grams per cubic centimetre to just 0.2,
+
+51
+00:03:21,779 --> 00:03:23,401
+less dense than water.
+
+52
+00:03:23,681 --> 00:03:28,468
+This is the slow part of the journey, and
+the main reason the trip out takes so
+
+53
+00:03:28,468 --> 00:03:28,771
+long.
+
+54
+00:03:29,051 --> 00:03:33,260
+How long, exactly, depends on the model
+and on what you count.
+
+55
+00:03:33,540 --> 00:03:40,501
+NASA's Sun fact sheet gives about 170,000
+years for energy to reach the top of the
+
+56
+00:03:40,501 --> 00:03:41,859
+convection zone.
+
+57
+00:03:42,139 --> 00:03:47,840
+NASA's Marshall solar physics group puts a
+photon's trip across the radiative zone
+
+58
+00:03:47,840 --> 00:03:49,995
+alone at about a million years.
+
+59
+00:03:50,275 --> 00:03:55,641
+Either way, the energy in today's sunlight
+set off long before the first cities were
+
+60
+00:03:55,641 --> 00:03:56,024
+built.
+
+61
+00:03:56,304 --> 00:04:01,243
+At the top of this zone sits a thin
+boundary called the tachocline, where
+
+62
+00:04:01,243 --> 00:04:04,965
+scientists think the Sun's magnetic field
+is generated.
+
+63
+00:04:05,865 --> 00:04:11,528
+Layer three is the convection zone, the
+outer thirty percent, starting about
+
+64
+00:04:11,528 --> 00:04:14,285
+200,000 kilometres below the surface.
+
+65
+00:04:14,565 --> 00:04:19,617
+Here the plasma is cool enough, below
+about two million degrees, that light can
+
+66
+00:04:19,617 --> 00:04:22,431
+no longer push the energy along
+efficiently.
+
+67
+00:04:22,711 --> 00:04:24,589
+So the Sun starts to boil.
+
+68
+00:04:24,869 --> 00:04:29,786
+Hot plasma rises, cools at the top, and
+sinks again, in enormous loops.
+
+69
+00:04:30,066 --> 00:04:35,445
+You can see the tops of these loops on the
+surface as a grainy pattern of granules.
+
+70
+00:04:35,725 --> 00:04:41,003
+By the time the plasma reaches the top, it
+is astonishingly thin, about ten thousand
+
+71
+00:04:41,003 --> 00:04:44,019
+times less dense than the air you are
+breathing.
+
+72
+00:04:44,299 --> 00:04:49,530
+This churning motion also twists the
+magnetic field, which is why the surface
+
+73
+00:04:49,530 --> 00:04:52,519
+is covered in sunspots, loops and
+eruptions.
+
+74
+00:04:53,419 --> 00:04:55,206
+At last, the light escapes.
+
+75
+00:04:55,486 --> 00:05:00,396
+The photosphere is what we call the Sun's
+surface, although it is not solid.
+
+76
+00:05:00,676 --> 00:05:07,627
+It is a layer about 400 kilometres thick,
+at roughly 5,500 degrees Celsius.
+
+77
+00:05:07,907 --> 00:05:11,568
+From here, the light needs only those
+eight minutes to reach us.
+
+78
+00:05:11,848 --> 00:05:13,771
+Above it, things get strange.
+
+79
+00:05:14,051 --> 00:05:19,595
+In the next layer, the chromosphere, the
+temperature climbs instead of falling,
+
+80
+00:05:19,595 --> 00:05:22,543
+from about 6,000 to around 20,000 degrees.
+
+81
+00:05:22,823 --> 00:05:28,167
+Then comes a thin transition region, and
+above that the corona, the Sun's outer
+
+82
+00:05:28,167 --> 00:05:32,631
+atmosphere, which reaches temperatures of
+up to 2 million degrees.
+
+83
+00:05:32,911 --> 00:05:37,799
+You normally cannot see the corona,
+because the photosphere is far too bright.
+
+84
+00:05:38,079 --> 00:05:43,428
+During a total solar eclipse, when the
+Moon blocks the disc, it appears as a pale
+
+85
+00:05:43,428 --> 00:05:44,287
+glowing halo.
+
+86
+00:05:45,187 --> 00:05:46,594
+That is the puzzle.
+
+87
+00:05:46,874 --> 00:05:51,354
+The further you move from the furnace at
+the centre, the cooler things should get.
+
+88
+00:05:51,634 --> 00:05:56,563
+Instead, the corona is hundreds of times
+hotter than the surface beneath it.
+
+89
+00:05:56,843 --> 00:06:01,983
+NASA describes the heating of the corona
+as a major unsolved puzzle in
+
+90
+00:06:01,983 --> 00:06:02,938
+heliophysics.
+
+91
+00:06:03,218 --> 00:06:07,180
+To study it up close, NASA launched the
+Parker Solar Probe.
+
+92
+00:06:07,460 --> 00:06:12,870
+On the twenty-eighth of April 2021, it
+crossed into the corona for the first
+
+93
+00:06:12,870 --> 00:06:18,778
+time, passing a boundary called the Alfvén
+critical surface, about 18.8 solar radii
+
+94
+00:06:18,778 --> 00:06:19,703
+from the Sun.
+
+95
+00:06:19,983 --> 00:06:24,821
+It was the first time a spacecraft had
+flown through the Sun's atmosphere,
+
+96
+00:06:24,821 --> 00:06:29,593
+measuring the particles and magnetic
+fields where the solar wind is born.
+
+97
+00:06:29,873 --> 00:06:32,175
+The answer is not settled yet.
+
+98
+00:06:32,455 --> 00:06:36,938
+But for the first time, we are taking
+measurements from inside the place where
+
+99
+00:06:36,938 --> 00:06:37,570
+it happens.
+
+100
+00:06:38,470 --> 00:06:44,124
+The Sun is about 4.6 billion years old and
+a little less than halfway through its
+
+101
+00:06:44,124 --> 00:06:44,473
+life.
+
+102
+00:06:44,753 --> 00:06:50,218
+In about five billion years, it will swell
+into a red giant, possibly engulfing
+
+103
+00:06:50,218 --> 00:06:55,130
+Mercury, Venus, and perhaps Earth, before
+shrinking into a white dwarf.
+
+104
+00:06:55,410 --> 00:07:00,697
+Until then, the same layered engine keeps
+running: fusion in the core, a long slow
+
+105
+00:07:00,697 --> 00:07:05,790
+glow through the radiative zone, boiling
+in the convection zone, and light that
+
+106
+00:07:05,790 --> 00:07:08,691
+finally escapes, eight minutes away from
+you.
+
+107
+00:07:08,971 --> 00:07:14,237
+If you want more space explained with real
+images and real numbers, subscribe.
+
+108
+00:07:14,517 --> 00:07:17,304
+Every source is linked in the description.

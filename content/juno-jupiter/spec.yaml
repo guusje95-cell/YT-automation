@@ -1,0 +1,346 @@
+id: juno-jupiter
+description_summary: >
+  NASA's Juno spacecraft spent years skimming over Jupiter's clouds. Here are five things it discovered, from geometric storms at the poles to a core that appears partly dissolved, told with real mission images and every number sourced below.
+working_title: "What NASA's Juno Found Inside Jupiter"
+pillar: missions-and-discoveries
+format: explainer
+status: draft
+title_options:
+  - "What NASA's Juno Found Inside Jupiter"
+  - "Juno Looked Inside Jupiter. It Wasn't What We Expected."
+  - "5 Things Juno Discovered About Jupiter (With Real Images)"
+thumbnail:
+  asset: north_ir
+  variants:
+    - {text: "NOT WHAT WE EXPECTED", asset: north_ir, focus: [0.55, 0.6], zoom: 1.15}
+    - {text: "WHAT JUNO FOUND", asset: grs_enh, focus: [0.6, 0.5], zoom: 1.0, side: left}
+    - {text: "5 DISCOVERIES", asset: south_ir, focus: [0.5, 0.55], zoom: 1.1}
+voice: {provider: kokoro, voice: bm_george, lang: en-gb, speed: 1.0}
+music: {mood: wonder}
+lexicon:
+  "Io": "Eye-oh"
+  "JunoCam": "Juno Cam"
+  "Galileo's": "Galileo's"
+time_sensitive:
+  - "Juno's mission status after September 2025 is not confirmed by NASA as of 2026-10-25; script avoids claiming it is still operating."
+tags: [jupiter, juno, nasa, space, astronomy, great red spot, planets, solar system, science explained]
+
+sources:
+  - id: nasa_juno
+    title: "Juno (mission overview and science findings)"
+    publisher: NASA Science
+    url: https://science.nasa.gov/mission/juno/
+    accessed: 2026-10-25
+  - id: jpl_3d_2021
+    title: "NASA's Juno Science Results Offer First 3D View of Jupiter Atmosphere"
+    publisher: NASA JPL (28 Oct 2021)
+    url: https://www.jpl.nasa.gov/news/nasas-juno-science-results-offer-first-3d-view-of-jupiter-atmosphere/
+    accessed: 2026-10-25
+  - id: adriani_2018
+    title: "Clusters of cyclones encircling Jupiter's poles (Adriani et al., Nature 555, 2018)"
+    publisher: Nature
+    url: https://authors.library.caltech.edu/83934
+    accessed: 2026-10-25
+  - id: pia23558
+    title: "A New Cyclone Joins the Jovian Fray (PIA23558)"
+    publisher: NASA/JPL Photojournal
+    url: https://photojournal.jpl.nasa.gov/catalog/PIA23558
+    accessed: 2026-10-25
+  - id: jpl_water_2020
+    title: "Findings From NASA's Juno Update Jupiter Water Mystery (Li et al., Nature Astronomy 2020)"
+    publisher: NASA JPL (Feb 2020)
+    url: https://www.jpl.nasa.gov/news/findings-from-nasas-juno-update-jupiter-water-mystery/
+    accessed: 2026-10-25
+  - id: jpl_mushballs_2020
+    title: "Shallow Lightning and 'Mushballs' Reveal Ammonia to NASA's Juno Scientists (Becker et al., Nature 2020; Guillot et al., JGR Planets 2020)"
+    publisher: NASA JPL (Aug 2020)
+    url: https://www.jpl.nasa.gov/news/shallow-lightning-and-mushballs-reveal-ammonia-to-nasas-juno-scientists/
+    accessed: 2026-10-25
+  - id: liu_2019
+    title: "The formation of Jupiter's diluted core by a giant impact (Liu et al., Nature 572, 2019)"
+    publisher: Nature
+    url: https://cris.tau.ac.il/en/publications/the-formation-of-jupiters-diluted-core-by-a-giant-impact/
+    accessed: 2026-10-25
+  - id: jpl_magfield_2019
+    title: "NASA's Juno Finds Changes in Jupiter's Magnetic Field (Moore et al., Nature Astronomy 2019)"
+    publisher: NASA JPL (May 2019)
+    url: https://www.jpl.nasa.gov/news/nasas-juno-finds-changes-in-jupiters-magnetic-field/
+    accessed: 2026-10-25
+  - id: pia24681
+    title: "Juno's Ganymede Close-up (PIA24681)"
+    publisher: NASA/JPL Photojournal
+    url: https://photojournal.jpl.nasa.gov/catalog/PIA24681
+    accessed: 2026-10-25
+  - id: pia25330
+    title: "First Image of Europa From Juno's Close Flyby (PIA25330)"
+    publisher: NASA/JPL Photojournal
+    url: https://photojournal.jpl.nasa.gov/catalog/PIA25330
+    accessed: 2026-10-25
+  - id: nasa_io_2024
+    title: "NASA's Juno Gives Aerial Views of Mountain, Lava Lake on Io"
+    publisher: NASA (Apr 2024)
+    url: https://www.nasa.gov/missions/juno/nasas-juno-gives-aerial-views-of-mountain-lava-lake-on-io/
+    accessed: 2026-10-25
+
+assets:
+  - {id: jup_below, provider: nasa_images, nasa_id: PIA21032}
+  - {id: jup_clouds, provider: nasa_images, nasa_id: PIA24972}
+  - {id: north_ir, provider: nasa_images, nasa_id: PIA22336}
+  - {id: north_ring, provider: nasa_images, nasa_id: PIA22335}
+  - {id: south_ir, provider: nasa_images, nasa_id: PIA22337}
+  - {id: south_new, provider: nasa_images, nasa_id: PIA23558}
+  - {id: juno_approach, provider: nasa_images, nasa_id: PIA20702}
+  - {id: juno_above, provider: nasa_images, nasa_id: PIA20704}
+  - {id: juno_south, provider: nasa_images, nasa_id: PIA21771}
+  - {id: solar_wing, provider: nasa_images, nasa_id: PIA13928}
+  - {id: vault, provider: nasa_images, nasa_id: PIA13259}
+  - {id: awaits_launch, provider: nasa_images, nasa_id: PIA14416}
+  - {id: grs_enh, provider: nasa_images, nasa_id: PIA21395}
+  - {id: grs_slices, provider: nasa_images, nasa_id: PIA22177}
+  - {id: grs_size, provider: nasa_images, nasa_id: PIA24817}
+  - {id: grs_horizon, provider: nasa_images, nasa_id: JPL-PIA22950}
+  - {id: turbulence, provider: nasa_images, nasa_id: PIA26595}
+  - {id: belts, provider: nasa_images, nasa_id: PIA26350}
+  - {id: belts2, provider: nasa_images, nasa_id: PIA21974}
+  - {id: swirls, provider: nasa_images, nasa_id: PIA21978}
+  - {id: white_oval, provider: nasa_images, nasa_id: PIA22691}
+  - {id: aurora_ir, provider: nasa_images, nasa_id: PIA21033}
+  - {id: io_south, provider: nasa_images, nasa_id: PIA25697}
+  - {id: io_loki, provider: nasa_images, nasa_id: PIA26293}
+  - {id: io_plume, provider: nasa_images, nasa_id: PIA26340}
+  - {id: ganymede, provider: nasa_images, nasa_id: PIA24681}
+  - {id: europa, provider: nasa_images, nasa_id: PIA26331}
+  - {id: family, provider: nasa_images, nasa_id: PIA25966}
+  - {id: mag_tour, provider: nasa_svs, svs_id: 13007, kind: video, file_hint: "JupiterMagneticTour1080",
+     credit: "NASA's Goddard Space Flight Center / Scientific Visualization Studio"}
+
+scenes:
+  - id: hook
+    chapter: "Intro"
+    narration: >
+      For most of the last century, the inside of Jupiter was educated guesswork.
+      The diagrams looked tidy: a thick layer of clouds, a deep ocean of hydrogen,
+      and at the very centre, a compact ball of rock and ice.
+      Then, in 2016, a spacecraft arrived that could actually measure the planet,
+      skimming a few thousand kilometres above the cloud tops on every close pass.
+      What it found was messier, deeper, and much stranger than the diagrams.
+      These are five discoveries from NASA's Juno mission, starting at the poles, where no spacecraft had ever had a good look,
+      and ending at a core that appears to be partly dissolved.
+    claims:
+      - {text: "Juno arrived at Jupiter in 2016", sources: [nasa_juno]}
+      - {text: "Core larger than expected and partially dissolved (dilute)", sources: [nasa_juno]}
+    beats:
+      - {type: image, asset: jup_below, motion: in, sentences: 2}
+      - {type: image, asset: jup_clouds, motion: pan_left, sentences: 1}
+      - {type: image, asset: juno_approach, motion: in, sentences: 2}
+      - {type: image, asset: north_ir, motion: out, sentences: 1}
+      - {type: title, text: "What Juno Found Inside Jupiter", kicker: "Five discoveries from NASA's Juno mission", sentences: 1}
+
+  - id: mission
+    chapter: "The spacecraft"
+    narration: >
+      Juno launched from Cape Canaveral on the fifth of August, 2011, and spent five years crossing the solar system.
+      On the fourth of July, 2016, it fired its main engine and slipped into orbit around Jupiter.
+      Two design choices made it unusual.
+      First, it runs on sunlight. Out at Jupiter, sunlight is only about four percent as strong as it is at Earth,
+      so Juno carries three huge solar arrays, each about nine metres long.
+      Second, Jupiter surrounds itself with some of the most intense radiation in the solar system.
+      So Juno's most sensitive electronics sit inside a titanium vault that weighs about 180 kilograms.
+      Instead of circling the equator, Juno loops over the poles on long, stretched orbits.
+      Each close pass is brief. Then the spacecraft swings far back out, and waits weeks for the next one.
+      At first, each of those orbits took 53 days.
+    claims:
+      - {text: "Launched Aug 5, 2011 from Cape Canaveral", sources: [nasa_juno]}
+      - {text: "Orbit insertion July 4, 2016", sources: [nasa_juno]}
+      - {text: "Sunlight at Jupiter ~4% of Earth's", sources: [nasa_juno]}
+      - {text: "Three solar arrays ~9 m each", sources: [nasa_juno]}
+      - {text: "Titanium vault ~180 kg", sources: [nasa_juno]}
+      - {text: "Original orbits 53 days", sources: [nasa_juno]}
+    beats:
+      - {type: image, asset: awaits_launch, motion: up, sentences: 1}
+      - {type: fact, big: "4 July 2016", small: "Juno enters orbit around Jupiter", source: nasa_juno, sentences: 1}
+      - {type: image, asset: juno_above, motion: pan_right, sentences: 1}
+      - {type: fact, big: "≈4%", small: "of Earth's sunlight reaches Jupiter", source: nasa_juno, sentences: 1}
+      - {type: image, asset: solar_wing, motion: pan_left, sentences: 1}
+      - {type: image, asset: juno_south, motion: in, sentences: 1}
+      - {type: image, asset: vault, motion: in, sentences: 1}
+      - {type: image, asset: juno_approach, motion: out, sentences: 2}
+      - {type: fact, big: "53 days", small: "per orbit, at first", source: nasa_juno, sentences: 2}
+
+  - id: poles
+    chapter: "1. Storm geometry at the poles"
+    narration: >
+      Discovery number one is at the poles, and it looks almost designed.
+      Over Jupiter's north pole, Juno's infrared camera found one cyclone sitting at the centre, surrounded by a ring of eight more,
+      arranged roughly like an octagon.
+      Over the south pole: one central cyclone, surrounded by five, in a rough pentagon.
+      Each of these storms is thousands of kilometres across, and they are packed so tightly that their edges almost touch.
+      On Earth, hurricanes drift toward the poles and fall apart. On Jupiter, these storms stay put.
+      Scientists watched the same pattern over years of passes. The cyclones wobble around their positions, but they do not merge.
+      Then, in November 2019, a new and smaller cyclone squeezed into the southern group.
+      Nobody fully understands yet how such a pattern forms, or why it stays so stable. That is still an open question.
+    claims:
+      - {text: "North: 8 cyclones around a central one (octagon); south: 5 around central (pentagon)", sources: [adriani_2018, jpl_3d_2021]}
+      - {text: "Cyclones remain in place and oscillate around an equilibrium position", sources: [jpl_3d_2021]}
+      - {text: "New smaller cyclone imaged at south pole on Nov 4, 2019", sources: [pia23558]}
+      - {text: "How the cyclones persist without merging is unknown", sources: [adriani_2018]}
+    beats:
+      - {type: list, title: "Five discoveries", items: ["Storm geometry at the poles", "Weather that goes deep", "Water, lightning and mushballs", "A fuzzy core", "A lopsided magnetic field"], highlight: 0, sentences: 1}
+      - {type: image, asset: north_ring, motion: in, sentences: 2, label: "North pole, infrared (JIRAM)"}
+      - {type: image, asset: south_ir, motion: out, sentences: 1, label: "South pole, infrared (JIRAM)"}
+      - {type: image, asset: north_ir, motion: pan_right, sentences: 2}
+      - {type: image, asset: jup_below, motion: in, sentences: 2}
+      - {type: image, asset: south_new, motion: in, sentences: 1, label: "South pole, 4 Nov 2019"}
+      - {type: image, asset: south_ir, motion: in, sentences: 2}
+
+  - id: deep_weather
+    chapter: "2. Weather that goes deep"
+    narration: >
+      The second discovery: Jupiter's weather does not stop at the clouds.
+      The famous stripes are alternating bands of wind, called belts and zones, blowing east and west at hundreds of kilometres per hour.
+      For decades, nobody knew how deep they went. They could have been a thin skin, like weather on Earth.
+      Juno answered that with gravity. As the spacecraft swoops past, tiny tugs on its radio signal reveal how mass is moving inside the planet.
+      The answer: the jet streams reach about 3,000 kilometres down.
+      Then there is the Great Red Spot, a storm wider than our entire planet.
+      Juno's microwave instrument showed its roots extend more than 350 kilometres below the cloud tops.
+      Gravity measurements from two close flybys put the depth at around 500 kilometres.
+      That is deep compared to any storm on Earth, but shallow compared to the jets around it.
+      Imagine a spinning coin, wide and thin, floating on top of winds that go far deeper.
+    claims:
+      - {text: "Belts and zones are alternating jet streams", sources: [nasa_juno]}
+      - {text: "Jets extend about 3,000 km below cloud tops", sources: [nasa_juno, jpl_3d_2021]}
+      - {text: "Great Red Spot wider than Earth (illustration PIA24817 depicts size)", sources: [jpl_3d_2021]}
+      - {text: "MWR: storms incl. GRS extend >350 km; gravity: GRS ~500 km", sources: [jpl_3d_2021]}
+    beats:
+      - {type: image, asset: belts, motion: pan_right, sentences: 2}
+      - {type: image, asset: turbulence, motion: in, sentences: 1}
+      - {type: image, asset: juno_above, motion: in, sentences: 2}
+      - {type: fact, big: "≈3,000 km", small: "depth of Jupiter's jet streams", source: nasa_juno, sentences: 1}
+      - {type: image, asset: grs_enh, motion: in, sentences: 1}
+      - {type: image, asset: grs_slices, motion: in, sentences: 1, label: "Microwave 'slices' through the Great Red Spot"}
+      - {type: fact, big: "350 – 500 km", small: "depth of the Great Red Spot's roots", source: jpl_3d_2021, sentences: 1}
+      - {type: image, asset: grs_size, motion: in, sentences: 2}
+      - {type: image, asset: grs_horizon, motion: pan_left, sentences: 1}
+
+  - id: water
+    chapter: "3. Water, lightning and mushballs"
+    narration: >
+      Number three involves something surprisingly basic: water.
+      In 1995, NASA's Galileo probe plunged into Jupiter's atmosphere and measured far less water than expected.
+      It may simply have dropped into an unusually dry spot, a bit like sampling Earth's weather only over a desert.
+      Juno measured from orbit instead, using microwaves to see deeper into the atmosphere, near the equator.
+      There, water makes up about 0.25 percent of the molecules, almost three times the Sun's proportion of oxygen and hydrogen.
+      Then came the lightning. Juno saw small flashes high up in the atmosphere, in places where it should be too cold for liquid water.
+      The proposed explanation is wonderfully odd.
+      Storms may throw ice crystals so high that ammonia gas melts them into a slushy mix of ammonia and water.
+      Those slushy hailstones, nicknamed mushballs, may grow heavy and fall deep into the planet, carrying ammonia and water down with them.
+      It is a model, not a direct observation. But it explains several puzzling measurements at once.
+    claims:
+      - {text: "Galileo probe (1995) found less water than expected; possibly a dry spot", sources: [nasa_juno, jpl_water_2020]}
+      - {text: "At equator water ~0.25% of molecules, almost 3x Sun", sources: [jpl_water_2020]}
+      - {text: "Shallow lightning observed at high altitudes", sources: [jpl_mushballs_2020]}
+      - {text: "Mushballs: ammonia-water hail model", sources: [jpl_mushballs_2020]}
+    beats:
+      - {type: list, title: "Five discoveries", items: ["Storm geometry at the poles", "Weather that goes deep", "Water, lightning and mushballs", "A fuzzy core", "A lopsided magnetic field"], highlight: 2, sentences: 1}
+      - {type: fact, big: "1995", small: "Galileo probe measures a surprisingly dry Jupiter", source: jpl_water_2020, sentences: 2}
+      - {type: image, asset: belts2, motion: pan_right, sentences: 1}
+      - {type: fact, big: "≈0.25%", small: "of molecules at the equator are water", source: jpl_water_2020, sentences: 1}
+      - {type: image, asset: swirls, motion: in, sentences: 1}
+      - {type: image, asset: white_oval, motion: pan_left, sentences: 1}
+      - {type: image, asset: grs_horizon, motion: in, sentences: 1}
+      - {type: fact, big: "“Mushballs”", small: "slushy ammonia-water hail (a proposed model)", source: jpl_mushballs_2020, sentences: 1}
+      - {type: image, asset: jup_clouds, motion: out, sentences: 2}
+
+  - id: core
+    chapter: "4. A fuzzy core"
+    narration: >
+      The fourth discovery goes all the way to the centre.
+      By tracking Juno's radio signal on every close pass, scientists built up a detailed map of Jupiter's gravity.
+      And gravity is shaped by where the mass sits inside.
+      The expected picture was a small, dense core with a sharp boundary.
+      Instead, the measurements point to a core that is larger and partly dissolved, with heavy elements mixed out into the hydrogen around it.
+      Scientists call it a dilute, or fuzzy, core.
+      How did it get that way? One idea, published in Nature in 2019, is a head-on collision early in Jupiter's history,
+      with a young planet around ten times the mass of Earth, violent enough to shatter the original core and stir it outward.
+      Other researchers think the core could have formed this way gradually, or been slowly eroded from within.
+      The question is still open. What changed is that we now have measurements to test the ideas against.
+    claims:
+      - {text: "Gravity science via radio tracking", sources: [nasa_juno]}
+      - {text: "Core larger than expected, partially dissolved: dilute/fuzzy", sources: [nasa_juno]}
+      - {text: "Giant-impact hypothesis (Liu et al. 2019), impactor ~10 Earth masses", sources: [liu_2019]}
+    beats:
+      - {type: list, title: "Five discoveries", items: ["Storm geometry at the poles", "Weather that goes deep", "Water, lightning and mushballs", "A fuzzy core", "A lopsided magnetic field"], highlight: 3, sentences: 1}
+      - {type: image, asset: juno_south, motion: out, sentences: 2}
+      - {type: scale, mode: core, title: "Expected vs. measured", labels: ["Compact core (expected)", "Dilute core (Juno)"], sentences: 2}
+      - {type: fact, big: "“Fuzzy core”", small: "larger, partly dissolved", source: nasa_juno, sentences: 1}
+      - {type: image, asset: grs_horizon, motion: in, sentences: 1}
+      - {type: fact, big: "~10 Earths", small: "proposed impactor mass (Liu et al., Nature 2019) — a hypothesis", source: liu_2019, sentences: 1}
+      - {type: image, asset: jup_clouds, motion: in, sentences: 2}
+
+  - id: magnetic
+    chapter: "5. A lopsided magnetic field"
+    narration: >
+      And the fifth discovery is invisible, but enormous.
+      Jupiter's magnetic field is immense, generated by a deep layer of hydrogen squeezed so hard it behaves like a liquid metal.
+      Juno found that the field is stronger and stranger than expected.
+      In some places, it is more than thirty times as strong as Earth's.
+      And it is lopsided. The northern hemisphere is a tangle of intense patches,
+      while near the equator sits an isolated hot spot of magnetic field that scientists call the Great Blue Spot.
+      By comparing Juno's map with measurements from earlier missions, researchers found that the field is slowly changing over time.
+      Most of that change happens at the Great Blue Spot, probably because deep winds are shearing the field and dragging it around.
+      The same magnetic field powers Jupiter's auroras, where Juno measured particle energies of up to 400,000 electron volts,
+      far beyond anything in Earth's northern lights.
+    claims:
+      - {text: "Field generated by liquid metallic hydrogen", sources: [nasa_juno]}
+      - {text: "Field >30x Earth's in some places", sources: [nasa_juno]}
+      - {text: "Great Blue Spot; secular variation concentrated there; driven by deep winds", sources: [jpl_magfield_2019]}
+      - {text: "Auroral energies up to 400,000 eV", sources: [nasa_juno]}
+    beats:
+      - {type: list, title: "Five discoveries", items: ["Storm geometry at the poles", "Weather that goes deep", "Water, lightning and mushballs", "A fuzzy core", "A lopsided magnetic field"], highlight: 4, sentences: 1}
+      - {type: video, asset: mag_tour, from: 0, zoom: 1.5, sentences: 3, label: "Juno magnetic field map (NASA SVS)"}
+      - {type: fact, big: "30×", small: "stronger than Earth's field, in places", source: nasa_juno, sentences: 1}
+      - {type: video, asset: mag_tour, from: 20, zoom: 1.6, sentences: 2}
+      - {type: video, asset: mag_tour, from: 44, zoom: 1.6, sentences: 1, label: "Great Blue Spot (blue patch)"}
+      - {type: image, asset: aurora_ir, motion: in, sentences: 1, label: "Southern aurora, infrared"}
+      - {type: fact, big: "400,000 eV", small: "auroral particle energies", source: nasa_juno, sentences: 1}
+
+  - id: moons
+    chapter: "Bonus: the moons"
+    narration: >
+      Juno was built to study Jupiter itself, but in its later years it turned toward the moons.
+      In June 2021, it passed within about 1,000 kilometres of Ganymede, the largest moon in the solar system.
+      In September 2022, it flew about 350 kilometres above the icy surface of Europa,
+      a moon thought to hide a salty ocean beneath its shell.
+      Then, in December 2023 and February 2024, it came within about 1,500 kilometres of Io, the most volcanic world we know.
+      Among the images was Loki Patera, a lava lake roughly 200 kilometres across, with islands in the middle
+      and a surface so smooth in places that it reflected sunlight like glass.
+      Each of those flybys also bent Juno's path, shrinking its orbit from 53 days down to 33.
+    claims:
+      - {text: "Ganymede flyby June 2021 within ~1,038 km (narrated as about 1,000 km)", sources: [pia24681]}
+      - {text: "Europa flyby Sept 29, 2022 at ~352 km (narrated as about 350 km)", sources: [pia25330]}
+      - {text: "Io flybys Dec 2023 & Feb 2024 within ~1,500 km", sources: [nasa_io_2024]}
+      - {text: "Loki Patera ~200 km lava lake with islands, glass-smooth reflection", sources: [nasa_io_2024]}
+      - {text: "Orbit period shortened from 53 to 33 days via flybys", sources: [nasa_juno]}
+    beats:
+      - {type: image, asset: family, motion: pan_right, sentences: 1}
+      - {type: image, asset: ganymede, motion: in, sentences: 1, label: "Ganymede, 7 June 2021"}
+      - {type: image, asset: europa, motion: in, sentences: 2, label: "Europa, JunoCam"}
+      - {type: image, asset: io_south, motion: in, sentences: 1, label: "Io, JunoCam"}
+      - {type: image, asset: io_loki, motion: pan_left, sentences: 1, label: "Loki Patera (artist's concept from Juno data)"}
+      - {type: image, asset: io_plume, motion: in, sentences: 1, label: "Io, JunoCam"}
+
+  - id: outro
+    chapter: "What it adds up to"
+    narration: >
+      Put it all together and Jupiter looks less like a neat diagram and more like a living system.
+      Storms locked into geometric patterns at the poles. Winds reaching thousands of kilometres down.
+      Hail made of ammonia. A magnetic field that drifts over the years. And a core that never quite settled.
+      Juno's planned mission ran through September 2025, and scientists are still working through what it sent home.
+      If you want more space explained with real images and real numbers, subscribe. Every source for this video is linked in the description.
+    claims:
+      - {text: "Mission extended to September 2025", sources: [nasa_juno]}
+    beats:
+      - {type: image, asset: south_ir, motion: in, sentences: 2}
+      - {type: image, asset: swirls, motion: pan_left, sentences: 1}
+      - {type: image, asset: jup_below, motion: out, sentences: 2}
+      - {type: end, text: "Real images. Real numbers.", sentences: 1}

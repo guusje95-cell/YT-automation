@@ -1,0 +1,66 @@
+{
+ "video_id": "inside-the-sun",
+ "title": "What's Actually Inside the Sun",
+ "title_options": [
+  "What's Actually Inside the Sun",
+  "Why the Sunlight You See Is Older Than You Think",
+  "Inside the Sun, Layer by Layer"
+ ],
+ "description": "The sunlight hitting your eyes left the Sun about eight minutes ago, but its energy began in the core long before that. A layer-by-layer journey from the core to the corona, with real NASA imagery and every number sourced below.\n\n\nChapters\n0:00 Intro\n0:43 First, the scale\n1:14 1. The core\n2:44 2. The radiative zone\n4:05 3. The convection zone\n4:53 4. The surface and atmosphere\n5:45 5. The hot corona mystery\n6:38 What happens next\n\nSources\n• Sun: Facts — NASA Science: https://science.nasa.gov/sun/facts/\n• The Solar Interior — NASA Marshall Space Flight Center, Solar Physics: https://solarscience.msfc.nasa.gov/interior.shtml\n• Layers of the Sun (The Sun Spot, 26 Sep 2023) — NASA Science: https://science.nasa.gov/blogs/the-sun-spot/2023/09/26/layers-of-the-sun/\n• Massive underground instrument finds final secret of our Sun's fusion (Borexino Collaboration, Nature 2020) — Princeton University: https://www.princeton.edu/news/2020/12/01/massive-underground-instrument-finds-final-secret-our-suns-fusion\n• NASA Enters the Solar Atmosphere for the First Time, Bringing New Discoveries (14 Dec 2021) — NASA: https://www.nasa.gov/solar-system/nasa-enters-the-solar-atmosphere-for-the-first-time-bringing-new-discoveries/\n\nImage and video credits\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA18143\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA21552\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA21768\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA11237\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA21958\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA21756\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA21569\n• NASA/JPL-Caltech — https://images.nasa.gov/details/AFRC2017-0233-007\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA22662\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA22360\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA22449\n• NASA/GSFC/Solar Dynamics Observatory — https://images.nasa.gov/details/PIA21836\n• ESA/NASA/SOHO — https://images.nasa.gov/details/PIA03149\n• NASA's Goddard Space Flight Center / Scientific Visualization Studio — https://svs.gsfc.nasa.gov/14036\nNASA material is used under NASA's media guidelines; NASA does not endorse this channel. CC BY images are credited above.\n\nMusic: original ambient score generated for this channel.\nNarration voice is synthetic (text-to-speech). Script researched and reviewed by the channel; sources below.",
+ "tags": [
+  "sun",
+  "inside the sun",
+  "solar core",
+  "nuclear fusion",
+  "corona",
+  "parker solar probe",
+  "nasa",
+  "space",
+  "astronomy",
+  "science explained"
+ ],
+ "category_id": "28",
+ "default_language": "en",
+ "made_for_kids": false,
+ "contains_synthetic_media": false,
+ "privacy_status": "private",
+ "chapters": [
+  {
+   "t": 0.0,
+   "title": "Intro"
+  },
+  {
+   "t": 43.422,
+   "title": "First, the scale"
+  },
+  {
+   "t": 74.948,
+   "title": "1. The core"
+  },
+  {
+   "t": 164.411,
+   "title": "2. The radiative zone"
+  },
+  {
+   "t": 245.865,
+   "title": "3. The convection zone"
+  },
+  {
+   "t": 293.419,
+   "title": "4. The surface and atmosphere"
+  },
+  {
+   "t": 345.187,
+   "title": "5. The hot corona mystery"
+  },
+  {
+   "t": 398.47,
+   "title": "What happens next"
+  }
+ ],
+ "files": {
+  "video": "/home/user/YT-automation/output/inside-the-sun/inside-the-sun.mp4",
+  "thumbnail": "/home/user/YT-automation/output/inside-the-sun/thumbnail_1.jpg",
+  "captions": "/home/user/YT-automation/output/inside-the-sun/inside-the-sun.en.srt"
+ }
+}

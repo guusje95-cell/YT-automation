@@ -1,0 +1,66 @@
+# Non-secret pipeline settings. Secrets go in environment variables / .env (see docs/SETUP.md).
+channel:
+  name: "Parsec Notes"            # working name; change once the channel is created
+  tagline: "Real images. Real numbers."
+  language: en
+  default_playlist: ""            # filled in after channel setup
+  credit_line: "Narration voice is synthetic (text-to-speech). Script researched and reviewed by the channel; sources below."
+
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  crf: 19                 # x264 quality (lower = better/larger)
+  preset: medium
+  transition_s: 0.5       # cross-dissolve between beats
+  safe_margin: 80
+
+brand:
+  bg: [8, 11, 20]
+  accent: [255, 176, 59]   # warm amber
+  text: [242, 244, 248]
+  muted: [150, 160, 180]
+  font_regular: automation/assets/fonts/Inter-Regular.otf
+  font_medium: automation/assets/fonts/Inter-Medium.otf
+  font_semibold: automation/assets/fonts/Inter-SemiBold.otf
+  font_bold: automation/assets/fonts/Inter-Bold.otf
+  font_display: automation/assets/fonts/InterDisplay-Black.otf
+
+voice:
+  provider: kokoro
+  voice: bm_george
+  lang: en-gb
+  speed: 1.0
+  sentence_gap_s: 0.28
+  paragraph_gap_s: 0.6
+  scene_gap_s: 0.9
+
+audio:
+  target_lufs: -14.0       # YouTube normalises to about -14 LUFS
+  true_peak_db: -1.0
+  music_gain_db: -25.0     # music bed relative to normalised voice
+  music_duck_db: -7.0      # extra attenuation while narration is speaking
+
+assets:
+  allowed_licenses: [public-domain, cc0, pdm, cc-by, cc-by-sa, nasa-media, generated]
+  user_agent: "ytauto/0.1 (YouTube explainer research; contact via channel)"
+
+llm:
+  provider: anthropic
+  model: claude-opus-5-5
+  max_tokens: 32000
+
+qa:
+  min_duration_s: 300
+  max_duration_s: 1500
+  lufs_tolerance: 1.0
+  max_silence_s: 2.5
+  max_black_s: 1.0
+  banned_phrases_file: config/banned_phrases.txt
+
+publish:
+  default_privacy: private          # never public without explicit approval
+  category_id: "28"                 # Science & Technology
+  made_for_kids: false
+  default_language: en
+  contains_synthetic_media: false   # set true per video if realistic AI imagery is used

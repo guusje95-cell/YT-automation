@@ -1,0 +1,72 @@
+[
+ {
+  "video_id": "inside-the-sun",
+  "started": "2026-10-25T22:07:00",
+  "stages": [
+   {
+    "stage": "assets",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "narration",
+    "seconds": 294.0,
+    "status": "ok"
+   },
+   {
+    "stage": "audio_mix",
+    "seconds": 47.7,
+    "status": "ok"
+   },
+   {
+    "stage": "captions",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "thumbnails",
+    "seconds": 1.6,
+    "status": "ok"
+   },
+   {
+    "stage": "storyboard",
+    "seconds": 10.2,
+    "status": "ok"
+   },
+   {
+    "stage": "render",
+    "seconds": 672.9,
+    "status": "ok"
+   },
+   {
+    "stage": "mux",
+    "seconds": 24.7,
+    "status": "ok"
+   },
+   {
+    "stage": "metadata",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "qa",
+    "seconds": 182.2,
+    "status": "ok"
+   }
+  ],
+  "qa": {
+   "PASS": 29,
+   "WARN": 0,
+   "FAIL": 0
+  },
+  "finished": "2026-10-25T22:27:33",
+  "total_seconds": 1233.3,
+  "cost_eur": {
+   "tts": 0.0,
+   "assets": 0.0,
+   "music": 0.0,
+   "llm": 0.0,
+   "note": "all local/free providers; LLM cost applies only when scripts are drafted via API"
+  }
+ }
+]

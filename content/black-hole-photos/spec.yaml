@@ -1,0 +1,212 @@
+id: black-hole-photos
+description_summary: >
+  Black holes trap light, so how did astronomers photograph two of them? What the orange rings actually show, how an
+  Earth-sized virtual telescope made the images, and why our own galaxy's black hole was harder. Real images, every number sourced below.
+working_title: "The First Photos of Black Holes, Explained"
+pillar: extreme-objects
+format: explainer
+status: draft
+title_options:
+  - "The First Photos of Black Holes, Explained"
+  - "How Do You Photograph Something That Traps Light?"
+  - "What the Black Hole Images Actually Show"
+thumbnail:
+  asset: m87
+  variants:
+    - {text: "THIS IS REAL", asset: m87, focus: [0.5, 0.5], zoom: 1.25, side: left}
+    - {text: "WHAT ARE WE SEEING?", asset: sgra, focus: [0.5, 0.5], zoom: 1.2, side: left}
+    - {text: "A PHOTO OF A BLACK HOLE", asset: m87, focus: [0.5, 0.5], zoom: 1.1, side: right}
+voice: {provider: kokoro, voice: bm_george, lang: en-gb, speed: 1.0}
+music: {mood: tension, seed: 5}
+lexicon:
+  "M87*": "M87 star"
+  "Sgr A*": "Sagittarius A star"
+  "Sagittarius A*": "Sagittarius A star"
+time_sensitive: []
+tags: [black hole, first image of a black hole, event horizon telescope, M87, Sagittarius A*, eso, nasa, space, astronomy, science explained]
+
+sources:
+  - id: eso1907
+    title: "Astronomers Capture First Image of a Black Hole (eso1907, 10 Apr 2019)"
+    publisher: ESO
+    url: https://www.eso.org/public/news/eso1907/
+    accessed: 2026-10-25
+  - id: eso2208
+    title: "Astronomers reveal first image of the black hole at the heart of our galaxy (eso2208-eht-mw, 12 May 2022)"
+    publisher: ESO
+    url: https://www.eso.org/public/news/eso2208-eht-mw/
+    accessed: 2026-10-25
+
+assets:
+  - {id: m87, provider: url, url: "https://cdn.eso.org/images/large/eso1907a.jpg", license: cc-by,
+     credit: "EHT Collaboration (CC BY 4.0)", source_page: "https://www.eso.org/public/images/eso1907a/", title: "First Image of a Black Hole"}
+  - {id: sgra, provider: url, url: "https://cdn.eso.org/images/large/eso2208-eht-mwa.jpg", license: cc-by,
+     credit: "EHT Collaboration (CC BY 4.0)", source_page: "https://www.eso.org/public/images/eso2208-eht-mwa/", title: "First image of our black hole"}
+  - {id: array, provider: url, url: "https://cdn.eso.org/images/large/eso1907j.jpg", license: cc-by,
+     credit: "ESO/L. Calçada (CC BY 4.0)", source_page: "https://www.eso.org/public/images/eso1907j/", title: "The EHT, a Planet-Scale Array"}
+  - {id: anatomy, provider: url, url: "https://cdn.eso.org/images/large/eso1907h.jpg", license: cc-by,
+     credit: "ESO, ESA/Hubble, M. Kornmesser/N. Bartmann (CC BY 4.0)", source_page: "https://www.eso.org/public/images/eso1907h/", title: "Anatomy of a Black Hole"}
+  - {id: impression, provider: url, url: "https://cdn.eso.org/images/large/eso1907c.jpg", license: cc-by,
+     credit: "ESO/M. Kornmesser (CC BY 4.0)", source_page: "https://www.eso.org/public/images/eso1907c/", title: "Artist's impression of the black hole at the heart of M87"}
+  - {id: m87_spitzer, provider: nasa_images, nasa_id: PIA23122}
+  - {id: milkyway, provider: nasa_images, nasa_id: PIA12348}
+  - {id: plunge, provider: nasa_svs, svs_id: 14576, kind: video, file_hint: "Rectilinear_2160x1080_30",
+     credit: "NASA's Goddard Space Flight Center / J. Schnittman and B. Powell"}
+
+scenes:
+  - id: hook
+    chapter: "Intro"
+    narration: >
+      In April 2019, astronomers released a blurry orange ring on a black background, and called it the first image of a black hole.
+      It sits at the centre of a galaxy called M87, about 55 million light-years away, and it weighs about 6.5 billion times as much as the Sun.
+      Three years later, they did it again, this time for the black hole at the centre of our own galaxy.
+      But there is an obvious problem. A black hole traps light. So what exactly is in these pictures,
+      how do you build a telescope sharp enough to take them, and why was the black hole next door the harder one?
+    claims:
+      - {text: "First image released 10 April 2019; M87* ~55 million light-years; ~6.5 billion solar masses", sources: [eso1907]}
+      - {text: "Sgr A* image released 12 May 2022 (three years later)", sources: [eso2208]}
+    beats:
+      - {type: image, asset: m87, motion: in, zoom: 0.18, sentences: 1, label: "M87*, Event Horizon Telescope (2019)"}
+      - {type: fact, big: "6.5 billion", small: "times the mass of the Sun: the black hole in M87", source: eso1907, sentences: 1}
+      - {type: image, asset: sgra, motion: in, zoom: 0.15, sentences: 1, label: "Sagittarius A*, Event Horizon Telescope (2022)"}
+      - {type: video, asset: plunge, from: 20, zoom: 1.0, sentences: 1, label: "NASA supercomputer visualization"}
+      - {type: title, text: "The First Photos of Black Holes", kicker: "What they show, and how they were made", sentences: 1}
+
+  - id: what
+    chapter: "1. What's in the picture"
+    narration: >
+      Start with what the image is not. It is not a photograph of the black hole itself. Nothing comes back from inside the event horizon.
+      What you are seeing is the light around it: hot gas swirling near the black hole, glowing in radio waves,
+      with its light bent by the black hole's gravity into a ring.
+      The dark patch in the middle is called the shadow.
+      It is the region where light that would have reached us has been bent away or captured.
+      The shadow is the closest an image can get to the black hole itself.
+      And the event horizon is smaller still. For M87, it is about two and a half times smaller than the shadow,
+      but still just under 40 billion kilometres across.
+    claims:
+      - {text: "Ring-like structure with dark centre: the shadow, caused by light bent and captured near the event horizon", sources: [eso1907]}
+      - {text: "Event horizon ~2.5 times smaller than the shadow; just under 40 billion km across", sources: [eso1907]}
+    beats:
+      - {type: list, title: "Three questions", items: ["What's in the picture", "How do you photograph it", "Why our black hole was harder"], highlight: 0, sentences: 1}
+      - {type: image, asset: m87, motion: in, zoom: 0.25, sentences: 2}
+      - {type: image, asset: anatomy, motion: in, fit: contain, zoom: 0.04, sentences: 2}
+      - {type: image, asset: impression, motion: out, sentences: 1, label: "Artist's impression"}
+      - {type: fact, big: "≈40 billion km", small: "width of M87's event horizon, about 2.5× smaller than the shadow", source: eso1907, sentences: 2}
+
+  - id: bending
+    chapter: "A hundred years of bending light"
+    narration: >
+      The idea that gravity bends light is older than any radio telescope.
+      Einstein's general relativity predicted it, and in 1919, expeditions to a total solar eclipse
+      tested the theory by checking whether starlight passing close to the Sun was bent.
+      It was, as predicted.
+      A black hole is that same effect taken to the extreme.
+      Near the event horizon, gravity bends light so strongly that it can wrap around the black hole,
+      which is why the glowing gas appears as a ring rather than a smudge.
+      One of the project's lead scientists called the shadow something predicted by Einstein's general relativity that we had never seen before.
+      A century after starlight was first seen bending around the Sun, we could finally see the edge of the place where light cannot escape.
+    claims:
+      - {text: "1919 eclipse expeditions tested general relativity by checking starlight bending around the Sun, as predicted by Einstein", sources: [eso1907]}
+      - {text: "Shadow is 'something predicted by Einstein's general relativity that we've never seen before' (Falcke)", sources: [eso1907]}
+      - {text: "Light bent by gravity near the event horizon; shadow caused by bending and capture", sources: [eso1907]}
+    beats:
+      - {type: fact, big: "1919", small: "eclipse expeditions test whether starlight bends around the Sun", source: eso1907, sentences: 3}
+      - {type: image, asset: anatomy, motion: out, fit: contain, zoom: 0.04, sentences: 3}
+      - {type: video, asset: plunge, from: 5, sentences: 2, label: "NASA supercomputer visualization"}
+      - {type: image, asset: m87, motion: in, zoom: 0.2, sentences: 1}
+
+  - id: how
+    chapter: "2. A telescope the size of Earth"
+    narration: >
+      The second question is how you take a picture of something so far away.
+      The ring is tiny on the sky. And the sharpness of any telescope depends on how wide it is compared with the wavelength it observes.
+      For radio waves, that means a dish far bigger than anything we could build.
+      To resolve this ring, you would need a telescope roughly the size of the Earth.
+      So astronomers built one, virtually. The Event Horizon Telescope linked eight radio observatories around the world,
+      from Chile to Hawaii to the South Pole, and observed together in 2017 at a wavelength of 1.3 millimetres.
+      By recording the same signals at precisely timed moments and combining them later, the network behaves like a single dish as wide as the planet.
+      The sharpness is hard to picture. ESO compares it to reading a newspaper in New York from a café in Paris.
+      The data volumes were just as extreme. Each telescope produced about 350 terabytes a day,
+      and supercomputers in Germany and the United States combined it into one image.
+      More than 200 researchers worked on that first result.
+      And it was not a one-off. The same ring showed up across multiple independent observations,
+      which is part of why the team was confident it was real and not an artefact of the processing.
+    claims:
+      - {text: "EHT: eight radio telescopes linked into an Earth-sized virtual telescope; 2017 campaign; 1.3 mm wavelength", sources: [eso1907]}
+      - {text: "Telescopes include ALMA/APEX (Chile), JCMT/SMA (Hawaii), South Pole Telescope", sources: [eso1907]}
+      - {text: "Resolution 20 micro-arcseconds: 'enough to read a newspaper in New York from a café in Paris'", sources: [eso1907]}
+      - {text: "~350 terabytes per telescope per day; combined at MPIfR (Germany) and MIT Haystack (US)", sources: [eso1907]}
+      - {text: "More than 200 researchers", sources: [eso1907]}
+      - {text: "Ring persisted across multiple independent EHT observations", sources: [eso1907]}
+    beats:
+      - {type: list, title: "Three questions", items: ["What's in the picture", "How do you photograph it", "Why our black hole was harder"], highlight: 1, sentences: 1}
+      - {type: image, asset: array, motion: pan_right, sentences: 5, label: "Event Horizon Telescope array (illustration)"}
+      - {type: fact, big: "1.3 mm", small: "the radio wavelength of the 2017 observations", source: eso1907, sentences: 1}
+      - {type: image, asset: array, motion: in, sentences: 1}
+      - {type: fact, big: "New York ↔ Paris", small: "sharp enough to read a newspaper across the Atlantic", source: eso1907, sentences: 2}
+      - {type: fact, big: "350 TB", small: "of data per telescope, per day", source: eso1907, sentences: 2}
+      - {type: image, asset: m87_spitzer, motion: in, sentences: 2, label: "Galaxy M87, infrared (Spitzer)"}
+      - {type: image, asset: m87, motion: out, zoom: 0.2, sentences: 2}
+
+  - id: sgra
+    chapter: "3. Why our own black hole was harder"
+    narration: >
+      Now the black hole at the centre of the Milky Way, called Sagittarius A star.
+      It is only about 27,000 light-years away, and about four million times the mass of the Sun.
+      Closer should mean easier. It wasn't.
+      Sagittarius A star is more than a thousand times smaller and less massive than the one in M87.
+      Around the giant in M87, gas takes days or weeks to complete an orbit.
+      Around our much smaller black hole, it completes an orbit in minutes.
+      So the source kept changing while the telescopes were watching, a bit like trying to photograph a puppy chasing its tail.
+      The team had to analyse many images and average them to reveal the underlying structure.
+      The result, published in May 2022 by more than 300 researchers, looks strikingly like the first one.
+      Seen from Earth, it is about the same size on the sky as a doughnut sitting on the Moon.
+    claims:
+      - {text: "Sgr A* ~27,000 light-years; ~4 million solar masses", sources: [eso2208]}
+      - {text: "More than a thousand times smaller and less massive than M87*", sources: [eso2208]}
+      - {text: "Gas orbits M87* in days to weeks; Sgr A* in minutes; images averaged", sources: [eso2208]}
+      - {text: "Released 12 May 2022; more than 300 researchers from 80 institutes", sources: [eso2208]}
+      - {text: "Same apparent size as a doughnut on the Moon", sources: [eso2208]}
+    beats:
+      - {type: list, title: "Three questions", items: ["What's in the picture", "How do you photograph it", "Why our black hole was harder"], highlight: 2, sentences: 1}
+      - {type: image, asset: milkyway, motion: pan_right, sentences: 1, label: "Centre of the Milky Way (NASA Great Observatories)"}
+      - {type: fact, big: "27,000 light-years", small: "distance to Sagittarius A*", source: eso2208, sentences: 2}
+      - {type: scale, mode: circles, title: "Mass compared (circle width proportional to mass)",
+         items: [{label: "Sagittarius A*", value: 4, color: [255, 176, 59], note: "≈4 million Suns"},
+                 {label: "M87*", value: 6500, color: [255, 120, 50], note: "≈6.5 billion Suns"}], sentences: 1}
+      - {type: fact, big: "minutes vs. weeks", small: "time for gas to orbit Sagittarius A* vs. M87*", source: eso2208, sentences: 3}
+      - {type: image, asset: sgra, motion: in, zoom: 0.2, sentences: 2}
+      - {type: fact, big: "A doughnut on the Moon", small: "the apparent size of Sagittarius A* seen from Earth", source: eso2208, sentences: 1}
+
+  - id: meaning
+    chapter: "What the images tell us"
+    narration: >
+      So why does a blurry ring matter so much?
+      Because the size of the shadow depends on the black hole's mass. The more massive the black hole, the larger the shadow.
+      For M87, that let the team measure its enormous mass directly from the image.
+      And for our own black hole, the ring came out almost exactly the size Einstein's general relativity predicted.
+      One of the researchers put it simply: general relativity governs these objects up close.
+      Two black holes, a thousand times apart in mass, look remarkably similar near their edges.
+      Whatever differences we see further out come from the material swirling around them, not from the black holes themselves.
+    claims:
+      - {text: "The more massive a black hole, the larger the shadow; the shadow allowed measuring M87*'s mass", sources: [eso1907]}
+      - {text: "Ring size agreed with general relativity predictions; 'General Relativity governs these objects up close' (Markoff)", sources: [eso2208]}
+      - {text: "The two look remarkably similar near the edge; differences further out due to surrounding material", sources: [eso2208]}
+    beats:
+      - {type: image, asset: m87, motion: out, zoom: 0.2, sentences: 2}
+      - {type: image, asset: sgra, motion: out, zoom: 0.2, sentences: 2}
+      - {type: video, asset: plunge, from: 60, sentences: 2, label: "NASA supercomputer visualization"}
+      - {type: image, asset: impression, motion: in, sentences: 1, label: "Artist's impression"}
+
+  - id: outro
+    chapter: "Closing"
+    narration: >
+      In a few years, astronomers went from drawing black holes to photographing them.
+      Not the black hole itself, which no light can leave, but the ring of light at its edge and the shadow it casts.
+      If you want more space explained with real images and real numbers, subscribe. Every source and image credit is linked in the description.
+    claims:
+      - {text: "Images show ring and shadow, not the black hole itself", sources: [eso1907]}
+    beats:
+      - {type: image, asset: m87, motion: in, zoom: 0.15, sentences: 1}
+      - {type: image, asset: sgra, motion: in, zoom: 0.15, sentences: 1}
+      - {type: end, text: "Real images. Real numbers.", sentences: 1}

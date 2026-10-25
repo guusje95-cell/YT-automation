@@ -1,0 +1,30 @@
+# Phrases that mark generic AI filler or hype. One per line, case-insensitive.
+# Script QA fails on "error" lines and warns on others (prefix "warn:").
+delve
+tapestry
+in today's video
+in this video, we will
+buckle up
+let's dive in
+dive into
+without further ado
+it's important to note
+it is important to note
+in conclusion
+mind-blowing
+mind blowing
+scientists are terrified
+scientists are baffled
+nasa is hiding
+shocking truth
+you won't believe
+the answer will shock you
+smash that like button
+journey through the cosmos
+warn:incredible
+warn:fascinating
+warn:amazing
+warn:truly
+warn:literally
+warn:unimaginable
+warn:mysterious

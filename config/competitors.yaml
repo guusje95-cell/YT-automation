@@ -1,0 +1,15 @@
+# Channels to monitor for outlier topics (space niche). Handles from the 2026-10-25 scan.
+outlier_multiple: 3.0      # flag uploads with >= 3x the channel's recent median views
+max_age_days: 120
+channels:
+  - "@NullSpaceYT"
+  - "@TheAstroExplainer"
+  - "@BluntlyExplained"
+  - "@Actualspace78"
+  - "@astralcuriosity"
+  - "@astrumspace"
+  - "@kurzgesagt"
+  - "@pbsspacetime"
+  - "@WhatIfScienceShow"
+  - "@globaldata1"
+  - "@territoryspace"
