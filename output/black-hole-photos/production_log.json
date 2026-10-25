@@ -1,0 +1,72 @@
+[
+ {
+  "video_id": "black-hole-photos",
+  "started": "2026-10-25T22:27:51",
+  "stages": [
+   {
+    "stage": "assets",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "narration",
+    "seconds": 1.5,
+    "status": "ok"
+   },
+   {
+    "stage": "audio_mix",
+    "seconds": 36.8,
+    "status": "ok"
+   },
+   {
+    "stage": "captions",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "thumbnails",
+    "seconds": 5.5,
+    "status": "ok"
+   },
+   {
+    "stage": "storyboard",
+    "seconds": 15.2,
+    "status": "ok"
+   },
+   {
+    "stage": "render",
+    "seconds": 439.2,
+    "status": "ok"
+   },
+   {
+    "stage": "mux",
+    "seconds": 23.8,
+    "status": "ok"
+   },
+   {
+    "stage": "metadata",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "qa",
+    "seconds": 144.1,
+    "status": "ok"
+   }
+  ],
+  "qa": {
+   "PASS": 29,
+   "WARN": 0,
+   "FAIL": 0
+  },
+  "finished": "2026-10-25T22:38:58",
+  "total_seconds": 666.1,
+  "cost_eur": {
+   "tts": 0.0,
+   "assets": 0.0,
+   "music": 0.0,
+   "llm": 0.0,
+   "note": "all local/free providers; LLM cost applies only when scripts are drafted via API"
+  }
+ }
+]

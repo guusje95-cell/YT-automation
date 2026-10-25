@@ -1,0 +1,62 @@
+{
+ "video_id": "black-hole-photos",
+ "title": "The First Photos of Black Holes, Explained",
+ "title_options": [
+  "The First Photos of Black Holes, Explained",
+  "How Do You Photograph Something That Traps Light?",
+  "What the Black Hole Images Actually Show"
+ ],
+ "description": "Black holes trap light, so how did astronomers photograph two of them? What the orange rings actually show, how an Earth-sized virtual telescope made the images, and why our own galaxy's black hole was harder. Real images, every number sourced below.\n\n\nChapters\n0:00 Intro\n0:41 1. What's in the picture\n1:27 A hundred years of bending light\n2:21 2. A telescope the size of Earth\n3:52 3. Why our own black hole was harder\n4:54 What the images tell us\n5:41 Closing\n\nSources\n• Astronomers Capture First Image of a Black Hole (eso1907, 10 Apr 2019) — ESO: https://www.eso.org/public/news/eso1907/\n• Astronomers reveal first image of the black hole at the heart of our galaxy (eso2208-eht-mw, 12 May 2022) — ESO: https://www.eso.org/public/news/eso2208-eht-mw/\n\nImage and video credits\n• EHT Collaboration (CC BY 4.0) — https://www.eso.org/public/images/eso1907a/\n• EHT Collaboration (CC BY 4.0) — https://www.eso.org/public/images/eso2208-eht-mwa/\n• ESO/L. Calçada (CC BY 4.0) — https://www.eso.org/public/images/eso1907j/\n• ESO, ESA/Hubble, M. Kornmesser/N. Bartmann (CC BY 4.0) — https://www.eso.org/public/images/eso1907h/\n• ESO/M. Kornmesser (CC BY 4.0) — https://www.eso.org/public/images/eso1907c/\n• NASA/JPL-Caltech/IPAC/Event Horizon Telescope Collaboration — https://images.nasa.gov/details/PIA23122\n• NASA/JPL-Caltech/ESA/CXC/STScI — https://images.nasa.gov/details/PIA12348\n• NASA's Goddard Space Flight Center / J. Schnittman and B. Powell — https://svs.gsfc.nasa.gov/14576\nNASA material is used under NASA's media guidelines; NASA does not endorse this channel. CC BY images are credited above.\n\nMusic: original ambient score generated for this channel.\nNarration voice is synthetic (text-to-speech). Script researched and reviewed by the channel; sources below.",
+ "tags": [
+  "black hole",
+  "first image of a black hole",
+  "event horizon telescope",
+  "M87",
+  "Sagittarius A*",
+  "eso",
+  "nasa",
+  "space",
+  "astronomy",
+  "science explained"
+ ],
+ "category_id": "28",
+ "default_language": "en",
+ "made_for_kids": false,
+ "contains_synthetic_media": false,
+ "privacy_status": "private",
+ "chapters": [
+  {
+   "t": 0.0,
+   "title": "Intro"
+  },
+  {
+   "t": 41.736,
+   "title": "1. What's in the picture"
+  },
+  {
+   "t": 87.385,
+   "title": "A hundred years of bending light"
+  },
+  {
+   "t": 141.67,
+   "title": "2. A telescope the size of Earth"
+  },
+  {
+   "t": 232.349,
+   "title": "3. Why our own black hole was harder"
+  },
+  {
+   "t": 294.975,
+   "title": "What the images tell us"
+  },
+  {
+   "t": 341.096,
+   "title": "Closing"
+  }
+ ],
+ "files": {
+  "video": "/home/user/YT-automation/output/black-hole-photos/black-hole-photos.mp4",
+  "thumbnail": "/home/user/YT-automation/output/black-hole-photos/thumbnail_1.jpg",
+  "captions": "/home/user/YT-automation/output/black-hole-photos/black-hole-photos.en.srt"
+ }
+}

@@ -20,7 +20,7 @@ Stages A–E done; Stage F (validation with real uploads) is **blocked on your o
 |---|---|---|---|---|
 | What NASA's Juno Found Inside Jupiter (pilot) | 9:02 | 0 FAIL · 1 WARN (time-sensitive mission status, intentional) · 28 PASS | 16.9 min | `output/juno-jupiter/` |
 | What's Actually Inside the Sun | 7:19 | 0 FAIL · 0 WARN · 29 PASS | 20.6 min | `output/inside-the-sun/` |
-| The First Photos of Black Holes, Explained | ~7 min | see `output/black-hole-photos/qa_report.md` | — | `output/black-hole-photos/` |
+| The First Photos of Black Holes, Explained | 6:04 | 0 FAIL · 0 WARN · 29 PASS | 11.1 min (narration pre-cached) | `output/black-hole-photos/` |
 
 Each folder: 1080p master `<id>.mp4` (git-ignored, regenerate with `python -m ytauto produce <id>`), `*_preview480.mp4`
 (committed), `.en.srt/.vtt`, `thumbnail_1-3.jpg`, `metadata.json`, `description.txt`, `script.md` (script with
@@ -31,7 +31,7 @@ claims→sources), `qa_report.md`, `licensing_checklist.md`, `storyboard.jpg`, `
 - Licence gate: caught 7 non-commercial or unlicensed images in the pilot that a naïve NASA search would have used
   (e.g. PIA21775 is CC BY-NC-SA); replaced with CC BY / NASA-produced images.
 - Audio: all three mixes measured at −14.0 LUFS integrated, true peak −1.2 dBFS (ffmpeg EBU R128).
-- Speech intelligibility (Whisper round-trip): 2.1% (Juno) and 3.8% (Sun) word error rate, almost entirely
+- Speech intelligibility (Whisper round-trip): 2.1% (Juno), 3.8% (Sun) and 1.4% (black holes) word error rate, almost entirely
   spelling/number formatting; two suspected mispronunciations were checked with a larger model and were ASR errors.
 - Video: H.264 1080p30 yuv420p, A/V lengths within 0.1 s, no black segments > 1 s, no silences > 2.5 s.
 - Publish gate: unit-tested (blocks public without authorisation, blocks on QA FAIL). **Actual upload untested** — needs your OAuth.
@@ -59,7 +59,7 @@ claims→sources), `qa_report.md`, `licensing_checklist.md`, `storyboard.jpg`, `
 4. Optional: an Anthropic API key with a spend cap (~$10/month) for unattended script drafting.
 
 ## Known limitations / honest caveats
-- Episodes run 7–9 min, shorter than the 10–12 min target; future scripts should aim for 1,400–1,700 words with more sources.
+- Episodes run 6–9 min, shorter than the 10–12 min target; future scripts should aim for 1,400–1,700 words with more sources.
 - Visual variety per topic is limited by available licensed imagery; some images repeat with different framing.
 - Kokoro voice is good but not top-tier; a paid voice A/B test is planned once there is retention data.
 - No impressions/CTR via API; requires a weekly Studio CSV export (2 min).

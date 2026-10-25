@@ -1,0 +1,154 @@
+{
+ "summary": {
+  "PASS": 29,
+  "WARN": 0,
+  "FAIL": 0
+ },
+ "results": [
+  [
+   "script.banned_phrases",
+   "PASS",
+   "none"
+  ],
+  [
+   "script.hype_words",
+   "PASS",
+   "none"
+  ],
+  [
+   "script.length",
+   "PASS",
+   "912 words, 60 sentences"
+  ],
+  [
+   "script.longest_sentence",
+   "PASS",
+   "32 words: What you are seeing is the light around it: hot gas swirling near the black hole, glowing ..."
+  ],
+  [
+   "script.repetitive_openers",
+   "PASS",
+   "none"
+  ],
+  [
+   "script.numbers_sourced",
+   "PASS",
+   "every number appears in a sourced claim"
+  ],
+  [
+   "script.sources_used",
+   "PASS",
+   "2 sources cited"
+  ],
+  [
+   "script.time_sensitive",
+   "PASS",
+   "none declared"
+  ],
+  [
+   "assets.licences",
+   "PASS",
+   "8 assets, all allowed"
+  ],
+  [
+   "assets.credits",
+   "PASS",
+   "all credited"
+  ],
+  [
+   "assets.flags",
+   "PASS",
+   "no open flags"
+  ],
+  [
+   "assets.unused",
+   "PASS",
+   "all used"
+  ],
+  [
+   "captions.line_length",
+   "PASS",
+   "0 lines > 42 chars"
+  ],
+  [
+   "meta.title_length",
+   "PASS",
+   "42 chars: The First Photos of Black Holes, Explained"
+  ],
+  [
+   "meta.description_length",
+   "PASS",
+   "1771 chars"
+  ],
+  [
+   "meta.tags",
+   "PASS",
+   "10 tags, 125 chars"
+  ],
+  [
+   "meta.chapters",
+   "PASS",
+   "7 chapters"
+  ],
+  [
+   "meta.privacy_default",
+   "PASS",
+   "private"
+  ],
+  [
+   "thumbnail.thumbnail_1",
+   "PASS",
+   "(1280, 720), 45 KB"
+  ],
+  [
+   "thumbnail.thumbnail_2",
+   "PASS",
+   "(1280, 720), 74 KB"
+  ],
+  [
+   "thumbnail.thumbnail_3",
+   "PASS",
+   "(1280, 720), 57 KB"
+  ],
+  [
+   "video.format",
+   "PASS",
+   "h264 1920x1080 yuv420p 30/1"
+  ],
+  [
+   "video.audio_stream",
+   "PASS",
+   "aac 48000 Hz 2 ch"
+  ],
+  [
+   "video.duration",
+   "PASS",
+   "364.4s (6.1 min)"
+  ],
+  [
+   "video.av_sync_length",
+   "PASS",
+   "video 364.43s / audio 364.42s"
+  ],
+  [
+   "video.black_frames",
+   "PASS",
+   "none longer than 1.0s"
+  ],
+  [
+   "audio.loudness",
+   "PASS",
+   "-14.0 LUFS integrated, true peak -1.2 dBFS"
+  ],
+  [
+   "audio.long_silences",
+   "PASS",
+   "none"
+  ],
+  [
+   "voice.intelligibility",
+   "PASS",
+   "ASR word error rate 1.4% (lower is better; includes number formatting differences). Top diffs: 'centre' -> 'center'; 'centre' -> 'center'; 'hot' -> 'that'; 'kilometres' -> 'kilometers'; '2017' -> '2000 and 17'; 'a star' -> 'asta'; 'four' -> '4'; 'a star' -> 'asta'"
+  ]
+ ]
+}
