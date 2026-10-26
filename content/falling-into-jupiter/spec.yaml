@@ -144,14 +144,16 @@ scenes:
       - {text: "No spacecraft has since gone deeper into Jupiter's atmosphere (Juno measures from orbit)", sources: [nasa_juno]}
     beats:
       - {type: r3d, shot: orbit, params: {dist: [3.6, 3.1], az: [0.7, 0.55], el: [0.12, 0.1], fov: [36, 34], light: [70, 15], streak: true}, sentences: 1, pov: true,
-         note: ["BASED ON A TRUE STORY"], hud: {speed: [170590, 170590, "km/h"], status: "ATMOSPHERE IN 10 S"}}
+         note: ["BASED ON A TRUE STORY"], note_big: true, hud: {speed: [170590, 170590, "km/h"], status: "ATMOSPHERE IN 10 S"}}
       - {type: r3d, shot: approach, params: {dist: [4.0, 2.2], fov: [30, 42]}, sentences: 1, pov: true, hud: {speed: [170590, 170590, "km/h"], status: "FINAL APPROACH"}}
       - {type: r3d, shot: entry, params: {lon: 20, lat: 4}, sentences: 3, shake: 0.5, pov: true}
       - {type: image, asset: probe_painting, motion: in, crop: [0.13, 0.03, 0.93, 0.86], sentences: 1, label: "NASA's Galileo probe, December 1995 (artist's impression)"}
       - {type: r3d, shot: cloud_dive, params: {decks: 1, lightning: 0.6, seed: 4}, sentences: 1, hud: {clock: ["T+00:00", "T+58:00"], status: "GALILEO PROBE · 1995", mission: "GALILEO PROBE  ·  TELEMETRY"}}
       - {type: glitch, text: "SIGNAL LOST", sentences: 0.6}
       - {type: r3d, shot: crescent, params: {dist: [3.4, 3.0], az: [0.35, 0.2], light: [85, 14]}, sentences: 0.8}
-      - {type: r3d, shot: cutaway, params: {marker: [1.0, 0.1], az: [0.35, 0.1]}, sentences: 3}
+      - {type: r3d, shot: cloud_dive, params: {decks: 1, seed: 31, layers: [["detail_swift.jpg", [0.0, 0.0, 0.8, 0.75]], ["dive_tkachenko.jpg", [0.0, 0.3, 1.0, 1.0]]], depth_tint: [[0.8, 0.6, 0.45], [0.45, 0.3, 0.2]]}, sentences: 1, pov: true, shake: 0.4}
+      - {type: r3d, shot: fluid, params: {mode: metallic, seed: 9}, sentences: 1, pov: true, shake: 0.3}
+      - {type: r3d, shot: cutaway, params: {marker: [1.0, 0.1], az: [0.3, 0.15], dist: [3.0, 2.5]}, sentences: 1}
       - {type: r3d, shot: crescent, params: {dist: [3.3, 3.0], az: [0.35, 0.2]}, title: "Falling into Jupiter", sentences: 1.2}
 
   - id: entry

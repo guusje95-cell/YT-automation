@@ -495,12 +495,23 @@ class PovFrame:
 class NoteOverlay:
     """Two centred mono lines (e.g. the fiction disclaimer)."""
 
-    def __init__(self, lines: list[str]):
-        self.layers = [place(tracked(l.upper(), "mono_medium" if i == 0 else "mono", 34 if i == 0 else 26,
-                                     TEXT if i == 0 else AMBER, 0.3), W // 2, int(H * 0.70) + i * 52, "mm")
-                       for i, l in enumerate(lines)]
+    def __init__(self, lines: list[str], big: bool = False):
+        self.big = big
+        if big:  # opening card: large, centred, on screen from the first frame
+            self.layers = [place(tracked(l.upper(), "semibold", 58, TEXT, 0.42), W // 2, int(H * 0.5) + i * 80, "mm")
+                           for i, l in enumerate(lines)]
+        else:
+            self.layers = [place(tracked(l.upper(), "mono_medium" if i == 0 else "mono", 34 if i == 0 else 26,
+                                         TEXT if i == 0 else AMBER, 0.3), W // 2, int(H * 0.70) + i * 52, "mm")
+                           for i, l in enumerate(lines)]
 
     def draw(self, frame: np.ndarray, t: float, duration: float) -> None:
+        if self.big:
+            a = min(1.0, max(duration - 0.3 - t, 0) / 0.5)
+            frame[:] = (frame.astype(np.float32) * (1 - 0.45 * a)).astype(np.uint8)
+            for l in self.layers:
+                l.draw(frame, a)
+            return
         for i, l in enumerate(self.layers):
             l.draw(frame, fr.fade_window(t, 0.4 + 0.6 * i, duration - 0.2, 0.6))
 

@@ -130,7 +130,7 @@ class Decorator:
             hud = self._get(("hud", k), lambda: ed.Hud(b["hud"], dur, self.mission))
             hud.draw(frame, lt, fr.fade_window(lt, 0.15, dur + 1, 0.35))
         if b.get("note"):
-            self._get(("note", k), lambda: ed.NoteOverlay(b["note"])).draw(frame, lt, dur)
+            self._get(("note", k), lambda: ed.NoteOverlay(b["note"], b.get("note_big", False))).draw(frame, lt, dur)
         if b.get("title") and t == "r3d":
             title = self._get(("title", k), lambda: ed.TitleOverlay(b["title"], b.get("title_sub", "")))
             title.draw(frame, lt, dur)
