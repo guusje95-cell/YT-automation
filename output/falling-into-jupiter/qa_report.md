@@ -31,5 +31,5 @@
 | video.duration | PASS | 357.9s (6.0 min) |
 | video.av_sync_length | PASS | video 357.77s / audio 357.85s |
 | video.black_frames | PASS | none longer than 1.0s |
-| audio.loudness | PASS | -14.4 LUFS integrated, true peak -1.8 dBFS |
+| audio.loudness | PASS | -14.5 LUFS integrated, true peak -1.6 dBFS |
 | audio.long_silences | PASS | none |
