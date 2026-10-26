@@ -174,7 +174,7 @@ def design(beats: list[dict], total_s: float, seed: int = 11) -> np.ndarray:
             if shot in ("approach",) or (shot == "orbit" and p.get("streak")):
                 _add(out, whoosh(min(dur, 6.0), rng), st + max(dur - 6.0, 0) * 0.5, 0.7)
             if shot == "entry":
-                _add(out, roar(dur + 0.5, rng), st, 1.0)
+                _add(out, roar(dur + 0.5, rng), st, 2.2)
             if shot == "cloud_dive":
                 _add(out, wind(dur + 1.0, rng, 1.0), st - 0.3, 0.8)
                 for ft in shots.lightning_times(dur, **p):

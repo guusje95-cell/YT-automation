@@ -22,6 +22,27 @@ from ytauto.voice import tts
 log = get_logger(__name__)
 
 
+# Expressive (sampling) TTS models occasionally repeat a phrase or ramble. A clip far longer than its word
+# count predicts is re-synthesised with a new seed; deterministic providers are trusted as-is.
+SEC_PER_WORD = 0.36
+MAX_RATIO = 1.75
+
+
+def _synth_checked(provider, text: str, tries: int = 4):
+    best = None
+    words = max(len(text.split()), 1)
+    for k in range(tries if provider.name == "chatterbox" else 1):
+        x, sr = provider.synthesize(text)
+        x = tts.trim_silence(x, sr)
+        ratio = len(x) / sr / (words * SEC_PER_WORD + 0.4)
+        if best is None or abs(ratio - 1) < abs(best[2] - 1):
+            best = (x, sr, ratio)
+        if 0.45 < ratio < MAX_RATIO:
+            break
+        log.warning("clip length off (ratio %.2f) for %r; retrying with a new seed", ratio, text[:60])
+    return best[0], best[1]
+
+
 def build(spec) -> dict:
     vcfg = dict(config.get("voice", {}))
     vcfg.update(spec.data.get("voice") or {})
@@ -49,8 +70,7 @@ def build(spec) -> dict:
             if clip_path.exists():
                 x, csr = sf.read(clip_path, dtype="float32")
             else:
-                x, csr = provider.synthesize(spoken)
-                x = tts.trim_silence(x, csr)
+                x, csr = _synth_checked(provider, spoken)
                 tts.write_wav(clip_path, x, csr)
             if csr != sr:
                 raise RuntimeError(f"unexpected sample rate {csr}")

@@ -22,21 +22,21 @@ voice:
   exaggeration: 0.55
   cfg_weight: 0.35
   temperature: 0.75
-  sentence_gap_s: 0.32
-  scene_gap_s: 1.1
+  sentence_gap_s: 0.42
+  scene_gap_s: 1.7
 music:
-  duck_db: -8
+  duck_db: -6
   cues:
-    - {scene: cold_open, track: zero-project-the-passage, offset: 0, gain_db: -19}
-    - {scene: arrival, track: zero-project-the-journey-instrumental, offset: 0, gain_db: -21}
-    - {scene: entry, track: zero-project-the-darkest-hour, offset: 58, gain_db: -19}
-    - {scene: clouds, track: zero-project-the-wind-of-oblivion, offset: 0, gain_db: -22}
+    - {scene: cold_open, track: zero-project-the-passage, offset: 0, gain_db: -10}
+    - {scene: arrival, track: zero-project-the-journey-instrumental, offset: 0, gain_db: -12}
+    - {scene: entry, track: zero-project-the-darkest-hour, offset: 58, gain_db: -10}
+    - {scene: clouds, track: zero-project-the-wind-of-oblivion, offset: 0, gain_db: -13}
     - {scene: signal_lost, track: silence}
-    - {scene: juno, track: zero-project-through-the-looking-glass, offset: 0, gain_db: -21}
-    - {scene: ocean, track: zero-project-the-secret-book-of-dreams, offset: 45, gain_db: -20}
-    - {scene: engine, track: zero-project-the-journey-instrumental, offset: 175, gain_db: -21}
-    - {scene: core, track: zero-project-the-dark-ages, offset: 0, gain_db: -21}
-    - {scene: ending, track: zero-project-the-passage, offset: 150, gain_db: -19}
+    - {scene: juno, track: zero-project-through-the-looking-glass, offset: 0, gain_db: -12}
+    - {scene: ocean, track: zero-project-the-secret-book-of-dreams, offset: 45, gain_db: -11}
+    - {scene: engine, track: zero-project-the-journey-instrumental, offset: 175, gain_db: -12}
+    - {scene: core, track: zero-project-the-dark-ages, offset: 0, gain_db: -12}
+    - {scene: ending, track: zero-project-the-passage, offset: 150, gain_db: -10}
 sfx:
   gain_db: -6
   duck_db: -5
