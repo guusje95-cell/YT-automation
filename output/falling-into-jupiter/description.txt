@@ -1,0 +1,50 @@
+On 7 December 1995 a small NASA probe plunged into Jupiter at 170,000 km/h and sent data for 58 minutes before it died. We follow it down through the clouds, then keep going with NASA's Juno data, past an ocean of liquid metal to a core nobody expected. Real mission data, every number sourced below.
+
+
+Chapters
+0:40 The giant
+1:36 Entry
+2:11 Into the clouds
+3:45 Beyond the probe
+4:31 The ocean with no surface
+5:07 The engine
+5:44 The heart
+
+Sources
+• Galileo Jupiter Atmospheric Probe (mission page) — NASA Science: https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe
+• Jupiter: Facts — NASA Science: https://science.nasa.gov/jupiter/facts/
+• Jupiter Fact Sheet — NASA Goddard (NSSDC): https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html
+• Sun: Facts — NASA Science: https://science.nasa.gov/sun/facts/
+• Juno (mission overview and findings) — NASA Science: https://science.nasa.gov/mission/juno/
+• NASA's Juno Science Results Offer First 3D View of Jupiter Atmosphere (28 Oct 2021) — NASA JPL: https://www.jpl.nasa.gov/news/nasas-juno-science-results-offer-first-3d-view-of-jupiter-atmosphere/
+• Shallow Lightning and 'Mushballs' Reveal Ammonia to NASA's Juno Scientists (Aug 2020) — NASA JPL: https://www.jpl.nasa.gov/news/shallow-lightning-and-mushballs-reveal-ammonia-to-nasas-juno-scientists/
+• Findings From NASA's Juno Update Jupiter Water Mystery (Feb 2020) — NASA JPL: https://www.jpl.nasa.gov/news/findings-from-nasas-juno-update-jupiter-water-mystery/
+• NASA's Juno Finds Changes in Jupiter's Magnetic Field (May 2019) — NASA JPL: https://www.jpl.nasa.gov/news/nasas-juno-finds-changes-in-jupiters-magnetic-field/
+• Juno Spacecraft Measurements of Jupiter's Gravity Imply a Dilute Core (Militzer et al., Planetary Science Journal 2022) — Caltech Authors repository: https://resolver.caltech.edu/CaltechAUTHORS:20220804-981005000
+• The formation of Jupiter's diluted core by a giant impact (Liu et al., Nature 572, 2019) — Nature: https://cris.tau.ac.il/en/publications/the-formation-of-jupiters-diluted-core-by-a-giant-impact/
+
+Image and video credits
+• NASA Ames / Ken Hodges — https://images.nasa.gov/details/ARC-1981-AC81-0174
+• NASA Ames / Ken Hodges — https://images.nasa.gov/details/ARC-1981-AC81-0174-1
+• NASA Ames — https://images.nasa.gov/details/ARC-1984-AC84-0228-3
+• NASA/ New Mexico State Univ. — https://images.nasa.gov/details/PIA01259
+• NASA — https://images.nasa.gov/details/PIA18176
+• NASA/JPL-Caltech — https://images.nasa.gov/details/PIA19639
+• NASA/JPL-Caltech/SwRI/CNRS — https://images.nasa.gov/details/PIA24042
+• NASA/JPL-Caltech/SwRI/JunoCam — https://images.nasa.gov/details/PIA22474
+• Enhanced image by Kevin M. Gill (CC-BY) based on images provided courtesy of NASA/JPL-Caltech/SwRI/MSSS — https://images.nasa.gov/details/PIA21395
+• NASA/JPL-Caltech/SwRI — https://images.nasa.gov/details/PIA22177
+• JunoCam Image data: NASA/JPL-Caltech/SwRI/MSSS JunoCam Image processing by Kevin M. Gill (CC BY) Earth Image: NASA — https://images.nasa.gov/details/PIA24817
+• Enhanced image by Kevin M. Gill (CC-BY) based on images provided courtesy of NASA/JPL-Caltech/SwRI/MSSS — https://images.nasa.gov/details/PIA21974
+• Enhanced image by Kevin M. Gill (CC-BY) based on images provided courtesy of NASA/JPL-Caltech/SwRI/MSSS — https://images.nasa.gov/details/PIA22691
+• NASA's Goddard Space Flight Center / Scientific Visualization Studio — https://svs.gsfc.nasa.gov/13007
+• NASA's Goddard Space Flight Center / Scientific Visualization Studio — https://svs.gsfc.nasa.gov/4664
+• Planet and star-field textures: Solar System Scope (solarsystemscope.com/textures), CC BY 4.0 — based on NASA imagery
+• Enhanced image by Kevin M. Gill (CC-BY) based on images provided courtesy of NASA/JPL-Caltech/SwRI/MSSS (used as texture/backdrop in rendered visualizations) — https://images.nasa.gov/details/PIA22941
+• Image data: NASA/JPL-Caltech/SwRI/MSSS Image processing: Brian Swift CC BY (used as texture/backdrop in rendered visualizations) — https://images.nasa.gov/details/PIA24972
+• Enhanced image by Roman Tkachenko (CC-BY) based on images provided courtesy of NASA/JPL-Caltech/SwRI/MSSS (used as texture/backdrop in rendered visualizations) — https://images.nasa.gov/details/PIA21388
+NASA material is used under NASA's media guidelines; NASA does not endorse this channel. CC BY images are credited above. 3D scenes, cutaways and interior views are visualizations (schematic, not to scale) built from the data cited in Sources.
+
+Music
+• "The Dark Ages" by zero-project (zero-project.gr), via the ESO Music Archive, CC BY 4.0 (edited: excerpted, faded, mixed under narration) — https://www.eso.org/public/products/music/zero-project-the-dark-ages/
+(Full source list continues in the pinned comment.)

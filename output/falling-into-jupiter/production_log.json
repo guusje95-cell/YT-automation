@@ -1,0 +1,72 @@
+[
+ {
+  "video_id": "falling-into-jupiter",
+  "started": "2026-10-26T08:46:51",
+  "stages": [
+   {
+    "stage": "assets",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "narration",
+    "seconds": 22.4,
+    "status": "ok"
+   },
+   {
+    "stage": "audio_mix",
+    "seconds": 34.2,
+    "status": "ok"
+   },
+   {
+    "stage": "captions",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "thumbnails",
+    "seconds": 11.9,
+    "status": "ok"
+   },
+   {
+    "stage": "storyboard",
+    "seconds": 144.4,
+    "status": "ok"
+   },
+   {
+    "stage": "render",
+    "seconds": 4120.4,
+    "status": "ok"
+   },
+   {
+    "stage": "mux",
+    "seconds": 27.8,
+    "status": "ok"
+   },
+   {
+    "stage": "metadata",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "qa",
+    "seconds": 228.6,
+    "status": "ok"
+   }
+  ],
+  "qa": {
+   "PASS": 27,
+   "WARN": 1,
+   "FAIL": 1
+  },
+  "finished": "2026-10-26T10:03:21",
+  "total_seconds": 4589.7,
+  "cost_eur": {
+   "tts": 0.0,
+   "assets": 0.0,
+   "music": 0.0,
+   "llm": 0.0,
+   "note": "all local/free providers; LLM cost applies only when scripts are drafted via API"
+  }
+ }
+]

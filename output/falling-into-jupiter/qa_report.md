@@ -1,0 +1,35 @@
+# QA report — falling-into-jupiter
+
+**1 FAIL · 1 WARN · 27 PASS**  (BLOCKED: fix FAIL items before publishing)
+
+| Check | Status | Detail |
+|---|---|---|
+| video.black_frames | FAIL | black segments: [(210.4, 220.933)] |
+| voice.intelligibility | WARN | ASR word error rate 7.0% (lower is better; includes number formatting differences). Top diffs: 'seventh' -> '7th'; 'four' -> '4'; 'ten' -> '10'; 'a hundred and seventy thousand kilometres' -> '170000 km'; 'fifty eight' -> '58'; 'centre' -> 'center'; 'eleven' -> '11'; 'just' -> 'first' |
+| script.banned_phrases | PASS | none |
+| script.hype_words | PASS | none |
+| script.length | PASS | 1096 words, 80 sentences |
+| script.longest_sentence | PASS | 33 words: On the seventh of December, 1995, at four minutes past ten at night, Universal Time, a sma... |
+| script.repetitive_openers | PASS | none |
+| script.numbers_sourced | PASS | every number appears in a sourced claim |
+| script.sources_used | PASS | 11 sources cited |
+| script.time_sensitive | PASS | none declared |
+| assets.licences | PASS | 15 assets, all allowed |
+| assets.credits | PASS | all credited |
+| assets.flags | PASS | no open flags |
+| assets.unused | PASS | unused (fine): ['white_oval'] |
+| captions.line_length | PASS | 0 lines > 42 chars |
+| meta.title_length | PASS | 20 chars: Falling Into Jupiter |
+| meta.description_length | PASS | 4751 chars |
+| meta.tags | PASS | 10 tags, 112 chars |
+| meta.chapters | PASS | 7 chapters |
+| meta.privacy_default | PASS | private |
+| thumbnail.thumbnail_1 | PASS | (1280, 720), 113 KB |
+| thumbnail.thumbnail_2 | PASS | (1280, 720), 98 KB |
+| thumbnail.thumbnail_3 | PASS | (1280, 720), 156 KB |
+| video.format | PASS | h264 1920x1080 yuv420p 30/1 |
+| video.audio_stream | PASS | aac 48000 Hz 2 ch |
+| video.duration | PASS | 437.9s (7.3 min) |
+| video.av_sync_length | PASS | video 437.87s / audio 437.87s |
+| audio.loudness | PASS | -14.2 LUFS integrated, true peak -0.6 dBFS |
+| audio.long_silences | PASS | none |
