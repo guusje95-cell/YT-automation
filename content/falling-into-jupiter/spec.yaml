@@ -304,9 +304,10 @@ scenes:
   - id: ending
     chapter: null
     narration: |
-      Mara isn't real. But the probe that went first was.
-      In 1995, a small machine fell into the biggest planet in our solar system, and for fifty-eight minutes, it told us what it found.
-      Everything deeper, we've pieced together since, from far outside. A place no one will ever see. But we know it's there.
+      Mara's journey was imagined. The probe's was not.
+      In 1995, a small machine really did fall into the biggest planet in our solar system, and for fifty-eight minutes, it told us what it found.
+      Everything deeper, we've pieced together since, from far outside, and every number you heard along the way is real.
+      A place no one will ever see. But we know it's there.
       If you want to fall into another world with us, subscribe.
     claims:
       - {text: "Galileo probe: 58 minutes of data, 1995", sources: [nasa_probe]}
