@@ -6,6 +6,7 @@ See docs/VIDEO_SPEC.md for the schema.
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -15,6 +16,31 @@ from ytauto.core import config
 
 BEAT_TYPES = {"image", "video", "title", "fact", "quote", "scale", "chart", "list", "end",
               "r3d", "glitch", "profile", "fact_list", "black"}
+
+
+_SPEAKER = re.compile(r"^\s*([A-Z][A-Z]{1,15}):\s*(.*)$")
+
+
+def segments(narration: str) -> list[tuple[str, str]]:
+    """Split a scene's narration into (speaker, text) runs. Lines starting with 'NAME:' (capitals) belong to
+    that character; everything else is the narrator. Folded YAML (>) has no line breaks, so it is all narrator."""
+    out: list[tuple[str, str]] = []
+    for line in narration.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        m = _SPEAKER.match(line)
+        who, text = (m.group(1).lower(), m.group(2)) if m else ("narrator", line)
+        if out and out[-1][0] == who:
+            out[-1] = (who, out[-1][1] + " " + text)
+        else:
+            out.append((who, text))
+    return out
+
+
+def plain(narration: str) -> str:
+    """Narration text without speaker tags (for word counts, ASR comparison, checks)."""
+    return " ".join(t for _, t in segments(narration))
 
 
 class SpecError(ValueError):

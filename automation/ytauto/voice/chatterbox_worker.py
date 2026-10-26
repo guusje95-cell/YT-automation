@@ -22,6 +22,8 @@ def main():
     model = ChatterboxTTS.from_pretrained("cpu")
     if ref:
         model.prepare_conditionals(ref, exaggeration=float(os.environ.get("CBX_EXAG", "0.5")))
+    conds = {ref: model.conds} if ref else {}
+    current = ref
     print(json.dumps({"ready": True, "sr": model.sr}), flush=True)
     for line in sys.stdin:
         line = line.strip()
@@ -29,6 +31,13 @@ def main():
             continue
         req = json.loads(line)
         try:
+            want = req.get("ref") or ref
+            if want and want != current:  # switch speaker: cache conditionals per reference clip
+                if want not in conds:
+                    model.prepare_conditionals(want, exaggeration=float(req.get("exaggeration", 0.5)))
+                    conds[want] = model.conds
+                model.conds = conds[want]
+                current = want
             if "seed" in req:
                 torch.manual_seed(int(req["seed"]))
             wav = model.generate(req["text"], exaggeration=float(req.get("exaggeration", 0.5)),

@@ -101,12 +101,18 @@ class ChatterboxTTS:
         self._json = _json
         self._n = 0
 
-    def synthesize(self, text: str) -> tuple[np.ndarray, int]:
+    def synthesize(self, text: str, ref: str | None = None, exaggeration: float | None = None,
+                   cfg_weight: float | None = None, temperature: float | None = None) -> tuple[np.ndarray, int]:
+        """Per-call overrides let one worker voice several characters (it caches each reference clip)."""
         import tempfile
         self._n += 1
         out = Path(tempfile.gettempdir()) / f"cbx_{os.getpid()}_{self._n}.wav"
-        req = {"text": text, "out": str(out), "exaggeration": self.exaggeration, "cfg_weight": self.cfg_weight,
-               "temperature": self.temperature, "seed": self.seed + self._n}
+        req = {"text": text, "out": str(out),
+               "exaggeration": self.exaggeration if exaggeration is None else exaggeration,
+               "cfg_weight": self.cfg_weight if cfg_weight is None else cfg_weight,
+               "temperature": self.temperature if temperature is None else temperature, "seed": self.seed + self._n}
+        if ref:
+            req["ref"] = str(Path(ref) if Path(ref).is_absolute() else config.ROOT / ref)
         self.proc.stdin.write(self._json.dumps(req) + "\n")
         self.proc.stdin.flush()
         while True:
@@ -137,7 +143,7 @@ class ChatterboxTTS:
 PROVIDERS = {"kokoro": KokoroTTS, "elevenlabs": ElevenLabsTTS, "chatterbox": ChatterboxTTS}
 
 
-_NON_PROVIDER_KEYS = {"sentence_gap_s", "paragraph_gap_s", "scene_gap_s"}
+_NON_PROVIDER_KEYS = {"sentence_gap_s", "paragraph_gap_s", "scene_gap_s", "speaker_gap_s"}
 
 
 def get_provider(spec_voice: dict | None = None):

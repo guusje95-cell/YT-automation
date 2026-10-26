@@ -3,46 +3,49 @@ format: story
 pillar: missions-and-discoveries
 status: draft
 description_summary: >
-  On 7 December 1995 a small NASA probe plunged into Jupiter at 170,000 km/h and sent data for 58 minutes before it
-  died. We follow it down through the clouds, then keep going with NASA's Juno data, past an ocean of liquid metal to a
-  core nobody expected. Real mission data, every number sourced below.
+  Mara Voss is fictional. Every number in this film is real. We follow her capsule from the top of Jupiter's
+  atmosphere past the exact depth where NASA's Galileo probe went silent in 1995, then down through an ocean of
+  liquid metal to a core nobody expected, using real data from Galileo and Juno. Sources below.
 title_options:
-  - "Falling Into Jupiter"
-  - "A Probe Fell Into Jupiter. Here's What It Found Before It Died."
-  - "What's Really Inside Jupiter (We Sent Something In)"
+  - "Falling Into Jupiter (Every Number Is Real)"
+  - "What You'd See Falling Into Jupiter, All the Way Down"
+  - "A Journey to the Centre of Jupiter (Real NASA Data)"
 thumbnail:
   style: cinematic
   variants:
     - {text: "FALLING INTO JUPITER", shot: entry, at: 0.55, side: left}
-    - {text: "58 MINUTES", shot: crescent, params: {light: [95, 15], az: [0.5, 0.5], dist: [2.6, 2.6]}, at: 0.5, side: left}
-    - {text: "IT NEVER CAME BACK", asset: probe_painting, crop: [0.13, 0.03, 0.93, 0.86], focus: [0.65, 0.5], side: left}
+    - {text: "NOBODY HAS SEEN THIS", shot: fluid, params: {mode: metallic, seed: 9}, at: 0.5, side: left}
+    - {text: "THE LAST SIGNAL", asset: probe_painting, crop: [0.13, 0.03, 0.93, 0.86], focus: [0.65, 0.5], side: left}
 voice:
   provider: chatterbox
   ref: automation/assets/voice/ref_narrator.wav
   exaggeration: 0.55
   cfg_weight: 0.35
   temperature: 0.75
-  sentence_gap_s: 0.42
-  scene_gap_s: 1.7
+  sentence_gap_s: 0.36
+  speaker_gap_s: 0.35
+  scene_gap_s: 1.5
+voices:
+  mara: {ref: automation/assets/voice/ref_mara.wav, exaggeration: 0.7, cfg_weight: 0.4, temperature: 0.8, radio: true}
+characters:
+  mara: {name: "MARA VOSS", tag: "VESPER · DESCENT LOG"}
 music:
   duck_db: -6
   cues:
     - {scene: cold_open, track: zero-project-the-passage, offset: 0, gain_db: -10}
-    - {scene: arrival, track: zero-project-the-journey-instrumental, offset: 0, gain_db: -12}
     - {scene: entry, track: zero-project-the-darkest-hour, offset: 58, gain_db: -10}
-    - {scene: clouds, track: zero-project-the-wind-of-oblivion, offset: 0, gain_db: -13}
-    - {scene: signal_lost, track: silence}
+    - {scene: clouds, track: zero-project-the-wind-of-oblivion, offset: 0, gain_db: -12}
+    - {scene: galileo, track: silence}
     - {scene: juno, track: zero-project-through-the-looking-glass, offset: 0, gain_db: -12}
     - {scene: ocean, track: zero-project-the-secret-book-of-dreams, offset: 45, gain_db: -11}
-    - {scene: engine, track: zero-project-the-journey-instrumental, offset: 175, gain_db: -12}
-    - {scene: core, track: zero-project-the-dark-ages, offset: 0, gain_db: -12}
+    - {scene: core, track: zero-project-the-dark-ages, offset: 0, gain_db: -11}
     - {scene: ending, track: zero-project-the-passage, offset: 150, gain_db: -10}
 sfx:
   gain_db: -6
   duck_db: -5
 lexicon: {}
 time_sensitive: []
-tags: [jupiter, galileo probe, falling into jupiter, juno, nasa, inside jupiter, space documentary, planets, astronomy, science]
+tags: [jupiter, falling into jupiter, what if you fell into jupiter, galileo probe, juno, nasa, inside jupiter, space documentary, planets, astronomy]
 
 sources:
   - id: nasa_probe
@@ -100,6 +103,16 @@ sources:
     publisher: Nature
     url: https://cris.tau.ac.il/en/publications/the-formation-of-jupiters-diluted-core-by-a-giant-impact/
     accessed: 2026-10-26
+  - id: macmillan_galileo
+    title: "The Galileo space probe explored Jupiter's deep atmosphere (Universe, 10th ed., section 12-5)"
+    publisher: Macmillan Learning (Freedman, Geller, Kaufmann)
+    url: https://digfir-published.macmillanusa.com/universe10e/universe10e_ch12_6.html
+    accessed: 2026-10-26
+  - id: nasa_spaceplace
+    title: "What's It Like Inside Jupiter?"
+    publisher: NASA Space Place
+    url: https://spaceplace.nasa.gov/jupiter/en/
+    accessed: 2026-10-26
 
 assets:
   - {id: probe_painting, provider: nasa_images, nasa_id: ARC-1981-AC81-0174, credit: "NASA Ames / Ken Hodges"}
@@ -123,228 +136,191 @@ assets:
 scenes:
   - id: cold_open
     chapter: null
-    narration: >
-      On the seventh of December, 1995, at four minutes past ten at night, Universal Time, a small probe hit the top of Jupiter's atmosphere at a hundred and seventy thousand kilometres an hour.
-      Within a minute, the gas in front of it was hotter than the surface of the Sun.
-      It carried six instruments, a parachute and a radio.
-      It was never meant to come back.
-      For fifty-eight minutes, it sent data home.
-      Then the signal stopped.
-      This is the story of how far it got.
-      And of what lies beneath it, all the way to the centre, in a place no machine will ever reach.
+    narration: |
+      MARA: Ten seconds to atmosphere.
+      MARA: Velocity, one hundred and seventy thousand kilometres an hour.
+      MARA: There's no ground down there. Nothing to land on. Just down.
+      This is Mara Voss. She doesn't exist, and neither does her capsule. Nothing we know how to build would survive what happens next.
+      But every number you're about to hear is real, measured by the machines that went before her.
+      One of them got this far in 1995. It lasted fifty-eight minutes before the pressure silenced it.
+      Mara is going to keep going. All the way to the centre.
+      MARA: Here we go.
     claims:
-      - {text: "Entry 22:04:44 UT Dec 7, 1995 at 106,000 mph (170,590 km/h)", sources: [nasa_probe]}
-      - {text: "Shock temperature ~16,000 C about a minute after entry vs Sun surface ~5,500 C", sources: [nasa_probe, nasa_sun_facts]}
-      - {text: "Six instruments; descent by parachute", sources: [nasa_probe]}
-      - {text: "Returned data for 58 minutes", sources: [nasa_probe]}
+      - {text: "Entry speed 170,590 km/h", sources: [nasa_probe]}
+      - {text: "No solid surface", sources: [nasa_jupiter_facts]}
+      - {text: "NASA: Jupiter's conditions crush, melt, and vaporize spacecraft trying to fly into the planet", sources: [nasa_jupiter_facts]}
+      - {text: "Galileo probe, Dec 1995: data for 58 minutes; transmitter failed evidently due to the enormous pressure", sources: [nasa_probe]}
     beats:
-      - {type: r3d, shot: orbit, params: {dist: [5.5, 4.2], az: [0.7, 0.55], el: [0.12, 0.1], fov: [36, 34], light: [70, 15], streak: true},
-         sentences: 1, hud: {date: "07 DEC 1995", clock: ["22:04:30", "22:04:44"], speed: [170590, 170590, "km/h"], status: "ENTRY"}}
-      - {type: r3d, shot: entry, params: {}, sentences: 1, hud: {clock: ["22:04:44", "22:05:44"], temp: [2000, 16000, "°C"], status: "PEAK HEATING"}}
-      - {type: image, asset: probe_hardware, motion: in, crop: [0.1, 0.05, 0.95, 0.9], sentences: 1, label: "The Galileo probe, 1984 (NASA Ames)"}
-      - {type: image, asset: probe_painting2, motion: in, crop: [0.04, 0.12, 0.96, 0.96], sentences: 1, label: "Artist's impression, NASA Ames"}
-      - {type: r3d, shot: cloud_dive, params: {decks: 1, lightning: 0.6, seed: 4}, sentences: 1, hud: {clock: ["22:05", "23:02"], status: "TELEMETRY OK"}}
-      - {type: glitch, text: "SIGNAL LOST", sentences: 1}
-      - {type: r3d, shot: cutaway, params: {marker: [1.0, 0.02], az: [0.35, 0.1]}, sentences: 1}
-      - {type: r3d, shot: crescent, params: {dist: [3.3, 3.0], az: [0.35, 0.2]}, title: "Falling into Jupiter", sentences: 1}
-
-  - id: arrival
-    chapter: "The giant"
-    narration: >
-      Jupiter is eleven times wider than Earth.
-      More than a thousand Earths could fit inside it.
-      It holds more than twice the material of every other planet, moon and asteroid in the solar system combined.
-      And it has no surface. Nothing to land on. Just gas, getting thicker and hotter the deeper you go.
-      The probe's journey began five months before it arrived.
-      In July 1995, it separated from its mothership, the Galileo orbiter, about eighty million kilometres from Jupiter, and coasted the rest of the way alone.
-      Its first danger wasn't the planet itself.
-      About fifty thousand kilometres above the clouds, it flew through an intense belt of radiation, particles trapped and accelerated by Jupiter's magnetic field.
-      Hold on to that. We'll find out where that field comes from at the bottom of this journey.
-    claims:
-      - {text: "11 times wider than Earth; 1,000 Earths could fit inside (hollow shell)", sources: [nasa_jupiter_facts]}
-      - {text: "More than twice the combined material of the other bodies in the solar system", sources: [nasa_jupiter_facts]}
-      - {text: "No solid surface; gas thickens with depth (surface pressure >>1000 bars)", sources: [nssdc_jupiter, nasa_jupiter_facts]}
-      - {text: "Probe released July 13, 1995, ~80 million km from Jupiter (~5 months before entry)", sources: [nasa_probe]}
-      - {text: "Intense radiation belt ~50,000 km above the clouds", sources: [nasa_probe]}
-      - {text: "Magnetosphere traps and accelerates particles creating intense radiation", sources: [nasa_jupiter_facts]}
-    beats:
-      - {type: r3d, shot: scale_compare, params: {}, sentences: 2}
-      - {type: r3d, shot: orbit, params: {dist: [3.4, 3.0], az: [-0.3, 0.1], el: [0.2, 0.12], light: [65, 20], spin: [0.5, 0.8]}, sentences: 1}
-      - {type: r3d, shot: orbit, params: {dist: [2.15, 1.75], az: [0.25, 0.15], el: [-0.24, -0.32], light: [55, 15], spin: [0.7, 1.05], fov: [38, 36]}, sentences: 3}
-      - {type: image, asset: galileo_orbiter, motion: in, sentences: 1, label: "Galileo orbiter (artist's concept)", hud: {date: "13 JUL 1995", distance: [80000000, 80000000, "km"], status: "PROBE RELEASE"}}
-      - {type: image, asset: galileo_orbiter, motion: pan_left, sentences: 1}
-      - {type: video, asset: magnetosphere, from: 5, sentences: 2, label: "Jupiter's magnetosphere (NASA visualization)", hud: {altitude: [80000, 50000, "km"], status: "RADIATION"}}
-      - {type: r3d, shot: crescent, params: {dist: [3.2, 2.9], light: [105, 12]}, sentences: 2}
+      - {type: r3d, shot: orbit, params: {dist: [5.5, 4.2], az: [0.7, 0.55], el: [0.12, 0.1], fov: [36, 34], light: [70, 15], streak: true}, sentences: 1, pov: true,
+         hud: {speed: [170590, 170590, "km/h"], status: "ATMOSPHERE IN 10 S"}}
+      - {type: r3d, shot: approach, params: {dist: [6.0, 2.4], fov: [30, 42]}, sentences: 1, pov: true, hud: {speed: [170590, 170590, "km/h"], status: "FINAL APPROACH"}}
+      - {type: r3d, shot: entry, params: {lon: 20, lat: 4}, sentences: 3, shake: 0.4, pov: true}
+      - {type: r3d, shot: crescent, params: {dist: [3.4, 3.0], az: [0.35, 0.2], light: [105, 12]}, sentences: 3, note: ["MARA VOSS IS FICTIONAL", "EVERY NUMBER IS REAL"]}
+      - {type: r3d, shot: cloud_dive, params: {decks: 1, lightning: 0.6, seed: 4}, sentences: 1}
+      - {type: image, asset: probe_painting, motion: in, crop: [0.07, 0.03, 0.92, 0.86], sentences: 1, label: "The real one: NASA's Galileo probe, 1995 (artist's impression)"}
+      - {type: r3d, shot: cutaway, params: {marker: [1.0, 0.1], az: [0.35, 0.1]}, sentences: 1.4}
+      - {type: r3d, shot: crescent, params: {dist: [3.3, 3.0], az: [0.35, 0.2]}, title: "Falling into Jupiter", sentences: 1.2}
 
   - id: entry
-    chapter: "Entry"
-    narration: >
-      Jupiter's gravity is so strong that anything falling in from far away hits the atmosphere at close to sixty kilometres per second.
-      The probe arrived at about forty-seven.
-      A minute after entry, it was slowing down so hard that it felt two hundred and twenty-eight times the force of gravity.
-      If you'd been on board, your body would have weighed more than fifteen tonnes.
-      Its heat shield was taking the hit from gas at sixteen thousand degrees.
-      Then, as it slowed, a parachute opened, and it began to sink, measuring everything around it.
+    chapter: "The wall of fire"
+    narration: |
+      MARA: Contact! Everything's shaking!
+      MARA: The window... the window is on fire!
+      At this speed, the gas in front of the capsule can't get out of the way. It piles up into a shock wave and turns into glowing plasma.
+      Sixteen thousand degrees. Almost three times hotter than the surface of the Sun.
+      Then the braking hits. For a few seconds, Mara weighs two hundred and twenty-eight times her normal weight. More than fifteen tonnes.
+      No human could survive that. The real probe did. It was built to.
+      MARA: I'm still here. I think I blacked out.
+      MARA: Chute is open.
     claims:
-      - {text: "Escape velocity 59.5 km/s: objects falling from far away arrive at about escape speed", sources: [nssdc_jupiter]}
-      - {text: "Entry speed 170,590 km/h = 47.4 km/s", sources: [nasa_probe]}
-      - {text: "Maximum deceleration 228 g about a minute after entry", sources: [nasa_probe]}
-      - {text: "228 x 70 kg = ~16 tonnes (derived)", sources: [nasa_probe]}
-      - {text: "Temperatures reached 16,000 C", sources: [nasa_probe]}
-      - {text: "Data returned by parachute descent", sources: [nasa_probe]}
+      - {text: "Temperatures reached 16,000 C about a minute after entry", sources: [nasa_probe]}
+      - {text: "Sun's surface ~5,500 C: 16,000 is ~2.9x (derived)", sources: [nasa_sun_facts]}
+      - {text: "Maximum deceleration 228 g; 228 x ~70 kg ≈ 16 t (derived)", sources: [nasa_probe]}
+      - {text: "Probe descended by parachute", sources: [nasa_probe]}
     beats:
-      - {type: r3d, shot: approach, params: {dist: [10, 2.6], fov: [28, 40]}, sentences: 1, hud: {speed: [59.5, 59.5, "km/s"], status: "FREE FALL"}}
-      - {type: r3d, shot: entry, params: {}, sentences: 1, hud: {speed: [47.4, 47.4, "km/s"], status: "ENTRY"}}
-      - {type: r3d, shot: entry, params: {lon: 40, lat: -14, sustain: true}, sentences: 2, hud: {g: [12, 228, "g"], status: "MAX DECELERATION"}}
-      - {type: image, asset: probe_painting, motion: in, crop: [0.07, 0.03, 0.92, 0.86], sentences: 1, hud: {temp: [9000, 16000, "°C"], status: "HEAT SHIELD"}, label: "Artist's impression, NASA Ames"}
+      - {type: r3d, shot: entry, params: {lon: 40, lat: -14, sustain: true}, sentences: 2, shake: 1.0, pov: true, hud: {speed: [170590, 120000, "km/h"], status: "CONTACT"}}
+      - {type: r3d, shot: entry, params: {}, sentences: 1, shake: 0.7, hud: {temp: [2000, 16000, "°C"], status: "PEAK HEATING"}}
+      - {type: fact, big: "16,000 °C", small: "almost three times the surface of the Sun", source: nasa_probe, sentences: 1}
+      - {type: r3d, shot: entry, params: {lon: 60, lat: 10, sustain: true}, sentences: 1, shake: 1.2, pov: true, hud: {g: [40, 228, "g"], status: "MAX DECELERATION"}}
+      - {type: image, asset: probe_hardware, motion: in, crop: [0.1, 0.05, 0.95, 0.9], sentences: 1, label: "The real Galileo probe, 1984: built to survive 228 g"}
+      - {type: r3d, shot: cloud_dive, params: {decks: 1, seed: 17}, sentences: 1, pov: true, hud: {speed: [400, 100, "km/h"], status: "SIGNAL OK"}}
       - {type: image, asset: probe_painting2, motion: out, crop: [0.04, 0.12, 0.96, 0.96], sentences: 1, hud: {status: "PARACHUTE DEPLOYED"}}
 
   - id: clouds
-    chapter: "Into the clouds"
-    narration: >
-      At the very top of the atmosphere, the pressure is only a tenth of what you feel at sea level, and the temperature is minus one hundred and sixty degrees.
-      A little lower, at the same pressure as the air around you right now, it's still minus one hundred and eight.
-      Jupiter's weather happens in three layers of cloud, about seventy-one kilometres thick in total.
-      The top layer is probably ammonia ice, the bright white bands you see from space.
-      Deeper down are clouds of water, and they make lightning.
-      Juno would later find something stranger in those storms: lightning flashing high up, where it should be too cold for liquid water.
-      The likely explanation is hail made of ammonia and water slush, nicknamed mushballs, falling out of the storms.
-      The Galileo probe saw less of all this than anyone expected. Less water, less lightning, and only half the helium scientists had predicted near the top.
-      Years later, Juno helped explain why. The probe had most likely fallen into an unusually dry spot, a desert patch in Jupiter's sky.
+    chapter: "Into the storm"
+    narration: |
+      MARA: Cloud tops. It's minus one hundred and sixty outside. Everything is white.
+      She's falling through the top of Jupiter's weather: three layers of cloud, stacked about seventy-one kilometres deep. Ammonia ice on top. Ammonium hydrosulfide below it. And at the bottom, water.
+      MARA: Something's flashing beneath me. Lightning. It's enormous.
+      Jupiter's water clouds make lightning. And Juno spotted something even stranger: hail made of ammonia and water slush, falling out of the storms. Scientists call them mushballs.
+      MARA: Wind just hit us sideways. I'm reading six hundred and forty metres per second.
+      That's what the real probe measured. Almost twice the speed of sound on Earth.
+      MARA: It's getting darker. And warmer.
     claims:
-      - {text: "0.1 bar: -161 C; 1 bar: -108 C", sources: [nssdc_jupiter]}
-      - {text: "Three distinct cloud layers spanning about 71 km; top layer probably ammonia ice", sources: [nasa_jupiter_facts]}
-      - {text: "Water clouds and lightning; shallow lightning at high altitude; mushballs (ammonia-water hail)", sources: [jpl_mushballs_2020]}
-      - {text: "Probe found less lightning, less water vapor, half the expected helium in upper atmosphere", sources: [nasa_probe]}
-      - {text: "Galileo probe likely entered an unusually dry spot", sources: [jpl_water_2020]}
+      - {text: "0.1 bar: -161 C", sources: [nssdc_jupiter]}
+      - {text: "Three cloud layers ~71 km; ammonia ice top, ammonium hydrosulfide middle, water innermost", sources: [nasa_jupiter_facts]}
+      - {text: "Water-cloud lightning, shallow lightning, mushballs", sources: [jpl_mushballs_2020]}
+      - {text: "Probe measured winds up to ~640 m/s; speed of sound in Earth air ~343 m/s (derived ~1.9x)", sources: [nasa_probe]}
+      - {text: "Temperature rises below the cloud tops (-108 C at 1 bar, ~150 C at 22 bar)", sources: [nssdc_jupiter, macmillan_galileo]}
     beats:
-      - {type: r3d, shot: cloud_dive, params: {decks: 1, seed: 11}, sentences: 2, hud: {pressure: [0.1, 1.0, "bar"], temp: [-161, -108, "°C"], depth: [0, 20, "km"], status: "DESCENT"}}
+      - {type: r3d, shot: cloud_dive, params: {decks: 1, seed: 11}, sentences: 1, pov: true, hud: {temp: [-161, -150, "°C"], pressure: [0.1, 0.3, "bar"], status: "CLOUD TOPS"}}
       - {type: profile, sentences: 1}
-      - {type: image, asset: belts, motion: pan_right, fit: contain, sentences: 1, label: "Ammonia-ice cloud bands (JunoCam)"}
-      - {type: r3d, shot: cloud_dive, params: {decks: 1, lightning: 2.0, seed: 21, layers: [["dive_tkachenko.jpg", [0.0, 0.0, 1.0, 0.75]], ["detail_swift.jpg", [0.0, 0.0, 0.8, 0.75]]]}, sentences: 1, hud: {depth: [71, 100, "km"], status: "WATER CLOUDS"}}
-      - {type: image, asset: lightning_art, motion: up, sentences: 1, label: "Lightning on Jupiter (artist's concept from Juno data)"}
-      - {type: image, asset: mushball_diagram, motion: in, fit: contain, sentences: 1, label: "How 'mushballs' may form (NASA/JPL illustration)"}
-      - {type: fact_list, title: "What the probe found", items: ["Less water than expected", "Less lightning", "Half the predicted helium near the top"], source: nasa_probe, sentences: 2}
-      - {type: image, asset: entry_site, motion: in, fit: contain, crop: [0.0, 0.0, 1.0, 0.86], sentences: 2, label: "The probe's entry site, imaged by Hubble weeks before arrival"}
+      - {type: image, asset: belts, motion: pan_right, fit: contain, sentences: 0.6, label: "Ammonia-ice clouds (JunoCam)"}
+      - {type: r3d, shot: cloud_dive, params: {decks: 1, lightning: 2.5, seed: 21, layers: [["dive_tkachenko.jpg", [0.0, 0.0, 1.0, 0.75]], ["detail_swift.jpg", [0.0, 0.0, 0.8, 0.75]]]}, sentences: 1, pov: true, shake: 0.3, hud: {status: "LIGHTNING"}}
+      - {type: image, asset: lightning_art, motion: up, sentences: 0.7, label: "Lightning on Jupiter (illustration from Juno data)"}
+      - {type: image, asset: mushball_diagram, motion: in, fit: contain, sentences: 0.8, label: "'Mushballs': ammonia-water hail (NASA/JPL)"}
+      - {type: r3d, shot: cloud_dive, params: {decks: 1, seed: 25, layers: [["detail_swift.jpg", [0.0, 0.0, 0.8, 0.75]], ["dive_tkachenko.jpg", [0.0, 0.3, 1.0, 1.0]]]}, sentences: 1, shake: 0.8, pov: true, hud: {speed: [640, 640, "m/s"], status: "WIND SHEAR"}}
+      - {type: fact, big: "640 m/s", small: "wind measured by the real probe", source: nasa_probe, sentences: 1}
+      - {type: r3d, shot: cloud_dive, params: {decks: 1, seed: 31, layers: [["detail_swift.jpg", [0.0, 0.0, 0.8, 0.75]], ["dive_tkachenko.jpg", [0.0, 0.3, 1.0, 1.0]]], depth_tint: [[0.8, 0.6, 0.45], [0.45, 0.3, 0.2]]}, sentences: 1, pov: true, hud: {temp: [-20, 60, "°C"], depth: [90, 140, "km"], status: "DESCENDING"}}
 
-  - id: signal_lost
-    chapter: null
-    narration: >
-      Fifty-eight minutes in, the science data stopped.
-      At sixty-one minutes, the transmitter failed, about a hundred and eighty kilometres below the point where it entered, at nearly twenty-three times the pressure at sea level.
-      Whatever was left of it kept sinking into the dark.
-      From here on down, no machine has ever gone.
+  - id: galileo
+    chapter: "Where the probe died"
+    narration: |
+      About an hour after entry, Mara reaches a very special place.
+      In 1995, NASA's Galileo probe stopped transmitting right here. About a hundred and eighty kilometres down. Twenty-two times the pressure of Earth's air. Around a hundred and fifty degrees, hotter than boiling water.
+      Its last signal came from this depth. Then, silence.
+      MARA: Passing the depth where Galileo went silent.
+      MARA: Nothing here. Just dark.
+      MARA: From now on, nobody has ever seen this. I'm the first.
+      Below this point, everything we know comes from the outside. From Juno, a spacecraft that has been looping around Jupiter since 2016, weighing the planet with gravity and listening to it in microwaves.
     claims:
-      - {text: "Data for 58 minutes; transmitter failed 61.4 minutes after entry, ~180 km below entry point, 22.7 atmospheres", sources: [nasa_probe]}
+      - {text: "Galileo: data 58 min, transmitter failed at 61.4 min, ~180 km below entry, 22.7 atm (1995)", sources: [nasa_probe]}
+      - {text: "Temperature ~152-153 C at the deepest point", sources: [macmillan_galileo]}
+      - {text: "Juno in polar orbit since 2016; gravity, magnetic, microwave measurements", sources: [nasa_juno]}
     beats:
-      - {type: r3d, shot: cloud_dive, params: {decks: 1, seed: 31, layers: [["detail_swift.jpg", [0.0, 0.0, 0.8, 0.75]], ["dive_tkachenko.jpg", [0.0, 0.3, 1.0, 1.0]]], depth_tint: [[0.8, 0.6, 0.45], [0.45, 0.3, 0.2]]}, sentences: 1, hud: {clock: ["T+57:30", "T+58:00"], depth: [150, 165, "km"], pressure: [19, 21, "bar"], status: "TELEMETRY DEGRADED"}}
-      - {type: glitch, text: "SIGNAL LOST", sub: "T+61.4 min · ~180 km · 22.7 bar", sentences: 1}
-      - {type: black, sentences: 1}
-      - {type: r3d, shot: cutaway, params: {marker: [1.0, 0.997], az: [0.1, 0.0], target: [[0.78, 0.08, 0.59], [0.0, -0.05, 0.0]], dist: [0.6, 2.8], fov: [32, 36]}, sentences: 1, label: "The probe's entire descent: the thin line at the very edge"}
+      - {type: r3d, shot: cutaway, params: {marker: [1.0, 0.997], az: [0.1, 0.0], target: [[0.0, -0.05, 0.0], [0.78, 0.08, 0.59]], dist: [2.8, 0.6], fov: [36, 32]}, sentences: 1, label: "Every mission so far: the thin line at the very edge"}
+      - {type: image, asset: probe_painting2, motion: in, crop: [0.04, 0.12, 0.96, 0.96], sentences: 1, hud: {clock: ["T+57:30", "T+58:00"], depth: [170, 180, "km"], pressure: [21, 22.7, "bar"], temp: [140, 153, "°C"], status: "GALILEO PROBE · 1995"}}
+      - {type: glitch, text: "SIGNAL LOST", sub: "GALILEO PROBE · 7 DEC 1995 · T+61.4 MIN", sentences: 1}
+      - {type: black, sentences: 0.6}
+      - {type: r3d, shot: fluid, params: {mode: liquid, darker: true, seed: 3}, sentences: 1.4, pov: true, hud: {depth: [180, 185, "km"], status: "BEYOND GALILEO"}}
+      - {type: r3d, shot: fluid, params: {mode: liquid, darker: true, seed: 6}, sentences: 1, note: ["FROM HERE ON", "NO MACHINE HAS EVER GONE"]}
+      - {type: image, asset: juno_art, motion: in, sentences: 0.6, label: "Juno (artist's concept)"}
+      - {type: r3d, shot: polar_orbit, params: {}, sentences: 0.7}
 
   - id: juno
-    chapter: "Beyond the probe"
-    narration: >
-      To follow it further, we need a different kind of explorer.
-      In 2016, NASA's Juno spacecraft began looping over Jupiter's poles, measuring the planet from the outside: its gravity, its magnetism, and microwaves glowing up from deep below the clouds.
-      And it found that the weather doesn't stop at the clouds.
-      The famous stripes are jet streams, and they reach about three thousand kilometres down.
-      The Great Red Spot, a storm twice as wide as Earth, has roots between three hundred and fifty and five hundred kilometres deep.
-      A storm wider than our planet, with roots so deep that the probe's entire descent would fit inside them twice.
+    chapter: "Storms with roots"
+    narration: |
+      MARA: Two hundred kilometres down. The wind still hasn't stopped.
+      It won't for a long time. Juno found that Jupiter's famous stripes are jet streams that reach about three thousand kilometres deep.
+      And the Great Red Spot, a storm twice as wide as Earth, has roots about five hundred kilometres down. Galileo's entire journey would fit inside it almost three times.
     claims:
-      - {text: "Juno arrived 2016; polar orbits; gravity, magnetic and microwave measurements", sources: [nasa_juno]}
-      - {text: "Belts and zones are jet streams extending ~3,000 km below cloud tops", sources: [nasa_juno]}
-      - {text: "GRS twice as wide as Earth", sources: [nasa_jupiter_facts]}
-      - {text: "GRS roots >350 km (MWR) to ~500 km (gravity)", sources: [jpl_3d_2021]}
-      - {text: "Probe failed ~180 km down: 350-500 km is about 2-3x deeper (derived)", sources: [nasa_probe, jpl_3d_2021]}
+      - {text: "Jet streams extend ~3,000 km below the cloud tops", sources: [nasa_juno]}
+      - {text: "GRS twice as wide as Earth; depth ~500 km (gravity)", sources: [nasa_jupiter_facts, jpl_3d_2021]}
+      - {text: "500 km / 180 km ≈ 2.8 (derived)", sources: [nasa_probe, jpl_3d_2021]}
     beats:
-      - {type: image, asset: juno_art, motion: in, sentences: 1, label: "Juno (artist's concept)"}
-      - {type: r3d, shot: polar_orbit, params: {}, sentences: 1}
-      - {type: image, asset: grs_slices, motion: in, fit: contain, sentences: 1, label: "Juno microwave 'slices' beneath the clouds"}
+      - {type: r3d, shot: fluid, params: {mode: liquid, seed: 12}, sentences: 1, pov: true, shake: 0.4, hud: {depth: [195, 200, "km"], status: "WIND STILL RISING"}}
+      - {type: r3d, shot: orbit, params: {dist: [2.15, 1.75], az: [0.25, 0.15], el: [-0.24, -0.32], light: [55, 15], spin: [0.7, 1.05], fov: [38, 36]}, sentences: 0.6}
       - {type: r3d, shot: cutaway, params: {layers: [[1.0, [0.95, 0.72, 0.45], [0.9, 0.62, 0.38]], [0.957, [0.62, 0.45, 0.32], [0.5, 0.36, 0.26]], [0.8, [0.36, 0.42, 0.70], [0.28, 0.33, 0.62]], [0.55, [0.95, 0.60, 0.28], [1.0, 0.86, 0.58]]], az: [0.3, 0.2], target: [[0.0, 0.0, 0.0], [0.0, 0.85, 0.1]], dist: [3.0, 0.7], el: [0.3, 0.35]},
-         sentences: 1, label: "Jet streams reach ~3,000 km down (about 4% of the radius)"}
-      - {type: image, asset: grs_closeup, motion: in, sentences: 1, label: "The Great Red Spot (JunoCam)"}
-      - {type: image, asset: grs_size, motion: in, fit: contain, sentences: 1, label: "Great Red Spot depth vs. Earth (NASA/JPL illustration)"}
+         sentences: 0.8, label: "Jet streams reach ~3,000 km down"}
+      - {type: image, asset: grs_closeup, motion: in, sentences: 0.6, label: "The Great Red Spot (JunoCam)"}
+      - {type: image, asset: grs_size, motion: in, fit: contain, sentences: 0.8, label: "Its roots: about 500 km deep"}
 
   - id: ocean
     chapter: "The ocean with no surface"
-    narration: >
-      Keep falling, and the pressure keeps rising.
-      Hydrogen, the gas that makes up almost ninety percent of Jupiter, is squeezed so hard that it turns into a liquid.
-      There is no clear surface to splash into. The gas just gets denser and hotter until you are no longer falling through air. You are sinking through an ocean.
-      And perhaps halfway to the centre, something even stranger happens.
-      The pressure becomes so great that electrons are squeezed off the hydrogen atoms.
-      The liquid starts to conduct electricity, like a metal.
+    narration: |
+      MARA: Pressure's climbing too fast. The hull is groaning.
+      MARA: Wait. Outside, it looks thick. Heavy. Like we're under water.
+      There's no splash. No surface. Hydrogen, almost ninety percent of Jupiter, is squeezed so hard that it slowly turns from a gas into a liquid.
+      Mara isn't falling anymore. She's sinking.
+      MARA: I'm in an ocean. An ocean bigger than Earth.
+      Roughly halfway to the centre, the pressure gets so extreme that it rips electrons off the hydrogen atoms. The ocean starts to conduct electricity, like liquid metal.
+      MARA: Every compass on board is spinning. There's current everywhere.
+      This metal ocean, churning inside a planet that spins once every ten hours, is a giant dynamo. It powers a magnetic field up to fifty-four times stronger than Earth's, the same field that traps the intense radiation the real probe had to fly through on its way in.
     claims:
       - {text: "Hydrogen ~89.8% by volume", sources: [nssdc_jupiter]}
-      - {text: "Deep pressure compresses hydrogen gas into a liquid", sources: [nasa_jupiter_facts]}
-      - {text: "Perhaps halfway to the centre, electrons squeezed off; liquid conducts electricity like metal", sources: [nasa_jupiter_facts]}
+      - {text: "Pressure compresses hydrogen gas into a liquid; no clear surface", sources: [nasa_jupiter_facts]}
+      - {text: "About halfway to the centre electrons are squeezed off; liquid conducts like metal; dynamo", sources: [nasa_jupiter_facts]}
+      - {text: "Day 9.9 hours; field 16-54x Earth's", sources: [nasa_jupiter_facts]}
+      - {text: "Probe flew through an intense radiation belt ~50,000 km above the clouds", sources: [nasa_probe]}
     beats:
-      - {type: r3d, shot: cutaway, params: {marker: [0.96, 0.85], az: [0.2, 0.05], target: [[0.7, 0.08, 0.5], [0.0, -0.05, 0.0]], dist: [1.1, 2.7]}, sentences: 1, hud: {depth: [3000, 10500, "km"], status: "DESCENDING"}}
-      - {type: r3d, shot: fluid, params: {mode: liquid}, sentences: 1}
-      - {type: r3d, shot: fluid, params: {mode: liquid, darker: true}, sentences: 3}
-      - {type: r3d, shot: cutaway, params: {marker: [0.85, 0.52], az: [0.05, -0.1]}, sentences: 1, hud: {depth: [10500, 33500, "km"], status: "≈ HALFWAY"}}
-      - {type: r3d, shot: fluid, params: {mode: metallic}, sentences: 2}
-
-  - id: engine
-    chapter: "The engine"
-    narration: >
-      This is the answer to the danger at the start of our journey.
-      An ocean of liquid metal, churning inside a planet that spins once every ten hours, works like a giant dynamo.
-      It generates a magnetic field sixteen to fifty-four times as powerful as Earth's.
-      That's the field that trapped the radiation the probe flew through on its way in.
-      Juno mapped it, and it's lumpy. Near the equator sits an intense patch scientists call the Great Blue Spot, and it is slowly drifting, dragged around by the planet's deep winds.
-    claims:
-      - {text: "Liquid metallic hydrogen layer generates the magnetic field", sources: [nasa_jupiter_facts]}
-      - {text: "Day ~9.9 hours", sources: [nasa_jupiter_facts]}
-      - {text: "Magnetic field 16 to 54 times as powerful as Earth's", sources: [nasa_jupiter_facts]}
-      - {text: "Great Blue Spot; secular variation driven by deep winds", sources: [jpl_magfield_2019]}
-    beats:
-      - {type: video, asset: magnetosphere, from: 30, sentences: 1, label: "Jupiter's magnetosphere (NASA visualization)"}
-      - {type: r3d, shot: orbit, params: {dist: [3.0, 2.8], az: [0.3, 0.2], light: [55, 15], spin: [0.0, 1.2]}, sentences: 1}
-      - {type: fact, big: "16–54×", small: "the strength of Earth's magnetic field", source: nasa_jupiter_facts, sentences: 1}
-      - {type: video, asset: magnetosphere, from: 50, sentences: 1}
-      - {type: video, asset: mag_tour, from: 20, zoom: 1.5, sentences: 2, label: "Juno's map of Jupiter's magnetic field"}
+      - {type: r3d, shot: fluid, params: {mode: liquid, seed: 14}, sentences: 1, pov: true, shake: 0.6, hud: {depth: [1000, 3000, "km"], status: "HULL STRESS"}}
+      - {type: r3d, shot: fluid, params: {mode: liquid, seed: 5}, sentences: 1, pov: true, hud: {depth: [3000, 6000, "km"], status: "DENSITY RISING"}}
+      - {type: r3d, shot: cutaway, params: {marker: [0.96, 0.85], az: [0.2, 0.05], target: [[0.7, 0.08, 0.5], [0.0, -0.05, 0.0]], dist: [1.1, 2.7]}, sentences: 1, label: "Gas becomes liquid: no surface, no splash"}
+      - {type: r3d, shot: fluid, params: {mode: liquid, darker: true, seed: 8}, sentences: 2, pov: true, hud: {depth: [6000, 15000, "km"], status: "SUBMERGED"}}
+      - {type: r3d, shot: cutaway, params: {marker: [0.85, 0.52], az: [0.05, -0.1]}, sentences: 1, label: "Halfway down: hydrogen turns metallic"}
+      - {type: r3d, shot: fluid, params: {mode: metallic}, sentences: 1, pov: true, shake: 0.3, hud: {depth: [33000, 35000, "km"], status: "CONDUCTIVE MEDIUM"}}
+      - {type: video, asset: magnetosphere, from: 30, sentences: 0.7, label: "Jupiter's magnetic field (NASA visualization)"}
+      - {type: video, asset: mag_tour, from: 20, zoom: 1.5, sentences: 0.6, label: "Juno's map of the field"}
 
   - id: core
     chapter: "The heart"
-    narration: >
-      And at the very centre? For decades, the diagrams showed a compact ball of rock and ice.
-      Juno's gravity measurements found something else.
-      The core looks much larger than expected, and not solid. Partly dissolved, its heavy elements smeared out into the metallic hydrogen around it.
-      In some models, that fuzzy core stretches more than halfway from the centre to the cloud tops.
-      How does a planet end up with a core like that? One idea is a collision.
-      Early in Jupiter's history, a young planet about ten times the mass of Earth may have hit it head-on, hard enough to shatter the original core and stir it outward.
-      It's a hypothesis. Nobody knows yet. But if it's right, the heart of the biggest planet in the solar system still carries the scar of a crash billions of years old.
+    narration: |
+      MARA: I've lost the link to the orbiter. Recording anyway.
+      For decades, textbooks drew a small, solid rock at Jupiter's centre. Juno's gravity measurements say that picture is wrong.
+      The core is huge, and fuzzy. Partly dissolved into the metal around it. In some models, it stretches more than halfway to the cloud tops.
+      One explanation: when Jupiter was young, a planet about ten times the mass of Earth may have hit it head-on, shattering its core so badly that it never settled again.
+      MARA: There's no floor. No rock. It just gets denser. Hotter.
+      Near the centre, scientists estimate the temperature at around twenty-four thousand degrees. More than four times hotter than the surface of the Sun.
+      MARA: Vesper, final log. If anyone ever hears this... it was beautiful.
     claims:
-      - {text: "Juno: core much larger than expected, not solid, partially dissolved ('fuzzy')", sources: [nasa_jupiter_facts]}
-      - {text: "Dilute core models extend as far as ~63% of the radius (uncertain)", sources: [militzer_2022]}
-      - {text: "Giant-impact hypothesis: ~10 Earth-mass embryo head-on", sources: [liu_2019]}
+      - {text: "Core much larger than expected, not solid, partially dissolved (fuzzy)", sources: [nasa_jupiter_facts]}
+      - {text: "Dilute core may extend to ~63% of the radius", sources: [militzer_2022]}
+      - {text: "Giant impact hypothesis (~10 Earth masses, head-on)", sources: [liu_2019]}
+      - {text: "Estimated ~24,000 C near the centre (model estimate)", sources: [nasa_spaceplace]}
+      - {text: "24,000 / 5,500 ≈ 4.4 (derived)", sources: [nasa_sun_facts]}
     beats:
+      - {type: r3d, shot: fluid, params: {mode: metallic, seed: 21}, sentences: 1, pov: true, hud: {depth: [40000, 45000, "km"], status: "ORBITER LINK LOST"}}
       - {type: r3d, shot: cutaway, params: {layers: [[1.0, [0.85, 0.66, 0.44], [0.62, 0.44, 0.30]], [0.80, [0.36, 0.42, 0.70], [0.28, 0.33, 0.62]], [0.12, [0.55, 0.42, 0.35], [0.45, 0.35, 0.3]]], fuzzy: false, az: [0.3, 0.15]}, sentences: 1, label: "The old picture: a small, solid core"}
-      - {type: r3d, shot: cutaway, params: {az: [0.15, 0.0], dist: [2.8, 2.4]}, sentences: 2, label: "Juno: a large, 'fuzzy' core"}
-      - {type: r3d, shot: cutaway, params: {layers: [[1.0, [0.85, 0.66, 0.44], [0.62, 0.44, 0.30]], [0.80, [0.36, 0.42, 0.70], [0.28, 0.33, 0.62]], [0.63, [0.95, 0.60, 0.28], [1.0, 0.86, 0.58]]], az: [0.0, -0.15], dist: [2.4, 2.3]}, sentences: 1, label: "One model: dilute core out to ~63% of the radius"}
-      - {type: r3d, shot: collision, params: {}, sentences: 2, label: "Hypothesis: a young planet ~10× Earth's mass hits young Jupiter (illustration)"}
-      - {type: r3d, shot: orbit, params: {dist: [2.6, 3.4], az: [0.1, 0.35], el: [0.05, 0.15], light: [80, 12], spin: [0.2, 0.6]}, sentences: 3}
+      - {type: r3d, shot: cutaway, params: {az: [0.15, 0.0], dist: [2.8, 2.4]}, sentences: 1, label: "Juno: a huge, 'fuzzy' core"}
+      - {type: r3d, shot: collision, params: {}, sentences: 1, label: "Hypothesis: a young planet ~10× Earth's mass (illustration)"}
+      - {type: r3d, shot: fluid, params: {mode: metallic, seed: 30}, sentences: 1, pov: true, shake: 0.5, hud: {depth: [60000, 65000, "km"], status: "NO FLOOR DETECTED"}}
+      - {type: fact, big: "≈24,000 °C", small: "estimated temperature near the centre", source: nasa_spaceplace, sentences: 1}
+      - {type: r3d, shot: fluid, params: {mode: metallic, darker: true, seed: 33}, sentences: 1, pov: true, hud: {status: "FINAL LOG"}}
+      - {type: glitch, text: "VESPER · SIGNAL LOST", sentences: 0.4}
 
   - id: ending
     chapter: null
-    narration: >
-      Back at the top of the clouds, those fifty-eight minutes of data still matter.
-      Everything below that point, we know only from measurements taken from far outside.
-      Jupiter isn't a ball of gas with a rock in the middle.
-      It's a planet with storms rooted hundreds of kilometres deep, an ocean of liquid metal, and a core that never settled.
-      And our first real look inside it came from a little machine that fell in, and never came back.
-      If you want more stories like this, told with real images and real numbers, subscribe. Every source is in the description.
+    narration: |
+      Mara isn't real. But the probe that went first was.
+      In 1995, a small machine fell into the biggest planet in our solar system, and for fifty-eight minutes, it told us what it found.
+      Everything deeper, we've pieced together since, from far outside. A place no one will ever see. But we know it's there.
+      If you want to fall into another world with us, subscribe.
     claims:
-      - {text: "58 minutes of data", sources: [nasa_probe]}
-      - {text: "Storm roots hundreds of km deep; liquid metallic hydrogen; dilute core", sources: [jpl_3d_2021, nasa_jupiter_facts]}
+      - {text: "Galileo probe: 58 minutes of data, 1995", sources: [nasa_probe]}
     beats:
-      - {type: r3d, shot: cloud_dive, params: {decks: 1, seed: 41, lightning: 0.5}, sentences: 1, hud: {clock: ["T+57:00", "T+58:00"], status: "TELEMETRY OK"}}
-      - {type: r3d, shot: polar_orbit, params: {}, sentences: 1}
-      - {type: image, asset: grs_closeup, motion: in, sentences: 0.5}
-      - {type: r3d, shot: fluid, params: {mode: metallic, seed: 9}, sentences: 0.5}
-      - {type: r3d, shot: cutaway, params: {az: [0.2, 0.0], dist: [2.6, 2.3]}, sentences: 0.6}
-      - {type: image, asset: probe_painting, motion: in, crop: [0.07, 0.03, 0.92, 0.86], sentences: 0.7}
-      - {type: r3d, shot: orbit, params: {dist: [4.0, 9.0], az: [0.4, 0.6], el: [0.1, 0.2], light: [70, 15], streak: true}, sentences: 0.6}
-      - {type: end, text: "Real images. Real numbers.", sentences: 1.5}
+      - {type: black, ember: false, sentences: 0.4}
+      - {type: image, asset: probe_painting, motion: in, crop: [0.07, 0.03, 0.92, 0.86], sentences: 0.8}
+      - {type: image, asset: probe_hardware, motion: out, crop: [0.1, 0.05, 0.95, 0.9], sentences: 0.8}
+      - {type: r3d, shot: orbit, params: {dist: [2.6, 3.6], az: [0.1, 0.35], el: [0.05, 0.15], light: [80, 12], spin: [0.2, 0.6]}, sentences: 1}
+      - {type: r3d, shot: orbit, params: {dist: [4.0, 9.0], az: [0.4, 0.6], el: [0.1, 0.2], light: [70, 15], streak: true}, sentences: 1}
+      - {type: end, text: "Real images. Real numbers.", sentences: 1}

@@ -36,16 +36,17 @@ def _banned() -> tuple[list[str], list[str]]:
 def check_script(spec) -> list[tuple]:
     res = []
     err, warn = _banned()
-    text_all = " ".join(sc["narration"] for sc in spec.scenes)
+    from ytauto.spec import plain
+    text_all = " ".join(plain(sc["narration"]) for sc in spec.scenes)
     low = text_all.lower()
     hits_e = [p for p in err if re.search(rf"\b{re.escape(p)}\b", low)]
     hits_w = [p for p in warn if re.search(rf"\b{re.escape(p)}\b", low)]
     res.append(("script.banned_phrases", FAIL if hits_e else PASS, ", ".join(hits_e) or "none"))
     res.append(("script.hype_words", WARN if len(hits_w) > 3 else PASS, ", ".join(hits_w) or "none"))
     words = len(text_all.split())
-    sents = [s for sc in spec.scenes for s in split_sentences(sc["narration"])]
+    sents = [s for sc in spec.scenes for s in split_sentences(plain(sc["narration"]))]
     longest = max(sents, key=lambda s: len(s.split()))
-    res.append(("script.length", PASS if 900 <= words <= 3200 else WARN, f"{words} words, {len(sents)} sentences"))
+    res.append(("script.length", PASS if (700 if spec.data.get("format") == "story" else 900) <= words <= 3200 else WARN, f"{words} words, {len(sents)} sentences"))
     res.append(("script.longest_sentence", WARN if len(longest.split()) > 38 else PASS,
                 f"{len(longest.split())} words: {longest[:90]}..."))
     openers = [" ".join(s.split()[:2]).lower() for s in sents]
@@ -55,7 +56,7 @@ def check_script(spec) -> list[tuple]:
     unbacked = []
     for sc in spec.scenes:
         claims_text = " ".join(c["text"] for c in sc.get("claims", [])).replace(",", "")
-        for num in re.findall(r"\b\d[\d,.]*\b", sc["narration"]):
+        for num in re.findall(r"\b\d[\d,.]*\b", plain(sc["narration"])):
             n = num.rstrip(".").replace(",", "")
             if n not in claims_text:
                 unbacked.append(f"{sc['id']}:{num}")
@@ -175,7 +176,8 @@ def check_intelligibility(spec, model_size: str = "small.en") -> list[tuple]:
     segs, _ = model.transcribe(audio16, language="en", beam_size=1)
     hyp = " ".join(s.text for s in segs)
     (spec.build / "asr_transcript.txt").write_text(hyp)
-    ref_w = _norm_words(" ".join(sc["narration"] for sc in spec.scenes))
+    from ytauto.spec import plain
+    ref_w = _norm_words(" ".join(plain(sc["narration"]) for sc in spec.scenes))
     hyp_w = _norm_words(hyp)
     sm = difflib.SequenceMatcher(a=ref_w, b=hyp_w, autojunk=False)
     errors = sum(max(i2 - i1, j2 - j1) for op, i1, i2, j1, j2 in sm.get_opcodes() if op != "equal")

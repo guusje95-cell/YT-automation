@@ -77,38 +77,68 @@ def _chapter_numbers(beats: list[dict]) -> dict:
 
 
 class Decorator:
-    """Per-beat overlays drawn on top of the raw beat frame: credits, labels, HUD, chapter card, title."""
+    """Per-beat overlays drawn on top of the raw beat frame: shake, capsule window, labels, HUD, notes,
+    character radio log + transcript, chapter card, title."""
 
-    def __init__(self, manifest: dict, beats: list[dict]):
+    def __init__(self, manifest: dict, beats: list[dict], spec=None, timings: dict | None = None):
         self.manifest = manifest
         self.ov = fr.Overlays()
         self.chapters = _chapter_numbers(beats)
         self.cache: dict = {}
+        self.pov = None
+        self.char_sents = []
+        self.radio = {}
+        self.mission = "TELEMETRY"
+        if spec is not None:
+            self.mission = spec.data.get("hud_mission", "VESPER  ·  TELEMETRY" if spec.data.get("characters")
+                                         else "GALILEO PROBE  ·  TELEMETRY")
+        chars = (spec.data.get("characters") or {}) if spec is not None else {}
+        if chars and timings:
+            env = ed.voice_envelope(spec.build / "narration.wav", fr.FPS)
+            self.radio = {k: ed.RadioLog(v["name"], v.get("tag", ""), env, fr.FPS) for k, v in chars.items()}
+            self.char_sents = [s for sc in timings["scenes"] for s in sc["sentences"] if s.get("who") in self.radio]
 
     def _get(self, key, make):
         if key not in self.cache:
             self.cache[key] = make()
         return self.cache[key]
 
-    def __call__(self, frame: np.ndarray, b: dict, k: int, lt: float) -> np.ndarray:
+    def _speaking(self, gt: float):
+        for s in self.char_sents:
+            if s["start"] - 0.25 <= gt <= s["end"] + 0.6:
+                return s
+        return None
+
+    def __call__(self, frame: np.ndarray, b: dict, k: int, lt: float, gt: float | None = None) -> np.ndarray:
         dur = b["end"] - b["start"]
         t = b["type"]
+        gt = b["start"] + lt if gt is None else gt
+        if b.get("shake"):
+            frame = ed.shake(frame, lt, float(b["shake"]), seed=k)
         if t in ("image", "video"):
             frame = fr.apply_vignette(frame)
-            self.ov.credit(fr.short_credit(self.manifest[b["asset"]]["credit"])).draw(frame, 0.85)
-        elif t == "r3d":
-            self.ov.credit(shots.onscreen_credit(b["shot"], b.get("params"))).draw(frame, 0.6)
-        if b.get("label"):
+        if b.get("pov"):
+            if self.pov is None:
+                self.pov = ed.PovFrame()
+            frame = self.pov.draw(frame, min(1.0, fr.fade_window(lt, 0.0, dur, 0.3) + (k > 0) * 0.0))
+        # No on-screen credit lines (they read as clutter); every credit is in the description,
+        # which satisfies CC BY's "reasonable manner for the medium" attribution.
+        speaking = self._speaking(gt)
+        if b.get("label") and not speaking:
             self.ov.label(b["label"]).draw(frame, fr.fade_window(lt, 0.5, dur - 0.3))
         if b.get("hud"):
-            hud = self._get(("hud", k), lambda: ed.Hud(b["hud"], dur))
+            hud = self._get(("hud", k), lambda: ed.Hud(b["hud"], dur, self.mission))
             hud.draw(frame, lt, fr.fade_window(lt, 0.15, dur + 1, 0.35))
+        if b.get("note"):
+            self._get(("note", k), lambda: ed.NoteOverlay(b["note"])).draw(frame, lt, dur)
         if b.get("title") and t == "r3d":
             title = self._get(("title", k), lambda: ed.TitleOverlay(b["title"], b.get("title_sub", "")))
             title.draw(frame, lt, dur)
         if b.get("first_in_scene") and b.get("chapter") and t not in NO_DISSOLVE_INTO:
             card = self._get(("ch", b["scene"]), lambda: ed.ChapterCard(self.chapters[b["scene"]], b["chapter"]))
             card.draw(frame, lt)
+        if speaking and t not in ("glitch", "black") or (speaking and t == "black"):
+            self.radio[speaking["who"]].draw(frame, gt, speaking)
         return frame
 
 
@@ -128,7 +158,7 @@ def render(spec, preview: bool = False) -> dict:
            "veryfast" if preview else vcfg["preset"], "-crf", str(23 if preview else vcfg["crf"]),
            "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(out_video)]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-    deco = Decorator(manifest, beats)
+    deco = Decorator(manifest, beats, spec, timings)
     trans = vcfg.get("transition_s", 0.5)
     n_frames = int(round(total * fps))
     t0 = time.time()
@@ -152,7 +182,7 @@ def render(spec, preview: bool = False) -> dict:
         if frame.base is not None or not frame.flags.writeable:
             frame = frame.copy()
         last_raw = frame.copy() if (i + 1) / fps >= b["end"] - 1.0 / fps else last_raw
-        frame = deco(frame, b, bi, lt)
+        frame = deco(frame, b, bi, lt, t)
         # cross-dissolve from the previous beat's last frame (hard cuts into glitch / black beats)
         tr = b.get("transition", 0.0 if b["type"] in NO_DISSOLVE_INTO else trans)
         if prev_last is not None and bi > 0 and lt < tr:
@@ -180,7 +210,7 @@ def storyboard(spec, cols: int = 6, thumb_w: int = 384, at=(0.6,)) -> str:
     timings = json.loads((spec.build / "timings.json").read_text())
     manifest = json.loads((spec.build / "asset_manifest.json").read_text())
     beats = timeline.build(spec, timings)
-    deco = Decorator(manifest, beats)
+    deco = Decorator(manifest, beats, spec, timings)
     th = int(thumb_w * fr.H / fr.W)
     cells = [(k, a) for k in range(len(beats)) for a in at]
     rows = (len(cells) + cols - 1) // cols

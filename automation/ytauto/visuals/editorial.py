@@ -147,12 +147,13 @@ class Hud:
 
     def __init__(self, spec: dict, duration: float, mission: str = "GALILEO PROBE  ·  TELEMETRY"):
         self.spec, self.duration = spec, duration
+        mission = spec.get("mission", mission)
         self.mission = place(tracked(mission, "mono_medium", 20, DIM, 0.12), MARGIN - 12, MARGIN - 34)
         self.keys = [k for k in _ORDER if k in spec]
         self.labels = {k: place(tracked(_KEY_LABELS[k], "mono", 19, DIM, 0.14), W - MARGIN + 12, 0, "rt")
                        for k in self.keys}
         st = spec.get("status")
-        self.status = place(tracked(st, "mono_bold", 24, AMBER, 0.3), W // 2, H - MARGIN + 8, "mb") if st else None
+        self.status = place(tracked(st, "mono_bold", 24, AMBER, 0.3), W // 2, MARGIN - 28, "mt") if st else None
 
     def draw(self, frame: np.ndarray, t: float, alpha: float = 1.0) -> None:
         if alpha <= 0.01:
@@ -185,8 +186,8 @@ class ChapterCard:
     """'02 — THE GIANT' with a short amber rule, bottom-left, letter-spaced; animates in from the left."""
 
     def __init__(self, index: int, title: str):
-        self.num = place(tracked(f"{index:02d}", "mono_medium", 26, AMBER, 0.2), MARGIN - 10, H - MARGIN - 112)
-        self.title = place(tracked(title.upper(), "semibold", 54, TEXT, 0.22), MARGIN - 14, H - MARGIN - 78)
+        self.num = place(tracked(f"{index:02d}", "mono_medium", 26, AMBER, 0.2), MARGIN - 10, MARGIN + 20)
+        self.title = place(tracked(title.upper(), "semibold", 54, TEXT, 0.22), MARGIN - 14, MARGIN + 54)
 
     def draw(self, frame: np.ndarray, t: float, hold: float = 4.2) -> None:
         a = fr.fade_window(t, 0.25, hold, 0.5)
@@ -194,11 +195,11 @@ class ChapterCard:
             return
         slide = int((1 - ease_out(min((t - 0.25) / 0.9, 1.0))) * -40)
         # dark gradient behind for legibility
-        y0 = H - MARGIN - 150
-        grad = np.linspace(0, 1, H - y0, dtype=np.float32)[:, None, None] ** 1.5 * 0.55 * a
-        frame[y0:] = (frame[y0:].astype(np.float32) * (1 - grad)).astype(np.uint8)
+        y1 = MARGIN + 170
+        grad = (1 - np.linspace(0, 1, y1, dtype=np.float32))[:, None, None] ** 1.5 * 0.5 * a
+        frame[:y1] = (frame[:y1].astype(np.float32) * (1 - grad)).astype(np.uint8)
         rule_w = int(90 * ease_out(min((t - 0.25) / 0.7, 1.0)))
-        cv2.rectangle(frame, (MARGIN + 52, H - MARGIN - 97), (MARGIN + 52 + rule_w, H - MARGIN - 95), AMBER, -1)
+        cv2.rectangle(frame, (MARGIN + 52, MARGIN + 37), (MARGIN + 52 + rule_w, MARGIN + 39), AMBER, -1)
         self.num.draw(frame, a, dx=slide)
         self.title.draw(frame, a, dx=slide)
 
@@ -447,3 +448,113 @@ def end_beat(duration: float, channel: str, tagline: str = "", note: str = "Sour
         nt.draw(f, fr.fade_window(t, 1.6, duration + 1, 0.9) * fade_out)
         return f
     return render
+
+
+# ----------------------------------------------------------------- character POV + radio log overlays
+def shake(frame: np.ndarray, t: float, amount: float, seed: int = 0) -> np.ndarray:
+    """Camera shake: smooth random translation + tiny rotation, amplitude ~14 px per unit."""
+    if amount <= 0:
+        return frame
+    k = seed * 13.1
+    dx = amount * 14 * (math.sin(t * 23.0 + k) * 0.6 + math.sin(t * 37.0 + 1.3 + k) * 0.4)
+    dy = amount * 14 * (math.sin(t * 29.0 + 2.1 + k) * 0.6 + math.sin(t * 41.0 + 0.4 + k) * 0.4)
+    rot = amount * 0.35 * math.sin(t * 17.0 + k)
+    M = cv2.getRotationMatrix2D((W / 2, H / 2), rot, 1.0 + 0.03 * amount)
+    M[0, 2] += dx
+    M[1, 2] += dy
+    return cv2.warpAffine(frame, M, (W, H), borderMode=cv2.BORDER_REFLECT)
+
+
+class PovFrame:
+    """Looking out of the capsule: dark rounded window frame, faint glass reflection, corner brackets."""
+
+    def __init__(self):
+        yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+        inset_x, inset_y, r = W * 0.035, H * 0.05, 120.0
+        qx = np.maximum(np.abs(xx - W / 2) - (W / 2 - inset_x - r), 0)
+        qy = np.maximum(np.abs(yy - H / 2) - (H / 2 - inset_y - r), 0)
+        d = np.sqrt(qx ** 2 + qy ** 2) - r              # signed distance to the rounded window edge
+        frame_a = np.clip((d + 6) / 12, 0, 1)            # 1 on the frame, 0 in the window
+        inner_shadow = np.exp(-np.maximum(-d, 0) / 70) * 0.55 * (1 - frame_a)
+        glass = np.clip(1 - np.abs((xx / W - yy / H * 0.6) - 0.15) / 0.12, 0, 1) ** 2 * 0.05
+        self.a = np.clip(frame_a + inner_shadow, 0, 1)[..., None].astype(np.float32)
+        col = np.array([10, 11, 14], np.float32)
+        # brushed-metal hint on the frame
+        noise = cv2.GaussianBlur(np.random.default_rng(1).random((H, W)).astype(np.float32), (0, 0), 1.2)
+        self.col = (col + (noise[..., None] - 0.5) * 10 * frame_a[..., None]).astype(np.float32)
+        self.glass = (glass[..., None] * np.array([200, 215, 235], np.float32)).astype(np.float32)
+        self.edge = np.clip(1 - np.abs(d) / 2.0, 0, 1)[..., None].astype(np.float32) * 0.35
+
+    def draw(self, frame: np.ndarray, alpha: float = 1.0) -> np.ndarray:
+        f = frame.astype(np.float32)
+        a = self.a * alpha
+        f = f * (1 - a) + self.col * a + self.glass * alpha + self.edge * alpha * np.array([150, 150, 160], np.float32)
+        return np.clip(f, 0, 255).astype(np.uint8)
+
+
+class NoteOverlay:
+    """Two centred mono lines (e.g. the fiction disclaimer)."""
+
+    def __init__(self, lines: list[str]):
+        self.layers = [place(tracked(l.upper(), "mono_medium" if i == 0 else "mono", 34 if i == 0 else 26,
+                                     TEXT if i == 0 else AMBER, 0.3), W // 2, int(H * 0.70) + i * 52, "mm")
+                       for i, l in enumerate(lines)]
+
+    def draw(self, frame: np.ndarray, t: float, duration: float) -> None:
+        for i, l in enumerate(self.layers):
+            l.draw(frame, fr.fade_window(t, 0.4 + 0.6 * i, duration - 0.2, 0.6))
+
+
+class RadioLog:
+    """While a character speaks: '● MARA VOSS · VESPER DESCENT LOG' tag with a live waveform, and the line
+    typed out as a transcript at the bottom of the frame (radio audio is harder to follow, so we show it)."""
+
+    def __init__(self, name: str, tag: str, envelope: np.ndarray, fps: int):
+        self.env, self.fps = envelope, fps
+        self.tag = place(tracked(f"{name}  ·  {tag}", "mono_medium", 22, TEXT, 0.18), W // 2 - 40, H - 168, "mm")
+        self.cache: dict = {}
+
+    def _lines(self, text: str) -> list[str]:
+        if text not in self.cache:
+            self.cache[text] = fr.wrap(text, font("mono_medium", 32), 1300)
+        return self.cache[text]
+
+    def draw(self, frame: np.ndarray, gt: float, sent: dict) -> None:
+        st, en = sent["start"], sent["end"]
+        a = min(1.0, (gt - st + 0.25) / 0.25, (en + 0.6 - gt) / 0.3)
+        if a <= 0:
+            return
+        # tag + blinking dot + waveform
+        self.tag.draw(frame, a * 0.95)
+        tw = self.tag.rgb.shape[1]
+        x0 = self.tag.x - 26
+        if (gt * 2) % 1 < 0.7:
+            cv2.circle(frame, (x0, H - 168), 7, RED, -1, cv2.LINE_AA)
+        bx = self.tag.x + tw + 12
+        i = int(gt * self.fps)
+        for k in range(16):
+            j = min(max(i - 15 + k, 0), len(self.env) - 1)
+            h = int(4 + 34 * self.env[j])
+            cv2.rectangle(frame, (bx + k * 7, H - 168 - h // 2), (bx + k * 7 + 3, H - 168 + h // 2), AMBER, -1)
+        # typewriter transcript, revealed in step with the line
+        lines = self._lines(sent["text"])
+        total = sum(len(l) for l in lines)
+        shown = int(total * min(1.0, max(gt - st, 0) / max((en - st) * 0.85, 0.3)))
+        y = H - 118
+        for l in lines:
+            part = l[:max(shown, 0)]
+            shown -= len(l)
+            if part:
+                _draw_text(frame, part, (W // 2 - font("mono_medium", 32).getlength(l) / 2, y), "mono_medium", 32,
+                           (255, 214, 150), anchor="la", alpha=a)
+            y += 44
+
+
+def voice_envelope(wav_path, fps: int) -> np.ndarray:
+    """0..1 loudness per video frame of the narration (drives the radio waveform)."""
+    import soundfile as sf
+    x, sr = sf.read(wav_path, dtype="float32")
+    hop = sr // fps
+    n = len(x) // hop
+    rms = np.sqrt((x[: n * hop].reshape(n, hop) ** 2).mean(1))
+    return np.clip(rms / (np.percentile(rms, 98) + 1e-9), 0, 1).astype(np.float32)

@@ -152,6 +152,18 @@ def hum(dur, rng, metallic=False):
     return _norm(x, 0.4) * _env(n, 1.5, 1.5)
 
 
+def groan(rng, dur=3.0):
+    """Hull stress: a low metallic groan (resonant filtered noise with a slowly bending pitch)."""
+    n = int(dur * SR)
+    t = np.arange(n, dtype=np.float32) / SR
+    f = 70 + 25 * np.sin(t * 1.3 + rng.uniform(0, 6)) + 40 * t / dur
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    tone = (np.sin(ph) + 0.5 * np.sin(2.01 * ph) + 0.3 * np.sin(3.03 * ph)) * (0.6 + 0.4 * rng.random(n) ** 4)
+    x = _bp(np.stack([tone, tone * 0.95], 1).astype(np.float32), 50, 900)
+    env = np.sin(np.linspace(0, np.pi, n, dtype=np.float32)) ** 1.5
+    return _norm(x * env[:, None], 0.45)
+
+
 def _add(track, clip, at_s, gain=1.0):
     i0 = int(at_s * SR)
     if i0 >= len(track):
@@ -182,6 +194,8 @@ def design(beats: list[dict], total_s: float, seed: int = 11) -> np.ndarray:
                     _add(out, thunder(rng, near=rng.random() < 0.6), st + ft + delay, 0.9)
             if shot == "fluid":
                 _add(out, hum(dur + 1.0, rng, metallic=p.get("mode") == "metallic"), st - 0.3, 0.8)
+                if b.get("shake"):
+                    _add(out, groan(rng, min(dur, 3.5)), st + 0.3, 0.9)
             if shot == "collision":
                 _add(out, boom(rng, 4.0, 42.0), st + 0.7 * dur, 1.0)
                 _add(out, whoosh(min(0.7 * dur, 4.0), rng), st + 0.7 * dur - min(0.7 * dur, 4.0), 0.5)
