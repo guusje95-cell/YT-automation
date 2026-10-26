@@ -3,10 +3,12 @@ format: story
 pillar: missions-and-discoveries
 status: draft
 description_summary: >
-  Mara Voss is fictional. Every number in this film is real. We follow her capsule from the top of Jupiter's
+  Based on a true story: in 1995 NASA's Galileo probe fell into Jupiter and sent data for 58 minutes. Mara Voss and
+  her capsule are a dramatization; every number in this film is real. We follow her capsule from the top of Jupiter's
   atmosphere past the exact depth where NASA's Galileo probe went silent in 1995, then down through an ocean of
   liquid metal to a core nobody expected, using real data from Galileo and Juno. Sources below.
 title_options:
+  - "Falling Into Jupiter (Based on a True Story)"
   - "Falling Into Jupiter (Every Number Is Real)"
   - "What You'd See Falling Into Jupiter, All the Way Down"
   - "A Journey to the Centre of Jupiter (Real NASA Data)"
@@ -130,25 +132,26 @@ scenes:
       MARA: Ten seconds to atmosphere.
       MARA: Velocity, one hundred and seventy thousand kilometres an hour.
       MARA: There's no ground down there, nothing to land on, just down.
-      This is Mara Voss. She doesn't exist, and neither does her capsule. Nothing we know how to build would survive what happens next.
-      But every number you're about to hear is real, measured by the machines that went before her.
-      One of them got this far in 1995. It lasted fifty-eight minutes before the pressure silenced it.
-      Mara is going to keep going. All the way to the centre.
+      In 1995, a machine fell into Jupiter.
+      For fifty-eight minutes, it sent back everything it saw. Then the pressure silenced it forever.
+      Nothing has gone deeper since.
+      This is what happens if you keep falling. Past the place where it died. All the way to the centre.
       MARA: Here we go.
     claims:
       - {text: "Entry speed 170,590 km/h", sources: [nasa_probe]}
       - {text: "No solid surface", sources: [nasa_jupiter_facts]}
-      - {text: "NASA: Jupiter's conditions crush, melt, and vaporize spacecraft trying to fly into the planet", sources: [nasa_jupiter_facts]}
-      - {text: "Galileo probe, Dec 1995: data for 58 minutes; transmitter failed evidently due to the enormous pressure", sources: [nasa_probe]}
+      - {text: "Galileo probe entered Jupiter on 7 Dec 1995; data for 58 minutes; transmitter failed evidently due to the enormous pressure", sources: [nasa_probe]}
+      - {text: "No spacecraft has since gone deeper into Jupiter's atmosphere (Juno measures from orbit)", sources: [nasa_juno]}
     beats:
-      - {type: r3d, shot: orbit, params: {dist: [5.5, 4.2], az: [0.7, 0.55], el: [0.12, 0.1], fov: [36, 34], light: [70, 15], streak: true}, sentences: 1, pov: true,
-         hud: {speed: [170590, 170590, "km/h"], status: "ATMOSPHERE IN 10 S"}}
-      - {type: r3d, shot: approach, params: {dist: [6.0, 2.4], fov: [30, 42]}, sentences: 1, pov: true, hud: {speed: [170590, 170590, "km/h"], status: "FINAL APPROACH"}}
-      - {type: r3d, shot: entry, params: {lon: 20, lat: 4}, sentences: 3, shake: 0.4, pov: true}
-      - {type: r3d, shot: crescent, params: {dist: [3.4, 3.0], az: [0.35, 0.2], light: [78, 14]}, sentences: 3, note: ["MARA VOSS IS FICTIONAL", "EVERY NUMBER IS REAL"]}
-      - {type: r3d, shot: cloud_dive, params: {decks: 1, lightning: 0.6, seed: 4}, sentences: 1}
-      - {type: image, asset: probe_painting, motion: in, crop: [0.13, 0.03, 0.93, 0.86], sentences: 1, label: "The real one: NASA's Galileo probe, 1995 (artist's impression)"}
-      - {type: r3d, shot: cutaway, params: {marker: [1.0, 0.1], az: [0.35, 0.1]}, sentences: 1.4}
+      - {type: r3d, shot: orbit, params: {dist: [3.6, 3.1], az: [0.7, 0.55], el: [0.12, 0.1], fov: [36, 34], light: [70, 15], streak: true}, sentences: 1, pov: true,
+         note: ["BASED ON A TRUE STORY"], hud: {speed: [170590, 170590, "km/h"], status: "ATMOSPHERE IN 10 S"}}
+      - {type: r3d, shot: approach, params: {dist: [4.0, 2.2], fov: [30, 42]}, sentences: 1, pov: true, hud: {speed: [170590, 170590, "km/h"], status: "FINAL APPROACH"}}
+      - {type: r3d, shot: entry, params: {lon: 20, lat: 4}, sentences: 3, shake: 0.5, pov: true}
+      - {type: image, asset: probe_painting, motion: in, crop: [0.13, 0.03, 0.93, 0.86], sentences: 1, label: "NASA's Galileo probe, December 1995 (artist's impression)"}
+      - {type: r3d, shot: cloud_dive, params: {decks: 1, lightning: 0.6, seed: 4}, sentences: 1, hud: {clock: ["T+00:00", "T+58:00"], status: "GALILEO PROBE · 1995", mission: "GALILEO PROBE  ·  TELEMETRY"}}
+      - {type: glitch, text: "SIGNAL LOST", sentences: 0.6}
+      - {type: r3d, shot: crescent, params: {dist: [3.4, 3.0], az: [0.35, 0.2], light: [85, 14]}, sentences: 0.8}
+      - {type: r3d, shot: cutaway, params: {marker: [1.0, 0.1], az: [0.35, 0.1]}, sentences: 3}
       - {type: r3d, shot: crescent, params: {dist: [3.3, 3.0], az: [0.35, 0.2]}, title: "Falling into Jupiter", sentences: 1.2}
 
   - id: entry
