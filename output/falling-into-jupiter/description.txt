@@ -1,14 +1,13 @@
-On 7 December 1995 a small NASA probe plunged into Jupiter at 170,000 km/h and sent data for 58 minutes before it died. We follow it down through the clouds, then keep going with NASA's Juno data, past an ocean of liquid metal to a core nobody expected. Real mission data, every number sourced below.
+Mara Voss is fictional. Every number in this film is real. We follow her capsule from the top of Jupiter's atmosphere past the exact depth where NASA's Galileo probe went silent in 1995, then down through an ocean of liquid metal to a core nobody expected, using real data from Galileo and Juno. Sources below.
 
 
 Chapters
-0:40 The giant
-1:36 Entry
-2:11 Into the clouds
-3:45 Beyond the probe
-4:31 The ocean with no surface
-5:07 The engine
-5:44 The heart
+0:41 The wall of fire
+1:24 Into the storm
+2:17 Where the probe died
+3:08 Storms with roots
+3:35 The ocean with no surface
+4:38 The heart
 
 Sources
 • Galileo Jupiter Atmospheric Probe (mission page) — NASA Science: https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe
@@ -18,10 +17,10 @@ Sources
 • Juno (mission overview and findings) — NASA Science: https://science.nasa.gov/mission/juno/
 • NASA's Juno Science Results Offer First 3D View of Jupiter Atmosphere (28 Oct 2021) — NASA JPL: https://www.jpl.nasa.gov/news/nasas-juno-science-results-offer-first-3d-view-of-jupiter-atmosphere/
 • Shallow Lightning and 'Mushballs' Reveal Ammonia to NASA's Juno Scientists (Aug 2020) — NASA JPL: https://www.jpl.nasa.gov/news/shallow-lightning-and-mushballs-reveal-ammonia-to-nasas-juno-scientists/
-• Findings From NASA's Juno Update Jupiter Water Mystery (Feb 2020) — NASA JPL: https://www.jpl.nasa.gov/news/findings-from-nasas-juno-update-jupiter-water-mystery/
-• NASA's Juno Finds Changes in Jupiter's Magnetic Field (May 2019) — NASA JPL: https://www.jpl.nasa.gov/news/nasas-juno-finds-changes-in-jupiters-magnetic-field/
 • Juno Spacecraft Measurements of Jupiter's Gravity Imply a Dilute Core (Militzer et al., Planetary Science Journal 2022) — Caltech Authors repository: https://resolver.caltech.edu/CaltechAUTHORS:20220804-981005000
 • The formation of Jupiter's diluted core by a giant impact (Liu et al., Nature 572, 2019) — Nature: https://cris.tau.ac.il/en/publications/the-formation-of-jupiters-diluted-core-by-a-giant-impact/
+• The Galileo space probe explored Jupiter's deep atmosphere (Universe, 10th ed., section 12-5) — Macmillan Learning (Freedman, Geller, Kaufmann): https://digfir-published.macmillanusa.com/universe10e/universe10e_ch12_6.html
+• What's It Like Inside Jupiter? — NASA Space Place: https://spaceplace.nasa.gov/jupiter/en/
 
 Image and video credits
 • NASA Ames / Ken Hodges — https://images.nasa.gov/details/ARC-1981-AC81-0174

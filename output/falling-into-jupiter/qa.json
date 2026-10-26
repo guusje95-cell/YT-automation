@@ -1,7 +1,7 @@
 {
  "summary": {
   "PASS": 28,
-  "WARN": 1,
+  "WARN": 0,
   "FAIL": 0
  },
  "results": [
@@ -18,12 +18,12 @@
   [
    "script.length",
    "PASS",
-   "1096 words, 80 sentences"
+   "826 words, 95 sentences"
   ],
   [
    "script.longest_sentence",
    "PASS",
-   "33 words: On the seventh of December, 1995, at four minutes past ten at night, Universal Time, a sma..."
+   "31 words: It powers a magnetic field up to fifty-four times stronger than Earth's, the same field th..."
   ],
   [
    "script.repetitive_openers",
@@ -63,7 +63,7 @@
   [
    "assets.unused",
    "PASS",
-   "unused (fine): ['white_oval']"
+   "unused (fine): ['entry_site', 'galileo_orbiter', 'grs_slices', 'white_oval']"
   ],
   [
    "captions.line_length",
@@ -73,22 +73,22 @@
   [
    "meta.title_length",
    "PASS",
-   "20 chars: Falling Into Jupiter"
+   "43 chars: Falling Into Jupiter (Every Number Is Real)"
   ],
   [
    "meta.description_length",
    "PASS",
-   "4751 chars"
+   "4758 chars"
   ],
   [
    "meta.tags",
    "PASS",
-   "10 tags, 112 chars"
+   "10 tags, 134 chars"
   ],
   [
    "meta.chapters",
    "PASS",
-   "7 chapters"
+   "6 chapters"
   ],
   [
    "meta.privacy_default",
@@ -103,12 +103,12 @@
   [
    "thumbnail.thumbnail_2",
    "PASS",
-   "(1280, 720), 98 KB"
+   "(1280, 720), 129 KB"
   ],
   [
    "thumbnail.thumbnail_3",
    "PASS",
-   "(1280, 720), 156 KB"
+   "(1280, 720), 153 KB"
   ],
   [
    "video.format",
@@ -123,12 +123,12 @@
   [
    "video.duration",
    "PASS",
-   "437.9s (7.3 min)"
+   "362.3s (6.0 min)"
   ],
   [
    "video.av_sync_length",
    "PASS",
-   "video 437.87s / audio 437.87s"
+   "video 362.30s / audio 362.28s"
   ],
   [
    "video.black_frames",
@@ -138,17 +138,12 @@
   [
    "audio.loudness",
    "PASS",
-   "-14.3 LUFS integrated, true peak -0.8 dBFS"
+   "-14.4 LUFS integrated, true peak -1.7 dBFS"
   ],
   [
    "audio.long_silences",
    "PASS",
    "none"
-  ],
-  [
-   "voice.intelligibility",
-   "WARN",
-   "ASR word error rate 7.0% (lower is better; includes number formatting differences). Top diffs: 'seventh' -> '7th'; 'four' -> '4'; 'ten' -> '10'; 'a hundred and seventy thousand kilometres' -> '170000 km'; 'fifty eight' -> '58'; 'centre' -> 'center'; 'eleven' -> '11'; 'just' -> 'first'"
   ]
  ]
 }

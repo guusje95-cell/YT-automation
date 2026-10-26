@@ -160,7 +160,7 @@ def groan(rng, dur=3.0):
     ph = 2 * np.pi * np.cumsum(f) / SR
     tone = (np.sin(ph) + 0.5 * np.sin(2.01 * ph) + 0.3 * np.sin(3.03 * ph)) * (0.6 + 0.4 * rng.random(n) ** 4)
     x = _bp(np.stack([tone, tone * 0.95], 1).astype(np.float32), 50, 900)
-    env = np.sin(np.linspace(0, np.pi, n, dtype=np.float32)) ** 1.5
+    env = np.clip(np.sin(np.linspace(0, np.pi, n, dtype=np.float32)), 0, 1) ** 1.5
     return _norm(x * env[:, None], 0.45)
 
 
@@ -213,4 +213,4 @@ def design(beats: list[dict], total_s: float, seed: int = 11) -> np.ndarray:
             _add(out, blip(), st + 0.2, 1.0)
             _add(out, blip(2400.0), st + 0.32, 0.8)
         prev_status = status
-    return out[: int(total_s * SR)]
+    return np.nan_to_num(out[: int(total_s * SR)])

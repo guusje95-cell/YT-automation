@@ -1,14 +1,13 @@
 # QA report — falling-into-jupiter
 
-**0 FAIL · 1 WARN · 28 PASS**  (publishable after human review of WARN items)
+**0 FAIL · 0 WARN · 28 PASS**  (publishable after human review of WARN items)
 
 | Check | Status | Detail |
 |---|---|---|
-| voice.intelligibility | WARN | ASR word error rate 7.0% (lower is better; includes number formatting differences). Top diffs: 'seventh' -> '7th'; 'four' -> '4'; 'ten' -> '10'; 'a hundred and seventy thousand kilometres' -> '170000 km'; 'fifty eight' -> '58'; 'centre' -> 'center'; 'eleven' -> '11'; 'just' -> 'first' |
 | script.banned_phrases | PASS | none |
 | script.hype_words | PASS | none |
-| script.length | PASS | 1096 words, 80 sentences |
-| script.longest_sentence | PASS | 33 words: On the seventh of December, 1995, at four minutes past ten at night, Universal Time, a sma... |
+| script.length | PASS | 826 words, 95 sentences |
+| script.longest_sentence | PASS | 31 words: It powers a magnetic field up to fifty-four times stronger than Earth's, the same field th... |
 | script.repetitive_openers | PASS | none |
 | script.numbers_sourced | PASS | every number appears in a sourced claim |
 | script.sources_used | PASS | 11 sources cited |
@@ -16,20 +15,20 @@
 | assets.licences | PASS | 15 assets, all allowed |
 | assets.credits | PASS | all credited |
 | assets.flags | PASS | no open flags |
-| assets.unused | PASS | unused (fine): ['white_oval'] |
+| assets.unused | PASS | unused (fine): ['entry_site', 'galileo_orbiter', 'grs_slices', 'white_oval'] |
 | captions.line_length | PASS | 0 lines > 42 chars |
-| meta.title_length | PASS | 20 chars: Falling Into Jupiter |
-| meta.description_length | PASS | 4751 chars |
-| meta.tags | PASS | 10 tags, 112 chars |
-| meta.chapters | PASS | 7 chapters |
+| meta.title_length | PASS | 43 chars: Falling Into Jupiter (Every Number Is Real) |
+| meta.description_length | PASS | 4758 chars |
+| meta.tags | PASS | 10 tags, 134 chars |
+| meta.chapters | PASS | 6 chapters |
 | meta.privacy_default | PASS | private |
 | thumbnail.thumbnail_1 | PASS | (1280, 720), 108 KB |
-| thumbnail.thumbnail_2 | PASS | (1280, 720), 98 KB |
-| thumbnail.thumbnail_3 | PASS | (1280, 720), 156 KB |
+| thumbnail.thumbnail_2 | PASS | (1280, 720), 129 KB |
+| thumbnail.thumbnail_3 | PASS | (1280, 720), 153 KB |
 | video.format | PASS | h264 1920x1080 yuv420p 30/1 |
 | video.audio_stream | PASS | aac 48000 Hz 2 ch |
-| video.duration | PASS | 437.9s (7.3 min) |
-| video.av_sync_length | PASS | video 437.87s / audio 437.87s |
+| video.duration | PASS | 362.3s (6.0 min) |
+| video.av_sync_length | PASS | video 362.30s / audio 362.28s |
 | video.black_frames | PASS | none longer than 1.0s |
-| audio.loudness | PASS | -14.3 LUFS integrated, true peak -0.8 dBFS |
+| audio.loudness | PASS | -14.4 LUFS integrated, true peak -1.7 dBFS |
 | audio.long_silences | PASS | none |

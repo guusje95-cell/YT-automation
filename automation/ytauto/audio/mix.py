@@ -94,7 +94,7 @@ def build(spec) -> dict:
 
     ml = meter.integrated_loudness(mix)
     mix *= db(target - ml)
-    mix = limiter(mix, tp - 0.3, SR)
+    mix = limiter(mix, tp - 1.2, SR)   # headroom for AAC encoder overshoot
     final_lufs = meter.integrated_loudness(mix)
     peak_db = 20 * np.log10(np.max(np.abs(mix)) + 1e-12)
     out = spec.build / "mix.wav"
