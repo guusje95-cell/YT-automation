@@ -1,0 +1,533 @@
+1
+00:00:00,400 --> 00:00:06,091
+On the seventh of December, 1995, at four
+minutes past ten at night, Universal Time,
+
+2
+00:00:06,091 --> 00:00:11,104
+a small probe hit the top of Jupiter's
+atmosphere at a hundred and seventy
+
+3
+00:00:11,104 --> 00:00:13,001
+thousand kilometres an hour.
+
+4
+00:00:13,421 --> 00:00:17,657
+Within a minute, the gas in front of it
+was hotter than the surface of the Sun.
+
+5
+00:00:18,077 --> 00:00:21,265
+It carried six instruments, a parachute
+and a radio.
+
+6
+00:00:21,685 --> 00:00:23,476
+It was never meant to come back.
+
+7
+00:00:23,896 --> 00:00:26,530
+For fifty-eight minutes, it sent data
+home.
+
+8
+00:00:26,950 --> 00:00:28,495
+Then the signal stopped.
+
+9
+00:00:28,915 --> 00:00:31,575
+This is the story of how far it got.
+
+10
+00:00:31,995 --> 00:00:37,655
+And of what lies beneath it, all the way
+to the centre, in a place no machine will
+
+11
+00:00:37,655 --> 00:00:38,414
+ever reach.
+
+12
+00:00:40,114 --> 00:00:43,258
+Jupiter is eleven times wider than Earth.
+
+13
+00:00:43,678 --> 00:00:46,441
+More than a thousand Earths could fit
+inside it.
+
+14
+00:00:46,861 --> 00:00:51,939
+It holds more than twice the material of
+every other planet, moon and asteroid in
+
+15
+00:00:51,939 --> 00:00:53,569
+the solar system combined.
+
+16
+00:00:53,989 --> 00:00:55,967
+And it has no surface.
+
+17
+00:00:56,387 --> 00:00:57,656
+Nothing to land on.
+
+18
+00:00:58,076 --> 00:01:01,756
+Just gas, getting thicker and hotter the
+deeper you go.
+
+19
+00:01:02,176 --> 00:01:05,644
+The probe's journey began five months
+before it arrived.
+
+20
+00:01:06,064 --> 00:01:11,040
+In July 1995, it separated from its
+mothership, the Galileo orbiter, about
+
+21
+00:01:11,040 --> 00:01:16,285
+eighty million kilometres from Jupiter,
+and coasted the rest of the way alone.
+
+22
+00:01:16,705 --> 00:01:19,608
+Its first danger wasn't the planet itself.
+
+23
+00:01:20,028 --> 00:01:25,109
+About fifty thousand kilometres above the
+clouds, it flew through an intense belt of
+
+24
+00:01:25,109 --> 00:01:29,524
+radiation, particles trapped and
+accelerated by Jupiter's magnetic field.
+
+25
+00:01:29,944 --> 00:01:31,016
+Hold on to that.
+
+26
+00:01:31,436 --> 00:01:35,290
+We'll find out where that field comes from
+at the bottom of this journey.
+
+27
+00:01:36,990 --> 00:01:41,776
+Jupiter's gravity is so strong that
+anything falling in from far away hits the
+
+28
+00:01:41,776 --> 00:01:44,906
+atmosphere at close to sixty kilometres
+per second.
+
+29
+00:01:45,326 --> 00:01:47,653
+The probe arrived at about forty-seven.
+
+30
+00:01:48,073 --> 00:01:52,614
+A minute after entry, it was slowing down
+so hard that it felt two hundred and
+
+31
+00:01:52,614 --> 00:01:54,943
+twenty-eight times the force of gravity.
+
+32
+00:01:55,363 --> 00:01:59,739
+If you'd been on board, your body would
+have weighed more than fifteen tonnes.
+
+33
+00:02:00,159 --> 00:02:04,477
+Its heat shield was taking the hit from
+gas at sixteen thousand degrees.
+
+34
+00:02:04,897 --> 00:02:09,701
+Then, as it slowed, a parachute opened,
+and it began to sink, measuring everything
+
+35
+00:02:09,701 --> 00:02:10,287
+around it.
+
+36
+00:02:11,987 --> 00:02:16,662
+At the very top of the atmosphere, the
+pressure is only a tenth of what you feel
+
+37
+00:02:16,662 --> 00:02:20,927
+at sea level, and the temperature is minus
+one hundred and sixty degrees.
+
+38
+00:02:21,347 --> 00:02:26,700
+A little lower, at the same pressure as
+the air around you right now, it's still
+
+39
+00:02:26,700 --> 00:02:28,574
+minus one hundred and eight.
+
+40
+00:02:28,994 --> 00:02:34,069
+Jupiter's weather happens in three layers
+of cloud, about seventy-one kilometres
+
+41
+00:02:34,069 --> 00:02:35,021
+thick in total.
+
+42
+00:02:35,441 --> 00:02:41,037
+The top layer is probably ammonia ice, the
+bright white bands you see from space.
+
+43
+00:02:41,457 --> 00:02:44,744
+Deeper down are clouds of water, and they
+make lightning.
+
+44
+00:02:45,164 --> 00:02:49,898
+Juno would later find something stranger
+in those storms: lightning flashing high
+
+45
+00:02:49,898 --> 00:02:52,761
+up, where it should be too cold for liquid
+water.
+
+46
+00:02:53,181 --> 00:02:58,232
+The likely explanation is hail made of
+ammonia and water slush, nicknamed
+
+47
+00:02:58,232 --> 00:03:00,792
+mushballs, falling out of the storms.
+
+48
+00:03:01,212 --> 00:03:05,002
+The Galileo probe saw less of all this
+than anyone expected.
+
+49
+00:03:05,422 --> 00:03:11,311
+Less water, less lightning, and only half
+the helium scientists had predicted near
+
+50
+00:03:11,311 --> 00:03:11,886
+the top.
+
+51
+00:03:12,306 --> 00:03:15,274
+Years later, Juno helped explain why.
+
+52
+00:03:15,694 --> 00:03:21,447
+The probe had most likely fallen into an
+unusually dry spot, a desert patch in
+
+53
+00:03:21,447 --> 00:03:22,479
+Jupiter's sky.
+
+54
+00:03:24,179 --> 00:03:26,829
+Fifty-eight minutes in, the science data
+stopped.
+
+55
+00:03:27,249 --> 00:03:31,556
+At sixty-one minutes, the transmitter
+failed, about a hundred and eighty
+
+56
+00:03:31,556 --> 00:03:36,163
+kilometres below the point where it
+entered, at nearly twenty-three times the
+
+57
+00:03:36,163 --> 00:03:37,479
+pressure at sea level.
+
+58
+00:03:37,899 --> 00:03:40,644
+Whatever was left of it kept sinking into
+the dark.
+
+59
+00:03:41,064 --> 00:03:43,857
+From here on down, no machine has ever
+gone.
+
+60
+00:03:45,557 --> 00:03:49,280
+To follow it further, we need a different
+kind of explorer.
+
+61
+00:03:49,700 --> 00:03:55,439
+In 2016, NASA's Juno spacecraft began
+looping over Jupiter's poles, measuring
+
+62
+00:03:55,439 --> 00:04:01,550
+the planet from the outside: its gravity,
+its magnetism, and microwaves glowing up
+
+63
+00:04:01,550 --> 00:04:03,562
+from deep below the clouds.
+
+64
+00:04:03,982 --> 00:04:07,292
+And it found that the weather doesn't stop
+at the clouds.
+
+65
+00:04:07,712 --> 00:04:12,910
+The famous stripes are jet streams, and
+they reach about three thousand kilometres
+
+66
+00:04:12,910 --> 00:04:13,227
+down.
+
+67
+00:04:13,647 --> 00:04:19,155
+The Great Red Spot, a storm twice as wide
+as Earth, has roots between three hundred
+
+68
+00:04:19,155 --> 00:04:22,008
+and fifty and five hundred kilometres
+deep.
+
+69
+00:04:22,428 --> 00:04:27,709
+A storm wider than our planet, with roots
+so deep that the probe's entire descent
+
+70
+00:04:27,709 --> 00:04:29,535
+would fit inside them twice.
+
+71
+00:04:31,235 --> 00:04:34,098
+Keep falling, and the pressure keeps
+rising.
+
+72
+00:04:34,518 --> 00:04:39,770
+Hydrogen, the gas that makes up almost
+ninety percent of Jupiter, is squeezed so
+
+73
+00:04:39,770 --> 00:04:41,936
+hard that it turns into a liquid.
+
+74
+00:04:42,356 --> 00:04:45,122
+There is no clear surface to splash into.
+
+75
+00:04:45,542 --> 00:04:50,221
+The gas just gets denser and hotter until
+you are no longer falling through air.
+
+76
+00:04:50,641 --> 00:04:52,752
+You are sinking through an ocean.
+
+77
+00:04:53,172 --> 00:04:57,429
+And perhaps halfway to the centre,
+something even stranger happens.
+
+78
+00:04:57,849 --> 00:05:02,181
+The pressure becomes so great that
+electrons are squeezed off the hydrogen
+
+79
+00:05:02,181 --> 00:05:02,532
+atoms.
+
+80
+00:05:02,952 --> 00:05:06,112
+The liquid starts to conduct electricity,
+like a metal.
+
+81
+00:05:07,812 --> 00:05:11,917
+This is the answer to the danger at the
+start of our journey.
+
+82
+00:05:12,337 --> 00:05:17,641
+An ocean of liquid metal, churning inside
+a planet that spins once every ten hours,
+
+83
+00:05:17,641 --> 00:05:19,303
+works like a giant dynamo.
+
+84
+00:05:19,723 --> 00:05:25,406
+It generates a magnetic field sixteen to
+fifty-four times as powerful as Earth's.
+
+85
+00:05:25,826 --> 00:05:30,212
+That's the field that trapped the
+radiation the probe flew through on its
+
+86
+00:05:30,212 --> 00:05:30,633
+way in.
+
+87
+00:05:31,053 --> 00:05:33,193
+Juno mapped it, and it's lumpy.
+
+88
+00:05:33,613 --> 00:05:38,788
+Near the equator sits an intense patch
+scientists call the Great Blue Spot, and
+
+89
+00:05:38,788 --> 00:05:43,045
+it is slowly drifting, dragged around by
+the planet's deep winds.
+
+90
+00:05:44,745 --> 00:05:46,293
+And at the very centre?
+
+91
+00:05:46,713 --> 00:05:51,334
+For decades, the diagrams showed a compact
+ball of rock and ice.
+
+92
+00:05:51,754 --> 00:05:54,559
+Juno's gravity measurements found
+something else.
+
+93
+00:05:54,979 --> 00:05:58,516
+The core looks much larger than expected,
+and not solid.
+
+94
+00:05:58,936 --> 00:06:04,256
+Partly dissolved, its heavy elements
+smeared out into the metallic hydrogen
+
+95
+00:06:04,256 --> 00:06:04,965
+around it.
+
+96
+00:06:05,385 --> 00:06:10,175
+In some models, that fuzzy core stretches
+more than halfway from the centre to the
+
+97
+00:06:10,175 --> 00:06:10,817
+cloud tops.
+
+98
+00:06:11,237 --> 00:06:14,339
+How does a planet end up with a core like
+that?
+
+99
+00:06:14,759 --> 00:06:16,589
+One idea is a collision.
+
+100
+00:06:17,009 --> 00:06:22,004
+Early in Jupiter's history, a young planet
+about ten times the mass of Earth may have
+
+101
+00:06:22,004 --> 00:06:26,528
+hit it head-on, hard enough to shatter the
+original core and stir it outward.
+
+102
+00:06:26,948 --> 00:06:28,261
+It's a hypothesis.
+
+103
+00:06:28,681 --> 00:06:29,948
+Nobody knows yet.
+
+104
+00:06:30,368 --> 00:06:35,177
+But if it's right, the heart of the
+biggest planet in the solar system still
+
+105
+00:06:35,177 --> 00:06:38,340
+carries the scar of a crash billions of
+years old.
+
+106
+00:06:40,040 --> 00:06:44,567
+Back at the top of the clouds, those
+fifty-eight minutes of data still matter.
+
+107
+00:06:44,987 --> 00:06:49,991
+Everything below that point, we know only
+from measurements taken from far outside.
+
+108
+00:06:50,411 --> 00:06:53,564
+Jupiter isn't a ball of gas with a rock in
+the middle.
+
+109
+00:06:53,984 --> 00:06:58,917
+It's a planet with storms rooted hundreds
+of kilometres deep, an ocean of liquid
+
+110
+00:06:58,917 --> 00:07:01,199
+metal, and a core that never settled.
+
+111
+00:07:01,619 --> 00:07:05,965
+And our first real look inside it came
+from a little machine that fell in, and
+
+112
+00:07:05,965 --> 00:07:06,857
+never came back.
+
+113
+00:07:07,277 --> 00:07:12,850
+If you want more stories like this, told
+with real images and real numbers,
+
+114
+00:07:12,850 --> 00:07:13,593
+subscribe.
+
+115
+00:07:14,013 --> 00:07:16,380
+Every source is in the description.
