@@ -204,14 +204,29 @@ def render(cam_r: float, cam_az: float, cam_el: float, w: int, h: int, fov: floa
         # background for escaped rays not blocked by the disk
         esc = ~hit & ~captured[bi] & np.isfinite(phi_esc[bi])
         if esc.any():
-            pe = phi_esc[bi][esc]
+            # interpolate the escape angle between neighbouring impact-parameter bins (no banding in the stars)
+            fb = (bm[esc] - b_grid[0]) / (b_grid[1] - b_grid[0])
+            i0 = np.clip(np.floor(fb).astype(int), 0, n_b - 2)
+            ff = np.clip(fb - i0, 0, 1)
+            p0, p1 = phi_esc[i0], phi_esc[i0 + 1]
+            pe = np.where(np.isfinite(p0) & np.isfinite(p1), p0 * (1 - ff) + p1 * ff, phi_esc[bi][esc])
+            # far from the hole use the smooth weak-field deflection (4/b + 15π/4b²) instead of the table
+            be = bm[esc]
+            ca = cosa[m][esc] if cosa[m].ndim == 1 else cosa[m][esc]
+            theta_d = np.arctan2(np.sqrt(np.clip(1 - ca ** 2, 0, 1)), -ca)
+            weak = theta_d + 4.0 / be + 15 * math.pi / (4 * be ** 2)
+            blend = np.clip((be - 25.0) / 15.0, 0, 1)
+            pe = pe * (1 - blend) + weak * blend
             dir_out = np.cos(pe)[:, None] * e1[None, :] + np.sin(pe)[:, None] * e2m[esc]
             lon = (np.arctan2(dir_out[:, 0], dir_out[:, 2]) / (2 * math.pi) + 0.5 + star_rot) % 1.0
             lat = np.arcsin(np.clip(dir_out[:, 1], -1, 1)) / math.pi + 0.5
             tex = _star_tex()
             th, tw = tex.shape[:2]
-            col[esc] += tex[np.clip(((1 - lat) * (th - 1)).astype(int), 0, th - 1),
-                            np.clip((lon * (tw - 1)).astype(int), 0, tw - 1)] * star_gain
+            yf, xf = (1 - lat) * (th - 1), lon * (tw - 1)
+            y0, x0 = np.clip(yf.astype(int), 0, th - 2), np.clip(xf.astype(int), 0, tw - 2)
+            fy, fx = (yf - y0)[:, None], (xf - x0)[:, None]
+            col[esc] += ((tex[y0, x0] * (1 - fx) + tex[y0, x0 + 1] * fx) * (1 - fy) +
+                         (tex[y0 + 1, x0] * (1 - fx) + tex[y0 + 1, x0 + 1] * fx) * fy) * star_gain
         out[m] = col
     return out
 

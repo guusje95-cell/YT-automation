@@ -585,3 +585,57 @@ def voice_envelope(wav_path, fps: int) -> np.ndarray:
     n = len(x) // hop
     rms = np.sqrt((x[: n * hop].reshape(n, hop) ** 2).mean(1))
     return np.clip(rms / (np.percentile(rms, 98) + 1e-9), 0, 1).astype(np.float32)
+
+
+
+# ----------------------------------------------------------------- scale: event horizon vs the Solar System
+def horizon_scale_beat(duration: float, horizon_au: float = 1300.0, title: str = "",
+                       orbits=(("Earth", 1.0), ("Jupiter", 5.2), ("Neptune", 30.1)),
+                       source_label: str = ""):
+    """Zoom out from Earth's orbit until the black hole's event horizon (radius `horizon_au`) fills the frame.
+    Log-scaled camera so the move feels steady; labels fade in as each orbit comes into view."""
+    cx, cy = W // 2, H // 2
+    bg = (fr.starfield(11).astype(np.float32) * 0.5).astype(np.uint8)
+    labels = {n: fr.text_layer(n, "medium", 26, DIM, 0, 0, anchor="lm") for n, _ in orbits}
+    hz_label = fr.text_layer("Event horizon", "semibold", 34, AMBER, 0, 0, anchor="mm")
+    t_layer = place(tracked(title.upper(), "semibold", 36, TEXT, 0.22), W // 2, int(H * 0.09), "mm") if title else None
+    src = fr.text_layer(source_label, "regular", 22, DIM, W - 36, H - 30, anchor="rb") if source_label else None
+    r0, r1 = 1.6, horizon_au * 1.25          # visible half-height in AU at start / end
+
+    def render(t):
+        u = ease(t / duration)
+        half = math.exp(math.log(r0) + (math.log(r1) - math.log(r0)) * u)
+        px_per_au = (H * 0.45) / half
+        f = bg.copy()
+        # horizon: black disk with a thin amber rim and a faint glow
+        rh = horizon_au * px_per_au
+        if rh < 4 * W:
+            glow = np.zeros((H, W), np.float32)
+            cv2.circle(glow, (cx, cy), int(rh), 1.0, int(max(2, rh * 0.04)), cv2.LINE_AA)
+            glow = cv2.GaussianBlur(glow, (0, 0), max(rh * 0.03, 2))
+            f = np.clip(f.astype(np.float32) + glow[..., None] * np.array(AMBER, np.float32) * 0.6, 0, 255).astype(np.uint8)
+            cv2.circle(f, (cx, cy), int(rh), (6, 6, 8), -1, cv2.LINE_AA)
+            cv2.circle(f, (cx, cy), int(rh), AMBER, 2, cv2.LINE_AA)
+            a = min(1.0, max((rh - 60) / 200, 0))
+            hz_label.x, hz_label.y = cx - hz_label.rgb.shape[1] // 2, int(cy - min(rh, H * 0.42) + 40) - hz_label.rgb.shape[0] // 2
+            hz_label.draw(f, a)
+        # planetary orbits (drawn on top of the horizon: they all fit inside it)
+        for name, au in orbits:
+            ro = au * px_per_au
+            if ro < 1.5:
+                continue
+            a = min(1.0, (ro - 1.5) / 30) * min(1.0, max(0.0, 1.2 - ro / (W * 0.9)))
+            if a <= 0:
+                continue
+            col = tuple(int(c * a + 20 * (1 - a)) for c in (200, 210, 230))
+            cv2.circle(f, (cx, cy), int(ro), col, 1, cv2.LINE_AA)
+            lab = labels[name]
+            lab.x, lab.y = int(cx + ro * 0.707) + 8, int(cy - ro * 0.707) - lab.rgb.shape[0] // 2
+            lab.draw(f, a)
+        cv2.circle(f, (cx, cy), 3, (255, 230, 170), -1, cv2.LINE_AA)   # the Sun at the centre
+        if t_layer:
+            t_layer.draw(f, fr.fade_window(t, 0.3, duration, 0.5))
+        if src:
+            src.draw(f, 0.8)
+        return f
+    return render

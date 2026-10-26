@@ -152,8 +152,10 @@ def approach(duration, planet="jupiter", dist=(9.0, 2.2), az=(0.5, 0.1), el=(0.2
     return orbit(duration, planet, dist, az, el, fov, spin=(0.3, 0.45), light=light)
 
 
-def starfield(duration, rot=(0.0, 0.06), fov=50, look=(0.3, 0.1, -1.0), streak=False, **_):
-    """Deep space; optional probe streak (bright head + plasma trail) crossing the frame."""
+def starfield(duration, rot=(0.0, 0.06), fov=50, look=(0.3, 0.1, -1.0), streak=False, marker=False, zoom=(1.0, 1.0),
+              **_):
+    """Deep space; optional probe streak crossing the frame, or `marker`: one faint blue-violet dot at the
+    centre, found by a pulsing ring (an old photographic-plate discovery), with an optional slow zoom in."""
     def render(t):
         u = t / duration
         sc = r3.Scene(bodies=[], sun_dir=(0.0, -1.0, 0.0), bg_rotation=rot[0] + (rot[1] - rot[0]) * u,
@@ -162,8 +164,28 @@ def starfield(duration, rot=(0.0, 0.06), fov=50, look=(0.3, 0.1, -1.0), streak=F
         f = r3.render(sc, cam, W, H)
         if streak:
             f = _probe_streak(f, u)
+        if marker:
+            f = _blue_dot(f, t, duration, zoom[0] + (zoom[1] - zoom[0]) * _smooth(u))
         return _post(f, t, bloom=0.25)
     return render
+
+
+def _blue_dot(f, t, duration, z=1.0):
+    if z != 1.0:  # zoom toward the centre
+        M = cv2.getRotationMatrix2D((W / 2, H / 2), 0, z)
+        f = cv2.warpAffine(f, M, (W, H), borderMode=cv2.BORDER_REFLECT)
+    f = f.astype(np.float32)
+    dot = np.zeros((H, W), np.float32)
+    cv2.circle(dot, (W // 2, H // 2), 2, 1.0, -1, cv2.LINE_AA)
+    glow = cv2.GaussianBlur(dot, (0, 0), 3) * 18 + dot
+    f += glow[..., None] * np.array([150, 170, 255], np.float32)
+    a = min(1.0, max(t - 0.8, 0) / 0.6)
+    pulse = 0.6 + 0.4 * math.sin(t * 3.0)
+    ring = np.zeros((H, W, 3), np.float32)
+    rad = int(46 + 10 * math.sin(t * 3.0))
+    cv2.circle(ring, (W // 2, H // 2), rad, (255, 176, 59), 2, cv2.LINE_AA)
+    f += ring * a * pulse
+    return np.clip(f, 0, 255).astype(np.uint8)
 
 
 def _probe_streak(f, u, start=(0.15, 0.25), end=(0.75, 0.62), hot=True):
@@ -639,3 +661,27 @@ def description_credits(beats: list[dict]) -> list[str]:
         c, page = _junocam_credit(s)
         out.append(f"{c} (used as texture/backdrop in rendered visualizations) — {page}")
     return out
+
+
+# ----------------------------------------------------------------- black holes (Schwarzschild ray tracing)
+def black_hole(duration, dist=(60.0, 40.0), az=(0.3, 0.5), el=(6.0, 4.0), fov=(38.0, 40.0), look=((0.0, 0.0), (0.0, 0.0)),
+               r_out=20.0, exposure=7.0, scale=0.6, spin_speed=1.0, roll=(0.0, 0.0), disk=True, **_):
+    """Camera around a non-rotating black hole (distances in units of GM/c², horizon radius = 2). Rendered at
+    `scale` x 1080p and upscaled (the disk is smooth; this keeps a frame around 2-3 s)."""
+    from ytauto.visuals import blackhole as bhr
+    w, h = int(W * scale) // 2 * 2, int(H * scale) // 2 * 2
+
+    def render(t):
+        u = _smooth(t / duration)
+        mix = lambda p: p[0] + (p[1] - p[0]) * u
+        lo = (mix((look[0][0], look[1][0])), mix((look[0][1], look[1][1])))
+        img = bhr.render(mix(dist), mix(az), math.radians(mix(el)), w, h, fov=mix(fov), t=t, look_offset=lo,
+                         r_out=r_out, spin_speed=spin_speed, roll=math.radians(mix(roll)), disk=disk)
+        f = bhr.to_srgb(img, exposure)
+        if (w, h) != (W, H):
+            f = cv2.resize(f, (W, H), interpolation=cv2.INTER_CUBIC)
+        return _post(f, t, bloom=0.55, grain=3.0)
+    return render
+
+
+PRESETS["black_hole"] = black_hole

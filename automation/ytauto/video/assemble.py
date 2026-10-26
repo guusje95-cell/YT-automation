@@ -46,6 +46,10 @@ def _renderer(beat: dict, dur: float, assets: dict, sources: dict, ctx: dict | N
         return ed.black_beat(dur, ember=beat.get("ember", True))
     if t == "profile":
         return ed.profile_beat(dur)
+    if t == "horizon_scale":
+        src = sources.get(beat.get("source"), {})
+        return ed.horizon_scale_beat(dur, beat.get("horizon_au", 1300.0), beat.get("title", ""),
+                                     source_label=f"Source: {src['publisher']}" if src else "")
     if t == "fact_list":
         src = sources.get(beat.get("source"), {})
         label = beat.get("source_label") or (f"Source: {src['publisher']}" if src else "")

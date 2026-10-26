@@ -56,7 +56,8 @@ def check_script(spec) -> list[tuple]:
     unbacked = []
     for sc in spec.scenes:
         claims_text = " ".join(c["text"] for c in sc.get("claims", [])).replace(",", "")
-        for num in re.findall(r"\b\d[\d,.]*\b", plain(sc["narration"])):
+        text = re.sub(r"\b[A-Z][A-Za-z]*\s?\d+\b", " ", plain(sc["narration"]))  # designations like "TON 618"
+        for num in re.findall(r"\b\d[\d,.]*\b", text):
             n = num.rstrip(".").replace(",", "")
             if n not in claims_text:
                 unbacked.append(f"{sc['id']}:{num}")

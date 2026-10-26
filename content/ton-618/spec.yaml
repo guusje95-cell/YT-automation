@@ -1,0 +1,290 @@
+id: ton-618
+format: story
+pillar: extreme-objects
+status: draft
+description_summary: >
+  Based on a true story: in 1957 two astronomers in Mexico catalogued a faint blue dot as number 618. It turned out
+  to be one of the brightest objects in the universe, powered by the heaviest black hole ever weighed. Jonah and Iris
+  are a dramatization; every fact about TON 618 and black holes in this film is real and sourced below.
+title_options:
+  - "TON 618: The Black Hole That Shouldn't Exist (Based on a True Story)"
+  - "Falling Into the Biggest Black Hole in the Universe"
+  - "What Happens If You Fall Into TON 618"
+thumbnail:
+  style: cinematic
+  variants:
+    - {text: "TOO BIG TO EXIST", shot: black_hole, params: {dist: [45, 45], el: [6, 6], fov: [38, 38]}, at: 0.5, side: left}
+    - {text: "NUMBER 618", shot: starfield, params: {marker: true, fov: 30}, at: 0.8, side: left}
+    - {text: "HE NEVER CAME BACK", shot: black_hole, params: {dist: [28, 28], el: [2, 2], fov: [62, 62], look: [[-12, 0], [-12, 0]]}, at: 0.5, side: left}
+voice:
+  provider: chatterbox
+  ref: automation/assets/voice/ref_narrator.wav
+  exaggeration: 0.55
+  cfg_weight: 0.35
+  temperature: 0.75
+  sentence_gap_s: 0.36
+  speaker_gap_s: 0.35
+  scene_gap_s: 1.5
+voices:
+  jonah: {ref: automation/assets/voice/ref_jonah.wav, exaggeration: 0.7, cfg_weight: 0.4, temperature: 0.8, radio: true}
+  iris: {ref: automation/assets/voice/ref_iris.wav, exaggeration: 0.65, cfg_weight: 0.4, temperature: 0.8, radio: true}
+characters:
+  jonah: {name: "JONAH HALE", tag: "VESPER POD · DESCENT LOG"}
+  iris: {name: "IRIS CALDER", tag: "RELAY SHIP"}
+hud_mission: "VESPER POD  ·  TELEMETRY"
+emotions:
+  calm: {exaggeration: 0.6, cfg_weight: 0.38, temperature: 0.8}
+  tense: {exaggeration: 0.9, cfg_weight: 0.3, temperature: 0.85}
+  panic: {exaggeration: 1.3, cfg_weight: 0.25, temperature: 0.9}
+  awe: {exaggeration: 0.8, cfg_weight: 0.28, temperature: 0.8}
+  weak: {exaggeration: 0.45, cfg_weight: 0.3, temperature: 0.7}
+  hushed: {exaggeration: 0.45, cfg_weight: 0.3, temperature: 0.7}
+  dramatic: {exaggeration: 0.75, cfg_weight: 0.3, temperature: 0.8}
+music:
+  duck_db: -6
+  cues:
+    - {scene: cold_open, track: zero-project-the-passage, offset: 0, gain_db: -10}
+    - {scene: dot, track: zero-project-the-journey-instrumental, offset: 0, gain_db: -12}
+    - {scene: glare, track: zero-project-the-wind-of-oblivion, offset: 0, gain_db: -12}
+    - {scene: edge, track: zero-project-through-the-looking-glass, offset: 0, gain_db: -12}
+    - {scene: myth, track: zero-project-the-secret-book-of-dreams, offset: 45, gain_db: -11}
+    - {scene: choice, track: zero-project-the-dark-ages, offset: 0, gain_db: -11}
+    - {scene: outside, track: silence}
+    - {scene: answer, track: zero-project-the-journey-instrumental, offset: 175, gain_db: -12}
+    - {scene: ending, track: zero-project-the-passage, offset: 150, gain_db: -10}
+sfx:
+  gain_db: -6
+  duck_db: -5
+lexicon: {"TON 618": "Ton six eighteen"}
+time_sensitive: ["Black hole mass estimates for TON 618 vary between studies (about 40 to 66 billion solar masses)."]
+tags: [ton 618, biggest black hole, black hole, supermassive black hole, quasar, falling into a black hole, event horizon, space documentary, astronomy, based on a true story]
+
+sources:
+  - id: wiki_ton618
+    title: "TON 618 (discovery history; citing Iriarte & Chavira 1957, Tonantzintla catalogue; Ulrich 1976)"
+    publisher: Wikipedia
+    url: https://en.wikipedia.org/wiki/TON_618
+    accessed: 2026-10-26
+  - id: guinness_ton618
+    title: "Heaviest black hole (TON 618)"
+    publisher: Guinness World Records
+    url: https://www.guinnessworldrecords.com/world-records/76251-heaviest-black-hole
+    accessed: 2026-10-26
+  - id: ge_2019
+    title: "Ge et al. 2019, C IV-based black-hole masses for high-redshift quasars (TON 618 ≈ 4.07×10^10 M☉), Astronomical Journal 157:148"
+    publisher: Astronomical Journal (via ADS)
+    url: https://ui.adsabs.harvard.edu/abs/2019AJ....157..148G/abstract
+    accessed: 2026-10-26
+  - id: nasa_earth_facts
+    title: "Earth: Facts"
+    publisher: NASA Science
+    url: https://science.nasa.gov/earth/facts/
+    accessed: 2026-10-26
+  - id: nasa_universe
+    title: "Universe overview (age ~13.8 billion years)"
+    publisher: NASA Science
+    url: https://science.nasa.gov/universe/overview/
+    accessed: 2026-10-26
+  - id: astronomy_quasar
+    title: "Is there a quasar behind every black hole? (Astronomy, July 2019)"
+    publisher: Astronomy Magazine
+    url: https://www.astronomy.com/science/is-there-a-quasar-behind-every-black-hole-and-a-black-hole-behind-every-quasar-are-these-different-faces-of-the-same-object/
+    accessed: 2026-10-26
+  - id: nasa_svs_plunge
+    title: "NASA Black Hole Visualization Takes Viewers Beyond the Brink (Schnittman & Powell, 2024)"
+    publisher: NASA Goddard Scientific Visualization Studio
+    url: https://svs.gsfc.nasa.gov/14576
+    accessed: 2026-10-26
+  - id: astronomy_observer
+    title: "Ask Astro: Can an observer ever see something fall into a black hole?"
+    publisher: Astronomy Magazine
+    url: https://astronomy.com/science/ask-astro-can-an-observer-ever-see-something-fall-into-a-black-hole
+    accessed: 2026-10-26
+  - id: chandra_uhz1
+    title: "UHZ1: NASA Telescopes Discover Record-Breaking Black Hole (2023)"
+    publisher: NASA Chandra X-ray Center
+    url: https://chandra.si.edu/photo/2023/uhz1/
+    accessed: 2026-10-26
+
+assets:
+  - {id: quasar_art, provider: nasa_images, nasa_id: PIA16114}
+  - {id: m87_eht, provider: nasa_images, nasa_id: PIA23122}
+  - {id: jets_art, provider: nasa_images, nasa_id: PIA13168}
+  - {id: svs_flyby, provider: nasa_svs, svs_id: 14576, kind: video, file_hint: "14576_BH_FlyBy_Zoom2_1920x1080_30.mp4",
+     credit: "NASA's Goddard Space Flight Center / J. Schnittman and B. Powell"}
+  - {id: svs_plunge, provider: nasa_svs, svs_id: 14576, kind: video, file_hint: "14576_BH_Plunge_Zoom2b_1080.mp4",
+     credit: "NASA's Goddard Space Flight Center / J. Schnittman and B. Powell"}
+
+scenes:
+  - id: cold_open
+    chapter: null
+    narration: |
+      [hushed]: In 1957, two astronomers in Mexico photographed a faint blue dot. They gave it a number, six hundred and eighteen, and moved on.
+      [dramatic]: Years later, astronomers realised what they had actually found. One of the brightest objects in the universe. And at its centre, the heaviest black hole ever weighed.
+      [hushed]: Nothing should be able to grow that big. Not that early. Not that fast.
+      JONAH[tense]: Relay, this is Jonah. I can see it. Even from here, it's blinding.
+      IRIS[calm]: We see you, Jonah. Take it slow. We're right behind you.
+      [hushed]: These are the recordings they sent back.
+    claims:
+      - {text: "TON 618 catalogued in 1957 (Tonantzintla, Mexico; Iriarte & Chavira) as a faint blue object; identified as a quasar after 1970", sources: [wiki_ton618]}
+      - {text: "Heaviest black hole (Guinness): ~66 billion solar masses", sources: [guinness_ton618]}
+      - {text: "Light left ~10.8 billion years ago, when the universe was ~3 billion years old (derived from 13.8 by)", sources: [guinness_ton618, nasa_universe]}
+    beats:
+      - {type: r3d, shot: starfield, params: {marker: true, zoom: [1.0, 1.8], fov: 30}, sentences: 2, note: ["BASED ON A TRUE STORY"], note_big: true,
+         hud: {mission: "TONANTZINTLA OBSERVATORY  ·  1957", status: "PLATE 618"}}
+      - {type: r3d, shot: black_hole, params: {dist: [400, 160], el: [14, 9], fov: [16, 24]}, sentences: 2}
+      - {type: r3d, shot: black_hole, params: {dist: [70, 55], el: [4, 6], fov: [40, 36], az: [0.6, 0.4]}, sentences: 1.4}
+      - {type: r3d, shot: black_hole, params: {dist: [120, 100], el: [8, 7], fov: [30, 28]}, sentences: 1, pov: true, heartbeat: 0.5,
+         hud: {distance: [30, 25, "ly"], status: "QUASAR GLARE"}}
+      - {type: r3d, shot: black_hole, params: {dist: [110, 95], el: [8, 7], fov: [28, 27], az: [0.35, 0.3]}, sentences: 1.4, pov: true,
+         hud: {status: "RELAY LINK STABLE"}}
+      - {type: r3d, shot: black_hole, params: {dist: [60, 45], el: [6, 5], fov: [38, 38]}, title: "TON 618", sentences: 1.2}
+
+  - id: dot
+    chapter: "The blue dot"
+    narration: |
+      TON 618 is so far away that its light left it ten point eight billion years ago.
+      Earth is only about four and a half billion years old. The light we see from it is older than our planet.
+      When that light set out, the universe was only about three billion years old.
+      And already, this black hole weighed somewhere between forty and sixty-six billion Suns.
+      [dramatic]: That's the mystery. There shouldn't have been enough time.
+      JONAH[tense]: Iris, my instruments can't even fit the numbers. What is this thing?
+    claims:
+      - {text: "Distance: light-travel ~10.8 billion light years", sources: [guinness_ton618]}
+      - {text: "Earth formed ~4.5 billion years ago", sources: [nasa_earth_facts]}
+      - {text: "Universe ~13.8 billion years old; 13.8 - 10.8 ≈ 3 (derived)", sources: [nasa_universe]}
+      - {text: "Mass estimates ~40.7 billion (Ge et al. 2019) to ~66 billion (Guinness) solar masses", sources: [ge_2019, guinness_ton618]}
+    beats:
+      - {type: r3d, shot: starfield, params: {marker: true, zoom: [1.8, 3.0], fov: 30}, sentences: 1, hud: {distance: [10.8, 10.8, "billion ly"], status: "LIGHT TRAVEL TIME"}}
+      - {type: fact, big: "10.8 billion years", small: "how long its light has travelled", source: guinness_ton618, sentences: 1}
+      - {type: r3d, shot: orbit, params: {planet: earth, dist: [3.2, 2.6], az: [0.3, 0.5], el: [0.15, 0.1], light: [55, 15]}, sentences: 1, label: "Earth: about 4.5 billion years old"}
+      - {type: r3d, shot: black_hole, params: {dist: [200, 120], el: [10, 8], fov: [22, 26], az: [1.2, 1.0]}, sentences: 1}
+      - {type: fact, big: "40–66 billion", small: "times the mass of the Sun", source: guinness_ton618, sentences: 1}
+      - {type: r3d, shot: black_hole, params: {dist: [90, 80], el: [3, 3], fov: [32, 30], az: [0.1, 0.2]}, sentences: 1, pov: true, shake: 0.2, heartbeat: 0.6,
+         hud: {status: "MASS: OUT OF RANGE"}}
+
+  - id: glare
+    chapter: "The glare"
+    narration: |
+      JONAH[awe]: Iris, the disk is brighter than anything I've ever seen. I can't look straight at it.
+      TON 618 is a quasar. Gas spiralling into the black hole forms a disk that heats up and shines so brightly that it drowns out the light of its entire galaxy.
+      That's why two astronomers could see it at all, from ten billion light years away.
+      IRIS[tense]: Your hull temperature is climbing. Pull back from the disk, Jonah.
+      JONAH[tense]: Pulling back. Going over the top of it instead.
+    claims:
+      - {text: "Quasar: infalling matter forms a heated disk that outshines its host galaxy", sources: [astronomy_quasar]}
+      - {text: "TON 618 is among the most luminous quasars known", sources: [wiki_ton618]}
+    beats:
+      - {type: r3d, shot: black_hole, params: {dist: [48, 44], el: [2, 3], fov: [48, 46], look: [[-14, 0], [-10, 0]]}, sentences: 1, pov: true, shake: 0.3,
+         hud: {hull: [100, 96, "%"], status: "OPTICAL SENSORS SATURATED"}}
+      - {type: image, asset: quasar_art, motion: in, sentences: 1, label: "A quasar (artist's concept)"}
+      - {type: r3d, shot: black_hole, params: {dist: [70, 60], el: [5, 8], fov: [36, 34], az: [0.9, 0.6]}, sentences: 1}
+      - {type: r3d, shot: black_hole, params: {dist: [44, 40], el: [3, 5], fov: [46, 44]}, sentences: 1, pov: true, heartbeat: 1.0, shake: 0.6,
+         hud: {hull: [96, 88, "%"], temp: [800, 1400, "°C"], status: "HULL HEATING"}}
+      - {type: r3d, shot: black_hole, params: {dist: [40, 34], el: [5, 28], fov: [46, 52], az: [0.3, 0.4]}, sentences: 1, pov: true,
+         hud: {hull: [88, 87, "%"], status: "CLIMBING OVER THE DISK"}}
+
+  - id: edge
+    chapter: "The edge"
+    narration: |
+      Now the black hole itself.
+      Its event horizon, the point of no return, measures about two thousand six hundred times the distance from the Earth to the Sun, from one side to the other.
+      [dramatic]: You could fit every planet in our solar system inside it more than forty times over.
+      Our own galaxy's black hole weighs about four million Suns. TON 618 is at least ten thousand times heavier.
+      JONAH[awe]: It doesn't look like an object anymore. It looks like a hole in the universe.
+    claims:
+      - {text: "Event horizon ~2600 AU across; swallow all planets of the solar system more than 40 times over", sources: [guinness_ton618]}
+      - {text: "Milky Way's black hole ~4.3 million solar masses; 40.7e9/4.3e6 ≈ 9,500 to 66e9/4.3e6 ≈ 15,000 (derived)", sources: [nasa_svs_plunge, ge_2019, guinness_ton618]}
+    beats:
+      - {type: r3d, shot: black_hole, params: {dist: [36, 30], el: [26, 10], fov: [50, 56], az: [0.4, 0.2]}, sentences: 1}
+      - {type: horizon_scale, horizon_au: 1300, title: "TON 618's event horizon", source: guinness_ton618, sentences: 2}
+      - {type: fact, big: "≈2,600 AU", small: "across its event horizon", source: guinness_ton618, sentences: 1}
+      - {type: image, asset: m87_eht, motion: in, sentences: 1, label: "M87, with the first image of a black hole's shadow (Event Horizon Telescope)"}
+      - {type: r3d, shot: black_hole, params: {dist: [30, 26], el: [4, 2], fov: [62, 66], look: [[-10, 0], [-14, 0]]}, sentences: 1.5, pov: true, heartbeat: 0.6,
+         hud: {hull: [87, 86, "%"], distance: [4000, 3300, "AU"], status: "APPROACHING HORIZON"}}
+
+  - id: myth
+    chapter: "The myth"
+    narration: |
+      JONAH[tense]: I'm going closer. Iris, everyone says this is where you get torn apart.
+      For a small black hole, that's true. Its gravity changes so sharply that your feet are pulled far harder than your head, and you'd be stretched apart before you ever reached the edge. Scientists really call it spaghettification.
+      [dramatic]: But TON 618 is so enormous that its gravity changes gently. At the edge, the stretch across a human body is far too small to feel.
+      JONAH[awe]: I don't feel anything. Nothing at all. That's the scariest part.
+      Close to the edge, the light behaves even stranger. The black hole bends light from behind it up and over the top, so you can see parts of the disk that should be hidden.
+      JONAH[awe]: Iris, the sky is folding. I can see the back of the disk, bent over the top of the black hole.
+    claims:
+      - {text: "Smaller black holes have stronger tidal forces near the horizon (spaghettification); for a supermassive black hole, NASA's simulation places spaghettification inside the horizon", sources: [nasa_svs_plunge]}
+      - {text: "Tidal stretch across ~2 m at TON 618's horizon ~ c^2 L / r_s^2 ≈ 5e-12 m/s² (derived from general relativity)", sources: [guinness_ton618]}
+      - {text: "Light from behind the black hole is bent over the top, revealing the far side of the disk", sources: [nasa_svs_plunge]}
+    beats:
+      - {type: r3d, shot: black_hole, params: {dist: [26, 22], el: [3, 2], fov: [64, 70], look: [[-12, 0], [-12, 2]]}, sentences: 1, pov: true, heartbeat: 1.0,
+         hud: {hull: [86, 86, "%"], distance: [3300, 2600, "AU"], status: "TIDAL SENSORS ARMED"}}
+      - {type: video, asset: svs_flyby, from: 4, sentences: 2, label: "NASA supercomputer simulation of a black hole flyby"}
+      - {type: r3d, shot: black_hole, params: {dist: [24, 20], el: [2, 1], fov: [70, 72]}, sentences: 2, pov: true, hud: {hull: [86, 86, "%"], g: [0.0, 0.0, "g"], status: "TIDAL STRESS: NONE"}}
+      - {type: r3d, shot: black_hole, params: {dist: [30, 18], el: [1, 0.5], fov: [66, 80], az: [0.2, 0.6]}, sentences: 1.5}
+      - {type: r3d, shot: black_hole, params: {dist: [16, 12], el: [1.5, 0.6], fov: [80, 90], look: [[0, 6], [0, 8]]}, sentences: 1.5, pov: true, shake: 0.2,
+         hud: {distance: [2000, 1500, "AU"], status: "LIGHT BENDING"}}
+
+  - id: choice
+    chapter: "The choice"
+    narration: |
+      IRIS[tense]: Jonah, you're at the limit. If you cross, there is no coming back. Not even light comes back from there.
+      JONAH[calm]: I know. But someone has to see what's on the other side.
+      JONAH[weak]: Tell everyone the blue dot was worth it.
+      [hushed]: Crossing the event horizon, Jonah feels nothing special. No wall, no flash. For him, time keeps running normally.
+      But nothing he sends can ever reach us again. And at TON 618's size, he would have at most about twelve days before reaching the centre.
+    claims:
+      - {text: "Nothing, not even light, escapes from inside the event horizon", sources: [nasa_svs_plunge]}
+      - {text: "Crossing a supermassive horizon is locally unremarkable; maximum proper time from horizon to singularity = πGM/c³ ≈ 12 days for 66e9 M☉ (derived)", sources: [nasa_svs_plunge, guinness_ton618]}
+    beats:
+      - {type: r3d, shot: black_hole, params: {dist: [12, 10], el: [1, 0.5], fov: [90, 100]}, sentences: 1, pov: true, heartbeat: 1.0, shake: 0.3,
+         hud: {hull: [86, 86, "%"], status: "POINT OF NO RETURN"}}
+      - {type: r3d, shot: black_hole, params: {dist: [10, 9], el: [0.5, 0.3], fov: [100, 104], look: [[8, 0], [10, 0]]}, sentences: 1.5, pov: true, heartbeat: 0.8}
+      - {type: video, asset: svs_plunge, from: 0, sentences: 3, label: "NASA supercomputer simulation: plunging into a black hole"}
+      - {type: fact, big: "≈12 days", small: "the longest anyone could last inside", source: nasa_svs_plunge, sentences: 1}
+      - {type: black, ember: true, sentences: 0.6}
+
+  - id: outside
+    chapter: "What Iris saw"
+    narration: |
+      IRIS[weak]: I watched him the whole time.
+      From the outside, the story looks completely different. Iris never sees Jonah cross.
+      His image turns redder, his signal arrives slower and slower, and he grows dimmer and dimmer.
+      IRIS[weak]: He just stopped. Frozen, right at the edge. And then he faded away.
+      [dramatic]: To the rest of the universe, Jonah never falls in. He is still there, at the edge, fading forever.
+    claims:
+      - {text: "A distant observer sees an infalling object redden and fade, never seeing it cross the horizon", sources: [astronomy_observer]}
+    beats:
+      - {type: r3d, shot: black_hole, params: {dist: [80, 78], el: [5, 5], fov: [30, 30], az: [0.5, 0.48]}, sentences: 1.5, hud: {mission: "RELAY SHIP  ·  TELEMETRY", status: "TRACKING POD"}}
+      - {type: r3d, shot: black_hole, params: {dist: [40, 36], el: [3, 3], fov: [44, 46]}, sentences: 1.5, hud: {mission: "RELAY SHIP  ·  TELEMETRY", status: "POD SIGNAL REDSHIFTING"}}
+      - {type: r3d, shot: black_hole, params: {dist: [36, 34], el: [3, 3], fov: [46, 46], look: [[2, 0], [3, 0]]}, sentences: 1.5, hud: {mission: "RELAY SHIP  ·  TELEMETRY", status: "POD SIGNAL FADING"}}
+      - {type: glitch, text: "POD SIGNAL LOST", sentences: 0.6}
+      - {type: r3d, shot: black_hole, params: {dist: [60, 90], el: [5, 10], fov: [36, 30]}, sentences: 1.5}
+
+  - id: answer
+    chapter: "The answer?"
+    narration: |
+      So how did TON 618 get so big, so early? We still don't know for certain.
+      But in 2023, NASA's Chandra and Webb telescopes found a black hole that seems to have been born huge. Not from a dying star, but from the direct collapse of a giant cloud of gas, just four hundred and seventy million years after the Big Bang.
+      [dramatic]: If giants like TON 618 got a head start like that, the mystery of the blue dot may finally have an answer.
+    claims:
+      - {text: "UHZ1: black hole seen 470 million years after the Big Bang, evidence it was born massive from a collapsing gas cloud (2023)", sources: [chandra_uhz1]}
+    beats:
+      - {type: r3d, shot: starfield, params: {fov: 40, rot: [0.1, 0.16]}, sentences: 1}
+      - {type: image, asset: jets_art, motion: in, sentences: 1.5, label: "A feeding supermassive black hole (artist's concept)"}
+      - {type: fact, big: "470 million years", small: "after the Big Bang: a black hole already born huge", source: chandra_uhz1, sentences: 1}
+      - {type: r3d, shot: black_hole, params: {dist: [140, 100], el: [9, 6], fov: [24, 28], az: [0.8, 0.5]}, sentences: 1.5}
+
+  - id: ending
+    chapter: null
+    narration: |
+      [hushed]: Jonah's journey was imagined. The blue dot was not.
+      In 1957, two astronomers wrote down number six hundred and eighteen, with no idea they had photographed a monster. Every fact about TON 618 in this story is real.
+      If you want to fall into another world with us, subscribe.
+    claims:
+      - {text: "TON 618 catalogued 1957", sources: [wiki_ton618]}
+    beats:
+      - {type: black, ember: false, sentences: 0.4}
+      - {type: r3d, shot: starfield, params: {marker: true, zoom: [3.0, 1.0], fov: 30}, sentences: 2}
+      - {type: r3d, shot: black_hole, params: {dist: [60, 300], el: [6, 14], fov: [38, 18]}, sentences: 1.5}
+      - {type: end, text: "Real images. Real numbers.", sentences: 1}
