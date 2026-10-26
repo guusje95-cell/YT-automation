@@ -519,7 +519,7 @@ FLUID_MODES = {
 }
 
 
-def fluid(duration, mode="liquid", darker=False, seed=5, **_):
+def fluid(duration, mode="liquid", darker=False, seed=5, rain=0.0, **_):
     """Sinking through Jupiter's interior: dense, glowing, slowly churning fluid (domain-warped
     fractal noise), out-of-focus particles streaking upward as we sink. `metallic` adds flickering
     current filaments and a sheen to suggest an electrically conducting liquid. Schematic, not a measurement."""
@@ -533,6 +533,7 @@ def fluid(duration, mode="liquid", darker=False, seed=5, **_):
     yy, xx = np.mgrid[0:lh, 0:lw].astype(np.float32)
     rng = np.random.default_rng(seed)
     parts = rng.uniform(0, 1, (140, 3))
+    rain_pts = rng.uniform(0, 1, (int(220 * rain), 3))
     base_a, glow_a = np.array(base, np.float32), np.array(glow, np.float32)
     heat = np.clip(0.35 + 0.65 * (yy / lh) ** 1.3, 0, 1)   # glow rising from the deep (bottom of frame)
     refl = cv2.BORDER_REFLECT
@@ -568,6 +569,15 @@ def fluid(duration, mode="liquid", darker=False, seed=5, **_):
             tgt = near if pz > 0.7 else far
             cv2.line(tgt, (int(x), int(y)), (int(x), int(y + ln)), [c * a for c in pcol], r_, cv2.LINE_AA)
         f += cv2.GaussianBlur(far, (0, 0), 1.2) + cv2.GaussianBlur(near, (0, 0), 5) * 1.6
+        if rain:  # helium 'rain': bright droplets falling faster than we sink, so they streak downward past us
+            drops = np.zeros((H, W, 3), np.float32)
+            for px, py, pz in rain_pts:
+                y = ((py + t * (0.35 + 0.6 * pz)) % 1.2 - 0.1) * H
+                x = px * W
+                ln = 30 + 120 * pz
+                cv2.line(drops, (int(x), int(y - ln)), (int(x), int(y)), [230 * (0.4 + 0.6 * pz)] * 3,
+                         max(1, int(1 + 3 * pz ** 2)), cv2.LINE_AA)
+            f += cv2.GaussianBlur(drops, (0, 0), 1.5) * 0.9 + cv2.GaussianBlur(drops, (0, 0), 8) * 0.8
         return _post(np.clip(f, 0, 255).astype(np.uint8), t, bloom=0.5, grain=4.0)
     return render
 

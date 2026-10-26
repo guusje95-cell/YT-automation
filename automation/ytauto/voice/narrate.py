@@ -101,7 +101,7 @@ SPEAKER_KEYS = {"ref", "exaggeration", "cfg_weight", "temperature"}
 
 
 def build(spec) -> dict:
-    from ytauto.spec import segments
+    from ytauto.spec import lines
     vcfg = dict(config.get("voice", {}))
     vcfg.update(spec.data.get("voice") or {})
     gaps = {k: vcfg.pop(k) for k in ("sentence_gap_s", "paragraph_gap_s", "scene_gap_s", "speaker_gap_s") if k in vcfg}
@@ -114,6 +114,7 @@ def build(spec) -> dict:
         except ImportError:
             log.warning("faster-whisper not installed: clips are not ASR-checked")
     voices = spec.data.get("voices") or {}
+    emotions = spec.data.get("emotions") or {}
     lexicon = spec.data.get("lexicon") or {}
     cache = spec.build / "tts"
     cache.mkdir(exist_ok=True)
@@ -128,11 +129,15 @@ def build(spec) -> dict:
     for si, sc in enumerate(spec.scenes):
         s_start = t
         sent_out = []
-        sentences = [(who, text) for who, seg in segments(sc["narration"]) for text in tts.split_sentences(seg)]
-        for k, (who, text) in enumerate(sentences):
+        sentences = [(who, text, emo) for who, seg, emo in lines(sc["narration"]) for text in tts.split_sentences(seg)]
+        for k, (who, text, emo) in enumerate(sentences):
             vo = dict(voices.get(who) or {})
             fx = vo.pop("radio", False)
             over = {kk: v for kk, v in vo.items() if kk in SPEAKER_KEYS}
+            if emo:
+                if emo not in emotions:
+                    raise ValueError(f"unknown emotion [{emo}] in scene {sc['id']}")
+                over.update(emotions[emo])
             sig = json.dumps({**vcfg, **over}, sort_keys=True)
             spoken = tts.pronounce(text, lexicon)
             key = hashlib.sha1((sig + "|" + spoken).encode()).hexdigest()[:16]
@@ -156,7 +161,7 @@ def build(spec) -> dict:
             n_clip += 1
             if fx:
                 x = radio(x, sr, seed=n_clip)
-            sent_out.append({"text": text, "who": who, "start": round(t, 3), "end": round(t + len(x) / sr, 3)})
+            sent_out.append({"text": text, "who": who, "emotion": emo, "start": round(t, 3), "end": round(t + len(x) / sr, 3)})
             pieces.append(x)
             t += len(x) / sr
             if k < len(sentences) - 1:

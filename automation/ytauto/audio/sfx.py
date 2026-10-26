@@ -164,6 +164,24 @@ def groan(rng, dur=3.0):
     return _norm(x * env[:, None], 0.45)
 
 
+def heartbeat(dur, bpm=96):
+    """Low double-thump heartbeat for tension (lub-dub)."""
+    n = int(dur * SR)
+    out = np.zeros((n, 2), np.float32)
+    t = np.arange(int(0.25 * SR), dtype=np.float32) / SR
+    thump = (np.sin(2 * np.pi * 48 * t) * np.exp(-t * 22)).astype(np.float32)
+    period = 60.0 / bpm
+    k = 0.0
+    while k < dur:
+        for off, g in ((0.0, 1.0), (0.22, 0.6)):
+            i0 = int((k + off) * SR)
+            i1 = min(i0 + len(thump), n)
+            if i0 < n:
+                out[i0:i1] += (thump[: i1 - i0] * g)[:, None]
+        k += period
+    return _norm(out, 0.5) * _env(n, 0.8, 1.0)
+
+
 def _add(track, clip, at_s, gain=1.0):
     i0 = int(at_s * SR)
     if i0 >= len(track):
@@ -208,6 +226,8 @@ def design(beats: list[dict], total_s: float, seed: int = 11) -> np.ndarray:
             _add(out, boom(rng, 3.5), st + 0.35, 0.8)
         elif typ == "black":
             _add(out, boom(rng, 4.0, 30.0) * 0.3, st + 0.3, 0.6)
+        if b.get("heartbeat"):
+            _add(out, heartbeat(dur + 0.5, 92 + 20 * float(b.get("heartbeat"))), st, 1.0)
         status = (b.get("hud") or {}).get("status")
         if status and status != prev_status:
             _add(out, blip(), st + 0.2, 1.0)

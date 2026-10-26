@@ -18,19 +18,34 @@ BEAT_TYPES = {"image", "video", "title", "fact", "quote", "scale", "chart", "lis
               "r3d", "glitch", "profile", "fact_list", "black"}
 
 
-_SPEAKER = re.compile(r"^\s*([A-Z][A-Z]{1,15}):\s*(.*)$")
+_LINE = re.compile(r"^\s*([A-Z][A-Z]{1,15})?\s*(?:\[([a-z_]+)\])?\s*:\s*(.*)$")
 
 
-def segments(narration: str) -> list[tuple[str, str]]:
-    """Split a scene's narration into (speaker, text) runs. Lines starting with 'NAME:' (capitals) belong to
-    that character; everything else is the narrator. Folded YAML (>) has no line breaks, so it is all narrator."""
-    out: list[tuple[str, str]] = []
+def lines(narration: str) -> list[tuple[str, str, str | None]]:
+    """(speaker, text, emotion) runs. 'MARA: ...', 'MARA[panic]: ...' or '[hushed]: ...' (narrator with an
+    emotion). Untagged lines are the narrator; consecutive lines with the same speaker+emotion are merged.
+    Folded YAML (>) has no line breaks, so it is all narrator."""
+    out: list[tuple[str, str, str | None]] = []
     for line in narration.splitlines():
         line = line.strip()
         if not line:
             continue
-        m = _SPEAKER.match(line)
-        who, text = (m.group(1).lower(), m.group(2)) if m else ("narrator", line)
+        m = _LINE.match(line)
+        if m and (m.group(1) or m.group(2)):
+            who, emo, text = (m.group(1) or "NARRATOR").lower(), m.group(2), m.group(3)
+        else:
+            who, emo, text = "narrator", None, line
+        if out and out[-1][0] == who and out[-1][2] == emo:
+            out[-1] = (who, out[-1][1] + " " + text, emo)
+        else:
+            out.append((who, text, emo))
+    return out
+
+
+def segments(narration: str) -> list[tuple[str, str]]:
+    """(speaker, text) runs, ignoring emotions."""
+    out: list[tuple[str, str]] = []
+    for who, text, _ in lines(narration):
         if out and out[-1][0] == who:
             out[-1] = (who, out[-1][1] + " " + text)
         else:

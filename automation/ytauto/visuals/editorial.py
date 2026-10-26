@@ -78,9 +78,9 @@ def _draw_text(frame, text, xy, kind, size, color, anchor="la", alpha=1.0):
 
 
 # ----------------------------------------------------------------- HUD telemetry
-_KEY_LABELS = {"date": "DATE", "clock": "TIME (UTC)", "speed": "VELOCITY", "temp": "TEMPERATURE", "depth": "DEPTH",
+_KEY_LABELS = {"hull": "HULL INTEGRITY", "date": "DATE", "clock": "TIME (UTC)", "speed": "VELOCITY", "temp": "TEMPERATURE", "depth": "DEPTH",
                "pressure": "PRESSURE", "g": "DECELERATION", "altitude": "ALTITUDE", "distance": "DISTANCE"}
-_ORDER = ["date", "clock", "distance", "altitude", "speed", "g", "temp", "pressure", "depth"]
+_ORDER = ["hull", "date", "clock", "distance", "altitude", "speed", "g", "temp", "pressure", "depth"]
 
 
 def _decimals(*vals) -> int:
@@ -522,8 +522,23 @@ class RadioLog:
 
     def __init__(self, name: str, tag: str, envelope: np.ndarray, fps: int):
         self.env, self.fps = envelope, fps
-        self.tag = place(tracked(f"{name}  ·  {tag}", "mono_medium", 22, TEXT, 0.18), W // 2 - 40, H - 168, "mm")
+        self.tag_log = place(tracked(f"{name}  ·  {tag}", "mono_medium", 22, TEXT, 0.18), W // 2 - 40, H - 168, "mm")
+        self.personal = {}
+        self.name = name
+        self.tag = self.tag_log
         self.cache: dict = {}
+
+    def _tag_for(self, text: str):
+        """Lines addressed to someone ('Noor, ...') switch the tag to a personal channel."""
+        import re as _re
+        m = _re.match(r"^\s*([A-Z][a-z]+),", text)
+        if m and m.group(1) not in ("Oh", "Wait", "Okay", "Vesper", "Relay"):
+            who = m.group(1).upper()
+            if who not in self.personal:
+                self.personal[who] = place(tracked(f"{self.name}  ·  PERSONAL MESSAGE  ·  {who}", "mono_medium", 22,
+                                                   (255, 214, 150), 0.18), W // 2 - 40, H - 168, "mm")
+            return self.personal[who]
+        return self.tag_log
 
     def _lines(self, text: str) -> list[str]:
         if text not in self.cache:
@@ -536,6 +551,7 @@ class RadioLog:
         if a <= 0:
             return
         # tag + blinking dot + waveform
+        self.tag = self._tag_for(sent["text"]) if not sent.get("personal_to") else self.tag
         self.tag.draw(frame, a * 0.95)
         tw = self.tag.rgb.shape[1]
         x0 = self.tag.x - 26
