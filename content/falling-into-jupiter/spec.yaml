@@ -170,7 +170,7 @@ scenes:
     beats:
       - {type: r3d, shot: scale_compare, params: {}, sentences: 2}
       - {type: r3d, shot: orbit, params: {dist: [3.4, 3.0], az: [-0.3, 0.1], el: [0.2, 0.12], light: [65, 20], spin: [0.5, 0.8]}, sentences: 1}
-      - {type: r3d, shot: flyover, params: {alt: [0.22, 0.14], lon: [30, 15], lat: [-8, -12], pitch: [30, 24], light: [150, 18]}, sentences: 3}
+      - {type: r3d, shot: orbit, params: {dist: [2.15, 1.75], az: [0.25, 0.15], el: [-0.24, -0.32], light: [55, 15], spin: [0.7, 1.05], fov: [38, 36]}, sentences: 3}
       - {type: image, asset: galileo_orbiter, motion: in, sentences: 1, label: "Galileo orbiter (artist's concept)", hud: {date: "13 JUL 1995", distance: [80000000, 80000000, "km"], status: "PROBE RELEASE"}}
       - {type: image, asset: galileo_orbiter, motion: pan_left, sentences: 1}
       - {type: video, asset: magnetosphere, from: 5, sentences: 2, label: "Jupiter's magnetosphere (NASA visualization)", hud: {altitude: [80000, 50000, "km"], status: "RADIATION"}}
@@ -195,7 +195,7 @@ scenes:
     beats:
       - {type: r3d, shot: approach, params: {dist: [10, 2.6], fov: [28, 40]}, sentences: 1, hud: {speed: [59.5, 59.5, "km/s"], status: "FREE FALL"}}
       - {type: r3d, shot: entry, params: {}, sentences: 1, hud: {speed: [47.4, 47.4, "km/s"], status: "ENTRY"}}
-      - {type: r3d, shot: entry, params: {lon: 40, lat: -14}, sentences: 2, hud: {g: [12, 228, "g"], status: "MAX DECELERATION"}}
+      - {type: r3d, shot: entry, params: {lon: 40, lat: -14, sustain: true}, sentences: 2, hud: {g: [12, 228, "g"], status: "MAX DECELERATION"}}
       - {type: image, asset: probe_painting, motion: in, crop: [0.07, 0.03, 0.92, 0.86], sentences: 1, hud: {temp: [9000, 16000, "°C"], status: "HEAT SHIELD"}, label: "Artist's impression, NASA Ames"}
       - {type: image, asset: probe_painting2, motion: out, crop: [0.04, 0.12, 0.96, 0.96], sentences: 1, hud: {status: "PARACHUTE DEPLOYED"}}
 
@@ -324,7 +324,7 @@ scenes:
       - {type: r3d, shot: cutaway, params: {layers: [[1.0, [0.85, 0.66, 0.44], [0.62, 0.44, 0.30]], [0.80, [0.36, 0.42, 0.70], [0.28, 0.33, 0.62]], [0.12, [0.55, 0.42, 0.35], [0.45, 0.35, 0.3]]], fuzzy: false, az: [0.3, 0.15]}, sentences: 1, label: "The old picture: a small, solid core"}
       - {type: r3d, shot: cutaway, params: {az: [0.15, 0.0], dist: [2.8, 2.4]}, sentences: 2, label: "Juno: a large, 'fuzzy' core"}
       - {type: r3d, shot: cutaway, params: {layers: [[1.0, [0.85, 0.66, 0.44], [0.62, 0.44, 0.30]], [0.80, [0.36, 0.42, 0.70], [0.28, 0.33, 0.62]], [0.63, [0.95, 0.60, 0.28], [1.0, 0.86, 0.58]]], az: [0.0, -0.15], dist: [2.4, 2.3]}, sentences: 1, label: "One model: dilute core out to ~63% of the radius"}
-      - {type: r3d, shot: collision, params: {}, sentences: 2}
+      - {type: r3d, shot: collision, params: {}, sentences: 2, label: "Hypothesis: a young planet ~10× Earth's mass hits young Jupiter (illustration)"}
       - {type: r3d, shot: orbit, params: {dist: [2.6, 3.4], az: [0.1, 0.35], el: [0.05, 0.15], light: [80, 12], spin: [0.2, 0.6]}, sentences: 3}
 
   - id: ending
@@ -340,8 +340,11 @@ scenes:
       - {text: "58 minutes of data", sources: [nasa_probe]}
       - {text: "Storm roots hundreds of km deep; liquid metallic hydrogen; dilute core", sources: [jpl_3d_2021, nasa_jupiter_facts]}
     beats:
-      - {type: r3d, shot: flyover, params: {alt: [0.12, 0.3], lon: [10, 0], lat: [5, 5], pitch: [28, 14], light: [150, 15]}, sentences: 1}
+      - {type: r3d, shot: cloud_dive, params: {decks: 1, seed: 41, lightning: 0.5}, sentences: 1, hud: {clock: ["T+57:00", "T+58:00"], status: "TELEMETRY OK"}}
       - {type: r3d, shot: polar_orbit, params: {}, sentences: 1}
-      - {type: r3d, shot: crescent, params: {dist: [3.0, 3.6], az: [0.25, 0.4], light: [100, 12]}, sentences: 2}
-      - {type: r3d, shot: orbit, params: {dist: [4.0, 9.0], az: [0.4, 0.6], el: [0.1, 0.2], light: [70, 15], streak: true}, sentences: 1}
-      - {type: end, text: "Real images. Real numbers.", sentences: 2}
+      - {type: image, asset: grs_closeup, motion: in, sentences: 0.5}
+      - {type: r3d, shot: fluid, params: {mode: metallic, seed: 9}, sentences: 0.5}
+      - {type: r3d, shot: cutaway, params: {az: [0.2, 0.0], dist: [2.6, 2.3]}, sentences: 0.6}
+      - {type: image, asset: probe_painting, motion: in, crop: [0.07, 0.03, 0.92, 0.86], sentences: 0.7}
+      - {type: r3d, shot: orbit, params: {dist: [4.0, 9.0], az: [0.4, 0.6], el: [0.1, 0.2], light: [70, 15], streak: true}, sentences: 0.6}
+      - {type: end, text: "Real images. Real numbers.", sentences: 1.5}

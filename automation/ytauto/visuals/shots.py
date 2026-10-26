@@ -190,14 +190,14 @@ def _probe_streak(f, u, start=(0.15, 0.25), end=(0.75, 0.62), hot=True):
     return np.clip(f.astype(np.float32) + layer, 0, 255).astype(np.uint8)
 
 
-def entry(duration, plasma=True, lon=10.0, lat=8.0, **_):
+def entry(duration, plasma=True, lon=10.0, lat=8.0, sustain=False, **_):
     """Diving at the equatorial cloud tops: the curved horizon flattens and rushes up, plasma at the edges."""
     b = body("jupiter", spin=0.0)
     rng = np.random.default_rng(3)
 
     def render(t):
         u = _smooth(t / duration)
-        alt = 0.8 * (1 - u) ** 1.7 + 0.004
+        alt = 0.8 * (1 - u) ** 1.7 + 0.10     # stop well above the cloud tops: the 4K map blurs when closer
         pitch = 62 * (1 - u) + 14 * u
         jitter = rng.normal(0, 0.25 * (0.2 + u), 2) if plasma else (0, 0)
         cam = surface_cam(lon - 6 * u, lat, alt, heading_deg=180, pitch_deg=pitch + jitter[0], fov=58 + 12 * u,
@@ -205,7 +205,8 @@ def entry(duration, plasma=True, lon=10.0, lat=8.0, **_):
         sun = sun_rel(cam, 35, 35)
         f = r3.render(r3.Scene(bodies=[b], sun_dir=sun), cam, W, H)
         if plasma:
-            glow = math.sin(min(1.0, (t / duration) * 1.2) * math.pi) ** 2
+            glow = (1.0 - 0.55 * (t / duration) if sustain     # continuing deceleration: start hot
+                    else math.sin(min(1.0, (t / duration) * 1.2) * math.pi) ** 2)
             f = _plasma(f, glow, t)
         return _post(f, t, bloom=0.45)
     return render
@@ -373,9 +374,9 @@ def make(shot: str, duration: float, **params):
 
 # ----------------------------------------------------------------- 2.5D cloud dive (real JunoCam imagery)
 DIVE_LAYERS = [  # (file, crop fractions x0, y0, x1, y1) — corner-free regions of CC BY JunoCam images
-    ("detail_barge.jpg", (0.45, 0.0, 1.0, 0.45)),
-    ("dive_tkachenko.jpg", (0.0, 0.0, 1.0, 0.75)),
     ("detail_swift.jpg", (0.0, 0.0, 0.8, 0.75)),
+    ("dive_tkachenko.jpg", (0.0, 0.0, 1.0, 0.75)),
+    ("detail_barge.jpg", (0.45, 0.0, 1.0, 0.45)),
     ("dive_oval.jpg", (0.0, 0.05, 1.0, 0.95)),
     ("detail_barge.jpg", (0.0, 0.45, 0.45, 1.0)),
 ]
@@ -480,7 +481,7 @@ def cloud_dive(duration, layers=None, decks: int = 2, depth_tint=((1.0, 0.97, 0.
             M[0, 2] += W / 2 - ms / 2
             M[1, 2] += H / 2 - ms / 2
             a = cv2.warpAffine(mist, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_WRAP)
-            a = a * (0.35 * alpha_ph + 0.65 * deck)
+            a = a * (0.18 * alpha_ph + 0.65 * deck)
             frame = frame * (1 - a[..., None]) + mcol * a[..., None]
         # lightning glows inside the mist
         for ft, (fx, fy) in zip(flashes, flash_pos):
@@ -497,6 +498,11 @@ def cloud_dive(duration, layers=None, decks: int = 2, depth_tint=((1.0, 0.97, 0.
                 ln = 20 + 50 * hz
                 cv2.line(frame, (int(xv), int(yv - ln)), (int(xv - 4), int(yv)), (225, 215, 200), 1 + int(hz * 2),
                          cv2.LINE_AA)
+        # grade: local-contrast + saturation so the JunoCam cloud structure reads through the haze
+        lum = frame.mean(-1, keepdims=True)
+        frame = lum + (frame - lum) * 1.35
+        m = lum.mean()
+        frame = m + (frame - m) * 1.25
         f = np.clip(frame, 0, 255).astype(np.uint8)
         return _post(f, t, bloom=0.3, grain=4.0)
     return render

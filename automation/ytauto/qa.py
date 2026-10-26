@@ -129,7 +129,13 @@ def check_video(spec) -> list[tuple]:
     tl = spec.build / "timeline.json"
     intended = [(b["start"] - 0.5, b["end"] + 0.5) for b in (json.loads(tl.read_text()) if tl.exists() else [])
                 if b["type"] in ("black", "glitch")]   # deliberate 'into the dark' / signal-lost beats
-    blacks = [(s_, e_) for s_, e_ in blacks if not any(a <= s_ and e_ <= b for a, b in intended)]
+    merged = []
+    for a, b in sorted(intended):  # adjacent glitch + black beats form one intended window
+        if merged and a <= merged[-1][1]:
+            merged[-1] = (merged[-1][0], max(merged[-1][1], b))
+        else:
+            merged.append((a, b))
+    blacks = [(s_, e_) for s_, e_ in blacks if not any(a <= s_ and e_ <= b for a, b in merged)]
     res.append(("video.black_frames", FAIL if blacks else PASS,
                 f"black segments: {blacks}" if blacks else f"none longer than {q['max_black_s']}s"))
     log.info("QA: loudness + silence scan")

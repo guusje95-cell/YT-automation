@@ -20,13 +20,18 @@ from ytauto.core.log import get_logger
 log = get_logger(__name__)
 
 RENDER_VERSION = 3
+# Per-shot look versions: bump one entry to re-render only that shot's clips.
+SHOT_VERSIONS = {"cloud_dive": 2, "entry": 2}
 CACHE = config.CACHE_DIR / "r3d"
 
 
 def clip_key(beat: dict, duration: float) -> str:
     from ytauto.visuals.frames import FPS, H, W
-    payload = json.dumps({"v": RENDER_VERSION, "shot": beat["shot"], "params": beat.get("params") or {},
-                          "frames": frame_count(duration, FPS), "size": [W, H]}, sort_keys=True)
+    d = {"v": RENDER_VERSION, "shot": beat["shot"], "params": beat.get("params") or {},
+         "frames": frame_count(duration, FPS), "size": [W, H]}
+    if SHOT_VERSIONS.get(beat["shot"], 1) > 1:
+        d["sv"] = SHOT_VERSIONS[beat["shot"]]
+    payload = json.dumps(d, sort_keys=True)
     return hashlib.sha1(payload.encode()).hexdigest()[:16]
 
 
