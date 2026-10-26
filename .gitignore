@@ -13,3 +13,4 @@ output/**/*.wav
 __pycache__/
 *.pyc
 logs/*.log
+automation/logs/
