@@ -1,6 +1,6 @@
 # Project status — YouTube automation business
 
-_Last updated: 2026-10-25 (session 1). Labels: **Fact** = observed/tested; **Est** = estimate; **Assumption**._
+_Last updated: 2026-10-26 (session 2: quality overhaul). Labels: **Fact** = observed/tested; **Est** = estimate; **Assumption**._
 
 ## Where we are
 Stages A–E done; Stage F (validation with real uploads) is **blocked on your one-time setup** (`docs/SETUP.md`, ~45 min).
@@ -25,6 +25,20 @@ Stages A–E done; Stage F (validation with real uploads) is **blocked on your o
 Each folder: 1080p master `<id>.mp4` (git-ignored, regenerate with `python -m ytauto produce <id>`), `*_preview480.mp4`
 (committed), `.en.srt/.vtt`, `thumbnail_1-3.jpg`, `metadata.json`, `description.txt`, `script.md` (script with
 claims→sources), `qa_report.md`, `licensing_checklist.md`, `storyboard.jpg`, `production_log.json`.
+
+## Session 2 — quality overhaul (after feedback: "boring voice, bad images, no storyline")
+New flagship episode **Falling Into Jupiter** (`content/falling-into-jupiter/`), built with a new cinematic layer:
+| Problem | What changed | Evidence |
+|---|---|---|
+| No storyline | Journey structure: the Galileo probe's 58-minute plunge (cold open → entry → clouds → signal lost), then Juno data down to the core; callbacks (radiation belt → dynamo; 58 minutes → ending) | `content/falling-into-jupiter/script.md`, 11 sources, every number in a sourced claim |
+| Static, flat images | Ray-traced 3D renderer (`visuals/render3d.py`) with NASA-derived textures + JunoCam detail; 11 shot presets (orbit, entry with plasma, cloud dive through real JunoCam imagery, cutaways, interior fluid, polar orbit, collision); parallel pre-render cache | `visuals/shots.py`, `video/prerender.py` |
+| Bland editing | Telemetry HUD with live counters, chapter cards, glitch "SIGNAL LOST", atmosphere profile, fact list, cinematic titles/end card | `visuals/editorial.py` |
+| Flat sound | Licensed score per scene (ESO Music Archive, zero-project, CC BY 4.0, credited) with ducking and a hard cut to silence at "signal lost"; procedural SFX (roar, wind, thunder synced to on-screen lightning, static, flat-line) | `audio/music.py`, `audio/sfx.py` |
+| Boring voice | Expressive local Chatterbox voice (MIT) cloned from a *synthetic* reference (no real person); automatic retry of clips that repeat words | `voice/tts.py`, `voice/narrate.py` |
+
+**Honest limits (Fact):** the voice is still synthetic; I can measure intelligibility (Whisper) and pacing but cannot judge
+timbre by ear. Best paid upgrade: ElevenLabs Creator (~$22/month) — **not purchased, needs your approval**.
+Compute: ~1.5 h narration + ~1 h 3D render on 4 CPU cores for a 7-minute episode (cached afterwards).
 
 ## Tests performed and results (facts)
 - Niche scanner: 2 live scans, ~1,000 videos and ~400 channel pages parsed, 0 errors.

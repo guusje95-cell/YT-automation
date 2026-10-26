@@ -1,8 +1,8 @@
 {
  "summary": {
-  "PASS": 27,
+  "PASS": 28,
   "WARN": 1,
-  "FAIL": 1
+  "FAIL": 0
  },
  "results": [
   [
@@ -98,7 +98,7 @@
   [
    "thumbnail.thumbnail_1",
    "PASS",
-   "(1280, 720), 113 KB"
+   "(1280, 720), 108 KB"
   ],
   [
    "thumbnail.thumbnail_2",
@@ -132,13 +132,13 @@
   ],
   [
    "video.black_frames",
-   "FAIL",
-   "black segments: [(210.4, 220.933)]"
+   "PASS",
+   "none longer than 1.0s"
   ],
   [
    "audio.loudness",
    "PASS",
-   "-14.2 LUFS integrated, true peak -0.6 dBFS"
+   "-14.3 LUFS integrated, true peak -0.8 dBFS"
   ],
   [
    "audio.long_silences",

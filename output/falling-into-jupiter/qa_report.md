@@ -1,10 +1,9 @@
 # QA report — falling-into-jupiter
 
-**1 FAIL · 1 WARN · 27 PASS**  (BLOCKED: fix FAIL items before publishing)
+**0 FAIL · 1 WARN · 28 PASS**  (publishable after human review of WARN items)
 
 | Check | Status | Detail |
 |---|---|---|
-| video.black_frames | FAIL | black segments: [(210.4, 220.933)] |
 | voice.intelligibility | WARN | ASR word error rate 7.0% (lower is better; includes number formatting differences). Top diffs: 'seventh' -> '7th'; 'four' -> '4'; 'ten' -> '10'; 'a hundred and seventy thousand kilometres' -> '170000 km'; 'fifty eight' -> '58'; 'centre' -> 'center'; 'eleven' -> '11'; 'just' -> 'first' |
 | script.banned_phrases | PASS | none |
 | script.hype_words | PASS | none |
@@ -24,12 +23,13 @@
 | meta.tags | PASS | 10 tags, 112 chars |
 | meta.chapters | PASS | 7 chapters |
 | meta.privacy_default | PASS | private |
-| thumbnail.thumbnail_1 | PASS | (1280, 720), 113 KB |
+| thumbnail.thumbnail_1 | PASS | (1280, 720), 108 KB |
 | thumbnail.thumbnail_2 | PASS | (1280, 720), 98 KB |
 | thumbnail.thumbnail_3 | PASS | (1280, 720), 156 KB |
 | video.format | PASS | h264 1920x1080 yuv420p 30/1 |
 | video.audio_stream | PASS | aac 48000 Hz 2 ch |
 | video.duration | PASS | 437.9s (7.3 min) |
 | video.av_sync_length | PASS | video 437.87s / audio 437.87s |
-| audio.loudness | PASS | -14.2 LUFS integrated, true peak -0.6 dBFS |
+| video.black_frames | PASS | none longer than 1.0s |
+| audio.loudness | PASS | -14.3 LUFS integrated, true peak -0.8 dBFS |
 | audio.long_silences | PASS | none |
