@@ -126,6 +126,10 @@ def check_video(spec) -> list[tuple]:
     bl = _ffmpeg_detect(vid, f"blackdetect=d={q['max_black_s']}:pix_th=0.06")
     blacks = re.findall(r"black_start:([\d.]+) black_end:([\d.]+)", bl)
     blacks = [(float(s), float(e)) for s, e in blacks if float(s) < dur - 3]  # the end-card fade is intended
+    tl = spec.build / "timeline.json"
+    intended = [(b["start"] - 0.5, b["end"] + 0.5) for b in (json.loads(tl.read_text()) if tl.exists() else [])
+                if b["type"] in ("black", "glitch")]   # deliberate 'into the dark' / signal-lost beats
+    blacks = [(s_, e_) for s_, e_ in blacks if not any(a <= s_ and e_ <= b for a, b in intended)]
     res.append(("video.black_frames", FAIL if blacks else PASS,
                 f"black segments: {blacks}" if blacks else f"none longer than {q['max_black_s']}s"))
     log.info("QA: loudness + silence scan")

@@ -25,6 +25,10 @@ brand:
   font_semibold: automation/assets/fonts/Inter-SemiBold.otf
   font_bold: automation/assets/fonts/Inter-Bold.otf
   font_display: automation/assets/fonts/InterDisplay-Black.otf
+  font_mono: automation/assets/fonts/JetBrainsMono-Regular.ttf
+  font_mono_medium: automation/assets/fonts/JetBrainsMono-Medium.ttf
+  font_mono_bold: automation/assets/fonts/JetBrainsMono-Bold.ttf
+  font_light: automation/assets/fonts/Inter-Regular.otf
 
 voice:
   provider: kokoro

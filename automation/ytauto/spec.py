@@ -13,7 +13,8 @@ import yaml
 
 from ytauto.core import config
 
-BEAT_TYPES = {"image", "video", "title", "fact", "quote", "scale", "chart", "list", "end"}
+BEAT_TYPES = {"image", "video", "title", "fact", "quote", "scale", "chart", "list", "end",
+              "r3d", "glitch", "profile", "fact_list", "black"}
 
 
 class SpecError(ValueError):

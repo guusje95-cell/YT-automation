@@ -4,12 +4,18 @@ Everything else is automated. These are the steps only you can do (accounts, con
 Estimated time: **~45 minutes once**, then ~15–30 min/week.
 
 ## 0. Run the pipeline on your machine (or a small server)
-Requirements: Python 3.11+, ffmpeg, ~2 GB disk, 4+ CPU cores (a 9-minute video renders in ~15 min on 4 cores).
+Requirements: Python 3.11+, ffmpeg, ~6 GB disk, 4+ CPU cores, 16 GB RAM. On 4 CPU cores a 9-minute cinematic
+episode takes roughly 1.5 h of narration (Chatterbox on CPU) plus ~1 h of 3D pre-rendering; both are cached, so later
+edits only redo what changed.
 ```bash
 git clone https://github.com/guusje95-cell/YT-automation && cd YT-automation
 pip install -r automation/requirements.txt
 ./scripts/fetch_models.sh                 # local voice model (~350 MB, free, Apache-2.0)
-cd automation && python -m pytest -q tests # 23 tests should pass
+# expressive narrator voice (Chatterbox, MIT licence) in its own virtualenv — it pins its own torch version
+python3 -m venv /root/venvs/cbx && /root/venvs/cbx/bin/pip install chatterbox-tts==0.1.7 \
+    torch==2.6.0 torchaudio==2.6.0 --extra-index-url https://download.pytorch.org/whl/cpu
+#   (another venv location? set `python:` in the spec's voice block)
+cd automation && python -m pytest -q tests # all tests should pass
 python -m ytauto produce juno-jupiter      # rebuilds the pilot end-to-end into output/juno-jupiter/
 ```
 

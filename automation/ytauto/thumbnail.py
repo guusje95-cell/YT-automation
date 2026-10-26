@@ -42,8 +42,12 @@ def balanced_lines(text: str, max_lines: int = 3) -> list[str]:
     return best
 
 
-def render_variant(img_path: str, text: str, side: str = "left", focus=(0.5, 0.5), zoom: float = 1.0) -> Image.Image:
+def render_variant(img_path: str, text: str, side: str = "left", focus=(0.5, 0.5), zoom: float = 1.0,
+                   crop=None) -> Image.Image:
     base = Image.open(img_path).convert("RGB")
+    if crop:
+        w, h = base.size
+        base = base.crop((int(crop[0] * w), int(crop[1] * h), int(crop[2] * w), int(crop[3] * h)))
     base = Image.fromarray(fr._trim_light_borders(np.array(base)))
     im = _cover(base, focus, zoom)
     im = ImageEnhance.Contrast(im).enhance(1.15)
@@ -90,8 +94,18 @@ def build(spec) -> list[str]:
     outs = []
     for k, v in enumerate(tcfg.get("variants") or [{"text": t} for t in tcfg.get("texts", [])]):
         o = {**tcfg, **v}
-        im = render_variant(manifest[o["asset"]]["file"], o["text"], side=o.get("side", "left"),
-                            focus=tuple(o.get("focus", (0.5, 0.5))), zoom=o.get("zoom", 1.0))
+        if o.get("shot"):  # a frame from a 3D shot as the thumbnail image
+            from ytauto.visuals import shots
+            src = spec.build / f"thumb_src_{k + 1}.png"
+            dur = 10.0
+            frame = shots.make(o["shot"], dur, **(o.get("params") or {}))(dur * o.get("at", 0.5))
+            Image.fromarray(frame).save(src)
+            img_path = str(src)
+        else:
+            img_path = manifest[o["asset"]]["file"]
+        im = render_variant(img_path, o["text"], side=o.get("side", "left"),
+                            focus=tuple(o.get("focus", (0.5, 0.5))), zoom=o.get("zoom", 1.0),
+                            crop=o.get("crop"))
         p = spec.out / f"thumbnail_{k + 1}.jpg"
         q = 92
         im.save(p, quality=q, optimize=True)

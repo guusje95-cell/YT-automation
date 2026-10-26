@@ -62,3 +62,104 @@ def ambient_bed(duration_s: float, mood: str = "calm", root_hz: float = 110.0,
     out[-fade:] *= ramp[::-1]
     peak = np.max(np.abs(out)) or 1.0
     return (out / peak * 0.89).astype(np.float32)
+
+
+# ----------------------------------------------------------------- licensed score (cue sheet)
+MUSIC_DIR_NAME = "music"
+ESO_URL = "https://www.eso.org/public/archives/music/wav/{id}.wav"
+ESO_PAGE = "https://www.eso.org/public/products/music/{id}/"
+
+
+def track_path(track_id: str):
+    from ytauto.core import config
+    return config.CACHE_DIR / MUSIC_DIR_NAME / f"{track_id}.wav"
+
+
+def ensure_track(track_id: str):
+    """Download an ESO Music Archive track (CC BY 4.0) into the cache if missing."""
+    import requests
+    p = track_path(track_id)
+    if p.exists():
+        return p
+    p.parent.mkdir(parents=True, exist_ok=True)
+    r = requests.get(ESO_URL.format(id=track_id), timeout=120)
+    r.raise_for_status()
+    p.write_bytes(r.content)
+    return p
+
+
+def track_credit(track_id: str) -> str:
+    """Credit line for a track. Only ESO's zero-project tracks are supported (CC BY 4.0, ESO Music Archive)."""
+    if not track_id.startswith("zero-project-"):
+        raise ValueError(f"no licence record for music track {track_id}")
+    name = track_id.removeprefix("zero-project-").replace("-", " ").title()
+    return (f"\"{name}\" by zero-project (zero-project.gr), via the ESO Music Archive, CC BY 4.0 "
+            f"(edited: excerpted, faded, mixed under narration) — {ESO_PAGE.format(id=track_id)}")
+
+
+def _load_track(track_id: str, sr: int) -> np.ndarray:
+    import soundfile as sf
+    from scipy.signal import resample_poly
+    x, tsr = sf.read(ensure_track(track_id), dtype="float32", always_2d=True)
+    if x.shape[1] == 1:
+        x = np.repeat(x, 2, 1)
+    if tsr != sr:
+        from math import gcd
+        g = gcd(sr, tsr)
+        x = resample_poly(x, sr // g, tsr // g, axis=0).astype(np.float32)
+    return x[:, :2]
+
+
+def cue_bed(cues: list[dict], scene_starts: dict[str, float], total_s: float, sr: int = SR,
+            xfade_s: float = 3.0) -> tuple[np.ndarray, list[dict]]:
+    """Assemble a stereo score from a cue sheet.
+
+    Each cue: {scene, track, offset (s into the track), gain_db (LU relative to the voice target)}.
+    A cue starts at its scene's start and plays until the next cue; `track: silence` makes a hard stop
+    (used for dramatic beats). Tracks shorter than their slot loop with a crossfade. Returns (bed, placed)
+    where `bed` is NOT loudness-normalised per cue: each cue carries its own `gain_db` applied by the mixer
+    through the returned per-sample gain track in placed[i]['gain_db'].
+    """
+    import pyloudnorm as pyln
+    n = int(total_s * sr)
+    bed = np.zeros((n, 2), np.float32)
+    meter = pyln.Meter(sr)
+    placed = []
+    starts = []
+    for c in cues:
+        st = 0.0 if not starts else scene_starts[c["scene"]]
+        starts.append(st)
+    for k, c in enumerate(cues):
+        st = starts[k]
+        en = starts[k + 1] if k + 1 < len(cues) else total_s
+        if c["track"] == "silence":
+            placed.append({**c, "start": st, "end": en})
+            continue
+        silent_next = k + 1 < len(cues) and cues[k + 1]["track"] == "silence"
+        tail = 0.08 if silent_next else xfade_s
+        seg_len = int((en - st + tail) * sr)
+        x = _load_track(c["track"], sr)
+        off = int(c.get("offset", 0) * sr)
+        src = x[off:]
+        while len(src) < seg_len:  # loop with a crossfade
+            f = int(2.0 * sr)
+            r = np.linspace(0, 1, f, dtype=np.float32)[:, None]
+            src = np.concatenate([src[:-f], src[-f:] * (1 - r) + x[off:off + f] * r, x[off + f:]])
+        seg = src[:seg_len].copy()
+        lufs = meter.integrated_loudness(seg) if len(seg) > sr * 0.5 else -30.0
+        seg *= 10 ** ((c.get("gain_db", -22.0) - (lufs + 14.0)) / 20)  # relative to a -14 LUFS voice
+        fin = int((0.05 if k == 0 and c.get("offset", 0) == 0 else (xfade_s if k else 1.5)) * sr)
+        fin = min(fin, len(seg) // 3)
+        fo = min(int(tail * sr), len(seg) // 3)
+        if fin:
+            seg[:fin] *= np.linspace(0, 1, fin, dtype=np.float32)[:, None]
+        if fo:
+            seg[-fo:] *= np.linspace(1, 0, fo, dtype=np.float32)[:, None]
+        i0 = int(st * sr)
+        i1 = min(i0 + len(seg), n)
+        bed[i0:i1] += seg[: i1 - i0]
+        placed.append({**c, "start": st, "end": en})
+    # end of film: fade the score out over the last 4 s
+    f = min(int(4 * sr), n)
+    bed[-f:] *= np.linspace(1, 0, f, dtype=np.float32)[:, None]
+    return bed, placed

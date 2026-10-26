@@ -10,6 +10,7 @@ alignment needed). Add a provider by implementing `synthesize(text) -> (samples,
 from __future__ import annotations
 
 import io
+import os
 import re
 from functools import lru_cache
 from pathlib import Path
@@ -66,7 +67,74 @@ class ElevenLabsTTS:
         return pcm, 24000
 
 
-PROVIDERS = {"kokoro": KokoroTTS, "elevenlabs": ElevenLabsTTS}
+class ChatterboxTTS:
+    """Expressive local TTS (Resemble AI Chatterbox, MIT) via a persistent worker in its own venv.
+
+    `ref` is a reference clip whose timbre is cloned. We use a *synthetic* reference (generated with
+    Kokoro) so the channel voice never imitates a real person.
+    """
+    name = "chatterbox"
+
+    def __init__(self, ref: str | None = None, exaggeration: float = 0.5, cfg_weight: float = 0.35,
+                 temperature: float = 0.75, python: str = "/root/venvs/cbx/bin/python", seed: int = 1234, **_):
+        import json as _json
+        import os
+        import subprocess
+        self.exaggeration, self.cfg_weight, self.temperature, self.seed = exaggeration, cfg_weight, temperature, seed
+        env = dict(os.environ)
+        if ref:
+            ref_path = Path(ref) if Path(ref).is_absolute() else config.ROOT / ref
+            env["CBX_REF"] = str(ref_path)
+        env["CBX_EXAG"] = str(exaggeration)
+        worker = Path(__file__).with_name("chatterbox_worker.py")
+        self.proc = subprocess.Popen([python, str(worker)], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                     stderr=subprocess.DEVNULL, text=True, env=env, bufsize=1)
+        while True:
+            line = self.proc.stdout.readline()
+            if not line:
+                raise RuntimeError("chatterbox worker failed to start (is the venv installed? see docs/SETUP.md)")
+            try:
+                if _json.loads(line).get("ready"):
+                    break
+            except ValueError:
+                continue
+        self._json = _json
+        self._n = 0
+
+    def synthesize(self, text: str) -> tuple[np.ndarray, int]:
+        import tempfile
+        self._n += 1
+        out = Path(tempfile.gettempdir()) / f"cbx_{os.getpid()}_{self._n}.wav"
+        req = {"text": text, "out": str(out), "exaggeration": self.exaggeration, "cfg_weight": self.cfg_weight,
+               "temperature": self.temperature, "seed": self.seed + self._n}
+        self.proc.stdin.write(self._json.dumps(req) + "\n")
+        self.proc.stdin.flush()
+        while True:
+            line = self.proc.stdout.readline()
+            if not line:
+                raise RuntimeError("chatterbox worker exited")
+            try:
+                res = self._json.loads(line)
+                break
+            except ValueError:
+                continue
+        if not res.get("ok"):
+            raise RuntimeError(res.get("error"))
+        x, sr = sf.read(out, dtype="float32")
+        out.unlink(missing_ok=True)
+        if x.ndim > 1:
+            x = x.mean(1)
+        return x, sr
+
+    def __del__(self):
+        try:
+            self.proc.stdin.close()
+            self.proc.terminate()
+        except Exception:
+            pass
+
+
+PROVIDERS = {"kokoro": KokoroTTS, "elevenlabs": ElevenLabsTTS, "chatterbox": ChatterboxTTS}
 
 
 _NON_PROVIDER_KEYS = {"sentence_gap_s", "paragraph_gap_s", "scene_gap_s"}

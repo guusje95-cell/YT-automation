@@ -47,10 +47,24 @@ def build(spec) -> dict:
         if line not in seen:
             seen.add(line)
             lines.append(line)
+    from ytauto.video import timeline
+    from ytauto.visuals import shots
+    for line in shots.description_credits(timeline.build(spec, timings)):
+        if line not in seen:
+            seen.add(line)
+            lines.append(f"• {line}")
     lines.append("NASA material is used under NASA's media guidelines; NASA does not endorse this channel. "
-                 "CC BY images are credited above.")
+                 "CC BY images are credited above. 3D scenes, cutaways and interior views are visualizations "
+                 "(schematic, not to scale) built from the data cited in Sources.")
     lines.append("")
-    lines.append("Music: original ambient score generated for this channel.")
+    mc = spec.build / "music_credits.json"
+    music_credits = json.loads(mc.read_text()) if mc.exists() else []
+    if music_credits:
+        lines.append("Music")
+        lines += [f"• {c}" for c in music_credits]
+        lines.append("Sound effects: synthesised for this channel.")
+    else:
+        lines.append("Music: original ambient score generated for this channel.")
     lines.append(config.get("channel.credit_line"))
     desc = "\n".join(lines)
     if len(desc) > 4900:  # YouTube limit is 5,000 characters

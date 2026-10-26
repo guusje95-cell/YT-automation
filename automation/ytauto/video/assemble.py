@@ -9,37 +9,107 @@ import numpy as np
 
 from ytauto.core import config
 from ytauto.core.log import get_logger
-from ytauto.video import timeline
+from ytauto.video import prerender, timeline
+from ytauto.visuals import editorial as ed
 from ytauto.visuals import frames as fr
+from ytauto.visuals import shots
 
 log = get_logger(__name__)
 
 
-def _renderer(beat: dict, dur: float, assets: dict, sources: dict):
+def _renderer(beat: dict, dur: float, assets: dict, sources: dict, ctx: dict | None = None):
+    ctx = ctx or {}
     t = beat["type"]
+    if t == "r3d":
+        if ctx.get("direct"):  # storyboard: render the requested frames straight from the shot
+            return shots.make(beat["shot"], dur, **(beat.get("params") or {}))
+        clip = prerender.clip_path(beat, dur)
+        if not clip.exists():
+            raise RuntimeError(f"r3d clip missing for {beat['shot']} ({clip.name}); run the prerender stage")
+        return fr.video_beat(str(clip), dur)
     if t == "image":
         a = assets[beat["asset"]]
         return fr.image_beat(a["file"], dur, motion=beat.get("motion", "in"),
                              focus=tuple(beat.get("focus", (0.5, 0.5))), fit=beat.get("fit", "auto"),
-                             zoom=beat.get("zoom", 0.12))
+                             zoom=beat.get("zoom", 0.12), crop=beat.get("crop"))
     if t == "video":
         a = assets[beat["asset"]]
         return fr.video_beat(a["file"], dur, start=beat.get("from", 0), speed=beat.get("speed", 1.0),
                             zoom=beat.get("zoom", 1.0))
     if t == "title":
+        if beat.get("style") == "cinematic":
+            return ed.title_beat(dur, beat["text"], beat.get("sub", ""))
         return fr.title_beat(dur, beat["text"], beat.get("kicker", ""))
+    if t == "glitch":
+        return ed.glitch_beat(dur, beat.get("text", "SIGNAL LOST"), beat.get("sub", ""), src=ctx.get("last"))
+    if t == "black":
+        return ed.black_beat(dur, ember=beat.get("ember", True))
+    if t == "profile":
+        return ed.profile_beat(dur)
+    if t == "fact_list":
+        src = sources.get(beat.get("source"), {})
+        label = beat.get("source_label") or (f"Source: {src['publisher']}" if src else "")
+        return ed.fact_list_beat(dur, beat.get("title", ""), beat["items"], label, backdrop=ctx.get("last"))
     if t == "fact":
         src = sources.get(beat.get("source"), {})
-        label = beat.get("source_label") or src.get("publisher") or ""
-        return fr.fact_beat(dur, beat["big"], beat.get("small", ""), label)
+        label = beat.get("source_label") or (f"Source: {src['publisher']}" if src else "")
+        return ed.fact_beat(dur, beat["big"], beat.get("small", ""), label, backdrop=ctx.get("last"))
     if t == "list":
         return fr.list_beat(dur, beat.get("title", ""), beat["items"], beat.get("highlight"))
     if t == "scale":
         return fr.scale_beat(dur, beat.get("mode", "circles"), beat.get("title", ""), beat.get("labels"),
                              beat.get("items"), beat.get("highlight"), beat.get("bounds"))
     if t == "end":
-        return fr.end_beat(dur, beat.get("text", ""))
+        return ed.end_beat(dur, config.get("channel.name", ""), beat.get("text", ""))
     raise ValueError(f"unsupported beat type {t}")
+
+
+NO_DISSOLVE_INTO = {"glitch", "black"}
+
+
+def _chapter_numbers(beats: list[dict]) -> dict:
+    nums, n = {}, 0
+    for b in beats:
+        if b.get("first_in_scene") and b.get("chapter"):
+            n += 1
+            nums[b["scene"]] = n
+    return nums
+
+
+class Decorator:
+    """Per-beat overlays drawn on top of the raw beat frame: credits, labels, HUD, chapter card, title."""
+
+    def __init__(self, manifest: dict, beats: list[dict]):
+        self.manifest = manifest
+        self.ov = fr.Overlays()
+        self.chapters = _chapter_numbers(beats)
+        self.cache: dict = {}
+
+    def _get(self, key, make):
+        if key not in self.cache:
+            self.cache[key] = make()
+        return self.cache[key]
+
+    def __call__(self, frame: np.ndarray, b: dict, k: int, lt: float) -> np.ndarray:
+        dur = b["end"] - b["start"]
+        t = b["type"]
+        if t in ("image", "video"):
+            frame = fr.apply_vignette(frame)
+            self.ov.credit(fr.short_credit(self.manifest[b["asset"]]["credit"])).draw(frame, 0.85)
+        elif t == "r3d":
+            self.ov.credit(shots.onscreen_credit(b["shot"], b.get("params"))).draw(frame, 0.6)
+        if b.get("label"):
+            self.ov.label(b["label"]).draw(frame, fr.fade_window(lt, 0.5, dur - 0.3))
+        if b.get("hud"):
+            hud = self._get(("hud", k), lambda: ed.Hud(b["hud"], dur))
+            hud.draw(frame, lt, fr.fade_window(lt, 0.15, dur + 1, 0.35))
+        if b.get("title") and t == "r3d":
+            title = self._get(("title", k), lambda: ed.TitleOverlay(b["title"], b.get("title_sub", "")))
+            title.draw(frame, lt, dur)
+        if b.get("first_in_scene") and b.get("chapter") and t not in NO_DISSOLVE_INTO:
+            card = self._get(("ch", b["scene"]), lambda: ed.ChapterCard(self.chapters[b["scene"]], b["chapter"]))
+            card.draw(frame, lt)
+        return frame
 
 
 def render(spec, preview: bool = False) -> dict:
@@ -47,6 +117,7 @@ def render(spec, preview: bool = False) -> dict:
     manifest = json.loads((spec.build / "asset_manifest.json").read_text())
     beats = timeline.build(spec, timings)
     (spec.build / "timeline.json").write_text(json.dumps(beats, indent=1))
+    prerender.run(beats)
     total = timings["duration"]
     fps = fr.FPS
     vcfg = config.get("video")
@@ -57,11 +128,12 @@ def render(spec, preview: bool = False) -> dict:
            "veryfast" if preview else vcfg["preset"], "-crf", str(23 if preview else vcfg["crf"]),
            "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(out_video)]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-    ov = fr.Overlays()
+    deco = Decorator(manifest, beats)
     trans = vcfg.get("transition_s", 0.5)
     n_frames = int(round(total * fps))
     t0 = time.time()
     prev_last = None
+    last_raw = None
     bi = 0
     cur = None
     cur_idx = -1
@@ -73,24 +145,18 @@ def render(spec, preview: bool = False) -> dict:
         if bi != cur_idx:
             if cur is not None and hasattr(cur, "close"):
                 cur.close()
-            cur = _renderer(b, b["end"] - b["start"] + 1.0 / fps, manifest, spec.sources)
+            cur = _renderer(b, b["end"] - b["start"] + 1.0 / fps, manifest, spec.sources, {"last": last_raw})
             cur_idx = bi
         lt = t - b["start"]
         frame = cur(lt)
         if frame.base is not None or not frame.flags.writeable:
             frame = frame.copy()
-        # overlays for media beats
-        if b["type"] in ("image", "video"):
-            frame = fr.apply_vignette(frame)
-            credit = fr.short_credit(manifest[b["asset"]]["credit"])
-            ov.credit(credit).draw(frame, 0.85)
-            if b.get("label"):
-                ov.label(b["label"]).draw(frame, fr.fade_window(lt, 0.5, b["end"] - b["start"] - 0.3))
-        if b.get("first_in_scene") and b.get("chapter") and b["scene_index"] > 0 and b["type"] in ("image", "video"):
-            ov.chapter(b["chapter"]).draw(frame, fr.fade_window(lt, 0.3, 4.0))
-        # cross-dissolve from the previous beat's last frame
-        if prev_last is not None and lt < trans and bi > 0:
-            a = fr.ease(lt / trans)
+        last_raw = frame.copy() if (i + 1) / fps >= b["end"] - 1.0 / fps else last_raw
+        frame = deco(frame, b, bi, lt)
+        # cross-dissolve from the previous beat's last frame (hard cuts into glitch / black beats)
+        tr = b.get("transition", 0.0 if b["type"] in NO_DISSOLVE_INTO else trans)
+        if prev_last is not None and bi > 0 and lt < tr:
+            a = fr.ease(lt / tr)
             frame = (prev_last.astype(np.float32) * (1 - a) + frame.astype(np.float32) * a).astype(np.uint8)
         if i + 1 < n_frames and (i + 1) / fps >= b["end"] and bi < len(beats) - 1:
             prev_last = frame
@@ -107,35 +173,37 @@ def render(spec, preview: bool = False) -> dict:
     return {"video": str(out_video), "beats": len(beats), "frames": n_frames, "render_s": round(time.time() - t0)}
 
 
-def storyboard(spec, cols: int = 6, thumb_w: int = 384) -> str:
-    """Render the mid-frame of every beat (with overlays) into one contact sheet for quick review."""
+def storyboard(spec, cols: int = 6, thumb_w: int = 384, at=(0.6,)) -> str:
+    """Contact sheet of every beat (with overlays) at the given fractions of each beat. 3D beats are rendered
+    directly (no prerender needed), so this is the fast review loop."""
     from PIL import Image, ImageDraw
     timings = json.loads((spec.build / "timings.json").read_text())
     manifest = json.loads((spec.build / "asset_manifest.json").read_text())
     beats = timeline.build(spec, timings)
-    ov = fr.Overlays()
+    deco = Decorator(manifest, beats)
     th = int(thumb_w * fr.H / fr.W)
-    rows = (len(beats) + cols - 1) // cols
+    cells = [(k, a) for k in range(len(beats)) for a in at]
+    rows = (len(cells) + cols - 1) // cols
     sheet = Image.new("RGB", (cols * thumb_w, rows * (th + 22)), (12, 12, 16))
     d = ImageDraw.Draw(sheet)
     f = fr.font("medium", 15)
-    for k, b in enumerate(beats):
+    last = None
+    for n, (k, at_) in enumerate(cells):
+        b = beats[k]
         dur = b["end"] - b["start"]
-        r = _renderer(b, dur, manifest, spec.sources)
-        lt = dur * 0.6
+        r = _renderer(b, dur, manifest, spec.sources, {"direct": True, "last": last})
+        lt = dur * at_
         frame = r(lt).copy()
+        if at_ == at[-1]:
+            last = r(dur * 0.98).copy() if b["type"] not in ("glitch",) else frame
         if hasattr(r, "close"):
             r.close()
-        if b["type"] in ("image", "video"):
-            frame = fr.apply_vignette(frame)
-            ov.credit(fr.short_credit(manifest[b["asset"]]["credit"])).draw(frame, 0.85)
-            if b.get("label"):
-                ov.label(b["label"]).draw(frame, 1.0)
+        frame = deco(frame, b, k, lt)
         im = Image.fromarray(frame).resize((thumb_w, th), Image.LANCZOS)
-        x, y = (k % cols) * thumb_w, (k // cols) * (th + 22)
+        x, y = (n % cols) * thumb_w, (n // cols) * (th + 22)
         sheet.paste(im, (x, y))
-        d.text((x + 4, y + th + 2), f"{k:02d} {b['scene']} {b['start']:.0f}-{b['end']:.0f}s {b['type']}",
-               fill=(255, 190, 90), font=f)
+        d.text((x + 4, y + th + 2), f"{k:02d} {b['scene']} {b['start']:.0f}-{b['end']:.0f}s {b['type']}"
+               f"{' ' + b['shot'] if b['type'] == 'r3d' else ''}", fill=(255, 190, 90), font=f)
     out = spec.out / "storyboard.jpg"
     sheet.save(out, quality=82)
     return str(out)

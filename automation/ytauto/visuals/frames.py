@@ -185,8 +185,11 @@ def _blur_backdrop(img: np.ndarray) -> np.ndarray:
 
 
 def image_beat(path: str, duration: float, motion: str = "in", focus=(0.5, 0.5), fit: str = "auto",
-               zoom: float = 0.12):
+               zoom: float = 0.12, crop=None):
     img = _load_image(path)
+    if crop:  # (x0, y0, x1, y1) fractions: drop borders, captions or empty margins
+        ch, cw = img.shape[:2]
+        img = np.ascontiguousarray(img[int(crop[1] * ch):int(crop[3] * ch), int(crop[0] * cw):int(crop[2] * cw)])
     ih, iw = img.shape[:2]
     aspect, target = iw / ih, W / H
     if fit == "auto":

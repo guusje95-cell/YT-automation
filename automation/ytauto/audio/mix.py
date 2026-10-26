@@ -63,17 +63,34 @@ def build(spec) -> dict:
     stereo_voice = np.stack([voice, voice], 1)
 
     mix = stereo_voice.copy()
-    if mcfg.get("enabled", True):
+    act = _voice_activity(voice, SR)
+    credits = []
+    if mcfg.get("cues"):
+        timings = json.loads((spec.build / "timings.json").read_text())
+        starts = {sc["id"]: sc["start"] for sc in timings["scenes"]}
+        bed, placed = music.cue_bed(mcfg["cues"], starts, n / SR, SR)
+        duck = db(mcfg.get("duck_db", acfg["music_duck_db"]))
+        mix = mix + bed[:n] * ((1 - act) + act * duck)[:, None]
+        credits = sorted({music.track_credit(c["track"]) for c in mcfg["cues"] if c["track"] != "silence"})
+    elif mcfg.get("enabled", True):
         bed = music.ambient_bed(n / SR + 0.1, mood=mcfg.get("mood", "calm"), seed=mcfg.get("seed", 7))
         if music.SR != SR:
             bed = resample_poly(bed, SR, music.SR, axis=0).astype(np.float32)
         bed = bed[:n]
         bl = meter.integrated_loudness(bed)
         bed *= db(target + mcfg.get("gain_db", acfg["music_gain_db"]) - bl)
-        act = _voice_activity(voice, SR)
         duck = db(acfg["music_duck_db"])
         gain = (1 - act) + act * duck
         mix = stereo_voice + bed * gain[:, None]
+    scfg = spec.data.get("sfx") or {}
+    if scfg.get("enabled", any(b.get("type") == "r3d" for sc in spec.scenes for b in sc["beats"])):
+        from ytauto.audio import sfx
+        from ytauto.video import timeline
+        timings = json.loads((spec.build / "timings.json").read_text())
+        fx = sfx.design(timeline.build(spec, timings), n / SR)[:n]
+        fx_duck = db(scfg.get("duck_db", -4.0))
+        mix = mix + fx * db(scfg.get("gain_db", -6.0)) * ((1 - act) + act * fx_duck)[:, None]
+    (spec.build / "music_credits.json").write_text(json.dumps(credits, indent=1))
 
     ml = meter.integrated_loudness(mix)
     mix *= db(target - ml)
