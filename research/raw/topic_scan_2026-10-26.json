@@ -1,0 +1,1092 @@
+[
+ {
+  "topic": "The biggest black hole (TON 618)",
+  "queries": [
+   "biggest black hole in the universe",
+   "TON 618 explained"
+  ],
+  "asset_query": "supermassive black hole",
+  "n_results": 35,
+  "demand_raw": 1574742.0,
+  "hits_raw": 19,
+  "velocity_raw": 10226.1,
+  "breakouts_raw": 15,
+  "big_hits": 5,
+  "top": [
+   {
+    "title": "What TON 618 Would Look Like at Different Distances",
+    "views": 8592783,
+    "channel": "Universe Dimensions"
+   },
+   {
+    "title": "TON 618: The Black Hole That Breaks the Universe | 4K",
+    "views": 2446041,
+    "channel": "NullSpace"
+   },
+   {
+    "title": "Why TON 618 Is So Terrifying",
+    "views": 1700134,
+    "channel": "Ridddle"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "What TON 618 Would Look Like at Different Distances",
+    "views": 8592783,
+    "channel": "Universe Dimensions",
+    "subs": 96800,
+    "url": "https://www.youtube.com/watch?v=xU60JQSjxLc"
+   },
+   {
+    "title": "TON 618: The Black Hole That Breaks the Universe | 4K",
+    "views": 2446041,
+    "channel": "NullSpace",
+    "subs": 53200,
+    "url": "https://www.youtube.com/watch?v=i3GIzBzNAAU"
+   },
+   {
+    "title": "Why TON 618 is The Scariest Black Hole in the Universe",
+    "views": 1548705,
+    "channel": "Cosmic Void",
+    "subs": 8650,
+    "url": "https://www.youtube.com/watch?v=Em3HCTeTlQg"
+   }
+  ],
+  "assets_raw": 25,
+  "demand_score": 9.47,
+  "hits_score": 9.47,
+  "breakouts_score": 10.0,
+  "velocity_score": 8.42,
+  "assets_score": 7.37,
+  "score": 9.13
+ },
+ {
+  "topic": "The Moon / Artemis",
+  "queries": [
+   "artemis moon mission",
+   "why we are going back to the moon"
+  ],
+  "asset_query": "Artemis Moon",
+  "n_results": 36,
+  "demand_raw": 1522866.0,
+  "hits_raw": 21,
+  "velocity_raw": 10700.2,
+  "breakouts_raw": 7,
+  "big_hits": 7,
+  "top": [
+   {
+    "title": "The Missions Bringing Us Back to the Moon",
+    "views": 5006572,
+    "channel": "StarTalk"
+   },
+   {
+    "title": "Artemis II Explained | 2026 Mission to the Moon",
+    "views": 4260189,
+    "channel": "Digital Astronaut"
+   },
+   {
+    "title": "How NASA Will Build The Artemis Moon Base",
+    "views": 3944879,
+    "channel": "The Space Race"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Artemis II Explained | 2026 Mission to the Moon",
+    "views": 4260189,
+    "channel": "Digital Astronaut",
+    "subs": 51800,
+    "url": "https://www.youtube.com/watch?v=nBdjwRmJRbU"
+   },
+   {
+    "title": "Apollo Astronaut Charles Duke Explains Why Humans Never Returned to the Moon",
+    "views": 759819,
+    "channel": "Vexora",
+    "subs": 18200,
+    "url": "https://www.youtube.com/watch?v=EM87VOG3rDU"
+   },
+   {
+    "title": "Every Artemis Mission Explained",
+    "views": 679222,
+    "channel": "Supernova",
+    "subs": 10000,
+    "url": "https://www.youtube.com/watch?v=qIRDgn9btEM"
+   }
+  ],
+  "assets_raw": 25,
+  "demand_score": 8.95,
+  "hits_score": 10.0,
+  "breakouts_score": 9.47,
+  "velocity_score": 8.95,
+  "assets_score": 7.37,
+  "score": 9.05
+ },
+ {
+  "topic": "Voyager 1 today",
+  "queries": [
+   "where is voyager 1 now",
+   "voyager 1 explained"
+  ],
+  "asset_query": "Voyager",
+  "n_results": 34,
+  "demand_raw": 980683.5,
+  "hits_raw": 15,
+  "velocity_raw": 6690.2,
+  "breakouts_raw": 6,
+  "big_hits": 4,
+  "top": [
+   {
+    "title": "What Voyager Detected at The Edge of Our Solar System",
+    "views": 2253129,
+    "channel": "Calm Space"
+   },
+   {
+    "title": "VOYAGER 1: The Story of the Next 10 Trillion Years | 4K",
+    "views": 2165962,
+    "channel": "NullSpace"
+   },
+   {
+    "title": "NASA\u2019s Voyager Just Crossed the Edge of the Solar System \u2014 and Found Something Wild",
+    "views": 2021281,
+    "channel": "NASASpaceNews"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "VOYAGER 1: The Story of the Next 10 Trillion Years | 4K",
+    "views": 2165962,
+    "channel": "NullSpace",
+    "subs": 53200,
+    "url": "https://www.youtube.com/watch?v=hh7wfElw4g0"
+   },
+   {
+    "title": "Where Will Voyager 1 Be in 10 Trillion Years?",
+    "views": 684615,
+    "channel": "Today in the Space World",
+    "subs": 78400,
+    "url": "https://www.youtube.com/watch?v=0iztn5wo6rk"
+   },
+   {
+    "title": "Launched in 1977: Where is Voyager 1 Right Now? (The Loneliest Object)",
+    "views": 635165,
+    "channel": "Cosmic Lens",
+    "subs": 99900,
+    "url": "https://www.youtube.com/watch?v=oSJEcODnB6I"
+   }
+  ],
+  "assets_raw": 25,
+  "demand_score": 6.84,
+  "hits_score": 8.16,
+  "breakouts_score": 8.95,
+  "velocity_score": 6.84,
+  "assets_score": 7.37,
+  "score": 7.71
+ },
+ {
+  "topic": "Mars colonization reality",
+  "queries": [
+   "can humans live on mars",
+   "living on mars explained"
+  ],
+  "asset_query": "Mars surface",
+  "n_results": 32,
+  "demand_raw": 1962168.5,
+  "hits_raw": 11,
+  "velocity_raw": 8760.6,
+  "breakouts_raw": 3,
+  "big_hits": 7,
+  "top": [
+   {
+    "title": "Something Strange is Happening on Mars",
+    "views": 6939296,
+    "channel": "GetsetflySCIENCE by Gaurav Thakur"
+   },
+   {
+    "title": "How SpaceX Will Build a City on Mars",
+    "views": 4660416,
+    "channel": "The Space Race"
+   },
+   {
+    "title": "Stranded on Mars: The Full Journey from Start to Finish",
+    "views": 2630497,
+    "channel": "Red Horizon"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Stranded on Mars: The Full Journey from Start to Finish",
+    "views": 2630497,
+    "channel": "Red Horizon",
+    "subs": 47900,
+    "url": "https://www.youtube.com/watch?v=8UKIFgXMfpM"
+   },
+   {
+    "title": "Can We Survive Mars? | \u0939\u093f\u0902\u0926\u0940",
+    "views": 1892084,
+    "channel": "Quera Official",
+    "subs": 81200,
+    "url": "https://www.youtube.com/watch?v=5WeCzUS9ZoA"
+   },
+   {
+    "title": "Can Humans Survive On Mars?",
+    "views": 533201,
+    "channel": "The Independent Bro",
+    "subs": 96400,
+    "url": "https://www.youtube.com/watch?v=qoTmL7wnFYo"
+   }
+  ],
+  "assets_raw": 25,
+  "demand_score": 10.0,
+  "hits_score": 7.11,
+  "breakouts_score": 5.26,
+  "velocity_score": 7.89,
+  "assets_score": 7.37,
+  "score": 7.53
+ },
+ {
+  "topic": "How the universe will end",
+  "queries": [
+   "how will the universe end",
+   "end of the universe explained"
+  ],
+  "asset_query": "galaxies deep field",
+  "n_results": 32,
+  "demand_raw": 1124032.0,
+  "hits_raw": 17,
+  "velocity_raw": 6921.3,
+  "breakouts_raw": 4,
+  "big_hits": 7,
+  "top": [
+   {
+    "title": "This Is the Scariest Place in The Universe",
+    "views": 8507072,
+    "channel": "Kurzgesagt \u2013 In a Nutshell"
+   },
+   {
+    "title": "TIMELAPSE OF THE UNIVERSE:  13 Billion Years in 10 Minutes \u2022 Updated and Remastered",
+    "views": 1605551,
+    "channel": "melodysheep"
+   },
+   {
+    "title": "The Universe's Expansion No Longer Makes Sense",
+    "views": 1395273,
+    "channel": "Astrum"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "The true Scale of the Universe \u2013 How Big is the Universe? | Space Documentary 2026",
+    "views": 1044059,
+    "channel": "Actual Space",
+    "subs": 56400,
+    "url": "https://www.youtube.com/watch?v=7odTB3nlN6U"
+   },
+   {
+    "title": "Every Way the Universe Could End Explained in 18 Minutes",
+    "views": 372022,
+    "channel": "Big Space Explainer",
+    "subs": 6360,
+    "url": "https://www.youtube.com/watch?v=etJuVmXoT4M"
+   },
+   {
+    "title": "Every Way The Universe Could End Explained in 9 Minutes",
+    "views": 258488,
+    "channel": "Bluntly Explained",
+    "subs": 45100,
+    "url": "https://www.youtube.com/watch?v=_8GzSKgDBH8"
+   }
+  ],
+  "assets_raw": 20,
+  "demand_score": 8.42,
+  "hits_score": 8.95,
+  "breakouts_score": 7.63,
+  "velocity_score": 7.37,
+  "assets_score": 2.11,
+  "score": 7.22
+ },
+ {
+  "topic": "The Bo\u00f6tes void",
+  "queries": [
+   "bootes void explained",
+   "biggest empty space in the universe"
+  ],
+  "asset_query": "cosmic web",
+  "n_results": 37,
+  "demand_raw": 955343.5,
+  "hits_raw": 15,
+  "velocity_raw": 6535.4,
+  "breakouts_raw": 4,
+  "big_hits": 4,
+  "top": [
+   {
+    "title": "This Is the Scariest Place in The Universe",
+    "views": 8507072,
+    "channel": "Kurzgesagt \u2013 In a Nutshell"
+   },
+   {
+    "title": "The Universe May Have Just Revealed the True Nature of Empty Space",
+    "views": 1839862,
+    "channel": "PBS Space Time"
+   },
+   {
+    "title": "You Live in a Cosmic Hole... And Nobody Told You",
+    "views": 1079276,
+    "channel": "Ridddle"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "The true Scale of the Universe \u2013 How Big is the Universe? | Space Documentary 2026",
+    "views": 1044059,
+    "channel": "Actual Space",
+    "subs": 56400,
+    "url": "https://www.youtube.com/watch?v=7odTB3nlN6U"
+   },
+   {
+    "title": "\"It's a Different Universe\" \u2014 James Webb Found Something That Doesn't Add Up",
+    "views": 822134,
+    "channel": "Space Before After",
+    "subs": 18200,
+    "url": "https://www.youtube.com/watch?v=TwrD53xdeMU"
+   },
+   {
+    "title": "How Big is the Universe? Your Brain Can't Comprehend the Answer",
+    "views": 543933,
+    "channel": "Sleep On Science",
+    "subs": 89800,
+    "url": "https://www.youtube.com/watch?v=NvLk3KfPRZY"
+   }
+  ],
+  "assets_raw": 25,
+  "demand_score": 6.32,
+  "hits_score": 8.16,
+  "breakouts_score": 7.63,
+  "velocity_score": 6.32,
+  "assets_score": 7.37,
+  "score": 7.17
+ },
+ {
+  "topic": "Falling into Jupiter (control)",
+  "queries": [
+   "what happens if you fall into jupiter",
+   "inside jupiter explained"
+  ],
+  "asset_query": "Jupiter Juno",
+  "n_results": 37,
+  "demand_raw": 1102985.0,
+  "hits_raw": 9,
+  "velocity_raw": 15327.9,
+  "breakouts_raw": 4,
+  "big_hits": 4,
+  "top": [
+   {
+    "title": "Jupiter Is Not What You Think",
+    "views": 7087877,
+    "channel": "The Space Race"
+   },
+   {
+    "title": "What NASA Found Below Jupiter's Clouds",
+    "views": 2486191,
+    "channel": "Astrum"
+   },
+   {
+    "title": "Why Jupiter is The Scariest Planet (It\u2019s Not Peaceful)",
+    "views": 2173091,
+    "channel": "Cosmicus"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Jupiter: 58 Minutes Inside a World That Has No Surface",
+    "views": 372055,
+    "channel": "The Quiet Observatory",
+    "subs": 29500,
+    "url": "https://www.youtube.com/watch?v=ZJgl-Ed70ow"
+   },
+   {
+    "title": "What If You Fell Into Jupiter?",
+    "views": 265830,
+    "channel": "Kian Odyssey",
+    "subs": 4630,
+    "url": "https://www.youtube.com/watch?v=LSm8jleX03M"
+   },
+   {
+    "title": "What NASA Actually Found Inside the Great Red Spot",
+    "views": 184193,
+    "channel": "Mystral",
+    "subs": 31900,
+    "url": "https://www.youtube.com/watch?v=aqh9ouK66FY"
+   }
+  ],
+  "assets_raw": 21,
+  "demand_score": 7.89,
+  "hits_score": 5.26,
+  "breakouts_score": 7.63,
+  "velocity_score": 10.0,
+  "assets_score": 2.89,
+  "score": 6.87
+ },
+ {
+  "topic": "Edge of the observable universe",
+  "queries": [
+   "what is at the edge of the universe",
+   "edge of the observable universe explained"
+  ],
+  "asset_query": "Webb deep field",
+  "n_results": 36,
+  "demand_raw": 1052976.5,
+  "hits_raw": 11,
+  "velocity_raw": 5645.0,
+  "breakouts_raw": 4,
+  "big_hits": 5,
+  "top": [
+   {
+    "title": "What Voyager Detected at The Edge of Our Solar System",
+    "views": 2253129,
+    "channel": "Calm Space"
+   },
+   {
+    "title": "The Anomaly at the Edge of the Universe",
+    "views": 1253337,
+    "channel": "Astrum"
+   },
+   {
+    "title": "What Is Beyond The End?",
+    "views": 1122490,
+    "channel": "History of the Universe"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "The true Scale of the Universe \u2013 How Big is the Universe? | Space Documentary 2026",
+    "views": 1044059,
+    "channel": "Actual Space",
+    "subs": 56400,
+    "url": "https://www.youtube.com/watch?v=7odTB3nlN6U"
+   },
+   {
+    "title": "Sir David Attenborough:  The True Scale of the Universe From Earth | Full Documentary Movie",
+    "views": 431657,
+    "channel": "Paleora",
+    "subs": 28600,
+    "url": "https://www.youtube.com/watch?v=HNF4ZL7Qzyw"
+   },
+   {
+    "title": "The Terrifying Reality Of Reaching The Edge Of The Universe",
+    "views": 213712,
+    "channel": "Flippo Explains",
+    "subs": 6040,
+    "url": "https://www.youtube.com/watch?v=skK6TKHy-HA"
+   }
+  ],
+  "assets_raw": 9,
+  "demand_score": 7.37,
+  "hits_score": 7.11,
+  "breakouts_score": 7.63,
+  "velocity_score": 5.79,
+  "assets_score": 1.58,
+  "score": 6.28
+ },
+ {
+  "topic": "Asteroid Apophis 2029",
+  "queries": [
+   "apophis asteroid 2029",
+   "asteroid that will pass earth"
+  ],
+  "asset_query": "asteroid",
+  "n_results": 34,
+  "demand_raw": 501440.0,
+  "hits_raw": 10,
+  "velocity_raw": 14445.6,
+  "breakouts_raw": 3,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "Humanity\u2019s Real Plan to Stop This Asteroid (Feat. Mark Rober)",
+    "views": 6097243,
+    "channel": "Cleo Abram and Mark Rober"
+   },
+   {
+    "title": "What If Asteroid Apophis Hit Earth? Scientists Mapped Where It Lands",
+    "views": 4684732,
+    "channel": "Tracer Project"
+   },
+   {
+    "title": "What Happens If An Asteroid ACTUALLY Hits Earth? | FULL DOCUMENTARY",
+    "views": 707439,
+    "channel": "Naked Science"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "What If Asteroid Apophis Hit Earth? Scientists Mapped Where It Lands",
+    "views": 4684732,
+    "channel": "Tracer Project",
+    "subs": 2990,
+    "url": "https://www.youtube.com/watch?v=0iBYMwGDin0"
+   },
+   {
+    "title": "Apophis Will Miss Earth by 30 Minutes. We Found Where It Would Hit.",
+    "views": 343726,
+    "channel": "cognatura",
+    "subs": 6940,
+    "url": "https://www.youtube.com/watch?v=ozAriCkX8E8"
+   },
+   {
+    "title": "What If Apophis Actually Hits Earth?",
+    "views": 148221,
+    "channel": "Found Alive",
+    "subs": 6860,
+    "url": "https://www.youtube.com/watch?v=KOhHj_XenhU"
+   }
+  ],
+  "assets_raw": 23,
+  "demand_score": 4.21,
+  "hits_score": 6.05,
+  "breakouts_score": 5.26,
+  "velocity_score": 9.47,
+  "assets_score": 3.95,
+  "score": 5.59
+ },
+ {
+  "topic": "Titan's methane seas",
+  "queries": [
+   "titan saturn moon explained",
+   "what is it like on titan"
+  ],
+  "asset_query": "Titan",
+  "n_results": 33,
+  "demand_raw": 555345.5,
+  "hits_raw": 8,
+  "velocity_raw": 1658.5,
+  "breakouts_raw": 3,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "What if Upgraded Titan cameraman cameback in skibidi toilet 77? (part 1) - REMAKE",
+    "views": 2704830,
+    "channel": "Matt"
+   },
+   {
+    "title": "Attack on Titan Is a Twisted Retelling of the Bible (You Can\u2019t Unsee It)",
+    "views": 1075877,
+    "channel": "Ifechi"
+   },
+   {
+    "title": "What We Found on the Icy Moons of Saturn",
+    "views": 707070,
+    "channel": "Astrum Extra"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Attack on Titan Is a Twisted Retelling of the Bible (You Can\u2019t Unsee It)",
+    "views": 1075877,
+    "channel": "Ifechi",
+    "subs": 15100,
+    "url": "https://www.youtube.com/watch?v=PEITBVhyEqI"
+   },
+   {
+    "title": "Ranking EVERY Attack on Titan Game on Roblox ",
+    "views": 543599,
+    "channel": "Pixel blox",
+    "subs": 44200,
+    "url": "https://www.youtube.com/watch?v=HYn961zRMyE"
+   },
+   {
+    "title": "Every Weird Moon in the Solar System Explained in 20 minutes",
+    "views": 120104,
+    "channel": "Captain Cipher",
+    "subs": 13900,
+    "url": "https://www.youtube.com/watch?v=M_eJcdBzgbM"
+   }
+  ],
+  "assets_raw": 25,
+  "demand_score": 4.74,
+  "hits_score": 4.74,
+  "breakouts_score": 5.26,
+  "velocity_score": 0.53,
+  "assets_score": 7.37,
+  "score": 4.63
+ },
+ {
+  "topic": "Betelgeuse going supernova",
+  "queries": [
+   "betelgeuse supernova",
+   "what if betelgeuse explodes"
+  ],
+  "asset_query": "Betelgeuse",
+  "n_results": 31,
+  "demand_raw": 707877.0,
+  "hits_raw": 10,
+  "velocity_raw": 2479.7,
+  "breakouts_raw": 3,
+  "big_hits": 3,
+  "top": [
+   {
+    "title": "We Finally Know Why Betelgeuse Behaves So Strangely",
+    "views": 2495286,
+    "channel": "Astrum"
+   },
+   {
+    "title": "We've Never Seen a Supernova Explode Until Now",
+    "views": 2101978,
+    "channel": "Astrum"
+   },
+   {
+    "title": "The Night Sky When BETELGEUSE Goes SUPERNOVA (Simulation)",
+    "views": 1234608,
+    "channel": "Universe Dimensions"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "The Night Sky When BETELGEUSE Goes SUPERNOVA (Simulation)",
+    "views": 1234608,
+    "channel": "Universe Dimensions",
+    "subs": 96800,
+    "url": "https://www.youtube.com/watch?v=7c_qUXqRZFo"
+   },
+   {
+    "title": "What If Antares and Betelgeuse Go Supernova at the Same Time",
+    "views": 144044,
+    "channel": "Universe Dimensions",
+    "subs": 96800,
+    "url": "https://www.youtube.com/watch?v=Btx2gj_6ZyQ"
+   },
+   {
+    "title": "Something Strange Is Happening to Betelgeuse\u2026 And It's Not Good",
+    "views": 109356,
+    "channel": "Space Time Narratives",
+    "subs": 16500,
+    "url": "https://www.youtube.com/watch?v=V7Bo_uOci-M"
+   }
+  ],
+  "assets_raw": 3,
+  "demand_score": 5.26,
+  "hits_score": 6.05,
+  "breakouts_score": 5.26,
+  "velocity_score": 2.11,
+  "assets_score": 0.53,
+  "score": 4.24
+ },
+ {
+  "topic": "When the Sun dies",
+  "queries": [
+   "what happens when the sun dies",
+   "how will the sun die"
+  ],
+  "asset_query": "Sun red giant",
+  "n_results": 29,
+  "demand_raw": 798397.5,
+  "hits_raw": 6,
+  "velocity_raw": 3670.9,
+  "breakouts_raw": 2,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "The Sun Is Weirder Than You Think",
+    "views": 9407471,
+    "channel": "Cleo Abram"
+   },
+   {
+    "title": "What If You Visited the Universe's Deadliest Environments?",
+    "views": 1143896,
+    "channel": "What If"
+   },
+   {
+    "title": "What If the Sun Starts Eating Planets? (Sun Dying)",
+    "views": 936822,
+    "channel": "Ultra Space Balls"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "The Evolution of the Sun in the Next 8 Billion Years",
+    "views": 855434,
+    "channel": "Universe Dimensions",
+    "subs": 96800,
+    "url": "https://www.youtube.com/watch?v=py-lVB-IgoI"
+   },
+   {
+    "title": "What Would Happen If The Sun Disappeared For One Week?",
+    "views": 741361,
+    "channel": "The Last Day",
+    "subs": 33000,
+    "url": "https://www.youtube.com/watch?v=yqIVm6jajfQ"
+   }
+  ],
+  "assets_raw": 21,
+  "demand_score": 5.79,
+  "hits_score": 3.95,
+  "breakouts_score": 3.42,
+  "velocity_score": 4.21,
+  "assets_score": 2.89,
+  "score": 4.16
+ },
+ {
+  "topic": "Life in Europa's ocean",
+  "queries": [
+   "europa ocean life",
+   "europa moon explained"
+  ],
+  "asset_query": "Europa",
+  "n_results": 37,
+  "demand_raw": 298223.0,
+  "hits_raw": 6,
+  "velocity_raw": 2606.4,
+  "breakouts_raw": 0,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "What NASA Found on Io",
+    "views": 5388266,
+    "channel": "The Space Race"
+   },
+   {
+    "title": "Something Weird Is Happening On Europa",
+    "views": 4460446,
+    "channel": "The Space Race"
+   },
+   {
+    "title": "Why Europa is The Scariest Moon (Something Lives Under the Ice)",
+    "views": 791447,
+    "channel": "Cosmicus"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 25,
+  "demand_score": 3.16,
+  "hits_score": 3.95,
+  "breakouts_score": 0.79,
+  "velocity_score": 3.16,
+  "assets_score": 7.37,
+  "score": 3.36
+ },
+ {
+  "topic": "Interstellar visitors (3I/ATLAS, Oumuamua)",
+  "queries": [
+   "interstellar object 3I ATLAS",
+   "oumuamua explained"
+  ],
+  "asset_query": "interstellar comet",
+  "n_results": 36,
+  "demand_raw": 249674.5,
+  "hits_raw": 5,
+  "velocity_raw": 4171.5,
+  "breakouts_raw": 0,
+  "big_hits": 0,
+  "top": [
+   {
+    "title": "Interstellar Object '3I/ATLAS' stuns scientists",
+    "views": 502676,
+    "channel": "KTVU FOX 2 San Francisco"
+   },
+   {
+    "title": "Something Came Out of 3I/ATLAS",
+    "views": 447713,
+    "channel": "Astrum"
+   },
+   {
+    "title": "What If Earth Got Hit by an Interstellar Object",
+    "views": 431558,
+    "channel": "What If"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 25,
+  "demand_score": 2.63,
+  "hits_score": 2.37,
+  "breakouts_score": 0.79,
+  "velocity_score": 4.74,
+  "assets_score": 7.37,
+  "score": 3.15
+ },
+ {
+  "topic": "Landing on Venus",
+  "queries": [
+   "what happens if you land on venus",
+   "venus explained"
+  ],
+  "asset_query": "Venus surface",
+  "n_results": 36,
+  "demand_raw": 116370.0,
+  "hits_raw": 4,
+  "velocity_raw": 4873.1,
+  "breakouts_raw": 2,
+  "big_hits": 3,
+  "top": [
+   {
+    "title": "What The Soviets Found On Venus",
+    "views": 4306479,
+    "channel": "The Space Race"
+   },
+   {
+    "title": "Why Russia Never Went Back to Planet Venus",
+    "views": 2194613,
+    "channel": "Zem TV"
+   },
+   {
+    "title": "How the Soviets Landed on Venus!",
+    "views": 1394073,
+    "channel": "Xverse"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "How the Soviets Landed on Venus!",
+    "views": 1394073,
+    "channel": "Xverse",
+    "subs": 75300,
+    "url": "https://www.youtube.com/watch?v=7u785oK8TvQ"
+   },
+   {
+    "title": "Can we Survive on Venus? | \u0939\u093f\u0902\u0926\u0940",
+    "views": 156481,
+    "channel": "Quera Official",
+    "subs": 81200,
+    "url": "https://www.youtube.com/watch?v=8sZtecewHrY"
+   }
+  ],
+  "assets_raw": 23,
+  "demand_score": 1.58,
+  "hits_score": 1.05,
+  "breakouts_score": 3.42,
+  "velocity_score": 5.26,
+  "assets_score": 3.95,
+  "score": 2.84
+ },
+ {
+  "topic": "Falling into a black hole",
+  "queries": [
+   "what happens if you fall into a black hole",
+   "falling into a black hole explained"
+  ],
+  "asset_query": "black hole",
+  "n_results": 33,
+  "demand_raw": 108410.0,
+  "hits_raw": 5,
+  "velocity_raw": 2435.8,
+  "breakouts_raw": 1,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "The Black Hole Paradox That Keeps Physicists Awake at Night",
+    "views": 1390025,
+    "channel": "New Scientist"
+   },
+   {
+    "title": "Falling Into a Black Hole (Simulation)",
+    "views": 1134802,
+    "channel": "Stargaze"
+   },
+   {
+    "title": "Visualizing the birth of a Black Hole",
+    "views": 603703,
+    "channel": "ScienceClic English"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "What Happens If You Fall Into Every Planet? (Then a Black Hole)",
+    "views": 111312,
+    "channel": "Dummyology",
+    "subs": 6470,
+    "url": "https://www.youtube.com/watch?v=h37AAV52YYo"
+   }
+  ],
+  "assets_raw": 25,
+  "demand_score": 1.05,
+  "hits_score": 2.37,
+  "breakouts_score": 2.37,
+  "velocity_score": 1.58,
+  "assets_score": 7.37,
+  "score": 2.67
+ },
+ {
+  "topic": "Magnetars",
+  "queries": [
+   "magnetar explained",
+   "most dangerous star in the universe"
+  ],
+  "asset_query": "magnetar",
+  "n_results": 36,
+  "demand_raw": 199658.5,
+  "hits_raw": 5,
+  "velocity_raw": 2168.2,
+  "breakouts_raw": 3,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "Why Saturn is The Scariest Planet (It\u2019s Not Peaceful)",
+    "views": 6205445,
+    "channel": "Cosmic Lens"
+   },
+   {
+    "title": "Is This the Largest Star In the Universe?",
+    "views": 3014425,
+    "channel": "Astrum"
+   },
+   {
+    "title": "Experience the Universe's VIOLENT Extremes | How the Universe Works | Science Channel",
+    "views": 915921,
+    "channel": "Science Channel"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Why Saturn is The Scariest Planet (It\u2019s Not Peaceful)",
+    "views": 6205445,
+    "channel": "Cosmic Lens",
+    "subs": 99900,
+    "url": "https://www.youtube.com/watch?v=0SEU_ggHdSs"
+   },
+   {
+    "title": "Every Terrifying Object in the Universe Explained",
+    "views": 253107,
+    "channel": "Space Time Narratives",
+    "subs": 16500,
+    "url": "https://www.youtube.com/watch?v=C7HSVsNcN8k"
+   },
+   {
+    "title": "Magnetar: The Star More Dangerous Than a Black Hole",
+    "views": 146210,
+    "channel": "The Quiet Observatory",
+    "subs": 29500,
+    "url": "https://www.youtube.com/watch?v=pw_4a-cRaWs"
+   }
+  ],
+  "assets_raw": 6,
+  "demand_score": 2.11,
+  "hits_score": 2.37,
+  "breakouts_score": 5.26,
+  "velocity_score": 1.05,
+  "assets_score": 1.05,
+  "score": 2.63
+ },
+ {
+  "topic": "Rogue planets",
+  "queries": [
+   "rogue planets explained",
+   "planets without a star"
+  ],
+  "asset_query": "rogue planet",
+  "n_results": 36,
+  "demand_raw": 326424.0,
+  "hits_raw": 5,
+  "velocity_raw": 3028.8,
+  "breakouts_raw": 0,
+  "big_hits": 3,
+  "top": [
+   {
+    "title": "The Most Disturbing Planets Ever Found",
+    "views": 3879410,
+    "channel": "The Paint Explainer"
+   },
+   {
+    "title": "The Most Bizarre Exoplanets We've Ever Found",
+    "views": 3482948,
+    "channel": "Astrum"
+   },
+   {
+    "title": "The Solar System vs The Rogue Planets",
+    "views": 1265492,
+    "channel": "SolarBalls"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 0,
+  "demand_score": 3.68,
+  "hits_score": 2.37,
+  "breakouts_score": 0.79,
+  "velocity_score": 3.68,
+  "assets_score": 0.0,
+  "score": 2.14
+ },
+ {
+  "topic": "Alien signals (Wow! signal)",
+  "queries": [
+   "wow signal explained",
+   "alien signal from space"
+  ],
+  "asset_query": "radio telescope",
+  "n_results": 28,
+  "demand_raw": 85977.0,
+  "hits_raw": 3,
+  "velocity_raw": 2556.9,
+  "breakouts_raw": 0,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "We Keep Receiving Mysterious Signals From Deep Space",
+    "views": 1378780,
+    "channel": "Astrum Extra"
+   },
+   {
+    "title": "The Alien Signal That Looked Intelligent",
+    "views": 1034682,
+    "channel": "Art of the Problem"
+   },
+   {
+    "title": "We\u2019ve Been Searching for Aliens the Wrong Way. That\u2019s All About To Change. . .",
+    "views": 803859,
+    "channel": "PBS Space Time"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 25,
+  "demand_score": 0.53,
+  "hits_score": 0.26,
+  "breakouts_score": 0.79,
+  "velocity_score": 2.63,
+  "assets_score": 7.37,
+  "score": 1.88
+ },
+ {
+  "topic": "Inside a neutron star",
+  "queries": [
+   "what is inside a neutron star",
+   "neutron star explained"
+  ],
+  "asset_query": "neutron star pulsar",
+  "n_results": 34,
+  "demand_raw": 78676.5,
+  "hits_raw": 3,
+  "velocity_raw": 763.6,
+  "breakouts_raw": 1,
+  "big_hits": 1,
+  "top": [
+   {
+    "title": "Every Type Of Star Explained in 10 minutes",
+    "views": 1015210,
+    "channel": "Bluntly Explained"
+   },
+   {
+    "title": "Major Discoveries About Neutron Stars, Magnetars, Pulsars and FRBs (Compilation)",
+    "views": 277904,
+    "channel": "Anton Petrov"
+   },
+   {
+    "title": "Inside a Neutron Star, Matter Starts Breaking Down",
+    "views": 206976,
+    "channel": "Sleep On Physics and 2 more"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Every Type Of Star Explained in 10 minutes",
+    "views": 1015210,
+    "channel": "Bluntly Explained",
+    "subs": 45100,
+    "url": "https://www.youtube.com/watch?v=0gwHOu8ZmkU"
+   }
+  ],
+  "assets_raw": 25,
+  "demand_score": 0.0,
+  "hits_score": 0.26,
+  "breakouts_score": 2.37,
+  "velocity_score": 0.0,
+  "assets_score": 7.37,
+  "score": 1.75
+ }
+]

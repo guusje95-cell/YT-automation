@@ -1,0 +1,23 @@
+# Candidate subjects for the next episodes. Two viewer-style queries per topic, phrased the same way for every
+# subject so none gets a friendlier search. asset_query = NASA Images search for licence-clean visuals.
+topics:
+  - {topic: "Falling into a black hole", queries: ["what happens if you fall into a black hole", "falling into a black hole explained"], asset_query: "black hole"}
+  - {topic: "The biggest black hole (TON 618)", queries: ["biggest black hole in the universe", "TON 618 explained"], asset_query: "supermassive black hole"}
+  - {topic: "Inside a neutron star", queries: ["what is inside a neutron star", "neutron star explained"], asset_query: "neutron star pulsar"}
+  - {topic: "Magnetars", queries: ["magnetar explained", "most dangerous star in the universe"], asset_query: "magnetar"}
+  - {topic: "Alien signals (Wow! signal)", queries: ["wow signal explained", "alien signal from space"], asset_query: "radio telescope"}
+  - {topic: "Betelgeuse going supernova", queries: ["betelgeuse supernova", "what if betelgeuse explodes"], asset_query: "Betelgeuse"}
+  - {topic: "How the universe will end", queries: ["how will the universe end", "end of the universe explained"], asset_query: "galaxies deep field"}
+  - {topic: "Edge of the observable universe", queries: ["what is at the edge of the universe", "edge of the observable universe explained"], asset_query: "Webb deep field"}
+  - {topic: "Voyager 1 today", queries: ["where is voyager 1 now", "voyager 1 explained"], asset_query: "Voyager"}
+  - {topic: "Rogue planets", queries: ["rogue planets explained", "planets without a star"], asset_query: "rogue planet"}
+  - {topic: "Life in Europa's ocean", queries: ["europa ocean life", "europa moon explained"], asset_query: "Europa"}
+  - {topic: "Landing on Venus", queries: ["what happens if you land on venus", "venus explained"], asset_query: "Venus surface"}
+  - {topic: "Titan's methane seas", queries: ["titan saturn moon explained", "what is it like on titan"], asset_query: "Titan"}
+  - {topic: "When the Sun dies", queries: ["what happens when the sun dies", "how will the sun die"], asset_query: "Sun red giant"}
+  - {topic: "Asteroid Apophis 2029", queries: ["apophis asteroid 2029", "asteroid that will pass earth"], asset_query: "asteroid"}
+  - {topic: "Interstellar visitors (3I/ATLAS, Oumuamua)", queries: ["interstellar object 3I ATLAS", "oumuamua explained"], asset_query: "interstellar comet"}
+  - {topic: "The Boötes void", queries: ["bootes void explained", "biggest empty space in the universe"], asset_query: "cosmic web"}
+  - {topic: "Falling into Jupiter (control)", queries: ["what happens if you fall into jupiter", "inside jupiter explained"], asset_query: "Jupiter Juno"}
+  - {topic: "Mars colonization reality", queries: ["can humans live on mars", "living on mars explained"], asset_query: "Mars surface"}
+  - {topic: "The Moon / Artemis", queries: ["artemis moon mission", "why we are going back to the moon"], asset_query: "Artemis Moon"}
