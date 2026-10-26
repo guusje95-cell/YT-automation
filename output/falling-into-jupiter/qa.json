@@ -1,7 +1,7 @@
 {
  "summary": {
   "PASS": 28,
-  "WARN": 0,
+  "WARN": 1,
   "FAIL": 0
  },
  "results": [
@@ -18,7 +18,7 @@
   [
    "script.length",
    "PASS",
-   "826 words, 95 sentences"
+   "814 words, 94 sentences"
   ],
   [
    "script.longest_sentence",
@@ -63,7 +63,7 @@
   [
    "assets.unused",
    "PASS",
-   "unused (fine): ['entry_site', 'galileo_orbiter', 'grs_slices', 'white_oval']"
+   "unused (fine): ['galileo_orbiter', 'grs_slices', 'white_oval']"
   ],
   [
    "captions.line_length",
@@ -73,12 +73,12 @@
   [
    "meta.title_length",
    "PASS",
-   "43 chars: Falling Into Jupiter (Every Number Is Real)"
+   "44 chars: Falling Into Jupiter (Based on a True Story)"
   ],
   [
    "meta.description_length",
    "PASS",
-   "4758 chars"
+   "4881 chars"
   ],
   [
    "meta.tags",
@@ -123,12 +123,12 @@
   [
    "video.duration",
    "PASS",
-   "362.3s (6.0 min)"
+   "357.9s (6.0 min)"
   ],
   [
    "video.av_sync_length",
    "PASS",
-   "video 362.30s / audio 362.28s"
+   "video 357.77s / audio 357.85s"
   ],
   [
    "video.black_frames",
@@ -138,12 +138,17 @@
   [
    "audio.loudness",
    "PASS",
-   "-14.4 LUFS integrated, true peak -1.7 dBFS"
+   "-14.4 LUFS integrated, true peak -1.8 dBFS"
   ],
   [
    "audio.long_silences",
    "PASS",
    "none"
+  ],
+  [
+   "voice.intelligibility",
+   "WARN",
+   "ASR word error rate 9.5% (lower is better; includes number formatting differences). Top diffs: 'ten' -> '10'; 'one hundred and seventy thousand kilometres' -> '170000 km'; 'fifty eight' -> '58'; 'centre' -> 'center'; 'shock wave' -> 'shockwave'; 'sixteen thousand' -> '16000'; 'two hundred and twenty eight' -> '228'; 'fifteen tonnes' -> '15 tons'"
   ]
  ]
 }

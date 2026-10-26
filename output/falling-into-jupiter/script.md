@@ -1,22 +1,22 @@
-# Falling Into Jupiter (Every Number Is Real)
+# Falling Into Jupiter (Based on a True Story)
 
-Video id: `falling-into-jupiter` · narration 6.0 min · 849 words
+Video id: `falling-into-jupiter` · narration 6.0 min · 837 words
 
 ## [0:00] None
 
 **MARA:** Ten seconds to atmosphere. Velocity, one hundred and seventy thousand kilometres an hour. There's no ground down there, nothing to land on, just down.
 
-This is Mara Voss. She doesn't exist, and neither does her capsule. Nothing we know how to build would survive what happens next. But every number you're about to hear is real, measured by the machines that went before her. One of them got this far in 1995. It lasted fifty-eight minutes before the pressure silenced it. Mara is going to keep going. All the way to the centre.
+In 1995, a machine fell into Jupiter. For fifty-eight minutes, it sent back everything it saw. Then the pressure silenced it forever. Nothing has gone deeper since. This is what happens if you keep falling. Past the place where it died. All the way to the centre.
 
 **MARA:** Here we go.
 
 **Claims → sources**
 - Entry speed 170,590 km/h — [nasa_probe](https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe)
 - No solid surface — [nasa_jupiter_facts](https://science.nasa.gov/jupiter/facts/)
-- NASA: Jupiter's conditions crush, melt, and vaporize spacecraft trying to fly into the planet — [nasa_jupiter_facts](https://science.nasa.gov/jupiter/facts/)
-- Galileo probe, Dec 1995: data for 58 minutes; transmitter failed evidently due to the enormous pressure — [nasa_probe](https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe)
+- Galileo probe entered Jupiter on 7 Dec 1995; data for 58 minutes; transmitter failed evidently due to the enormous pressure — [nasa_probe](https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe)
+- No spacecraft has since gone deeper into Jupiter's atmosphere (Juno measures from orbit) — [nasa_juno](https://science.nasa.gov/mission/juno/)
 
-## [0:41] The wall of fire
+## [0:34] The wall of fire
 
 **MARA:** Contact, contact, everything's shaking! The window, the window is on fire!
 
@@ -30,7 +30,7 @@ At this speed, the gas in front of the capsule can't get out of the way. It pile
 - Maximum deceleration 228 g; 228 x ~70 kg ≈ 16 t (derived) — [nasa_probe](https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe)
 - Probe descended by parachute — [nasa_probe](https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe)
 
-## [1:24] Into the storm
+## [1:17] Into the storm
 
 **MARA:** I'm at the cloud tops, and it's minus one hundred and sixty outside. Everything is white.
 
@@ -53,7 +53,7 @@ That's what the real probe measured. Almost twice the speed of sound on Earth.
 - Probe measured winds up to ~640 m/s; speed of sound in Earth air ~343 m/s (derived ~1.9x) — [nasa_probe](https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe)
 - Temperature rises below the cloud tops (-108 C at 1 bar, ~150 C at 22 bar) — [nssdc_jupiter](https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html), [macmillan_galileo](https://digfir-published.macmillanusa.com/universe10e/universe10e_ch12_6.html)
 
-## [2:17] Where the probe died
+## [2:11] Where the probe died
 
 About an hour after entry, Mara reaches a very special place. In 1995, NASA's Galileo probe stopped transmitting right here. About a hundred and eighty kilometres down. Twenty-two times the pressure of Earth's air. Around a hundred and fifty degrees, hotter than boiling water. Its last signal came from this depth. Then, silence.
 
@@ -66,7 +66,7 @@ Below this point, everything we know comes from the outside. From Juno, a spacec
 - Temperature ~152-153 C at the deepest point — [macmillan_galileo](https://digfir-published.macmillanusa.com/universe10e/universe10e_ch12_6.html)
 - Juno in polar orbit since 2016; gravity, magnetic, microwave measurements — [nasa_juno](https://science.nasa.gov/mission/juno/)
 
-## [3:08] Storms with roots
+## [3:01] Storms with roots
 
 **MARA:** I'm two hundred kilometres down, and the wind still hasn't stopped.
 
@@ -77,7 +77,7 @@ It won't for a long time. Juno found that Jupiter's famous stripes are jet strea
 - GRS twice as wide as Earth; depth ~500 km (gravity) — [nasa_jupiter_facts](https://science.nasa.gov/jupiter/facts/), [jpl_3d_2021](https://www.jpl.nasa.gov/news/nasas-juno-science-results-offer-first-3d-view-of-jupiter-atmosphere/)
 - 500 km / 180 km ≈ 2.8 (derived) — [nasa_probe](https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe), [jpl_3d_2021](https://www.jpl.nasa.gov/news/nasas-juno-science-results-offer-first-3d-view-of-jupiter-atmosphere/)
 
-## [3:35] The ocean with no surface
+## [3:28] The ocean with no surface
 
 **MARA:** Pressure's climbing too fast. The hull is groaning. Wait, the outside looks thick and heavy, like we're under water.
 
@@ -98,7 +98,7 @@ This metal ocean, churning inside a planet that spins once every ten hours, is a
 - Day 9.9 hours; field 16-54x Earth's — [nasa_jupiter_facts](https://science.nasa.gov/jupiter/facts/)
 - Probe flew through an intense radiation belt ~50,000 km above the clouds — [nasa_probe](https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe)
 
-## [4:38] The heart
+## [4:31] The heart
 
 **MARA:** I've lost the link to the orbiter. Recording anyway.
 
@@ -117,9 +117,9 @@ Near the centre, scientists estimate the temperature at around twenty-four thous
 - Estimated ~24,000 C near the centre (model estimate) — [nasa_spaceplace](https://spaceplace.nasa.gov/jupiter/en/)
 - 24,000 / 5,500 ≈ 4.4 (derived) — [nasa_sun_facts](https://science.nasa.gov/sun/facts/)
 
-## [5:34] None
+## [5:27] None
 
-Mara isn't real. But the probe that went first was. In 1995, a small machine fell into the biggest planet in our solar system, and for fifty-eight minutes, it told us what it found. Everything deeper, we've pieced together since, from far outside. A place no one will ever see. But we know it's there. If you want to fall into another world with us, subscribe.
+Mara's journey was imagined. The probe's was not. In 1995, a small machine really did fall into the biggest planet in our solar system, and for fifty-eight minutes, it told us what it found. Everything deeper, we've pieced together since, from far outside, and every number you heard along the way is real. A place no one will ever see. But we know it's there. If you want to fall into another world with us, subscribe.
 
 **Claims → sources**
 - Galileo probe: 58 minutes of data, 1995 — [nasa_probe](https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe)

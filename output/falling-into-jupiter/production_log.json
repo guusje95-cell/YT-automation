@@ -208,5 +208,75 @@
    "llm": 0.0,
    "note": "all local/free providers; LLM cost applies only when scripts are drafted via API"
   }
+ },
+ {
+  "video_id": "falling-into-jupiter",
+  "started": "2026-10-26T17:47:09",
+  "stages": [
+   {
+    "stage": "assets",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "narration",
+    "seconds": 319.2,
+    "status": "ok"
+   },
+   {
+    "stage": "audio_mix",
+    "seconds": 26.4,
+    "status": "ok"
+   },
+   {
+    "stage": "captions",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "thumbnails",
+    "seconds": 8.9,
+    "status": "ok"
+   },
+   {
+    "stage": "storyboard",
+    "seconds": 103.7,
+    "status": "ok"
+   },
+   {
+    "stage": "render",
+    "seconds": 1808.9,
+    "status": "ok"
+   },
+   {
+    "stage": "mux",
+    "seconds": 23.1,
+    "status": "ok"
+   },
+   {
+    "stage": "metadata",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "qa",
+    "seconds": 188.9,
+    "status": "ok"
+   }
+  ],
+  "qa": {
+   "PASS": 28,
+   "WARN": 1,
+   "FAIL": 0
+  },
+  "finished": "2026-10-26T18:28:28",
+  "total_seconds": 2479.1,
+  "cost_eur": {
+   "tts": 0.0,
+   "assets": 0.0,
+   "music": 0.0,
+   "llm": 0.0,
+   "note": "all local/free providers; LLM cost applies only when scripts are drafted via API"
+  }
  }
 ]
