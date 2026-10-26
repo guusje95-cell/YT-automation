@@ -28,18 +28,58 @@ SEC_PER_WORD = 0.36
 MAX_RATIO = 1.75
 
 
-def _synth_checked(provider, text: str, tries: int = 4, **over):
+_NUMBER_WORDS = set("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen "
+                    "sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety "
+                    "hundred thousand million billion and a".split())
+_SPELLING = {"kilometres": "kilometers", "metres": "meters", "centre": "center", "tonnes": "tons"}
+
+
+def _asr_words(text: str, numbers: bool) -> list[str]:
+    import re
+    ws = re.findall(r"[a-z']+|\d[\d,.]*", text.lower().replace("-", " "))
+    ws = [_SPELLING.get(w, w) for w in ws]
+    if numbers:  # drop numerals and number words: ASR writes "170,000" for "one hundred and seventy thousand"
+        ws = [w for w in ws if not w[0].isdigit() and w not in _NUMBER_WORDS]
+    return ws
+
+
+class AsrJudge:
+    """Checks each synthesised clip with Whisper: a clip the recogniser can't follow is re-synthesised.
+    Catches mumbled short lines and invented words, which duration checks alone miss."""
+
+    def __init__(self, model_size: str = "small.en"):
+        from faster_whisper import WhisperModel
+        self.m = WhisperModel(model_size, device="cpu", compute_type="int8",
+                              download_root=str(config.MODELS_DIR / "whisper"))
+
+    def score(self, x: np.ndarray, sr: int, text: str) -> float:
+        import difflib
+        from scipy.signal import resample_poly
+        a = resample_poly(np.concatenate([np.zeros(sr // 5, np.float32), x, np.zeros(sr // 5, np.float32)]),
+                          16000 // 8000, sr // 8000).astype(np.float32)
+        hyp = " ".join(z.text for z in self.m.transcribe(a, language="en", beam_size=3)[0])
+        ref_w, hyp_w = _asr_words(text, True), _asr_words(hyp, True)
+        if not ref_w:
+            return 1.0
+        return difflib.SequenceMatcher(a=ref_w, b=hyp_w, autojunk=False).ratio()
+
+
+def _synth_checked(provider, text: str, tries: int = 4, judge: "AsrJudge | None" = None, **over):
     best = None
     words = max(len(text.split()), 1)
     for k in range(tries if provider.name == "chatterbox" else 1):
         x, sr = provider.synthesize(text, **over) if over else provider.synthesize(text)
         x = tts.trim_silence(x, sr)
         ratio = len(x) / sr / (words * SEC_PER_WORD + 0.4)
-        if best is None or abs(ratio - 1) < abs(best[2] - 1):
-            best = (x, sr, ratio)
-        if 0.45 < ratio < MAX_RATIO:
+        length_ok = 0.45 < ratio < MAX_RATIO
+        heard = judge.score(x, sr, text) if judge and length_ok else (1.0 if length_ok else 0.0)
+        quality = heard - (0 if length_ok else 1)
+        if best is None or quality > best[2]:
+            best = (x, sr, quality)
+        if length_ok and heard >= 0.8:
             break
-        log.warning("clip length off (ratio %.2f) for %r; retrying with a new seed", ratio, text[:60])
+        log.warning("clip rejected (length ratio %.2f, ASR match %.2f) for %r; retrying with a new seed",
+                    ratio, heard, text[:60])
     return best[0], best[1]
 
 
@@ -65,7 +105,14 @@ def build(spec) -> dict:
     vcfg = dict(config.get("voice", {}))
     vcfg.update(spec.data.get("voice") or {})
     gaps = {k: vcfg.pop(k) for k in ("sentence_gap_s", "paragraph_gap_s", "scene_gap_s", "speaker_gap_s") if k in vcfg}
+    asr_check = vcfg.pop("asr_check", True)
     provider = tts.get_provider(vcfg)
+    judge = None
+    if asr_check and provider.name == "chatterbox":
+        try:
+            judge = AsrJudge()
+        except ImportError:
+            log.warning("faster-whisper not installed: clips are not ASR-checked")
     voices = spec.data.get("voices") or {}
     lexicon = spec.data.get("lexicon") or {}
     cache = spec.build / "tts"
@@ -92,9 +139,18 @@ def build(spec) -> dict:
             clip_path = cache / f"{key}.wav"
             if clip_path.exists():
                 x, csr = sf.read(clip_path, dtype="float32")
+                ok_mark = clip_path.with_suffix(".ok")
+                if judge and not ok_mark.exists():   # audit clips made before the ASR check existed
+                    if judge.score(x, csr, spoken) < 0.6:
+                        log.warning("cached clip fails ASR check, re-synthesising: %r", spoken[:60])
+                        x, csr = _synth_checked(provider, spoken, judge=judge, **over)
+                        tts.write_wav(clip_path, x, csr)
+                    ok_mark.touch()
             else:
-                x, csr = _synth_checked(provider, spoken, **over)
+                x, csr = _synth_checked(provider, spoken, judge=judge, **over)
                 tts.write_wav(clip_path, x, csr)
+                if judge:
+                    clip_path.with_suffix(".ok").touch()
             if csr != sr:
                 raise RuntimeError(f"unexpected sample rate {csr}")
             n_clip += 1

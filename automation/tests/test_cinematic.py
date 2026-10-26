@@ -68,3 +68,17 @@ def test_sfx_design_places_thunder_after_flash():
     assert out.shape == (20 * sfx.SR, 2)
     assert np.abs(out[: 4 * sfx.SR]).max() < 1e-6          # nothing before the shot starts
     assert np.abs(out[5 * sfx.SR:15 * sfx.SR]).max() > 0.05
+
+
+def test_speaker_segments_and_plain_text():
+    from ytauto.spec import plain, segments
+    n = "MARA: Ten seconds.\nThe probe fell.\nIt was fast.\nMARA: Here we go."
+    assert segments(n) == [("mara", "Ten seconds."), ("narrator", "The probe fell. It was fast."), ("mara", "Here we go.")]
+    assert plain(n) == "Ten seconds. The probe fell. It was fast. Here we go."
+    assert segments("folded text: no tags here.") == [("narrator", "folded text: no tags here.")]
+
+
+def test_asr_words_ignore_number_formatting():
+    from ytauto.voice.narrate import _asr_words
+    assert _asr_words("Velocity, one hundred and seventy thousand kilometres an hour.", True) == \
+        _asr_words("Velocity, 170,000 kilometers an hour", True)
