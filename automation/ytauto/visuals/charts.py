@@ -102,13 +102,14 @@ def record_chart_beat(duration: float, points: list[dict], title: str = "", unit
         if official:
             # `break: true` on a point starts a new series (e.g. land speed records -> production-car records),
             # so the step line never implies a record stood across the gap
-            segs, poly = [], []
+            segs, poly, prev = [], [], None
             for p in official:
                 x, y = px(p["year"], p["value"])
-                if p.get("break") and poly:
-                    poly.append((px(p["year"] - 2, 0)[0], poly[-1][1]))
+                if p.get("break") and poly:   # end the old series just after its last record
+                    poly.append((px(prev + (xr[1] - xr[0]) * 0.02, 0)[0], poly[-1][1]))
                     segs.append(poly)
                     poly = []
+                prev = p["year"]
                 if poly:
                     poly.append((x, poly[-1][1]))
                 poly.append((x, y))

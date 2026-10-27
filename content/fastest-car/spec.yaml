@@ -327,7 +327,7 @@ scenes:
       - {type: image, asset: tuatara_b, motion: in, sentences: 1, label: "SSC Tuatara (2011 concept)"}
       - {type: road, sky: dusk, speed: [1.0, 1.8], speedo: {from: 0, to: 533, unit: "km/h"}, label: "Nevada · October 2020", sentences: 1, seed: 5}
       - {type: speed, start: 0, end: 508.73, label: "SSC Tuatara · claimed", sub: "533 km/h one way · 508 km/h average", sentences: 2}
-      - {type: image, asset: tuatara_c, motion: pan_right, crop: [0.0, 0.0, 0.84, 1.0], sentences: 1}
+      - {type: image, asset: tuatara_c, motion: pan_right, crop: [0.0, 0.0, 0.66, 0.86], sentences: 1}
       - {type: landmark, claimed: "Speed on screen", sentences: 2}
       - {type: fact_list, title: "What didn't add up", items: ["The car looked slower than the screen said", "GPS supplier: never validated the run", "No Guinness officials present"], source: yahoo_tuatara, sentences: 2}
       - {type: glitch, text: "SUBSTANTIALLY INCORRECT", sub: "SSC, ON ITS OWN VIDEO", sentences: 2}
