@@ -193,7 +193,7 @@ assets:   # Openverse (Flickr-hosted); licence checked at fetch time, credits go
   - {id: mclaren, provider: openverse, openverse_id: 770ddc6d-e663-4bf1-8676-595d53a71886}
   - {id: veyron_ss, provider: openverse, openverse_id: 1eb30a96-e4f5-49db-b178-e38175b2c103}
   - {id: agera, provider: openverse, openverse_id: 542c17c5-fa72-42cc-b260-66f259b3371c}
-  - {id: ksc_runway, provider: openverse, openverse_id: c6c48c4f-f55d-4644-85c7-4c919ecfb1d1}
+  - {id: ksc_runway, provider: nasa_images, nasa_id: 201107210054HQ}
 
 scenes:
   - id: cold_open
