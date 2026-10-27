@@ -191,6 +191,12 @@ def image_beat(path: str, duration: float, motion: str = "in", focus=(0.5, 0.5),
         ch, cw = img.shape[:2]
         img = np.ascontiguousarray(img[int(crop[1] * ch):int(crop[3] * ch), int(crop[0] * cw):int(crop[2] * cw)])
     ih, iw = img.shape[:2]
+    up = max(W / iw, H / ih) * (1 + zoom)
+    if up > 1.25:  # small source (e.g. 1024 px Flickr): upscale once with bicubic + gentle unsharp mask
+        img = cv2.resize(img, (int(iw * up), int(ih * up)), interpolation=cv2.INTER_CUBIC)
+        soft = cv2.GaussianBlur(img, (0, 0), 1.4)
+        img = cv2.addWeighted(img, 1.5, soft, -0.5, 0)
+        ih, iw = img.shape[:2]
     aspect, target = iw / ih, W / H
     if fit == "auto":
         fit = "cover" if 0.72 * target <= aspect <= 1.6 * target else "contain"

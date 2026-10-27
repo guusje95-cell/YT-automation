@@ -211,6 +211,33 @@ def impact(rng, dur=2.5):
     return _norm(b + trans + tail, 0.7)
 
 
+def engine(dur, rng, rise=(0.5, 1.0)):
+    """Speed run: a harmonic engine drone whose pitch climbs with the speed curve, over road/wind noise."""
+    n = int(dur * SR)
+    u = np.linspace(0, 1, n, dtype=np.float32)
+    v = rise[0] + (rise[1] - rise[0]) * (u * u * (3 - 2 * u))
+    f = 55 + 95 * v
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    tone = (np.sin(ph) + 0.6 * np.sin(2 * ph) + 0.35 * np.sin(3 * ph + 0.4) + 0.2 * np.sin(4.02 * ph))
+    tone *= 0.85 + 0.15 * np.sin(2 * np.pi * 31 * u * dur)        # firing roughness
+    x = _lp(np.stack([tone, tone * 0.97], 1).astype(np.float32), 1200, 2)
+    air = _bp(_noise(n, rng), 300, 4000) * (0.25 + 0.75 * v)[:, None] * 0.5
+    return _norm((x * 0.6 + air) * (0.5 + 0.5 * v)[:, None], 0.5) * _env(n, 0.6, 0.8)
+
+
+def tick(dur, rng, per_s=4.0):
+    """Stopwatch ticking."""
+    n = int(dur * SR)
+    out = np.zeros((n, 2), np.float32)
+    t = np.arange(int(0.02 * SR), dtype=np.float32) / SR
+    clk = _hp(_noise(len(t), rng), 3000) * np.exp(-t * 300)[:, None]
+    k = 0.0
+    while k < dur:
+        _add(out, clk, k, 0.5)
+        k += 1.0 / per_s
+    return out
+
+
 def _add(track, clip, at_s, gain=1.0):
     i0 = int(at_s * SR)
     if i0 >= len(track):
@@ -255,13 +282,23 @@ def design(beats: list[dict], total_s: float, seed: int = 11) -> np.ndarray:
             _add(out, boom(rng, 3.5), st + 0.35, 0.8)
         elif typ == "black":
             _add(out, boom(rng, 4.0, 30.0) * 0.3, st + 0.3, 0.6)
+        elif typ == "road":
+            _add(out, engine(dur + 0.6, rng, tuple(b.get("speed", (0.6, 1.0)))), st - 0.3, 1.0)
+        elif typ == "speed":
+            count_end = dur * (0.62 if b.get("verdict") else 0.8)
+            _add(out, engine(count_end + 0.3, rng, (0.4, 1.3)), st, 0.8)
+            _add(out, impact(rng), st + count_end, 0.9)
+            if b.get("verdict"):
+                _add(out, static_burst(0.5, rng), st + count_end, 0.7)
+        elif typ == "landmark":
+            _add(out, tick(dur, rng), st, 0.8)
         # reveals: riser into fact cards, landing on an impact; a deep hit on every new chapter
         if typ == "fact":
             _add(out, riser(rng, 1.4), max(st - 1.4, 0), 0.8)
             _add(out, impact(rng), st, 0.9)
         if b.get("first_in_scene") and b.get("chapter"):
             _add(out, impact(rng, 3.0) * 0.8, st + 0.2, 0.8)
-        elif typ in ("r3d", "image", "video") and not b.get("first_in_scene"):
+        elif typ in ("r3d", "image", "video", "road", "record_chart", "landmark") and not b.get("first_in_scene"):
             _add(out, whoosh(0.9, rng), max(st - 0.45, 0), 0.25)
         if b.get("heartbeat"):
             _add(out, heartbeat(dur + 0.5, 92 + 20 * float(b.get("heartbeat"))), st, 1.0)

@@ -1,0 +1,378 @@
+id: fastest-car
+format: story
+pillar: speed-records
+status: draft
+description_summary: >
+  A true story. In October 2020 a small American company claimed its car had averaged more than 500 km/h on a
+  Nevada highway. Within weeks its own video had been pulled apart. This is the 127-year fight over one title,
+  the fastest car in the world, and the two rules that decide who really owns it. This November a Chinese electric
+  hypercar will try to break 500 km/h. Every number in this film is sourced below.
+title_options:
+  - "The 500 km/h Wall: The Fastest Car Record Nobody Can Agree On"
+  - "The Fastest Car in the World Is a Lie. Here's Why."
+  - "Why No Car Has Officially Hit 500 km/h (Yet)"
+thumbnail:
+  style: cinematic
+  variants:
+    - {text: "500 KM/H?", asset: tuatara_a, side: left}
+    - {text: "IT NEVER HAPPENED", asset: tuatara_b, side: left}
+    - {text: "THE 500 WALL", asset: tuatara_c, side: left}
+voice:
+  provider: chatterbox
+  model: turbo
+  ref: automation/assets/voice/ref_narrator.wav
+  exaggeration: 0.55
+  cfg_weight: 0.35
+  temperature: 0.75
+  sentence_gap_s: 0.34
+  speaker_gap_s: 0.35
+  scene_gap_s: 1.3
+emotions:   # Chatterbox Turbo style tags (verified in the model's tokenizer)
+  calm: {temperature: 0.8}
+  hushed: {tag: "[narration]", temperature: 0.7}
+  dramatic: {tag: "[dramatic]", temperature: 0.8}
+music:
+  duck_db: -6
+  cues:
+    - {scene: cold_open, track: zero-project-the-dark-ages, offset: 0, gain_db: -10}
+    - {scene: never_satisfied, track: zero-project-the-journey-instrumental, offset: 0, gain_db: -12}
+    - {scene: rules, track: zero-project-the-wind-of-oblivion, offset: 0, gain_db: -12}
+    - {scene: limiter, track: zero-project-through-the-looking-glass, offset: 0, gain_db: -12}
+    - {scene: highway, track: zero-project-the-secret-book-of-dreams, offset: 45, gain_db: -11}
+    - {scene: video, track: zero-project-the-dark-ages, offset: 60, gain_db: -11}
+    - {scene: wall, track: zero-project-the-passage, offset: 0, gain_db: -11}
+    - {scene: ending, track: zero-project-the-passage, offset: 150, gain_db: -10}
+sfx:
+  gain_db: -6
+  duck_db: -5
+lexicon: {"Achères": "Ash-air", "Jenatzy": "Zhenatzee", "Jeantaud": "Zhan-toh", "Tuatara": "Too-ah-tara",
+          "Yangwang": "Yang-wang", "Agera": "Ah-gera", "Koenigsegg": "Kernig-segg", "Chasseloup-Laubat": "Shass-loo Lo-bah",
+          "Pahrump": "Pa-rump", "SSC": "S S C", "BYD": "B Y D","Papenburg": "Pappen-burg", "Basseng": "Bassing"}
+time_sensitive:
+  - "BYD says the Yangwang U9 Xtreme will attempt to exceed 500 km/h in November 2026 (announced July 2026)."
+  - "Production-car top-speed records and their recognition can change; status as of 27 October 2026."
+tags: [fastest car in the world, top speed record, 500 kmh, ssc tuatara, tuatara record, bugatti chiron 300, koenigsegg agera rs, yangwang u9, byd, mclaren f1, la jamais contente, car documentary, car history, true story]
+
+sources:
+  - id: wiki_lsr
+    title: "List of land speed records (Chasseloup-Laubat 63.13 km/h, 18 Dec 1898; record duels with Jenatzy)"
+    publisher: Wikipedia
+    url: https://en.wikipedia.org/wiki/List_of_land_speed_records
+    accessed: 2026-10-27
+  - id: wiki_chasseloup
+    title: "Gaston de Chasseloup-Laubat (first recognised land speed record, Achères, competition by La France Automobile)"
+    publisher: Wikipedia
+    url: https://en.wikipedia.org/wiki/Gaston_de_Chasseloup-Laubat
+    accessed: 2026-10-27
+  - id: wapling_acheres
+    title: "Land speed racing at Achères (record table 1898-1899: 66.66, 70.31, 80.35, 92.78 km/h)"
+    publisher: Greg Wapling, Land Speed Racing History
+    url: https://www.gregwapling.com/hotrod/land-speed-racing-history/land-speed-racing-acheres.html
+    accessed: 2026-10-27
+  - id: wiki_jamais
+    title: "La Jamais Contente (105.882 km/h, 29 April 1899, Achères; first over 100 km/h)"
+    publisher: Wikipedia
+    url: https://en.wikipedia.org/wiki/La_Jamais_Contente
+    accessed: 2026-10-27
+  - id: gwr_thrust
+    title: "Land speed (fastest car): ThrustSSC, Andy Green, 1,227.985 km/h, 15 October 1997"
+    publisher: Guinness World Records
+    url: https://www.guinnessworldrecords.com/world-records/land-speed-(fastest-car)
+    accessed: 2026-10-27
+  - id: gwr_lsr_1997
+    title: "1997: Land Speed Record (average of two runs over a measured mile within an hour)"
+    publisher: Guinness World Records
+    url: https://www.guinnessworldrecords.com/news/2015/8/60/1997-land-speed-record-392880
+    accessed: 2026-10-27
+  - id: carscoops_f1
+    title: "How the McLaren F1 became the world's fastest (240.1 mph, 31 March 1998, Ehra-Lessien, Andy Wallace)"
+    publisher: Carscoops
+    url: https://www.carscoops.com/2017/01/how-mclaren-f1-became-worlds-fastest/
+    accessed: 2026-10-27
+  - id: driving_veyron_strip
+    title: "Exclusive: Guinness withdraws speed record from Bugatti Veyron (2013; limiter deactivated on record car)"
+    publisher: Driving.co.uk (The Sunday Times)
+    url: https://www.driving.co.uk/?p=14198
+    accessed: 2026-10-27
+  - id: ma_veyron_back
+    title: "Bugatti Veyron Super Sport is once again the world's fastest production car (Guinness reinstates, 2013)"
+    publisher: Motor Authority
+    url: https://www.motorauthority.com/news/1083532_bugatti-veyron-super-sport-is-once-again-the-worlds-fastest-production-car
+    accessed: 2026-10-27
+  - id: hagerty_agera
+    title: "Swede speed: How 277.87 mph on a public road happened (Agera RS, 4 Nov 2017, Nevada SR 160)"
+    publisher: Hagerty
+    url: https://hagerty.com/media/?p=4055
+    accessed: 2026-10-27
+  - id: gtplanet_chiron
+    title: "Bugatti Chiron busts through 300 mph, but don't rewrite the record books just yet (one direction, 2019)"
+    publisher: GTPlanet
+    url: https://gtplanet.net/bugatti-chiron-300mph
+    accessed: 2026-10-27
+  - id: drive_tuatara
+    title: "SSC admits Tuatara's 331-mph top speed video was 'incorrect' as chaos engulfs world record run"
+    publisher: The Drive
+    url: https://www.thedrive.com/news/37317/ssc-admits-tuataras-331-mph-top-speed-video-was-incorrect-as-chaos-engulfs-world-record-run
+    accessed: 2026-10-27
+  - id: yahoo_tuatara
+    title: "SSC Tuatara top speed record video generates controversy leading to statements from SSC, Dewetron"
+    publisher: Autoblog via Yahoo
+    url: https://ca.news.yahoo.com/ssc-tuatara-top-speed-record-192200295.html
+    accessed: 2026-10-27
+  - id: racelogic_tuatara
+    title: "Racelogic certifies SSC Tuatara speed (282.9 mph two-way average, 17 Jan 2021, Kennedy Space Center)"
+    publisher: SSC North America / Racelogic
+    url: https://sscnorthamerica.com/news/racelogic-certifies-ssc-tuatara-speed
+    accessed: 2026-10-27
+  - id: hagerty_tuatara_rerun
+    title: "SSC Tuatara (really) breaks top speed record, awaits Guinness verification (critic invited to oversee)"
+    publisher: Hagerty
+    url: https://hagerty.com/media/?p=121866
+    accessed: 2026-10-27
+  - id: byd_u9
+    title: "YANGWANG U9 Xtreme is the world's fastest production car, with top speed of 496.22 km/h (14 Sep 2025, ATP Papenburg)"
+    publisher: BYD
+    url: https://www.byd.com/mea/news-list/yangwang-u9-xtreme-is-the-worlds-fastest-production-car-with-top-speed-of-496kmh
+    accessed: 2026-10-27
+  - id: carscoops_u9
+    title: "China's YangWang U9 smashed Bugatti's speed record but still isn't officially the world's fastest car"
+    publisher: Carscoops
+    url: https://www.carscoops.com/2025/09/byds-electric-hypercar-just-smashed-bugattis-top-speed-record/
+    accessed: 2026-10-27
+  - id: cnc_u9_500
+    title: "Yangwang U9 Xtreme to break 500 km/h barrier in November, says BYD VP (July 2026)"
+    publisher: CarNewsChina
+    url: https://carnewschina.com/2026/07/14/yangwang-u9-xtreme-to-break-500-km-h-barrier-in-november-says-byd-vp/
+    accessed: 2026-10-27
+  - id: z2t_u9
+    title: "BYD Yangwang U9 Xtreme targets historic 500 km/h top speed run this year (1.5 s of full throttle left)"
+    publisher: Zero2Turbo
+    url: https://www.zero2turbo.com/2026/07/byd-yangwang-u9-xtreme-targets-historic-500-km-h-top-speed-run-this-year
+    accessed: 2026-10-27
+
+chart_points:
+  detail: &pts
+    - {year: 1898.96, value: 63.13, label: "Chasseloup-Laubat", sub: "Dec 1898 · 63 km/h", pos: below}
+    - {year: 1899.04, value: 66.66}
+    - {year: 1899.045, value: 70.31}
+    - {year: 1899.07, value: 80.35}
+    - {year: 1899.17, value: 92.78}
+    - {year: 1899.32, value: 105.88, label: "La Jamais Contente", sub: "Apr 1899 · 106 km/h"}
+    - {year: 1998.25, value: 386.4, label: "McLaren F1", sub: "1998 · 386 km/h"}
+    - {year: 2010.5, value: 431.07, label: "Veyron Super Sport", sub: "2010 · 431 km/h"}
+    - {year: 2017.84, value: 447.19, label: "Agera RS", sub: "2017 · 447 km/h"}
+    - {year: 2019.6, value: 490.48, kind: oneway, label: "Chiron SS 300+", sub: "2019 · one way", pos: below}
+    - {year: 2020.8, value: 508.73, kind: disputed, label: "Tuatara claim", sub: "2020 · 508?"}
+    - {year: 2021.05, value: 455.3, label: "Tuatara re-run", sub: "2021 · 455 km/h", pos: below}
+    - {year: 2025.7, value: 496.22, kind: oneway, label: "Yangwang U9 Xtreme", sub: "2025 · one way", side: left}
+  overview: &overview
+    - {year: 1898.96, value: 63.13}
+    - {year: 1899.04, value: 66.66}
+    - {year: 1899.045, value: 70.31}
+    - {year: 1899.07, value: 80.35}
+    - {year: 1899.17, value: 92.78}
+    - {year: 1899.32, value: 105.88, label: "La Jamais Contente", sub: "1899 · electric"}
+    - {year: 1998.25, value: 386.4}
+    - {year: 2010.5, value: 431.07}
+    - {year: 2017.84, value: 447.19}
+    - {year: 2019.6, value: 490.48, kind: oneway}
+    - {year: 2021.05, value: 455.3}
+    - {year: 2025.7, value: 496.22, kind: oneway, label: "Yangwang U9 Xtreme", sub: "2025 · electric", side: left}
+
+assets:   # Openverse (Flickr-hosted); licence checked at fetch time, credits go to the description
+  - {id: tuatara_a, provider: openverse, openverse_id: 1ad854e2-1514-4a4e-ab19-e077503eb471}
+  - {id: tuatara_b, provider: openverse, openverse_id: 10ede867-007d-45ae-8e13-a7e7fc7d50bf}
+  - {id: tuatara_c, provider: openverse, openverse_id: d202fcfe-14c5-44c0-9b7e-750d947ca10a}
+  - {id: jenatzy, provider: openverse, openverse_id: 7fea809d-15fa-4725-9db4-ad246fa55575}
+  - {id: jamais_a, provider: openverse, openverse_id: 66ee09f3-c105-42b7-b24a-da5cb04253dd}
+  - {id: jamais_b, provider: openverse, openverse_id: f68426e7-4208-44de-9f1f-6f021a17ab51}
+  - {id: jamais_c, provider: openverse, openverse_id: 6fd07d7a-7579-4390-9b73-64cdebbf0bbe}
+  - {id: thrust_engines, provider: openverse, openverse_id: 2d8e4c56-2f39-4f9d-b03d-c5617d13f339}
+  - {id: thrust_helmet, provider: openverse, openverse_id: f2ca36c8-37ae-40f5-aaf8-93c7b3d4f64e}
+  - {id: thrust_fin, provider: openverse, openverse_id: bee41994-1b39-4100-8050-9902bdb75f19}
+  - {id: mclaren, provider: openverse, openverse_id: 90b79255-53f0-4f8f-96df-db4fffb5e10a}
+  - {id: mclaren_door, provider: openverse, openverse_id: 6285a039-2faf-4a99-ae13-1aceab80f0e3}
+  - {id: veyron_ss, provider: openverse, openverse_id: 1eb30a96-e4f5-49db-b178-e38175b2c103}
+  - {id: agera, provider: openverse, openverse_id: 542c17c5-fa72-42cc-b260-66f259b3371c}
+  - {id: agera_b, provider: openverse, openverse_id: 2ff7be1e-5c68-4841-b39e-1abe3777e8be}
+  - {id: chiron_ss, provider: openverse, openverse_id: 8613642f-14c6-4b2c-b07f-a0b4fe8b5818}
+  - {id: ksc_runway, provider: openverse, openverse_id: c6c48c4f-f55d-4644-85c7-4c919ecfb1d1}
+
+scenes:
+  - id: cold_open
+    chapter: null
+    narration: |
+      [hushed]: October, twenty twenty. An empty desert highway in Nevada.
+      [dramatic]: A car from a small American company is about to claim a number no production car had ever officially reached. An average of more than five hundred kilometres per hour.
+      The video went online, and within days the world had a new fastest car.
+      [hushed]: Then people started timing that car against landmarks on the road.
+      [dramatic]: What they found turned the record into one of the biggest arguments in car history.
+      And this November, a Chinese electric car will try to break that same barrier, for real this time.
+      [hushed]: To understand why five hundred is so hard, we have to go back to a park outside Paris, in December, eighteen ninety-eight.
+    claims:
+      - {text: "Oct 2020, SSC Tuatara claimed 316.11 mph (508.73 km/h) two-way average on a Nevada highway; video later admitted 'substantially incorrect'", sources: [drive_tuatara, yahoo_tuatara]}
+      - {text: "BYD plans an attempt to exceed 500 km/h with the Yangwang U9 Xtreme in November 2026", sources: [cnc_u9_500]}
+    beats:
+      - {type: road, sky: night, speed: [0.4, 0.8], label: "Nevada · October 2020", sentences: 2, note: ["A TRUE STORY"], note_big: true}
+      - {type: road, sky: dusk, speed: [0.9, 1.7], speedo: {from: 0, to: 508, unit: "km/h"}, sentences: 2, seed: 5}
+      - {type: image, asset: tuatara_a, motion: in, sentences: 1, label: "SSC Tuatara"}
+      - {type: landmark, claimed: "Speed on screen", sentences: 1}
+      - {type: speed, start: 0, end: 508.73, label: "SSC Tuatara · October 2020", sub: "claimed two-way average", verdict: "DISPUTED", sentences: 1}
+      - {type: record_chart, points: *pts, title: "The 500 km/h wall", reveal: [2016, 2026], x_range: [[2015, 2027], [2016, 2027]], y_range: [[400, 530], [420, 530]], wall: 500, focus: "Yangwang U9 Xtreme", source_label: "Sources: Guinness World Records, Racelogic, BYD", sentences: 1}
+      - {type: title, style: cinematic, text: "ACHÈRES · 1898", sub: "A park outside Paris", sentences: 1}
+
+  - id: never_satisfied
+    chapter: "Never satisfied"
+    narration: |
+      A French car magazine organises a timed run through the park at Achères.
+      The winner is a count, Gaston de Chasseloup-Laubat, in an electric car, at sixty-three kilometres per hour. The first recognised land speed record.
+      A Belgian racer, Camille Jenatzy, takes that personally.
+      Over the next four months, the two men take the record from each other again and again.
+      [dramatic]: Then Jenatzy builds something new. A torpedo-shaped electric car he calls La Jamais Contente. The never satisfied.
+      On the twenty-ninth of April, eighteen ninety-nine, it becomes the first car ever to go faster than one hundred kilometres per hour.
+      [hushed]: The first car to break a hundred was electric. Remember that, because it matters at the end of this story.
+    claims:
+      - {text: "18 Dec 1898, Achères: Chasseloup-Laubat, Jeantaud electric, 63.13 km/h, first recognised land speed record; competition organised by La France Automobile", sources: [wiki_chasseloup, wiki_lsr]}
+      - {text: "Record duels Jan to Apr 1899: 66.66 / 70.31 (17 Jan), 80.35 (27 Jan), 92.78 (4 Mar)", sources: [wiki_lsr, wapling_acheres]}
+      - {text: "29 Apr 1899: La Jamais Contente, 105.882 km/h, first over 100 km/h; electric, torpedo-shaped body", sources: [wiki_jamais]}
+    beats:
+      - {type: record_chart, points: *pts, title: "Land speed record", reveal: [1898.8, 1899.0], x_range: [[1898.8, 1899.5], [1898.8, 1899.5]], y_range: [[0, 120], [0, 120]], source_label: "Source: Wikipedia, List of land speed records", sentences: 3}
+      - {type: image, asset: jenatzy, motion: in, crop: [0.025, 0.04, 0.985, 0.935], focus: [0.4, 0.4], sentences: 1, label: "Camille Jenatzy (at a later race)"}
+      - {type: record_chart, points: *pts, title: "Land speed record", reveal: [1899.0, 1899.25], x_range: [[1898.8, 1899.5], [1898.8, 1899.5]], y_range: [[0, 120], [0, 120]], source_label: "Source: Wikipedia, List of land speed records", sentences: 1}
+      - {type: image, asset: jamais_a, motion: in, sentences: 1.5, label: "La Jamais Contente, 1899"}
+      - {type: image, asset: jamais_b, motion: pan_right, sentences: 1.5}
+      - {type: speed, start: 0, end: 105.88, decimals: 1, label: "La Jamais Contente · 29 April 1899", sub: "first car over 100 km/h", sentences: 1}
+      - {type: image, asset: jamais_c, motion: out, sentences: 2, label: "La Jamais Contente: battery-electric"}
+
+  - id: rules
+    chapter: "The two rules"
+    narration: |
+      For the next century, the fastest machines on land stopped being cars you could buy.
+      In nineteen ninety-seven, a British car called Thrust SSC, pushed by two jet engines, broke the sound barrier in the Nevada desert, at more than twelve hundred kilometres per hour.
+      Its driver, a Royal Air Force fighter pilot, is still the only person to have gone supersonic on land.
+      [dramatic]: But nobody can buy a jet car. So a second race began: the fastest car you can actually buy.
+      And that race has two rules that decide everything in this story.
+      Rule one: two runs, in opposite directions, and the record is the average. That cancels out wind and slope.
+      Rule two: the record car has to be the same as the cars sold to customers.
+      [hushed]: Keep those two rules in mind. Almost every fight that follows breaks one of them.
+    claims:
+      - {text: "ThrustSSC, 15 Oct 1997, Black Rock Desert, 1,227.985 km/h (763.035 mph), two Rolls-Royce Spey jet engines; Andy Green, RAF pilot, only person to break the sound barrier on land", sources: [gwr_thrust]}
+      - {text: "Record = average of two runs (opposite directions) within an hour", sources: [gwr_lsr_1997, gtplanet_chiron]}
+      - {text: "Guinness production-car rule: record car must be mechanically identical to those sold", sources: [driving_veyron_strip]}
+    beats:
+      - {type: image, asset: thrust_fin, motion: in, sentences: 1, label: "ThrustSSC"}
+      - {type: speed, start: 0, end: 1228, label: "ThrustSSC · 15 October 1997", sub: "Black Rock Desert, Nevada · supersonic", sentences: 1}
+      - {type: image, asset: thrust_helmet, motion: in, sentences: 1, label: "Andy Green's helmet"}
+      - {type: road, sky: day, speed: [0.7, 1.1], sentences: 2, seed: 9}
+      - {type: fact_list, title: "The two rules", items: ["Two runs, opposite directions, averaged", "The same car customers can buy"], source: gwr_lsr_1997, sentences: 4}
+      - {type: record_chart, points: *overview, title: "The fastest car you can buy", reveal: [1990, 2026], x_range: [[1990, 2027], [1990, 2027]], y_range: [[300, 520], [300, 520]], wall: 500, source_label: "Sources: Guinness World Records, Racelogic, BYD", sentences: 2}
+
+  - id: limiter
+    chapter: "The limiter"
+    narration: |
+      In nineteen ninety-eight, a driver named Andy Wallace takes a McLaren F1 to a Volkswagen test track in northern Germany. Three hundred and eighty-six kilometres per hour.
+      The record stands for years. Then Bugatti arrives with the Veyron, and in twenty ten its Super Sport version averages four hundred and thirty-one.
+      [dramatic]: In twenty thirteen, Guinness takes that record away.
+      The reason was the speed limiter. On the record car it had been switched off, but on the cars sold to customers it was switched on. That broke rule two.
+      Bugatti pushes back. One week later, after an outside expert review, Guinness gives the record back. A limiter, it decides, does not change what the car is.
+      [hushed]: The lesson was clear. The rules could bend.
+    claims:
+      - {text: "31 Mar 1998, McLaren F1 XP5, Andy Wallace, Ehra-Lessien, 240.1 mph (386.4 km/h); stood until the Veyron", sources: [carscoops_f1]}
+      - {text: "Veyron Super Sport, July 2010, 431.07 km/h (267.86 mph)", sources: [driving_veyron_strip, hagerty_agera]}
+      - {text: "April 2013: Guinness withdrew the record (limiter deactivated on the record car), then reinstated it a week later after an external expert review", sources: [driving_veyron_strip, ma_veyron_back]}
+    beats:
+      - {type: image, asset: mclaren, motion: in, sentences: 1.5, label: "McLaren F1"}
+      - {type: record_chart, points: *pts, title: "The fastest car you can buy", reveal: [1997, 2011], x_range: [[1995, 2013], [1995, 2013]], y_range: [[350, 460], [350, 460]], source_label: "Sources: Carscoops, Guinness World Records", sentences: 1.5}
+      - {type: image, asset: veyron_ss, motion: in, sentences: 1, label: "Bugatti Veyron Super Sport"}
+      - {type: glitch, text: "RECORD WITHDRAWN", sub: "GUINNESS WORLD RECORDS · 2013", sentences: 1}
+      - {type: fact_list, title: "Why", items: ["Record car: limiter off", "Customer cars: limiter on"], source: driving_veyron_strip, sentences: 3}
+      - {type: fact, big: "1 week", small: "until Guinness gave the record back", source: ma_veyron_back, sentences: 2}
+      - {type: image, asset: veyron_ss, motion: out, focus: [0.6, 0.5], sentences: 3}
+
+  - id: highway
+    chapter: "The highway"
+    narration: |
+      November, twenty seventeen. Koenigsegg does something no one had tried. It closes a public highway.
+      A stretch of Nevada State Route one sixty, outside the town of Pahrump.
+      A customer's Agera RS runs in both directions. Four hundred and forty-seven kilometres per hour, averaged. A new world record.
+      Two years later, Bugatti goes faster. A Chiron Super Sport prototype hits four hundred and ninety, at that same German test track.
+      The driver is Andy Wallace, again, twenty-one years after the McLaren.
+      [dramatic]: But Bugatti only drives in one direction, so it breaks rule one. It is the fastest speed a road car had ever reached, and it is not an official record.
+      [hushed]: Five hundred was now just ten kilometres per hour away. Someone was going to claim it.
+    claims:
+      - {text: "4 Nov 2017, Agera RS (customer car), closed Nevada SR 160 near Pahrump, 277.87 mph (447.19 km/h) two-way average, Guinness record", sources: [hagerty_agera]}
+      - {text: "2 Aug 2019, Chiron Super Sport 300+ pre-production prototype, Andy Wallace, Ehra-Lessien, 304.773 mph (490.48 km/h), one direction only, not an official record", sources: [gtplanet_chiron]}
+    beats:
+      - {type: image, asset: agera, motion: in, sentences: 3, label: "Koenigsegg Agera RS"}
+      - {type: road, sky: day, speed: [0.8, 1.3], label: "Nevada State Route 160", sentences: 1, seed: 11}
+      - {type: speed, start: 0, end: 447.19, label: "Koenigsegg Agera RS · 4 November 2017", sub: "two-way average · world record", sentences: 3}
+      - {type: image, asset: chiron_ss, motion: in, sentences: 2, label: "Bugatti Chiron Super Sport"}
+      - {type: image, asset: mclaren_door, motion: in, sentences: 1, label: "McLaren F1, 1998: also Andy Wallace"}
+      - {type: speed, start: 0, end: 490.48, label: "Chiron Super Sport 300+ prototype · 2019", sub: "one direction only", verdict: "NOT A RECORD", sentences: 2}
+      - {type: record_chart, points: *pts, title: "The 500 km/h wall", reveal: [2016, 2019.8], x_range: [[2015, 2022], [2015, 2022]], y_range: [[400, 530], [420, 530]], wall: 500, focus: "Chiron SS 300+", source_label: "Sources: Hagerty, GTPlanet", sentences: 2}
+
+  - id: video
+    chapter: "The video"
+    narration: |
+      That someone was SSC, a small American carmaker.
+      In October twenty twenty, its Tuatara runs on that same Nevada highway.
+      The claim: five hundred and thirty-three kilometres per hour one way, and an average of five hundred and eight. A new world record, by more than sixty.
+      [dramatic]: Then the video goes online, and people start to check it.
+      They time the car between landmarks on the road. It seems to be going far slower than the numbers on the screen.
+      The company that supplied the GPS equipment says it never validated the run. Guinness confirms none of its officials were there.
+      [dramatic]: Within weeks, SSC admits the video was, in its own words, substantially incorrect. It blames an editing mix-up, and promises to run again.
+      In January twenty twenty-one, on a runway at the Kennedy Space Center, a Tuatara runs again, with independent GPS data and one of its loudest critics invited to watch.
+      Four hundred and fifty-five kilometres per hour, averaged. Fast, but more than fifty below the claim.
+      [hushed]: The five hundred wall was still standing.
+    claims:
+      - {text: "Oct 2020 claim: 331.15 mph (532.93 km/h) one way, 301.07 mph the other, 316.11 mph (508.73 km/h) average; 508.73 - 447.19 = 61.5 (derived)", sources: [drive_tuatara, yahoo_tuatara]}
+      - {text: "Critics compared the car's progress between road landmarks with the on-screen speed", sources: [drive_tuatara]}
+      - {text: "Dewetron denied validating the run; Guinness confirmed no officials present; SSC admitted video 'substantially incorrect', blamed editing", sources: [yahoo_tuatara, drive_tuatara]}
+      - {text: "17 Jan 2021, Kennedy Space Center (Johnny Bohmer Proving Grounds): 282.9 mph (455.3 km/h) two-way average, Racelogic VBOX data, critic invited", sources: [racelogic_tuatara, hagerty_tuatara_rerun]}
+    beats:
+      - {type: image, asset: tuatara_b, motion: in, sentences: 1, label: "SSC Tuatara (early version)"}
+      - {type: road, sky: dusk, speed: [1.0, 1.8], speedo: {from: 0, to: 533, unit: "km/h"}, label: "Nevada · October 2020", sentences: 1, seed: 5}
+      - {type: speed, start: 0, end: 508.73, label: "SSC Tuatara · claimed", sub: "533 km/h one way · 508 km/h average", sentences: 2}
+      - {type: image, asset: tuatara_c, motion: pan_right, sentences: 1}
+      - {type: landmark, claimed: "Speed on screen", sentences: 2}
+      - {type: fact_list, title: "What didn't add up", items: ["The car looked slower than the screen said", "GPS supplier: never validated the run", "No Guinness officials present"], source: yahoo_tuatara, sentences: 2}
+      - {type: glitch, text: "SUBSTANTIALLY INCORRECT", sub: "SSC, ON ITS OWN VIDEO", sentences: 2}
+      - {type: image, asset: ksc_runway, motion: in, sentences: 1, label: "Kennedy Space Center runway (NASA)"}
+      - {type: speed, start: 0, end: 455.3, decimals: 1, label: "SSC Tuatara · 17 January 2021", sub: "two-way average · independent GPS data", sentences: 1}
+      - {type: record_chart, points: *pts, title: "The 500 km/h wall", reveal: [2016, 2021.2], x_range: [[2015, 2023], [2016, 2023]], y_range: [[400, 530], [420, 530]], wall: 500, focus: "Tuatara claim", source_label: "Sources: The Drive, Racelogic", sentences: 2}
+
+  - id: wall
+    chapter: "The wall"
+    narration: |
+      September, twenty twenty-five. A test track in northern Germany, at Papenburg.
+      A hypercar from Yangwang, the luxury brand of China's BYD, called the U9 Xtreme.
+      With Marc Basseng at the wheel, it reaches four hundred and ninety-six point two kilometres per hour. Faster than the Bugatti.
+      [dramatic]: One hundred and twenty-six years after La Jamais Contente, the highest speed ever recorded by a production car belongs to an electric car again.
+      But it ran in one direction only. Rule one, again. Officially, nobody has beaten five hundred.
+      BYD says the car is coming back this November, to the same track, to go past five hundred. Reports from the first run say the driver still had about one and a half seconds of full throttle left.
+      [hushed]: So will it count? That depends on the two rules.
+    claims:
+      - {text: "14 Sep 2025, ATP Papenburg, Marc Basseng, 496.22 km/h; beat the Chiron Super Sport 300+'s 490.48 km/h", sources: [byd_u9]}
+      - {text: "U9 run was one direction only, so not an official two-way record", sources: [carscoops_u9, cnc_u9_500]}
+      - {text: "1899 to 2025 = 126 years (derived)", sources: [wiki_jamais, byd_u9]}
+      - {text: "November 2026 attempt to exceed 500 km/h announced by BYD's Stella Li at Goodwood, July 2026; reportedly 1.5 s of full throttle left in 2025", sources: [cnc_u9_500, z2t_u9]}
+    beats:
+      - {type: road, sky: day, speed: [0.9, 1.4], label: "Papenburg, Germany · September 2025", sentences: 3, seed: 13}
+      - {type: speed, start: 0, end: 496.22, decimals: 1, label: "Yangwang U9 Xtreme · 14 September 2025", sub: "electric · one direction", sentences: 2}
+      - {type: record_chart, points: *overview, title: "126 years of speed", reveal: [1895, 2026], x_range: [[1895, 2030], [1895, 2030]], y_range: [[0, 530], [0, 530]], focus: "Yangwang U9 Xtreme", source_label: "Sources: Wikipedia, Guinness World Records, BYD", sentences: 1}
+      - {type: record_chart, points: *pts, title: "The 500 km/h wall", reveal: [2016, 2026], x_range: [[2015, 2027], [2016, 2027]], y_range: [[400, 530], [430, 520]], wall: 500, focus: "Yangwang U9 Xtreme", source_label: "Sources: BYD, Carscoops", sentences: 3}
+      - {type: road, sky: dusk, speed: [1.1, 2.0], speedo: {from: 0, to: 500, unit: "km/h"}, label: "Papenburg · November 2026?", sentences: 2, seed: 17}
+      - {type: title, style: cinematic, text: "WILL IT COUNT?", sentences: 2}
+
+  - id: ending
+    chapter: null
+    narration: |
+      So when the next number comes in, ask two questions. Did it run both ways? And is it the car you can actually buy?
+      [dramatic]: Jenatzy called his car the never satisfied. A hundred and twenty-seven years later, nobody is.
+      Follow the channel, and we'll tell you if the wall falls.
+    claims:
+      - {text: "1899 to 2026 = 127 years (derived)", sources: [wiki_jamais]}
+    beats:
+      - {type: fact_list, title: "Two questions", items: ["Did it run both ways?", "Is it the car you can buy?"], sentences: 3}
+      - {type: image, asset: jamais_a, motion: out, sentences: 2}
+      - {type: end, channel: "Redline Files", text: "Real records. Real rules.", sentences: 1}

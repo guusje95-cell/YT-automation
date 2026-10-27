@@ -64,7 +64,9 @@ class AsrJudge:
         return difflib.SequenceMatcher(a=ref_w, b=hyp_w, autojunk=False).ratio()
 
 
-def _synth_checked(provider, text: str, tries: int = 4, judge: "AsrJudge | None" = None, **over):
+def _synth_checked(provider, text: str, tries: int = 4, judge: "AsrJudge | None" = None, ref: str | None = None,
+                   **over):
+    """`ref` is the written form the judge listens for (the lexicon respells names for the TTS only)."""
     best = None
     words = max(len(tts.strip_tags(text).split()), 1)
     for k in range(tries if provider.name == "chatterbox" else 1):
@@ -72,7 +74,7 @@ def _synth_checked(provider, text: str, tries: int = 4, judge: "AsrJudge | None"
         x = tts.trim_silence(x, sr)
         ratio = len(x) / sr / (words * SEC_PER_WORD + 0.4)
         length_ok = 0.45 < ratio < MAX_RATIO
-        heard = judge.score(x, sr, text) if judge and length_ok else (1.0 if length_ok else 0.0)
+        heard = judge.score(x, sr, ref or text) if judge and length_ok else (1.0 if length_ok else 0.0)
         quality = heard - (0 if length_ok else 1)
         if best is None or quality > best[2]:
             best = (x, sr, quality)
@@ -149,13 +151,13 @@ def build(spec) -> dict:
                 x, csr = sf.read(clip_path, dtype="float32")
                 ok_mark = clip_path.with_suffix(".ok")
                 if judge and not ok_mark.exists():   # audit clips made before the ASR check existed
-                    if judge.score(x, csr, spoken) < 0.6:
+                    if judge.score(x, csr, text) < 0.6:
                         log.warning("cached clip fails ASR check, re-synthesising: %r", spoken[:60])
-                        x, csr = _synth_checked(provider, spoken, judge=judge, **over)
+                        x, csr = _synth_checked(provider, spoken, judge=judge, ref=text, **over)
                         tts.write_wav(clip_path, x, csr)
                     ok_mark.touch()
             else:
-                x, csr = _synth_checked(provider, spoken, judge=judge, **over)
+                x, csr = _synth_checked(provider, spoken, judge=judge, ref=text, **over)
                 tts.write_wav(clip_path, x, csr)
                 if judge:
                     clip_path.with_suffix(".ok").touch()

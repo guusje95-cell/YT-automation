@@ -27,7 +27,9 @@ from ytauto.core.retry import retry
 
 log = get_logger(__name__)
 
-UA = {"User-Agent": "ytauto/0.1 (educational YouTube explainer production)"}
+# Wikimedia's robot policy asks for a descriptive agent with a contact point
+UA = {"User-Agent": "ytauto/0.1 (educational video production; https://github.com/guusje95-cell/yt-automation) "
+                    "python-requests/" + requests.__version__}
 
 
 class AssetError(RuntimeError):
@@ -200,15 +202,37 @@ def openverse_search(q: str, n: int = 10) -> list[dict]:
     return r.json()["results"]
 
 
+WIKIMEDIA_THUMB_WIDTHS = (2560, 1920, 1280)   # standard thumbnail steps; Wikimedia asks bulk users to use these
+
+
+def _wikimedia_thumbs(url: str, width: int | None) -> list[str]:
+    """Standard-size thumbnail URLs for a Wikimedia Commons original, largest first (never upscaled)."""
+    m = re.match(r"https://upload\.wikimedia\.org/wikipedia/commons/(\w/\w\w)/([^/]+)$", url)
+    if not m:
+        return []
+    name = m.group(2)
+    return [f"https://upload.wikimedia.org/wikipedia/commons/thumb/{m.group(1)}/{name}/{w}px-{name}"
+            for w in WIKIMEDIA_THUMB_WIDTHS if not width or w < width]
+
+
 def _openverse(a: dict, dest_dir: Path) -> dict:
     r = _get(f"https://api.openverse.org/v1/images/{a['openverse_id']}/").json()
     lic = _OV_LICENSES.get(r["license"])
     if not lic:
         raise AssetError(f"openverse {a['openverse_id']}: licence {r['license']} not allowed")
     dest = dest_dir / f"{a['id']}{Path(r['url']).suffix.lower() or '.jpg'}"
-    sha = _download(r["url"], dest)
+    url = r["url"]
+    for cand in _wikimedia_thumbs(url, r.get("width")) + [url]:
+        try:
+            sha = _download(cand, dest)
+            url = cand
+            break
+        except Exception as e:  # noqa: BLE001  (try the next size; the last candidate re-raises)
+            if cand == url:
+                raise
+            log.warning("openverse %s: %s failed (%s)", a["openverse_id"], cand, e)
     credit = r.get("attribution") or f"{r.get('title')} by {r.get('creator')} ({r['license']})"
-    return {"file": str(dest), "source_page": r.get("foreign_landing_url"), "file_url": r["url"], "license": lic,
+    return {"file": str(dest), "source_page": r.get("foreign_landing_url"), "file_url": url, "license": lic,
             "license_url": r.get("license_url"), "title": r.get("title"), "credit": credit, "sha256": sha, "flags": []}
 
 

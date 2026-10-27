@@ -15,7 +15,7 @@ import yaml
 from ytauto.core import config
 
 BEAT_TYPES = {"image", "video", "title", "fact", "quote", "scale", "chart", "list", "end",
-              "r3d", "glitch", "profile", "fact_list", "black", "horizon_scale"}
+              "r3d", "glitch", "profile", "fact_list", "black", "horizon_scale", "record_chart", "speed", "road", "landmark"}
 
 
 _LINE = re.compile(r"^\s*([A-Z][A-Z]{1,15})?\s*(?:\[([a-z_]+)\])?\s*:\s*(.*)$")

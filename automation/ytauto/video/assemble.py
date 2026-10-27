@@ -10,8 +10,10 @@ import numpy as np
 from ytauto.core import config
 from ytauto.core.log import get_logger
 from ytauto.video import prerender, timeline
+from ytauto.visuals import charts
 from ytauto.visuals import editorial as ed
 from ytauto.visuals import frames as fr
+from ytauto.visuals import road
 from ytauto.visuals import shots
 
 log = get_logger(__name__)
@@ -58,13 +60,30 @@ def _renderer(beat: dict, dur: float, assets: dict, sources: dict, ctx: dict | N
         src = sources.get(beat.get("source"), {})
         label = beat.get("source_label") or (f"Source: {src['publisher']}" if src else "")
         return ed.fact_beat(dur, beat["big"], beat.get("small", ""), label, backdrop=ctx.get("last"))
+    if t == "record_chart":
+        src = sources.get(beat.get("source"), {})
+        label = beat.get("source_label") or (f"Source: {src['publisher']}" if src else "")
+        return charts.record_chart_beat(dur, beat["points"], beat.get("title", ""), beat.get("unit", "km/h"),
+                                        tuple(beat.get("reveal", (1895, 2026))),
+                                        beat.get("x_range", ((1895, 2030), (1895, 2030))),
+                                        beat.get("y_range", ((0, 520), (0, 520))), beat.get("focus"), label,
+                                        beat.get("wall"))
+    if t == "speed":
+        return charts.speed_beat(dur, beat.get("start", 0), beat["end"], beat.get("unit", "km/h"),
+                                 beat.get("label", ""), beat.get("sub", ""), beat.get("verdict", ""),
+                                 backdrop=ctx.get("last"), decimals=beat.get("decimals", 0))
+    if t == "road":
+        return road.road_beat(dur, beat.get("sky", "dusk"), tuple(beat.get("speed", (0.6, 1.0))), beat.get("speedo"),
+                              beat.get("label", ""), seed=beat.get("seed", 3))
+    if t == "landmark":
+        return road.landmark_beat(dur, beat.get("claimed", "533 km/h on screen"), beat.get("note", "Illustration"))
     if t == "list":
         return fr.list_beat(dur, beat.get("title", ""), beat["items"], beat.get("highlight"))
     if t == "scale":
         return fr.scale_beat(dur, beat.get("mode", "circles"), beat.get("title", ""), beat.get("labels"),
                              beat.get("items"), beat.get("highlight"), beat.get("bounds"))
     if t == "end":
-        return ed.end_beat(dur, config.get("channel.name", ""), beat.get("text", ""))
+        return ed.end_beat(dur, beat.get("channel") or config.get("channel.name", ""), beat.get("text", ""))
     raise ValueError(f"unsupported beat type {t}")
 
 
@@ -128,7 +147,7 @@ class Decorator:
         # No on-screen credit lines (they read as clutter); every credit is in the description,
         # which satisfies CC BY's "reasonable manner for the medium" attribution.
         speaking = self._speaking(gt)
-        if b.get("label") and not speaking:
+        if b.get("label") and not speaking and t not in ("road", "speed"):   # those draw their own caption
             self.ov.label(b["label"]).draw(frame, fr.fade_window(lt, 0.5, dur - 0.3))
         if b.get("hud"):
             hud = self._get(("hud", k), lambda: ed.Hud(b["hud"], dur, self.mission))
