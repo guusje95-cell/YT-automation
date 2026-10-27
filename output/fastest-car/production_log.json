@@ -1,0 +1,22 @@
+[
+ {
+  "video_id": "fastest-car",
+  "started": "2026-10-27T10:03:57",
+  "stages": [
+   {
+    "stage": "assets",
+    "seconds": 166.6,
+    "status": "error: 504 Server Error: Gateway Timeout for url: https://api.openverse.org/v1/images/8613642f-14c6-4b2c-b07f-a0b4fe8b5818/"
+   }
+  ],
+  "finished": "2026-10-27T10:06:44",
+  "total_seconds": 166.6,
+  "cost_eur": {
+   "tts": 0.0,
+   "assets": 0.0,
+   "music": 0.0,
+   "llm": 0.0,
+   "note": "all local/free providers; LLM cost applies only when scripts are drafted via API"
+  }
+ }
+]
