@@ -158,7 +158,7 @@ chart_points:
     - {year: 1899.07, value: 80.35}
     - {year: 1899.17, value: 92.78}
     - {year: 1899.32, value: 105.88, label: "La Jamais Contente", sub: "Apr 1899 · 106 km/h"}
-    - {year: 1998.25, value: 386.4, label: "McLaren F1", sub: "1998 · 386 km/h"}
+    - {year: 1998.25, value: 386.4, label: "McLaren F1", sub: "1998 · 386 km/h", break: true}
     - {year: 2010.5, value: 431.07, label: "Veyron Super Sport", sub: "2010 · 431 km/h"}
     - {year: 2017.84, value: 447.19, label: "Agera RS", sub: "2017 · 447 km/h"}
     - {year: 2019.6, value: 490.48, kind: oneway, label: "Chiron SS 300+", sub: "2019 · one way", pos: below}
@@ -172,7 +172,7 @@ chart_points:
     - {year: 1899.07, value: 80.35}
     - {year: 1899.17, value: 92.78}
     - {year: 1899.32, value: 105.88, label: "La Jamais Contente", sub: "1899 · electric"}
-    - {year: 1998.25, value: 386.4}
+    - {year: 1998.25, value: 386.4, break: true, label: "Production cars", sub: "from 1998", pos: below}
     - {year: 2010.5, value: 431.07}
     - {year: 2017.84, value: 447.19}
     - {year: 2019.6, value: 490.48, kind: oneway}
@@ -327,7 +327,7 @@ scenes:
       - {type: image, asset: tuatara_b, motion: in, sentences: 1, label: "SSC Tuatara (2011 concept)"}
       - {type: road, sky: dusk, speed: [1.0, 1.8], speedo: {from: 0, to: 533, unit: "km/h"}, label: "Nevada · October 2020", sentences: 1, seed: 5}
       - {type: speed, start: 0, end: 508.73, label: "SSC Tuatara · claimed", sub: "533 km/h one way · 508 km/h average", sentences: 2}
-      - {type: image, asset: tuatara_c, motion: pan_right, sentences: 1}
+      - {type: image, asset: tuatara_c, motion: pan_right, crop: [0.0, 0.0, 0.84, 1.0], sentences: 1}
       - {type: landmark, claimed: "Speed on screen", sentences: 2}
       - {type: fact_list, title: "What didn't add up", items: ["The car looked slower than the screen said", "GPS supplier: never validated the run", "No Guinness officials present"], source: yahoo_tuatara, sentences: 2}
       - {type: glitch, text: "SUBSTANTIALLY INCORRECT", sub: "SSC, ON ITS OWN VIDEO", sentences: 2}
@@ -353,7 +353,7 @@ scenes:
     beats:
       - {type: road, sky: day, speed: [0.9, 1.4], label: "Papenburg, Germany · September 2025", sentences: 3, seed: 13}
       - {type: speed, start: 0, end: 496.22, decimals: 1, label: "Yangwang U9 Xtreme · 14 September 2025", sub: "electric · one direction", sentences: 2}
-      - {type: record_chart, points: *overview, title: "126 years of speed", reveal: [1895, 2026], x_range: [[1895, 2030], [1895, 2030]], y_range: [[0, 530], [0, 530]], focus: "Yangwang U9 Xtreme", source_label: "Sources: Wikipedia, Guinness World Records, BYD", sentences: 1}
+      - {type: record_chart, points: *overview, title: "Land speed record 1899 · fastest production cars since 1998", reveal: [1895, 2026], x_range: [[1895, 2030], [1895, 2030]], y_range: [[0, 530], [0, 530]], focus: "Yangwang U9 Xtreme", source_label: "Sources: Wikipedia, Guinness World Records, BYD", sentences: 1}
       - {type: record_chart, points: *pts, title: "The 500 km/h wall", reveal: [2016, 2026], x_range: [[2015, 2027], [2016, 2027]], y_range: [[400, 530], [430, 520]], wall: 500, focus: "Yangwang U9 Xtreme", source_label: "Sources: BYD, Carscoops", sentences: 3}
       - {type: road, sky: dusk, speed: [1.1, 2.0], speedo: {from: 0, to: 500, unit: "km/h"}, label: "Papenburg · November 2026?", sentences: 2, seed: 17}
       - {type: title, style: cinematic, text: "WILL IT COUNT?", sentences: 2}

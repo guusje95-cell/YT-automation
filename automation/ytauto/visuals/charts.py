@@ -100,19 +100,26 @@ def record_chart_beat(duration: float, points: list[dict], title: str = "", unit
         axes = f.copy()   # data is clipped to the plot area against this afterwards
         official = [p for p in pts if p.get("kind", "record") == "record" and p["year"] <= year_now]
         if official:
-            poly = []
-            for i, p in enumerate(official):
+            # `break: true` on a point starts a new series (e.g. land speed records -> production-car records),
+            # so the step line never implies a record stood across the gap
+            segs, poly = [], []
+            for p in official:
                 x, y = px(p["year"], p["value"])
-                if i:
+                if p.get("break") and poly:
+                    poly.append((px(p["year"] - 2, 0)[0], poly[-1][1]))
+                    segs.append(poly)
+                    poly = []
+                if poly:
                     poly.append((x, poly[-1][1]))
                 poly.append((x, y))
             poly.append((px(year_now, 0)[0], poly[-1][1]))
-            arr = np.array(poly, np.int32)
+            segs.append(poly)
+            arrs = [np.array(s_, np.int32) for s_ in segs]
             glow = np.zeros((H, W), np.float32)
-            cv2.polylines(glow, [arr], False, 1.0, 9, cv2.LINE_AA)
+            cv2.polylines(glow, arrs, False, 1.0, 9, cv2.LINE_AA)
             glow = cv2.GaussianBlur(glow, (0, 0), 9)
             f[:] = np.clip(f.astype(np.float32) + glow[..., None] * np.array(AMBER, np.float32) * 0.55, 0, 255).astype(np.uint8)
-            cv2.polylines(f, [arr], False, AMBER, 3, cv2.LINE_AA)
+            cv2.polylines(f, arrs, False, AMBER, 3, cv2.LINE_AA)
         for p in pts:
             if p["year"] > year_now:
                 continue
