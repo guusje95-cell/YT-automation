@@ -1,0 +1,606 @@
+[
+ {
+  "topic": "Car business story (faceless, stock/photo)",
+  "queries": [
+   "how this car company went bankrupt",
+   "the downfall of car company"
+  ],
+  "n_results": 39,
+  "demand_raw": 1906545.0,
+  "hits_raw": 21,
+  "velocity_raw": 17187.3,
+  "breakouts_raw": 8,
+  "big_hits": 7,
+  "top": [
+   {
+    "title": "\ud83d\ude97 BYD : The biggest SCAM of the car industry ?",
+    "views": 9905800,
+    "channel": "Statrys"
+   },
+   {
+    "title": "The Dumb Design of Modern Cars",
+    "views": 5806669,
+    "channel": "fern"
+   },
+   {
+    "title": "How One Ad Destroyed Jaguar's Billion-Dollar Empire",
+    "views": 2540092,
+    "channel": "CoreSight"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "How One Ad Destroyed Jaguar's Billion-Dollar Empire",
+    "views": 2540092,
+    "channel": "CoreSight",
+    "subs": 24400,
+    "url": "https://www.youtube.com/watch?v=Kzvscc5wqUs"
+   },
+   {
+    "title": "6 Car Brands Collapsing in 2026 \u2014 Here's Why You Should Avoid Them!",
+    "views": 730979,
+    "channel": "Autotrends",
+    "subs": 54600,
+    "url": "https://www.youtube.com/watch?v=JJnA1Z1swIE"
+   },
+   {
+    "title": "Jaguar: How A Delusional Rebrand Killed An $12.3B Icon",
+    "views": 669907,
+    "channel": "JunkBondInvestor",
+    "subs": 78300,
+    "url": "https://www.youtube.com/watch?v=qRkMz9Kzt-Y"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 9.09,
+  "hits_score": 10.0,
+  "breakouts_score": 10.0,
+  "velocity_score": 9.09,
+  "assets_score": 5.0,
+  "score": 8.89
+ },
+ {
+  "topic": "Stickman / cartoon car stories",
+  "queries": [
+   "stickman car story",
+   "car history explained cartoon"
+  ],
+  "n_results": 33,
+  "demand_raw": 4622264.5,
+  "hits_raw": 20,
+  "velocity_raw": 62791.2,
+  "breakouts_raw": 7,
+  "big_hits": 13,
+  "top": [
+   {
+    "title": "Best Phonk | Stickman Dismounting Funny Moments Compilation #129",
+    "views": 14396178,
+    "channel": "KAD STICK"
+   },
+   {
+    "title": "Best Phonk | Stickman Dismounting Funny Moments Compilation #113",
+    "views": 9963542,
+    "channel": "KAD STICK"
+   },
+   {
+    "title": "Lightning McQueen's Greatest Moments Compilation! \ud83c\udfce\ufe0f\ud83d\udca8 | Pixar Cars | Disney Jr.",
+    "views": 8284866,
+    "channel": "Disney Jr. "
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Zombie Outbreak: 30 Days Locked Inside a Supermarket",
+    "views": 2252902,
+    "channel": "Nobody Gets In",
+    "subs": 40000,
+    "url": "https://www.youtube.com/watch?v=oXj7bWgRX_I"
+   },
+   {
+    "title": "Zombie Outbreak: 30 Days Locked Inside a School",
+    "views": 1425253,
+    "channel": "Nobody Gets In",
+    "subs": 40000,
+    "url": "https://www.youtube.com/watch?v=2XYr2AEHDGI"
+   },
+   {
+    "title": "Stickman Cars Race - Survival Race in Algodoo",
+    "views": 1405264,
+    "channel": "KrashLab 2D",
+    "subs": 10300,
+    "url": "https://www.youtube.com/watch?v=LwQGxTAHrSw"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 10.0,
+  "hits_score": 9.09,
+  "breakouts_score": 8.64,
+  "velocity_score": 10.0,
+  "assets_score": 5.0,
+  "score": 8.73
+ },
+ {
+  "topic": "Hypercar records (photo/data)",
+  "queries": [
+   "fastest hypercar record explained",
+   "500 kmh car record"
+  ],
+  "n_results": 33,
+  "demand_raw": 1744315.0,
+  "hits_raw": 8,
+  "velocity_raw": 9579.7,
+  "breakouts_raw": 4,
+  "big_hits": 6,
+  "top": [
+   {
+    "title": "Why Koenigsegg\u2019s new 2,300hp hypercar changes everything",
+    "views": 4797118,
+    "channel": "carwow"
+   },
+   {
+    "title": "The Insane Engineering of the World's Fastest Car",
+    "views": 3799953,
+    "channel": "Driver61"
+   },
+   {
+    "title": "Richard Hammond Drives the World\u2019s FASTEST Car",
+    "views": 2695457,
+    "channel": "DRIVETRIBE"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "The Fastest Car From Every Brand by Top Speed (Slowest \u2192 Fastest)",
+    "views": 2010954,
+    "channel": "PawFlow",
+    "subs": 11300,
+    "url": "https://www.youtube.com/watch?v=U2J_dqK47IE"
+   },
+   {
+    "title": "\ud83d\ude80 INSTANT 600 MPH! Can We Survive? \ud83d\ude31 | BeamNG.drive #18",
+    "views": 1477676,
+    "channel": "BeamDQ",
+    "subs": 8100,
+    "url": "https://www.youtube.com/watch?v=9O-7CipAAy0"
+   },
+   {
+    "title": "Instant 550 MPH Acceleration \ud83d\ude80 Which Vehicle Can Survive? \ud83e\udd14 - BeamNG Drive",
+    "views": 1256455,
+    "channel": "BeamRoyale",
+    "subs": 35600,
+    "url": "https://www.youtube.com/watch?v=xf5X7q512Ig"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 8.18,
+  "hits_score": 5.45,
+  "breakouts_score": 6.82,
+  "velocity_score": 6.36,
+  "assets_score": 5.0,
+  "score": 6.54
+ },
+ {
+  "topic": "Pagani vs Koenigsegg vs Bugatti",
+  "queries": [
+   "pagani vs koenigsegg",
+   "pagani vs bugatti"
+  ],
+  "n_results": 26,
+  "demand_raw": 1089100.0,
+  "hits_raw": 8,
+  "velocity_raw": 10009.8,
+  "breakouts_raw": 1,
+  "big_hits": 4,
+  "top": [
+   {
+    "title": "Fastest Koenigsegg v Fastest Bugatti: DRAG RACE",
+    "views": 6073883,
+    "channel": "carwow"
+   },
+   {
+    "title": "Why Koenigsegg\u2019s new 2,300hp hypercar changes everything",
+    "views": 4797118,
+    "channel": "carwow"
+   },
+   {
+    "title": "The World's Biggest DRAG RACE",
+    "views": 3704188,
+    "channel": "carwow"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Ultimate Supercar Tournament | Koenigsegg vs Bugatti vs Pagani vs Lambo",
+    "views": 422630,
+    "channel": "Tiny Track Cars",
+    "subs": 93800,
+    "url": "https://www.youtube.com/watch?v=oA57dKkWQIE"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 7.27,
+  "hits_score": 5.45,
+  "breakouts_score": 4.09,
+  "velocity_score": 8.18,
+  "assets_score": 5.0,
+  "score": 5.91
+ },
+ {
+  "topic": "Car tier list / rankings animation",
+  "queries": [
+   "every car brand explained",
+   "car brands tier list explained"
+  ],
+  "n_results": 34,
+  "demand_raw": 344709.5,
+  "hits_raw": 11,
+  "velocity_raw": 1132.4,
+  "breakouts_raw": 7,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "Engineer Ranks Japanese Car Brands BEST To WORST In Build Quality",
+    "views": 1335071,
+    "channel": "Car Help Corner"
+   },
+   {
+    "title": "Engineer Ranks Every Car Brand BEST To WORST For Reliability",
+    "views": 1048538,
+    "channel": "Car Help Corner"
+   },
+   {
+    "title": "The 7 Levels of Mercedes Explained In 10 Minutes",
+    "views": 919921,
+    "channel": "Kitty Explains Cars"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "The 7 Levels of Mercedes Explained In 10 Minutes",
+    "views": 919921,
+    "channel": "Kitty Explains Cars",
+    "subs": 28800,
+    "url": "https://www.youtube.com/watch?v=rI3oHHb-4TE"
+   },
+   {
+    "title": "What Your Car Says About You (It\u2019s Brutally Honest)",
+    "views": 425240,
+    "channel": "Casual Car Dude",
+    "subs": 20100,
+    "url": "https://www.youtube.com/watch?v=gCf-D30M5do"
+   },
+   {
+    "title": "Every Car Brand Explained in 18 Minutes",
+    "views": 264179,
+    "channel": "Yuhcars",
+    "subs": 90600,
+    "url": "https://www.youtube.com/watch?v=pi8AxMpPglQ"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 3.64,
+  "hits_score": 8.18,
+  "breakouts_score": 8.64,
+  "velocity_score": 2.73,
+  "assets_score": 5.0,
+  "score": 5.87
+ },
+ {
+  "topic": "Character POV car story (you are the driver)",
+  "queries": [
+   "what if you drove the fastest car",
+   "you are a race car driver story"
+  ],
+  "n_results": 32,
+  "demand_raw": 504401.0,
+  "hits_raw": 10,
+  "velocity_raw": 3179.6,
+  "breakouts_raw": 4,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "The Fastest Car From Every Brand by Top Speed (Slowest \u2192 Fastest)",
+    "views": 2010954,
+    "channel": "PawFlow"
+   },
+   {
+    "title": "The Craziest Racing Stories You\u2019ve Never Heard ft ActuallyVen | Unsubscribe Podcast Ep 279",
+    "views": 1157638,
+    "channel": "Unsubscribe Podcast"
+   },
+   {
+    "title": "The Story of Max Verstappen",
+    "views": 734242,
+    "channel": "Bakaish"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "The Fastest Car From Every Brand by Top Speed (Slowest \u2192 Fastest)",
+    "views": 2010954,
+    "channel": "PawFlow",
+    "subs": 11300,
+    "url": "https://www.youtube.com/watch?v=U2J_dqK47IE"
+   },
+   {
+    "title": "The Story of Max Verstappen",
+    "views": 734242,
+    "channel": "Bakaish",
+    "subs": 9160,
+    "url": "https://www.youtube.com/watch?v=csYmh0YDcII"
+   },
+   {
+    "title": "How to Become an F1 Driver",
+    "views": 528200,
+    "channel": "Mort",
+    "subs": 19800,
+    "url": "https://www.youtube.com/watch?v=_e13hFrKn2s"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 4.55,
+  "hits_score": 7.27,
+  "breakouts_score": 6.82,
+  "velocity_score": 3.64,
+  "assets_score": 5.0,
+  "score": 5.59
+ },
+ {
+  "topic": "Car documentary (real footage)",
+  "queries": [
+   "supercar documentary",
+   "car brand documentary"
+  ],
+  "n_results": 38,
+  "demand_raw": 759706.5,
+  "hits_raw": 8,
+  "velocity_raw": 8319.2,
+  "breakouts_raw": 1,
+  "big_hits": 3,
+  "top": [
+   {
+    "title": "Will This Reshape The Car Industry? Juncheng Vehicle Co. Replicating Icons | Capturing Car Culture",
+    "views": 5543527,
+    "channel": "Hagerty"
+   },
+   {
+    "title": "I EXPOSED WHAT HAPPENED TO GVE LONDON",
+    "views": 2761579,
+    "channel": "Mark McCann"
+   },
+   {
+    "title": "Inside The Crisis Facing U.S. Auto Giants",
+    "views": 1520629,
+    "channel": "CNBC"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Geely: The Secret Empire Buying the World's Car Brands",
+    "views": 443623,
+    "channel": "Low Volume Capital",
+    "subs": 14200,
+    "url": "https://www.youtube.com/watch?v=AN395sNtSjs"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 5.45,
+  "hits_score": 5.45,
+  "breakouts_score": 4.09,
+  "velocity_score": 5.45,
+  "assets_score": 5.0,
+  "score": 5.04
+ },
+ {
+  "topic": "Animated car history (2D animation)",
+  "queries": [
+   "animated history of cars",
+   "car history animation"
+  ],
+  "n_results": 16,
+  "demand_raw": 1056454.0,
+  "hits_raw": 7,
+  "velocity_raw": 9915.0,
+  "breakouts_raw": 0,
+  "big_hits": 4,
+  "top": [
+   {
+    "title": "Lightning McQueen's Greatest Moments Compilation! \ud83c\udfce\ufe0f\ud83d\udca8 | Pixar Cars | Disney Jr.",
+    "views": 8284866,
+    "channel": "Disney Jr. "
+   },
+   {
+    "title": "The Dumb Design of Modern Cars",
+    "views": 5806669,
+    "channel": "fern"
+   },
+   {
+    "title": "How did the Lunar Roving Vehicle work? (NASA)",
+    "views": 1851405,
+    "channel": "Jared Owen"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 0,
+  "demand_score": 6.36,
+  "hits_score": 3.64,
+  "breakouts_score": 1.36,
+  "velocity_score": 7.27,
+  "assets_score": 5.0,
+  "score": 4.5
+ },
+ {
+  "topic": "Animated car brand story",
+  "queries": [
+   "ferrari story animated",
+   "lamborghini story animation"
+  ],
+  "n_results": 24,
+  "demand_raw": 59268.0,
+  "hits_raw": 3,
+  "velocity_raw": 563.4,
+  "breakouts_raw": 3,
+  "big_hits": 1,
+  "top": [
+   {
+    "title": "I Built a Supercar from a GIANT TREE! \ud83d\ude31\ud83d\ude97\ud83e\udeb5 | Wooden Lamborghini 3D Cat Story (A1-A2 Level)",
+    "views": 1202791,
+    "channel": "MeowToonsOfficial"
+   },
+   {
+    "title": "\ud83d\udea8 Someone Stole Jace & Maya\u2019s Lamborghini\u2026 THEN the Chase Began! \ud83c\udfce\ufe0f\ud83d\ude31 | Slow English Story (A2)",
+    "views": 549357,
+    "channel": "Izi Daily English"
+   },
+   {
+    "title": "I Built a Ferrari 488 GTB from WOOD! \ud83d\ude31\ud83c\udfce\ufe0f | Heartwarming 3D Cat Story (A1-A2 Level)",
+    "views": 412543,
+    "channel": "MeowToonsOfficial"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "I Built a Supercar from a GIANT TREE! \ud83d\ude31\ud83d\ude97\ud83e\udeb5 | Wooden Lamborghini 3D Cat Story (A1-A2 Level)",
+    "views": 1202791,
+    "channel": "MeowToonsOfficial",
+    "subs": 8890,
+    "url": "https://www.youtube.com/watch?v=_-E4rkBvL1M"
+   },
+   {
+    "title": "\ud83d\udea8 Someone Stole Jace & Maya\u2019s Lamborghini\u2026 THEN the Chase Began! \ud83c\udfce\ufe0f\ud83d\ude31 | Slow English Story (A2)",
+    "views": 549357,
+    "channel": "Izi Daily English",
+    "subs": 39400,
+    "url": "https://www.youtube.com/watch?v=cj_wNSNfxEs"
+   },
+   {
+    "title": "I Built a Ferrari 488 GTB from WOOD! \ud83d\ude31\ud83c\udfce\ufe0f | Heartwarming 3D Cat Story (A1-A2 Level)",
+    "views": 412543,
+    "channel": "MeowToonsOfficial",
+    "subs": 8890,
+    "url": "https://www.youtube.com/watch?v=sFHhk8Q7cUQ"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 1.82,
+  "hits_score": 2.27,
+  "breakouts_score": 5.45,
+  "velocity_score": 1.82,
+  "assets_score": 5.0,
+  "score": 3.29
+ },
+ {
+  "topic": "Pagani Utopia / Zonda engineering",
+  "queries": [
+   "pagani utopia explained",
+   "why pagani zonda is special"
+  ],
+  "n_results": 27,
+  "demand_raw": 74423.5,
+  "hits_raw": 3,
+  "velocity_raw": 4122.3,
+  "breakouts_raw": 0,
+  "big_hits": 1,
+  "top": [
+   {
+    "title": "Why Pagani BOLTS cost more than a Porsche 911!",
+    "views": 1372609,
+    "channel": "carwow"
+   },
+   {
+    "title": "NEW Pagani Codalunga Speedster is the ULTIMATE Hypercar!",
+    "views": 813637,
+    "channel": "carwow"
+   },
+   {
+    "title": "Why I Drive a Pagani Zonda Cinque Roadster ",
+    "views": 110101,
+    "channel": "Magnacars"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 0,
+  "demand_score": 2.73,
+  "hits_score": 2.27,
+  "breakouts_score": 1.36,
+  "velocity_score": 4.55,
+  "assets_score": 5.0,
+  "score": 2.91
+ },
+ {
+  "topic": "Pagani story (Horacio Pagani, Zonda, Huayra)",
+  "queries": [
+   "pagani story",
+   "horacio pagani story how he built pagani"
+  ],
+  "n_results": 24,
+  "demand_raw": 797.5,
+  "hits_raw": 1,
+  "velocity_raw": 6.5,
+  "breakouts_raw": 0,
+  "big_hits": 1,
+  "top": [
+   {
+    "title": "Why Pagani BOLTS cost more than a Porsche 911!",
+    "views": 1372609,
+    "channel": "carwow"
+   },
+   {
+    "title": "PAGANI ZONDA F - THE CAR THAT CHANGED MY LIFE (USA/ITA CC)",
+    "views": 53747,
+    "channel": "Leone Drives"
+   },
+   {
+    "title": "HORACIO PAGANI: How a Visionary Artisan Built the Ultimate HyperCars",
+    "views": 1265,
+    "channel": "The Gentleman Chronicles "
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 0,
+  "demand_score": 0.91,
+  "hits_score": 0.91,
+  "breakouts_score": 1.36,
+  "velocity_score": 0.0,
+  "assets_score": 5.0,
+  "score": 1.5
+ },
+ {
+  "topic": "Animated car engineering (3D explainer)",
+  "queries": [
+   "how a car works animation",
+   "engine animation explained 3d"
+  ],
+  "n_results": 13,
+  "demand_raw": 450.0,
+  "hits_raw": 0,
+  "velocity_raw": 27.3,
+  "breakouts_raw": 0,
+  "big_hits": 0,
+  "top": [
+   {
+    "title": "How a Car Engine Works (3D Animation)",
+    "views": 18261,
+    "channel": "Exploded Works"
+   },
+   {
+    "title": "How does the Car Water Pump work ? / Car Specialist",
+    "views": 7652,
+    "channel": "Car Specialist "
+   },
+   {
+    "title": "How a Car Water Pump Works \ud83d\ude97\ud83d\udca7 | Simple Animation",
+    "views": 1332,
+    "channel": "MechVerse"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 0,
+  "demand_score": 0.0,
+  "hits_score": 0.0,
+  "breakouts_score": 1.36,
+  "velocity_score": 0.91,
+  "assets_score": 5.0,
+  "score": 1.23
+ }
+]
