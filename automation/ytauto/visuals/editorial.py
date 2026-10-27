@@ -376,8 +376,20 @@ def profile_beat(duration: float, title: str = "Jupiter's weather layer", marks=
 
 
 # ----------------------------------------------------------------- fact list
+def _usable(backdrop):
+    """A backdrop taken from a dark beat (glitch, black, title card) would leave the card near-black once dimmed;
+    fall back to a lit graphite gradient instead."""
+    if backdrop is None or float(backdrop.mean()) >= 18:
+        return backdrop
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    r = np.sqrt(((xx - W * 0.6) / W) ** 2 + ((yy - H * 0.95) / H) ** 2)
+    g = np.array([60, 62, 72], np.float32) + np.array([130, 90, 45], np.float32) * np.clip(1 - r * 1.3, 0, 1)[..., None]
+    return np.clip(g, 0, 255).astype(np.uint8)
+
+
 def fact_list_beat(duration: float, title: str, items: list[str], source_label: str = "", backdrop=None):
     """Items reveal one by one over a darkened, blurred backdrop (last frame of the previous shot)."""
+    backdrop = _usable(backdrop)
     if backdrop is not None:
         bg = cv2.GaussianBlur(backdrop, (0, 0), 18).astype(np.float32) * 0.35
     else:
@@ -411,6 +423,7 @@ def fact_list_beat(duration: float, title: str, items: list[str], source_label: 
 # ----------------------------------------------------------------- big number + end card (cinematic style)
 def fact_beat(duration: float, big: str, small: str = "", source_label: str = "", backdrop=None):
     """One huge number over the darkened, blurred previous shot; the number scales in slightly."""
+    backdrop = _usable(backdrop)
     if backdrop is not None:
         bg = (cv2.GaussianBlur(backdrop, (0, 0), 22).astype(np.float32) * 0.3).astype(np.uint8)
     else:

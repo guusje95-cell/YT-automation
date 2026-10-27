@@ -1,0 +1,154 @@
+{
+ "summary": {
+  "PASS": 26,
+  "WARN": 1,
+  "FAIL": 2
+ },
+ "results": [
+  [
+   "script.banned_phrases",
+   "PASS",
+   "none"
+  ],
+  [
+   "script.hype_words",
+   "PASS",
+   "none"
+  ],
+  [
+   "script.length",
+   "PASS",
+   "995 words, 92 sentences"
+  ],
+  [
+   "script.longest_sentence",
+   "PASS",
+   "30 words: In nineteen ninety-seven, a British car called Thrust SSC, pushed by two jet engines, brok..."
+  ],
+  [
+   "script.repetitive_openers",
+   "PASS",
+   "none"
+  ],
+  [
+   "script.numbers_sourced",
+   "PASS",
+   "every number appears in a sourced claim"
+  ],
+  [
+   "script.sources_used",
+   "PASS",
+   "19 sources cited"
+  ],
+  [
+   "script.time_sensitive",
+   "WARN",
+   "BYD says the Yangwang U9 Xtreme will attempt to exceed 500 km/h in November 2026 (announced July 2026). | Production-car top-speed records and their recognition can change; status as of 27 October 2026."
+  ],
+  [
+   "assets.licences",
+   "PASS",
+   "14 assets, all allowed"
+  ],
+  [
+   "assets.credits",
+   "PASS",
+   "all credited"
+  ],
+  [
+   "assets.flags",
+   "PASS",
+   "no open flags"
+  ],
+  [
+   "assets.unused",
+   "PASS",
+   "unused (fine): ['jamais_b', 'mclaren', 'thrust_helmet']"
+  ],
+  [
+   "captions.line_length",
+   "PASS",
+   "0 lines > 42 chars"
+  ],
+  [
+   "meta.title_length",
+   "PASS",
+   "61 chars: The 500 km/h Wall: The Fastest Car Record Nobody Can Agree On"
+  ],
+  [
+   "meta.description_length",
+   "PASS",
+   "4745 chars"
+  ],
+  [
+   "meta.tags",
+   "PASS",
+   "14 tags, 201 chars"
+  ],
+  [
+   "meta.chapters",
+   "PASS",
+   "6 chapters"
+  ],
+  [
+   "meta.privacy_default",
+   "PASS",
+   "private"
+  ],
+  [
+   "thumbnail.thumbnail_1",
+   "PASS",
+   "(1280, 720), 161 KB"
+  ],
+  [
+   "thumbnail.thumbnail_2",
+   "PASS",
+   "(1280, 720), 158 KB"
+  ],
+  [
+   "thumbnail.thumbnail_3",
+   "PASS",
+   "(1280, 720), 153 KB"
+  ],
+  [
+   "video.format",
+   "PASS",
+   "h264 1920x1080 yuv420p 30/1"
+  ],
+  [
+   "video.audio_stream",
+   "PASS",
+   "aac 48000 Hz 2 ch"
+  ],
+  [
+   "video.duration",
+   "PASS",
+   "376.9s (6.3 min)"
+  ],
+  [
+   "video.av_sync_length",
+   "PASS",
+   "video 376.90s / audio 376.92s"
+  ],
+  [
+   "video.black_frames",
+   "FAIL",
+   "black segments: [(157.9, 171.933), (359.1, 367.967)]"
+  ],
+  [
+   "audio.loudness",
+   "PASS",
+   "-14.4 LUFS integrated, true peak -1.8 dBFS"
+  ],
+  [
+   "audio.long_silences",
+   "PASS",
+   "none"
+  ],
+  [
+   "voice.intelligibility",
+   "FAIL",
+   "ASR word error rate 15.5% (lower is better; includes number formatting differences). Top diffs: 'twenty twenty' -> '2020'; 'five hundred kilometres' -> '500 kilometers'; 'five hundred' -> '500'; 'eighteen ninety eight' -> '1898'; 'organises' -> 'organizes'; 'ach res' -> 'asher'; 'chasseloup laubat' -> 'chasseleau lobain'; 'sixty three kilometres' -> '63 kilometers'"
+  ]
+ ]
+}

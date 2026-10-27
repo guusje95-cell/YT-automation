@@ -31,7 +31,8 @@ MAX_RATIO = 1.75
 _NUMBER_WORDS = set("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen "
                     "sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety "
                     "hundred thousand million billion and a".split())
-_SPELLING = {"kilometres": "kilometers", "metres": "meters", "centre": "center", "tonnes": "tons"}
+_SPELLING = {"kilometres": "kilometers", "metres": "meters", "centre": "center", "tonnes": "tons",
+             "organises": "organizes", "recognised": "recognized", "realised": "realized", "colour": "color"}
 
 
 def _asr_words(text: str, numbers: bool) -> list[str]:

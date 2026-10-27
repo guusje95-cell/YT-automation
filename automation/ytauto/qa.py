@@ -186,9 +186,18 @@ def check_intelligibility(spec, model_size: str = "small.en") -> list[tuple]:
     diffs = [f"'{' '.join(ref_w[i1:i2])}' -> '{' '.join(hyp_w[j1:j2])}'" for op, i1, i2, j1, j2 in sm.get_opcodes()
              if op != "equal"][:25]
     (spec.build / "asr_diffs.txt").write_text("\n".join(diffs))
-    status = PASS if wer < 0.06 else WARN if wer < 0.12 else FAIL
-    return [("voice.intelligibility", status, f"ASR word error rate {wer:.1%} (lower is better; includes number "
-                                              f"formatting differences). Top diffs: {'; '.join(diffs[:8])}")]
+    # Gate on the error rate without number formatting ("twenty twenty" vs "2020") or UK/US spelling, which are
+    # transcription conventions, not mumbling; the raw rate is reported alongside.
+    from ytauto.voice.narrate import _asr_words
+    ref_n = _asr_words(" ".join(plain(sc["narration"]) for sc in spec.scenes), True)
+    hyp_n = _asr_words(hyp, True)
+    sm_n = difflib.SequenceMatcher(a=ref_n, b=hyp_n, autojunk=False)
+    wer_n = sum(max(i2 - i1, j2 - j1) for op, i1, i2, j1, j2 in sm_n.get_opcodes() if op != "equal") / max(len(ref_n), 1)
+    diffs_n = [f"'{' '.join(ref_n[i1:i2])}' -> '{' '.join(hyp_n[j1:j2])}'"
+               for op, i1, i2, j1, j2 in sm_n.get_opcodes() if op != "equal"]
+    status = PASS if wer_n < 0.06 else WARN if wer_n < 0.12 else FAIL
+    return [("voice.intelligibility", status, f"ASR word error rate {wer_n:.1%} excluding number formatting and "
+                                              f"UK/US spelling (raw {wer:.1%}). Top diffs: {'; '.join(diffs_n[:8])}")]
 
 
 # ----------------------------------------------------------------- captions / packaging
