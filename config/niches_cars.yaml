@@ -1,0 +1,35 @@
+# Car niche deep dive (2026-10-27): sub-niches a faceless, narrated channel could own, plus space as baseline.
+# rpm_band: assumed creator RPM (USD, English long-form) — estimates from public creator reports, not measured.
+niches:
+  car_brand_stories:
+    label: "Car company histories / rise and fall (narrated)"
+    queries: ["rise and fall of car company", "how this car company almost died", "car brand history documentary"]
+    rpm_band: [6, 14]
+  car_engineering:
+    label: "Automotive engineering explainers (engines, aero, how it works)"
+    queries: ["how a car engine works explained", "why this engine is genius", "automotive engineering explained"]
+    rpm_band: [5, 12]
+  supercar_hypercar:
+    label: "Supercar / hypercar stories (Bugatti, Koenigsegg, Pagani)"
+    queries: ["how bugatti built the fastest car", "koenigsegg engineering explained", "hypercar documentary"]
+    rpm_band: [5, 12]
+  car_failures:
+    label: "Car disasters / worst cars / engineering failures"
+    queries: ["worst cars ever made", "car that destroyed a company", "biggest car failures documentary"]
+    rpm_band: [5, 12]
+  motorsport_stories:
+    label: "Motorsport history (F1, Le Mans, rally) narrated"
+    queries: ["f1 history documentary", "le mans history story", "group b rally documentary"]
+    rpm_band: [4, 10]
+  ev_industry:
+    label: "EV / car industry business (Tesla, BYD, EV startups)"
+    queries: ["why ev companies are failing", "byd vs tesla explained", "ev industry explained"]
+    rpm_band: [7, 16]
+  jdm_culture:
+    label: "JDM / car culture stories"
+    queries: ["jdm history documentary", "toyota supra story", "why japanese cars are legendary"]
+    rpm_band: [4, 10]
+  space_astronomy:
+    label: "Space & astronomy explainers (baseline)"
+    queries: ["space documentary", "black holes explained", "how big is the universe"]
+    rpm_band: [3, 8]

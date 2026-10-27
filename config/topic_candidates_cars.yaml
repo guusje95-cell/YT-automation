@@ -1,0 +1,22 @@
+# Car topics, two viewer-style queries each, phrased the same way for every subject.
+topics:
+  - {topic: "Bugatti Veyron / Chiron engineering", queries: ["how bugatti built the veyron", "bugatti chiron engineering explained"]}
+  - {topic: "Koenigsegg innovations", queries: ["koenigsegg engineering explained", "how koenigsegg builds hypercars"]}
+  - {topic: "Rise and fall of a car brand (Saab, Pontiac...)", queries: ["what happened to saab", "rise and fall of car brand"]}
+  - {topic: "DeLorean story", queries: ["delorean story documentary", "what happened to delorean"]}
+  - {topic: "Ferrari vs Lamborghini origin", queries: ["ferrari vs lamborghini story", "why lamborghini started making cars"]}
+  - {topic: "Ford vs Ferrari / Le Mans 1966", queries: ["ford vs ferrari le mans 1966 true story", "ford gt40 history"]}
+  - {topic: "Group B rally (too dangerous)", queries: ["group b rally banned why", "group b rally documentary"]}
+  - {topic: "How F1 cars work", queries: ["how f1 cars work explained", "f1 engineering explained"]}
+  - {topic: "Toyota's rise / Toyota engineering", queries: ["how toyota became the biggest car company", "why toyota is so reliable"]}
+  - {topic: "Toyota Supra / JDM legend", queries: ["toyota supra 2jz story", "why the 2jz engine is legendary"]}
+  - {topic: "Tesla vs BYD / Chinese EVs", queries: ["byd vs tesla explained", "why chinese ev cars are taking over"]}
+  - {topic: "Worst cars ever made", queries: ["worst cars ever made", "cars that were total failures"]}
+  - {topic: "Most expensive cars / car auctions", queries: ["most expensive car ever sold story", "why this car sold for millions"]}
+  - {topic: "Rotary engine (Mazda)", queries: ["mazda rotary engine explained", "why the rotary engine failed"]}
+  - {topic: "Fastest cars ever / top speed records", queries: ["fastest car ever made", "top speed record car history"]}
+  - {topic: "Engines explained (V8, W16, hydrogen)", queries: ["how car engines work explained", "w16 engine explained"]}
+  - {topic: "Car safety / crash test history", queries: ["history of car safety crash tests", "how crash tests changed cars"]}
+  - {topic: "Porsche 911 history", queries: ["porsche 911 history documentary", "why the porsche 911 never changed"]}
+  - {topic: "Dieselgate (Volkswagen scandal)", queries: ["volkswagen dieselgate explained", "vw emissions scandal story"]}
+  - {topic: "Abandoned / barn find supercars", queries: ["abandoned supercars story", "barn find rare car story"]}

@@ -94,8 +94,8 @@ def scan(topics: list[dict], with_assets: bool = True) -> list[dict]:
     return topics
 
 
-def report(topics: list[dict]) -> str:
-    today = dt.date.today().isoformat()
+def report(topics: list[dict], tag: str = "") -> str:
+    today = dt.date.today().isoformat() + (f"_{tag}" if tag else "")
     lines = [f"# Topic scan — {today}", "",
              "Past-year YouTube search results per topic (two queries pooled), long-form only (≥4 min). Demand = median "
              "views of the top 8 results. Breakout = ≥100k views from a channel under 100k subscribers. Scores are "
@@ -121,9 +121,15 @@ def report(topics: list[dict]) -> str:
     return str(out)
 
 
-def main():
-    cands = yaml.safe_load((ROOT / "config" / "topic_candidates.yaml").read_text())["topics"]
-    print(report(scan(cands)))
+def main(argv=None):
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--config", default="topic_candidates.yaml")
+    ap.add_argument("--tag", default="")
+    ap.add_argument("--no-assets", action="store_true", help="skip the NASA asset count (non-space topics)")
+    a = ap.parse_args(argv)
+    cands = yaml.safe_load((ROOT / "config" / a.config).read_text())["topics"]
+    print(report(scan(cands, with_assets=not a.no_assets), a.tag))
 
 
 if __name__ == "__main__":

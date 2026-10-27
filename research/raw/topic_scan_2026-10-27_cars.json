@@ -1,0 +1,1001 @@
+[
+ {
+  "topic": "Abandoned / barn find supercars",
+  "queries": [
+   "abandoned supercars story",
+   "barn find rare car story"
+  ],
+  "n_results": 37,
+  "demand_raw": 2043473.5,
+  "hits_raw": 23,
+  "velocity_raw": 15315.8,
+  "breakouts_raw": 3,
+  "big_hits": 6,
+  "top": [
+   {
+    "title": "I Bought Bugatti Chiron for ONLY $500! Grandma Sold Me His Abandoned Supercar",
+    "views": 4771815,
+    "channel": "AutoReforge"
+   },
+   {
+    "title": "I EXPOSED WHAT HAPPENED TO GVE LONDON",
+    "views": 2759822,
+    "channel": "Mark McCann"
+   },
+   {
+    "title": "Buying An ABANDONED Porsche BARN FIND | First Wash in 30 YEARS!",
+    "views": 2563067,
+    "channel": "WD Detailing"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "I Bought Bugatti Chiron for ONLY $500! Grandma Sold Me His Abandoned Supercar",
+    "views": 4771815,
+    "channel": "AutoReforge",
+    "subs": 26600,
+    "url": "https://www.youtube.com/watch?v=sYG7A2SEXhg"
+   },
+   {
+    "title": "GARAGE FIND 1969 E-TYPE JAGUAR! ABANDONED FOR 48 YEARS!!!",
+    "views": 413912,
+    "channel": "Freddie Lynch",
+    "subs": 12100,
+    "url": "https://www.youtube.com/watch?v=TZnQ2WlpOpo"
+   },
+   {
+    "title": "Proposed With 9 Supercars After 3 Years! She Showed Her 5-Month Bump: \"Too Late, I'm Married!\"",
+    "views": 131947,
+    "channel": "HerStory Reel ",
+    "subs": 14100,
+    "url": "https://www.youtube.com/watch?v=9iatX5wFZvM"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 8.95,
+  "hits_score": 10.0,
+  "breakouts_score": 7.63,
+  "velocity_score": 9.47,
+  "assets_score": 5.0,
+  "score": 8.32
+ },
+ {
+  "topic": "Fastest cars ever / top speed records",
+  "queries": [
+   "fastest car ever made",
+   "top speed record car history"
+  ],
+  "n_results": 21,
+  "demand_raw": 1385106.5,
+  "hits_raw": 13,
+  "velocity_raw": 11560.4,
+  "breakouts_raw": 8,
+  "big_hits": 4,
+  "top": [
+   {
+    "title": "The Insane Engineering of the World's Fastest Car",
+    "views": 3799788,
+    "channel": "Driver61"
+   },
+   {
+    "title": "Richard Hammond Drives the World\u2019s FASTEST Car",
+    "views": 2695457,
+    "channel": "DRIVETRIBE"
+   },
+   {
+    "title": "World\u2019s Quickest Car: Corvette ZR1X vs Sapphire vs \u201cFast\u201d Cars \u2014 Cammisa Ultimate Drag Race Replay",
+    "views": 2537979,
+    "channel": "Hagerty"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "The Fastest Car From Every Brand by Top Speed (Slowest \u2192 Fastest)",
+    "views": 2010084,
+    "channel": "PawFlow",
+    "subs": 11300,
+    "url": "https://www.youtube.com/watch?v=U2J_dqK47IE"
+   },
+   {
+    "title": "The Fastest Machines Ever Built Explained",
+    "views": 713887,
+    "channel": "Overscaled",
+    "subs": 20100,
+    "url": "https://www.youtube.com/watch?v=zBaPSYzl3L0"
+   },
+   {
+    "title": "Top 10 FASTEST CARS In The World (2026)",
+    "views": 541271,
+    "channel": "THE OUTLAWZZ ",
+    "subs": 2330,
+    "url": "https://www.youtube.com/watch?v=cnaG_4ntygg"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 8.42,
+  "hits_score": 8.16,
+  "breakouts_score": 9.47,
+  "velocity_score": 8.42,
+  "assets_score": 5.0,
+  "score": 8.12
+ },
+ {
+  "topic": "How F1 cars work",
+  "queries": [
+   "how f1 cars work explained",
+   "f1 engineering explained"
+  ],
+  "n_results": 33,
+  "demand_raw": 3114049.0,
+  "hits_raw": 18,
+  "velocity_raw": 12480.0,
+  "breakouts_raw": 2,
+  "big_hits": 10,
+  "top": [
+   {
+    "title": "The Ridiculous Engineering Of Jet Engines",
+    "views": 16750061,
+    "channel": "Veritasium"
+   },
+   {
+    "title": "The Insane Genius of a Formula 1 Gearbox",
+    "views": 5321554,
+    "channel": "Driver61"
+   },
+   {
+    "title": "The Insane Engineering of the World's Fastest Car",
+    "views": 3799763,
+    "channel": "Driver61"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Why NO F1 Driver Can Drive Like Max Verstappen",
+    "views": 255458,
+    "channel": "F1 Race Bulletin",
+    "subs": 3160,
+    "url": "https://www.youtube.com/watch?v=ruGEIN53kPY"
+   },
+   {
+    "title": "GT3 Explained for Formula 1 Fans",
+    "views": 139705,
+    "channel": "Driven Properly ",
+    "subs": 636,
+    "url": "https://www.youtube.com/watch?v=w3fIz5BXdSg"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 9.47,
+  "hits_score": 9.47,
+  "breakouts_score": 5.79,
+  "velocity_score": 8.95,
+  "assets_score": 5.0,
+  "score": 7.8
+ },
+ {
+  "topic": "Worst cars ever made",
+  "queries": [
+   "worst cars ever made",
+   "cars that were total failures"
+  ],
+  "n_results": 39,
+  "demand_raw": 281474.0,
+  "hits_raw": 11,
+  "velocity_raw": 6097.5,
+  "breakouts_raw": 9,
+  "big_hits": 0,
+  "top": [
+   {
+    "title": "The WORST Cars to Buy | Doug DeMuro",
+    "views": 983899,
+    "channel": "The Iced Coffee Hour Clips"
+   },
+   {
+    "title": "Top 11 WORST Cars in US History!",
+    "views": 685713,
+    "channel": "Vintage Wheels"
+   },
+   {
+    "title": "Top 13 WORST Cars in US History!",
+    "views": 341724,
+    "channel": "Vintage Wheels"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Top 11 WORST Cars in US History!",
+    "views": 685713,
+    "channel": "Vintage Wheels",
+    "subs": 9450,
+    "url": "https://www.youtube.com/watch?v=Z6k99825jPI"
+   },
+   {
+    "title": "Top 13 WORST Cars in US History!",
+    "views": 341724,
+    "channel": "Vintage Wheels",
+    "subs": 9450,
+    "url": "https://www.youtube.com/watch?v=wDUJBpYLf8k"
+   },
+   {
+    "title": "15 WORST Cars to Buy in Britain in 2026 (Ranked Bad to Catastrophic!)",
+    "views": 297860,
+    "channel": "Reg Hartley",
+    "subs": 2610,
+    "url": "https://www.youtube.com/watch?v=Q4LecVNOBaU"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 6.84,
+  "hits_score": 7.11,
+  "breakouts_score": 10.0,
+  "velocity_score": 7.37,
+  "assets_score": 5.0,
+  "score": 7.49
+ },
+ {
+  "topic": "Toyota's rise / Toyota engineering",
+  "queries": [
+   "how toyota became the biggest car company",
+   "why toyota is so reliable"
+  ],
+  "n_results": 39,
+  "demand_raw": 444386.5,
+  "hits_raw": 13,
+  "velocity_raw": 3853.2,
+  "breakouts_raw": 5,
+  "big_hits": 1,
+  "top": [
+   {
+    "title": "Engineer Ranks Every Car Brand BEST To WORST For Reliability",
+    "views": 1048486,
+    "channel": "Car Help Corner"
+   },
+   {
+    "title": "This Toyota Model Is The Most Reliable in 2026",
+    "views": 565351,
+    "channel": "The Car Care Nut"
+   },
+   {
+    "title": "Best and Worst Toyota Models To Buy Used and New",
+    "views": 465738,
+    "channel": "The Car Care Nut"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "10 Cars With Nearly Perfect Reliability Scores | Consumer Reports 2026",
+    "views": 354454,
+    "channel": "Hard Miles",
+    "subs": 1930,
+    "url": "https://www.youtube.com/watch?v=LycA5kMVnOo"
+   },
+   {
+    "title": "3 Shocking Reasons Why Toyota Hybrid Engines Last Forever",
+    "views": 244309,
+    "channel": "Toyota Stories",
+    "subs": 6490,
+    "url": "https://www.youtube.com/watch?v=ThOIZtkQzPc"
+   },
+   {
+    "title": "Why Toyota Prioritizes Reliability and Honda Prioritizes Performance",
+    "views": 231140,
+    "channel": "Honda Culture",
+    "subs": 13700,
+    "url": "https://www.youtube.com/watch?v=OsDvrC10TBU"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 7.37,
+  "hits_score": 8.16,
+  "breakouts_score": 8.95,
+  "velocity_score": 6.32,
+  "assets_score": 5.0,
+  "score": 7.41
+ },
+ {
+  "topic": "Tesla vs BYD / Chinese EVs",
+  "queries": [
+   "byd vs tesla explained",
+   "why chinese ev cars are taking over"
+  ],
+  "n_results": 33,
+  "demand_raw": 1095653.5,
+  "hits_raw": 15,
+  "velocity_raw": 6889.2,
+  "breakouts_raw": 1,
+  "big_hits": 4,
+  "top": [
+   {
+    "title": "Why this Chinese EV terrifies Europe\u2019s carmakers",
+    "views": 3360829,
+    "channel": "Bloomberg Television"
+   },
+   {
+    "title": "BYD\u2019s Rise: How China Built the World\u2019s EV Giant | Business Case Study",
+    "views": 2181001,
+    "channel": "Think School"
+   },
+   {
+    "title": "America Is Blocking Chinese EVs ... I Flew to China to Find Out Why",
+    "views": 2158667,
+    "channel": "Rich Rebuilds"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Why Chinese cars are TAKING OVER the UK",
+    "views": 196803,
+    "channel": "Car Dealer Magazine",
+    "subs": 46100,
+    "url": "https://www.youtube.com/watch?v=b7ENSMUL_-M"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 7.89,
+  "hits_score": 8.95,
+  "breakouts_score": 3.68,
+  "velocity_score": 7.89,
+  "assets_score": 5.0,
+  "score": 6.62
+ },
+ {
+  "topic": "Bugatti Veyron / Chiron engineering",
+  "queries": [
+   "how bugatti built the veyron",
+   "bugatti chiron engineering explained"
+  ],
+  "n_results": 35,
+  "demand_raw": 12307946.5,
+  "hits_raw": 11,
+  "velocity_raw": 159869.9,
+  "breakouts_raw": 0,
+  "big_hits": 11,
+  "top": [
+   {
+    "title": "I BOUGHT A NON RUNNING BUGATTI VEYRON",
+    "views": 16841544,
+    "channel": "Mat Armstrong"
+   },
+   {
+    "title": "I BOUGHT A REPOSSESSED BUGATTI VEYRON",
+    "views": 14816036,
+    "channel": "Mat Armstrong"
+   },
+   {
+    "title": "I COMPLETED THE REBUILD BUGATTI SAID WAS IMPOSSIBLE",
+    "views": 13152205,
+    "channel": "Mat Armstrong"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 0,
+  "demand_score": 10.0,
+  "hits_score": 7.11,
+  "breakouts_score": 1.05,
+  "velocity_score": 10.0,
+  "assets_score": 5.0,
+  "score": 6.43
+ },
+ {
+  "topic": "Ferrari vs Lamborghini origin",
+  "queries": [
+   "ferrari vs lamborghini story",
+   "why lamborghini started making cars"
+  ],
+  "n_results": 37,
+  "demand_raw": 226841.5,
+  "hits_raw": 7,
+  "velocity_raw": 4688.6,
+  "breakouts_raw": 2,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "Man Builds Amazing LAMBORGHINI From Scratch in 10 Months | Start to Finish by @haisupercar",
+    "views": 1529496,
+    "channel": "Quantum Makers"
+   },
+   {
+    "title": "Lamborghini: The Man Behind the Legend | Frank Grillo | Biopic | Drama | Full Movie | PS",
+    "views": 1333237,
+    "channel": "Movie District"
+   },
+   {
+    "title": "Inside Italy\u2019s Best Factory Building the Massive Lamborghini Urus From Scratch",
+    "views": 286293,
+    "channel": "FRAME"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Ferrari vs Lamborghini: The Insult That Started It All ",
+    "views": 258813,
+    "channel": "AI Hidden Facts",
+    "subs": 1730,
+    "url": "https://www.youtube.com/watch?v=xs1RXsKkdEY"
+   },
+   {
+    "title": "How A Poor Farm Boy Created Lamborghini",
+    "views": 106210,
+    "channel": "Farzeen Sayyam",
+    "subs": 30200,
+    "url": "https://www.youtube.com/watch?v=hOPeNNReNK8"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 6.32,
+  "hits_score": 6.32,
+  "breakouts_score": 5.79,
+  "velocity_score": 6.84,
+  "assets_score": 5.0,
+  "score": 6.07
+ },
+ {
+  "topic": "Rotary engine (Mazda)",
+  "queries": [
+   "mazda rotary engine explained",
+   "why the rotary engine failed"
+  ],
+  "n_results": 33,
+  "demand_raw": 151765.0,
+  "hits_raw": 6,
+  "velocity_raw": 880.4,
+  "breakouts_raw": 3,
+  "big_hits": 0,
+  "top": [
+   {
+    "title": "No Pistons. No Valves. | Mazda\u2019s \"Impossible\" Rotary Engine Explained!",
+    "views": 935199,
+    "channel": "IQ FUNDA"
+   },
+   {
+    "title": "Genius Way Japan Produces Mazda\u2019s Super-Advanced Rotary Engine",
+    "views": 469601,
+    "channel": "FRAME"
+   },
+   {
+    "title": "Mazda CEO Shocks Industry! \"Our New Rotary Engine Will Destroy the Electric Vehicle Industry!",
+    "views": 222941,
+    "channel": "TechDiscoverer"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "No Pistons. No Valves. | Mazda\u2019s \"Impossible\" Rotary Engine Explained!",
+    "views": 935199,
+    "channel": "IQ FUNDA",
+    "subs": 27100,
+    "url": "https://www.youtube.com/watch?v=JDmHwbg2vRY"
+   },
+   {
+    "title": "Mazda CEO Shocks Industry! \"Our New Rotary Engine Will Destroy the Electric Vehicle Industry!",
+    "views": 222941,
+    "channel": "TechDiscoverer",
+    "subs": 4540,
+    "url": "https://www.youtube.com/watch?v=C1wd_MwQl8o"
+   },
+   {
+    "title": "Inside the Mazda 787: Rebuilding a 4-Rotor Le Mans Prototype",
+    "views": 187827,
+    "channel": "Mazda Motorsports",
+    "subs": 4830,
+    "url": "https://www.youtube.com/watch?v=OYSCdPgkBCg"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 5.26,
+  "hits_score": 5.79,
+  "breakouts_score": 7.63,
+  "velocity_score": 4.74,
+  "assets_score": 5.0,
+  "score": 5.84
+ },
+ {
+  "topic": "Most expensive cars / car auctions",
+  "queries": [
+   "most expensive car ever sold story",
+   "why this car sold for millions"
+  ],
+  "n_results": 30,
+  "demand_raw": 167904.5,
+  "hits_raw": 5,
+  "velocity_raw": 1604.1,
+  "breakouts_raw": 1,
+  "big_hits": 1,
+  "top": [
+   {
+    "title": "What's The Most Expensive Thing Ever?",
+    "views": 19510000,
+    "channel": "jack pockets"
+   },
+   {
+    "title": "Why I Paid $38.5 Million for a Ferrari 250 GTO",
+    "views": 818515,
+    "channel": "Ferrari Collector David Lee"
+   },
+   {
+    "title": "One-of-One Ferrari 250 GTO Sells for $38.5 Million at Mecum Kissimmee",
+    "views": 439446,
+    "channel": "Mecum Auctions and Ferrari Collector David Lee"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Top 25 Most Expensive 1 of 1 Cars Ever Sold At Barrett Jackson",
+    "views": 142783,
+    "channel": "ELuxuryLifestyle",
+    "subs": 53500,
+    "url": "https://www.youtube.com/watch?v=7eJEmkLAi2A"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 5.79,
+  "hits_score": 5.26,
+  "breakouts_score": 3.68,
+  "velocity_score": 5.79,
+  "assets_score": 5.0,
+  "score": 5.04
+ },
+ {
+  "topic": "Car safety / crash test history",
+  "queries": [
+   "history of car safety crash tests",
+   "how crash tests changed cars"
+  ],
+  "n_results": 29,
+  "demand_raw": 85274.0,
+  "hits_raw": 4,
+  "velocity_raw": 280.1,
+  "breakouts_raw": 3,
+  "big_hits": 0,
+  "top": [
+   {
+    "title": "Why Are Women More Likely to Die in Crashes?",
+    "views": 357516,
+    "channel": "New York Times Opinion and The New York Times"
+   },
+   {
+    "title": "Legendary 80s & 90s Cars Crash Tests. How Safe Were Classic Cars?",
+    "views": 223677,
+    "channel": "Kram Motors"
+   },
+   {
+    "title": "Volkswagen Golf Crash Test Evolution From First Generation to Latest Model",
+    "views": 130613,
+    "channel": "Kram Motors"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Legendary 80s & 90s Cars Crash Tests. How Safe Were Classic Cars?",
+    "views": 223677,
+    "channel": "Kram Motors",
+    "subs": 4880,
+    "url": "https://www.youtube.com/watch?v=WLdSABf7hek"
+   },
+   {
+    "title": "Volkswagen Golf Crash Test Evolution From First Generation to Latest Model",
+    "views": 130613,
+    "channel": "Kram Motors",
+    "subs": 4880,
+    "url": "https://www.youtube.com/watch?v=2_mK9cqQ2cU"
+   },
+   {
+    "title": "Old Cars Crash Tests Compilation \u2013 Shocking Safety Failures",
+    "views": 110884,
+    "channel": "Kram Motors",
+    "subs": 4880,
+    "url": "https://www.youtube.com/watch?v=O5be0ds807w"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 3.68,
+  "hits_score": 4.21,
+  "breakouts_score": 7.63,
+  "velocity_score": 2.63,
+  "assets_score": 5.0,
+  "score": 4.81
+ },
+ {
+  "topic": "Rise and fall of a car brand (Saab, Pontiac...)",
+  "queries": [
+   "what happened to saab",
+   "rise and fall of car brand"
+  ],
+  "n_results": 38,
+  "demand_raw": 104680.0,
+  "hits_raw": 4,
+  "velocity_raw": 855.7,
+  "breakouts_raw": 2,
+  "big_hits": 0,
+  "top": [
+   {
+    "title": "Why Enthusiasts Loved Saab\u2026 and Why It Failed",
+    "views": 630991,
+    "channel": "Engine Era"
+   },
+   {
+    "title": "The Rise and Fall of Every Major Car Brand",
+    "views": 226129,
+    "channel": "Casual Car Dude"
+   },
+   {
+    "title": "The rise and fall of Small Cars",
+    "views": 123870,
+    "channel": "Michael Girdley"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Why Enthusiasts Loved Saab\u2026 and Why It Failed",
+    "views": 630991,
+    "channel": "Engine Era",
+    "subs": 2300,
+    "url": "https://www.youtube.com/watch?v=V0mAhuhl7Vs"
+   },
+   {
+    "title": "The Rise and Fall of Every Major Car Brand",
+    "views": 226129,
+    "channel": "Casual Car Dude",
+    "subs": 20100,
+    "url": "https://www.youtube.com/watch?v=-wtjCbC-t_4"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 4.21,
+  "hits_score": 4.21,
+  "breakouts_score": 5.79,
+  "velocity_score": 4.21,
+  "assets_score": 5.0,
+  "score": 4.72
+ },
+ {
+  "topic": "Group B rally (too dangerous)",
+  "queries": [
+   "group b rally banned why",
+   "group b rally documentary"
+  ],
+  "n_results": 30,
+  "demand_raw": 48442.5,
+  "hits_raw": 3,
+  "velocity_raw": 325.3,
+  "breakouts_raw": 3,
+  "big_hits": 0,
+  "top": [
+   {
+    "title": "Why was this Rally Category BANNED FOREVER!?",
+    "views": 949556,
+    "channel": "LUGNUTS"
+   },
+   {
+    "title": "Top 10 Rally Cars of All Time \u2013 Voted by Fans, Told by the Drivers",
+    "views": 142858,
+    "channel": "Special Stage Rally Video"
+   },
+   {
+    "title": "World Rally Championship 1986: The Final Season of Group B",
+    "views": 100703,
+    "channel": "Marvdogger"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Why was this Rally Category BANNED FOREVER!?",
+    "views": 949556,
+    "channel": "LUGNUTS",
+    "subs": 66200,
+    "url": "https://www.youtube.com/watch?v=Lvs6wpTSyys"
+   },
+   {
+    "title": "Top 10 Rally Cars of All Time \u2013 Voted by Fans, Told by the Drivers",
+    "views": 142858,
+    "channel": "Special Stage Rally Video",
+    "subs": 45300,
+    "url": "https://www.youtube.com/watch?v=zI17wrml7nQ"
+   },
+   {
+    "title": "World Rally Championship 1986: The Final Season of Group B",
+    "views": 100703,
+    "channel": "Marvdogger",
+    "subs": 22600,
+    "url": "https://www.youtube.com/watch?v=ZufTnLUYH3M"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 3.16,
+  "hits_score": 2.89,
+  "breakouts_score": 7.63,
+  "velocity_score": 3.16,
+  "assets_score": 5.0,
+  "score": 4.5
+ },
+ {
+  "topic": "Ford vs Ferrari / Le Mans 1966",
+  "queries": [
+   "ford vs ferrari le mans 1966 true story",
+   "ford gt40 history"
+  ],
+  "n_results": 37,
+  "demand_raw": 135216.5,
+  "hits_raw": 4,
+  "velocity_raw": 980.3,
+  "breakouts_raw": 1,
+  "big_hits": 1,
+  "top": [
+   {
+    "title": "Ford v Ferrari: What Happened To Carroll Shelby After The Film Ends",
+    "views": 1175411,
+    "channel": "Fact vs Film"
+   },
+   {
+    "title": "How the Ford GT40 OUTSMARTED Ferrari with a Controversial Loophole",
+    "views": 511417,
+    "channel": "Rare Old Engines and Backshift Garage"
+   },
+   {
+    "title": "The True Story of Ford v Ferrari | Ford Racing",
+    "views": 255705,
+    "channel": "Ford Racing and Speeed"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "Ford v Ferrari: What Happened To Carroll Shelby After The Film Ends",
+    "views": 1175411,
+    "channel": "Fact vs Film",
+    "subs": 11800,
+    "url": "https://www.youtube.com/watch?v=14usBWLXBx8"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 4.74,
+  "hits_score": 4.21,
+  "breakouts_score": 3.68,
+  "velocity_score": 5.26,
+  "assets_score": 5.0,
+  "score": 4.49
+ },
+ {
+  "topic": "Engines explained (V8, W16, hydrogen)",
+  "queries": [
+   "how car engines work explained",
+   "w16 engine explained"
+  ],
+  "n_results": 36,
+  "demand_raw": 24165.0,
+  "hits_raw": 3,
+  "velocity_raw": 590.5,
+  "breakouts_raw": 1,
+  "big_hits": 1,
+  "top": [
+   {
+    "title": "New Bugatti Destrier: Makes The V16 Tourbillon Look Tame! | 4K",
+    "views": 1574088,
+    "channel": "Top Gear"
+   },
+   {
+    "title": "Every Car Engine Type Explained",
+    "views": 758885,
+    "channel": "Bladed Angel"
+   },
+   {
+    "title": "How Car Engines Work (Explained in Simple Terms) | Masterclass EP01",
+    "views": 155242,
+    "channel": "The Apex Theory"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "How Car Engines Work (Explained in Simple Terms) | Masterclass EP01",
+    "views": 155242,
+    "channel": "The Apex Theory",
+    "subs": 36500,
+    "url": "https://www.youtube.com/watch?v=IIAIIqEZxdU"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 2.11,
+  "hits_score": 2.89,
+  "breakouts_score": 3.68,
+  "velocity_score": 3.68,
+  "assets_score": 5.0,
+  "score": 3.33
+ },
+ {
+  "topic": "Porsche 911 history",
+  "queries": [
+   "porsche 911 history documentary",
+   "why the porsche 911 never changed"
+  ],
+  "n_results": 34,
+  "demand_raw": 30078.5,
+  "hits_raw": 2,
+  "velocity_raw": 247.0,
+  "breakouts_raw": 0,
+  "big_hits": 2,
+  "top": [
+   {
+    "title": "My Life Long Dream To Own A Porsche 911",
+    "views": 2153583,
+    "channel": "Jeffrey Pang"
+   },
+   {
+    "title": "Hagerty's Porsche 911 Turbo Documentary with Jason Cammisa, Henry Catchpole, and Friends",
+    "views": 1620335,
+    "channel": "Hagerty"
+   },
+   {
+    "title": "Porsche Will Never Be the Same",
+    "views": 50038,
+    "channel": "Porsche Pulse"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 0,
+  "demand_score": 2.63,
+  "hits_score": 1.84,
+  "breakouts_score": 1.05,
+  "velocity_score": 2.11,
+  "assets_score": 5.0,
+  "score": 2.35
+ },
+ {
+  "topic": "Dieselgate (Volkswagen scandal)",
+  "queries": [
+   "volkswagen dieselgate explained",
+   "vw emissions scandal story"
+  ],
+  "n_results": 35,
+  "demand_raw": 745.5,
+  "hits_raw": 1,
+  "velocity_raw": 16.8,
+  "breakouts_raw": 1,
+  "big_hits": 0,
+  "top": [
+   {
+    "title": "NAJVE\u0106I SKANDAL IKADA  - DIESELGATE",
+    "views": 132416,
+    "channel": "Turbo Pri\u010de"
+   },
+   {
+    "title": "The Outrageous Fraud of the Volkwagen Emissions Scandal | History in the Dark",
+    "views": 5606,
+    "channel": "History in the Dark"
+   },
+   {
+    "title": "Dieselgate Explained! \ud83d\udeabWhat They Didn\u2019t Tell Owners About The Fix",
+    "views": 4598,
+    "channel": "TorqueCars"
+   }
+  ],
+  "breakout_examples": [
+   {
+    "title": "NAJVE\u0106I SKANDAL IKADA  - DIESELGATE",
+    "views": 132416,
+    "channel": "Turbo Pri\u010de",
+    "subs": 58800,
+    "url": "https://www.youtube.com/watch?v=KSbNlRdzgbA"
+   }
+  ],
+  "assets_raw": 0,
+  "demand_score": 0.0,
+  "hits_score": 1.05,
+  "breakouts_score": 3.68,
+  "velocity_score": 0.53,
+  "assets_score": 5.0,
+  "score": 1.96
+ },
+ {
+  "topic": "Koenigsegg innovations",
+  "queries": [
+   "koenigsegg engineering explained",
+   "how koenigsegg builds hypercars"
+  ],
+  "n_results": 35,
+  "demand_raw": 9979.5,
+  "hits_raw": 2,
+  "velocity_raw": 194.6,
+  "breakouts_raw": 0,
+  "big_hits": 1,
+  "top": [
+   {
+    "title": "Why Koenigsegg\u2019s new 2,300hp hypercar changes everything",
+    "views": 4796944,
+    "channel": "carwow"
+   },
+   {
+    "title": "The Illegal Koenigsegg That Finally Got Built",
+    "views": 461796,
+    "channel": "Supercar Blondie"
+   },
+   {
+    "title": "Do The Koenigsegg Jesko's Fins Actually Work?",
+    "views": 20203,
+    "channel": "Premier Aerodynamics and Premier Aerodynamics Planes"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 0,
+  "demand_score": 1.05,
+  "hits_score": 1.84,
+  "breakouts_score": 1.05,
+  "velocity_score": 1.58,
+  "assets_score": 5.0,
+  "score": 1.88
+ },
+ {
+  "topic": "DeLorean story",
+  "queries": [
+   "delorean story documentary",
+   "what happened to delorean"
+  ],
+  "n_results": 33,
+  "demand_raw": 12408.0,
+  "hits_raw": 0,
+  "velocity_raw": 147.1,
+  "breakouts_raw": 0,
+  "big_hits": 0,
+  "top": [
+   {
+    "title": "The Fatal DeLorean Factory: The Scandal That Destroyed a Car Empire",
+    "views": 74669,
+    "channel": "Lost Industries"
+   },
+   {
+    "title": "The rise and fall of DeLorean Motor Corporation",
+    "views": 59112,
+    "channel": "Michael Girdley"
+   },
+   {
+    "title": "The DeLorean's Fatal Factory: The Scandal That Destroyed an Automotive Empire",
+    "views": 18256,
+    "channel": "Ru\u00ednas Industriais"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 0,
+  "demand_score": 1.58,
+  "hits_score": 0.26,
+  "breakouts_score": 1.05,
+  "velocity_score": 1.05,
+  "assets_score": 5.0,
+  "score": 1.62
+ },
+ {
+  "topic": "Toyota Supra / JDM legend",
+  "queries": [
+   "toyota supra 2jz story",
+   "why the 2jz engine is legendary"
+  ],
+  "n_results": 26,
+  "demand_raw": 1504.0,
+  "hits_raw": 0,
+  "velocity_raw": 8.7,
+  "breakouts_raw": 0,
+  "big_hits": 0,
+  "top": [
+   {
+    "title": "THE SHOCKING TRUTH BEHIND THE \"UNBREAKABLE\" 2JZ-GTE TOYOTA NEVER WANTED YOU TO KNOW!",
+    "views": 22393,
+    "channel": "JDM ENGINE ARCHIVE"
+   },
+   {
+    "title": "The History of Toyota Supra | seluruh generasi toyota supra",
+    "views": 11763,
+    "channel": "ichsan moch"
+   },
+   {
+    "title": "The reason why the 2JZ engine is called the most powerful in the world! The legendary inline 6-cy...",
+    "views": 2397,
+    "channel": "\u4eca\u65e5\u306e\u8eca"
+   }
+  ],
+  "breakout_examples": [],
+  "assets_raw": 0,
+  "demand_score": 0.53,
+  "hits_score": 0.26,
+  "breakouts_score": 1.05,
+  "velocity_score": 0.0,
+  "assets_score": 5.0,
+  "score": 1.2
+ }
+]
