@@ -182,6 +182,35 @@ def heartbeat(dur, bpm=96):
     return _norm(out, 0.5) * _env(n, 0.8, 1.0)
 
 
+def riser(rng, dur=1.6):
+    """Tension riser: noise + tone sweeping up and swelling, cut dead at the end (the reveal lands on silence+hit)."""
+    n = int(dur * SR)
+    t = np.arange(n, dtype=np.float32) / SR
+    u = t / dur
+    f = 180 * (1 + 5 * u ** 2)
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    tone = np.sin(ph) * 0.4 + np.sin(ph * 1.5) * 0.2
+    x = np.stack([tone, tone], 1).astype(np.float32)
+    noise = _noise(n, rng)
+    out = np.zeros_like(noise)
+    chunk = int(0.04 * SR)
+    for i in range(0, n, chunk):
+        c = 400 + 5000 * (i / n) ** 2
+        out[i:i + chunk] = _bp(noise[i:i + chunk], c * 0.7, min(c * 1.4, SR / 2 - 100))
+    env = (u ** 2.2)[:, None]
+    return _norm((x + out * 0.8) * env, 0.45)
+
+
+def impact(rng, dur=2.5):
+    """Cinematic hit for reveals: sub drop + short transient + airy tail."""
+    b = boom(rng, dur, 50.0)
+    n = len(b)
+    t = np.arange(n, dtype=np.float32) / SR
+    trans = _hp(_noise(n, rng), 2000) * np.exp(-t * 40)[:, None] * 0.6
+    tail = _bp(_noise(n, rng), 300, 2500) * np.exp(-t * 2.2)[:, None] * 0.15
+    return _norm(b + trans + tail, 0.7)
+
+
 def _add(track, clip, at_s, gain=1.0):
     i0 = int(at_s * SR)
     if i0 >= len(track):
@@ -226,6 +255,14 @@ def design(beats: list[dict], total_s: float, seed: int = 11) -> np.ndarray:
             _add(out, boom(rng, 3.5), st + 0.35, 0.8)
         elif typ == "black":
             _add(out, boom(rng, 4.0, 30.0) * 0.3, st + 0.3, 0.6)
+        # reveals: riser into fact cards, landing on an impact; a deep hit on every new chapter
+        if typ == "fact":
+            _add(out, riser(rng, 1.4), max(st - 1.4, 0), 0.8)
+            _add(out, impact(rng), st, 0.9)
+        if b.get("first_in_scene") and b.get("chapter"):
+            _add(out, impact(rng, 3.0) * 0.8, st + 0.2, 0.8)
+        elif typ in ("r3d", "image", "video") and not b.get("first_in_scene"):
+            _add(out, whoosh(0.9, rng), max(st - 0.45, 0), 0.25)
         if b.get("heartbeat"):
             _add(out, heartbeat(dur + 0.5, 92 + 20 * float(b.get("heartbeat"))), st, 1.0)
         status = (b.get("hud") or {}).get("status")

@@ -58,7 +58,7 @@ class AsrJudge:
         a = resample_poly(np.concatenate([np.zeros(sr // 5, np.float32), x, np.zeros(sr // 5, np.float32)]),
                           16000 // 8000, sr // 8000).astype(np.float32)
         hyp = " ".join(z.text for z in self.m.transcribe(a, language="en", beam_size=3)[0])
-        ref_w, hyp_w = _asr_words(text, True), _asr_words(hyp, True)
+        ref_w, hyp_w = _asr_words(tts.strip_tags(text), True), _asr_words(hyp, True)
         if not ref_w:
             return 1.0
         return difflib.SequenceMatcher(a=ref_w, b=hyp_w, autojunk=False).ratio()
@@ -66,7 +66,7 @@ class AsrJudge:
 
 def _synth_checked(provider, text: str, tries: int = 4, judge: "AsrJudge | None" = None, **over):
     best = None
-    words = max(len(text.split()), 1)
+    words = max(len(tts.strip_tags(text).split()), 1)
     for k in range(tries if provider.name == "chatterbox" else 1):
         x, sr = provider.synthesize(text, **over) if over else provider.synthesize(text)
         x = tts.trim_silence(x, sr)
@@ -134,12 +134,15 @@ def build(spec) -> dict:
             vo = dict(voices.get(who) or {})
             fx = vo.pop("radio", False)
             over = {kk: v for kk, v in vo.items() if kk in SPEAKER_KEYS}
+            prefix = ""
             if emo:
                 if emo not in emotions:
                     raise ValueError(f"unknown emotion [{emo}] in scene {sc['id']}")
-                over.update(emotions[emo])
+                emo_cfg = dict(emotions[emo])
+                prefix = emo_cfg.pop("tag", "")      # Turbo style tag, e.g. "[fear]"
+                over.update({kk: v for kk, v in emo_cfg.items() if kk in SPEAKER_KEYS})
             sig = json.dumps({**vcfg, **over}, sort_keys=True)
-            spoken = tts.pronounce(text, lexicon)
+            spoken = (prefix + " " if prefix else "") + tts.pronounce(text, lexicon)
             key = hashlib.sha1((sig + "|" + spoken).encode()).hexdigest()[:16]
             clip_path = cache / f"{key}.wav"
             if clip_path.exists():
@@ -161,7 +164,7 @@ def build(spec) -> dict:
             n_clip += 1
             if fx:
                 x = radio(x, sr, seed=n_clip)
-            sent_out.append({"text": text, "who": who, "emotion": emo, "start": round(t, 3), "end": round(t + len(x) / sr, 3)})
+            sent_out.append({"text": tts.strip_tags(text), "who": who, "emotion": emo, "start": round(t, 3), "end": round(t + len(x) / sr, 3)})
             pieces.append(x)
             t += len(x) / sr
             if k < len(sentences) - 1:

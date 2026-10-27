@@ -665,7 +665,7 @@ def description_credits(beats: list[dict]) -> list[str]:
 
 # ----------------------------------------------------------------- black holes (Schwarzschild ray tracing)
 def black_hole(duration, dist=(60.0, 40.0), az=(0.3, 0.5), el=(6.0, 4.0), fov=(38.0, 40.0), look=((0.0, 0.0), (0.0, 0.0)),
-               r_out=20.0, exposure=7.0, scale=0.6, spin_speed=1.0, roll=(0.0, 0.0), disk=True, **_):
+               r_out=20.0, exposure=7.0, scale=0.6, spin_speed=1.0, roll=(0.0, 0.0), disk=True, heat=1.0, **_):
     """Camera around a non-rotating black hole (distances in units of GM/c², horizon radius = 2). Rendered at
     `scale` x 1080p and upscaled (the disk is smooth; this keeps a frame around 2-3 s)."""
     from ytauto.visuals import blackhole as bhr
@@ -676,7 +676,7 @@ def black_hole(duration, dist=(60.0, 40.0), az=(0.3, 0.5), el=(6.0, 4.0), fov=(3
         mix = lambda p: p[0] + (p[1] - p[0]) * u
         lo = (mix((look[0][0], look[1][0])), mix((look[0][1], look[1][1])))
         img = bhr.render(mix(dist), mix(az), math.radians(mix(el)), w, h, fov=mix(fov), t=t, look_offset=lo,
-                         r_out=r_out, spin_speed=spin_speed, roll=math.radians(mix(roll)), disk=disk)
+                         r_out=r_out, spin_speed=spin_speed, roll=math.radians(mix(roll)), disk=disk, heat=heat)
         f = bhr.to_srgb(img, exposure)
         if (w, h) != (W, H):
             f = cv2.resize(f, (W, H), interpolation=cv2.INTER_CUBIC)

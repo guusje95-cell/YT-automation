@@ -54,8 +54,9 @@ def segments(narration: str) -> list[tuple[str, str]]:
 
 
 def plain(narration: str) -> str:
-    """Narration text without speaker tags (for word counts, ASR comparison, checks)."""
-    return " ".join(t for _, t in segments(narration))
+    """Narration text without speaker tags or inline voice tags (for word counts, ASR comparison, checks)."""
+    from ytauto.voice.tts import strip_tags
+    return strip_tags(" ".join(t for _, t in segments(narration)))
 
 
 class SpecError(ValueError):

@@ -105,7 +105,7 @@ def _blackbody_rgb(t: np.ndarray) -> np.ndarray:
 def render(cam_r: float, cam_az: float, cam_el: float, w: int, h: int, fov: float = 60.0, t: float = 0.0,
            look_offset=(0.0, 0.0), disk=True, r_in: float = 6.0, r_out: float = 20.0, disk_gain: float = 1.0,
            star_gain: float = 0.35, star_rot: float = 0.0, roll: float = 0.0, spin_speed: float = 1.0,
-           tilt: float = 0.0) -> np.ndarray:
+           tilt: float = 0.0, heat: float = 1.0) -> np.ndarray:
     """Linear-light float image (h, w, 3). Camera on a sphere of radius cam_r (in M) around the hole, looking at
     it (plus `look_offset` = (yaw, pitch) in degrees). Disk lies in the plane z = 0 (normal +y), optionally tilted."""
     # camera basis (world: y up)
@@ -191,8 +191,8 @@ def render(cam_r: float, cam_az: float, cam_el: float, w: int, h: int, fov: floa
                     ang_rot = (ang + t * spin_speed * 0.6 * rr ** -1.5 * 10) % (2 * math.pi)
                     ai = (ang_rot / (2 * math.pi) * (nz.shape[1] - 1)).astype(int)
                     turb = 0.25 + 1.5 * nz[ri, ai]
-                    temp = tprof * g                          # observed temperature (Doppler + gravity shifted)
-                    flux = temp ** 4 * turb * (r_in / rr) ** 1.5   # ~T^4 plus the steep thin-disk falloff
+                    temp = tprof * g * heat                   # observed temperature (Doppler + gravity shifted)
+                    flux = (temp / heat) ** 4 * turb * (r_in / rr) ** 1.5   # ~T^4 plus the steep thin-disk falloff
                     tt = np.clip(temp, 0, 1.6)
                     hue = np.stack([np.ones_like(tt), 0.16 + 0.32 * tt ** 1.5, 0.02 + 0.16 * tt ** 3], -1)  # deep orange -> white-hot (linear light)
                     c = hue * (flux * disk_gain * 0.28)[:, None]

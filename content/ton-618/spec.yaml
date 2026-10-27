@@ -18,6 +18,7 @@ thumbnail:
     - {text: "HE NEVER CAME BACK", shot: black_hole, params: {dist: [28, 28], el: [2, 2], fov: [62, 62], look: [[-12, 0], [-12, 0]]}, at: 0.5, side: left}
 voice:
   provider: chatterbox
+  model: turbo
   ref: automation/assets/voice/ref_narrator.wav
   exaggeration: 0.55
   cfg_weight: 0.35
@@ -32,14 +33,15 @@ characters:
   jonah: {name: "JONAH HALE", tag: "VESPER POD · DESCENT LOG"}
   iris: {name: "IRIS CALDER", tag: "RELAY SHIP"}
 hud_mission: "VESPER POD  ·  TELEMETRY"
-emotions:
-  calm: {exaggeration: 0.6, cfg_weight: 0.38, temperature: 0.8}
-  tense: {exaggeration: 0.9, cfg_weight: 0.3, temperature: 0.85}
-  panic: {exaggeration: 1.3, cfg_weight: 0.25, temperature: 0.9}
-  awe: {exaggeration: 0.8, cfg_weight: 0.28, temperature: 0.8}
-  weak: {exaggeration: 0.45, cfg_weight: 0.3, temperature: 0.7}
-  hushed: {exaggeration: 0.45, cfg_weight: 0.3, temperature: 0.7}
-  dramatic: {exaggeration: 0.75, cfg_weight: 0.3, temperature: 0.8}
+emotions:   # Chatterbox Turbo style tags (verified in the model's tokenizer)
+  calm: {temperature: 0.8}
+  tense: {tag: "[fear]", temperature: 0.8}
+  panic: {tag: "[fear]", temperature: 0.85}
+  awe: {temperature: 0.85}
+  weak: {tag: "[sigh]", temperature: 0.75}
+  sad: {tag: "[crying]", temperature: 0.75}
+  hushed: {tag: "[narration]", temperature: 0.7}
+  dramatic: {tag: "[dramatic]", temperature: 0.8}
 music:
   duck_db: -6
   cues:
@@ -122,7 +124,7 @@ scenes:
       [hushed]: In 1957, two astronomers in Mexico photographed a faint blue dot. They gave it a number, six hundred and eighteen, and moved on.
       [dramatic]: Years later, astronomers realised what they had actually found. One of the brightest objects in the universe. And at its centre, the heaviest black hole ever weighed.
       [hushed]: Nothing should be able to grow that big. Not that early. Not that fast.
-      JONAH[tense]: Relay, this is Jonah. I can see it. Even from here, it's blinding.
+      JONAH[tense]: [gasp] Relay, this is Jonah. I can see it. Even from here, it's blinding.
       IRIS[calm]: We see you, Jonah. Take it slow. We're right behind you.
       [hushed]: These are the recordings they sent back.
     claims:
@@ -148,7 +150,7 @@ scenes:
       When that light set out, the universe was only about three billion years old.
       And already, this black hole weighed somewhere between forty and sixty-six billion Suns.
       [dramatic]: That's the mystery. There shouldn't have been enough time.
-      JONAH[tense]: Iris, my instruments can't even fit the numbers. What is this thing?
+      JONAH[tense]: Iris, my instruments can't even fit the numbers. [gasp] What is this thing?
     claims:
       - {text: "Distance: light-travel ~10.8 billion light years", sources: [guinness_ton618]}
       - {text: "Earth formed ~4.5 billion years ago", sources: [nasa_earth_facts]}
@@ -166,7 +168,7 @@ scenes:
   - id: glare
     chapter: "The glare"
     narration: |
-      JONAH[awe]: Iris, the disk is brighter than anything I've ever seen. I can't look straight at it.
+      JONAH[awe]: [gasp] Iris, the disk is brighter than anything I've ever seen. I can't look straight at it.
       TON 618 is a quasar. Gas spiralling into the black hole forms a disk that heats up and shines so brightly that it drowns out the light of its entire galaxy.
       That's why two astronomers could see it at all, from ten billion light years away.
       IRIS[tense]: Your hull temperature is climbing. Pull back from the disk, Jonah.
@@ -178,7 +180,7 @@ scenes:
       - {type: r3d, shot: black_hole, params: {dist: [48, 44], el: [2, 3], fov: [48, 46], look: [[-14, 0], [-10, 0]]}, sentences: 1, pov: true, shake: 0.3,
          hud: {hull: [100, 96, "%"], status: "OPTICAL SENSORS SATURATED"}}
       - {type: image, asset: quasar_art, motion: in, sentences: 1, label: "A quasar (artist's concept)"}
-      - {type: r3d, shot: black_hole, params: {dist: [70, 60], el: [5, 8], fov: [36, 34], az: [0.9, 0.6]}, sentences: 1}
+      - {type: r3d, shot: black_hole, params: {dist: [70, 60], el: [5, 8], fov: [36, 34], az: [0.9, 0.6], heat: 1.6}, sentences: 1}
       - {type: r3d, shot: black_hole, params: {dist: [44, 40], el: [3, 5], fov: [46, 44]}, sentences: 1, pov: true, heartbeat: 1.0, shake: 0.6,
          hud: {hull: [96, 88, "%"], temp: [800, 1400, "°C"], status: "HULL HEATING"}}
       - {type: r3d, shot: black_hole, params: {dist: [40, 34], el: [5, 28], fov: [46, 52], az: [0.3, 0.4]}, sentences: 1, pov: true,
@@ -209,7 +211,7 @@ scenes:
       JONAH[tense]: I'm going closer. Iris, everyone says this is where you get torn apart.
       For a small black hole, that's true. Its gravity changes so sharply that your feet are pulled far harder than your head, and you'd be stretched apart before you ever reached the edge. Scientists really call it spaghettification.
       [dramatic]: But TON 618 is so enormous that its gravity changes gently. At the edge, the stretch across a human body is far too small to feel.
-      JONAH[awe]: I don't feel anything. Nothing at all. That's the scariest part.
+      JONAH[awe]: I don't feel anything. Nothing at all. [chuckle] That's the scariest part.
       Close to the edge, the light behaves even stranger. The black hole bends light from behind it up and over the top, so you can see parts of the disk that should be hidden.
       JONAH[awe]: Iris, the sky is folding. I can see the back of the disk, bent over the top of the black hole.
     claims:
@@ -221,7 +223,7 @@ scenes:
          hud: {hull: [86, 86, "%"], distance: [3300, 2600, "AU"], status: "TIDAL SENSORS ARMED"}}
       - {type: video, asset: svs_flyby, from: 10, sentences: 2, label: "NASA supercomputer simulation of a black hole flyby"}
       - {type: r3d, shot: black_hole, params: {dist: [24, 20], el: [2, 1], fov: [70, 72]}, sentences: 2, pov: true, hud: {hull: [86, 86, "%"], g: [0.0, 0.0, "g"], status: "TIDAL STRESS: NONE"}}
-      - {type: r3d, shot: black_hole, params: {dist: [30, 18], el: [1, 0.5], fov: [66, 80], az: [0.2, 0.6]}, sentences: 1.5}
+      - {type: r3d, shot: black_hole, params: {dist: [28, 22], el: [62, 45], fov: [60, 64], az: [0.2, 0.6], heat: 1.3}, sentences: 1.5}
       - {type: r3d, shot: black_hole, params: {dist: [16, 12], el: [1.5, 0.6], fov: [80, 90], look: [[0, 6], [0, 8]]}, sentences: 1.5, pov: true, shake: 0.2,
          hud: {distance: [2000, 1500, "AU"], status: "LIGHT BENDING"}}
 
@@ -229,7 +231,7 @@ scenes:
     chapter: "The choice"
     narration: |
       IRIS[tense]: Jonah, you're at the limit. If you cross, there is no coming back. Not even light comes back from there.
-      JONAH[calm]: I know. But someone has to see what's on the other side.
+      JONAH[calm]: I know. [sigh] But someone has to see what's on the other side.
       JONAH[weak]: Tell everyone the blue dot was worth it.
       [hushed]: Crossing the event horizon, Jonah feels nothing special. No wall, no flash. For him, time keeps running normally.
       But nothing he sends can ever reach us again. And at TON 618's size, he would have at most about twelve days before reaching the centre.
@@ -239,7 +241,7 @@ scenes:
     beats:
       - {type: r3d, shot: black_hole, params: {dist: [12, 10], el: [1, 0.5], fov: [90, 100]}, sentences: 1, pov: true, heartbeat: 1.0, shake: 0.3,
          hud: {hull: [86, 86, "%"], status: "POINT OF NO RETURN"}}
-      - {type: r3d, shot: black_hole, params: {dist: [10, 9], el: [0.5, 0.3], fov: [100, 104], look: [[8, 0], [10, 0]]}, sentences: 1.5, pov: true, heartbeat: 0.8}
+      - {type: r3d, shot: black_hole, params: {dist: [10, 9], el: [0.5, 0.3], fov: [100, 104], look: [[8, 0], [10, 0]], heat: 1.5}, sentences: 1.5, pov: true, heartbeat: 0.8}
       - {type: video, asset: svs_plunge, from: 40, sentences: 3, label: "NASA supercomputer simulation: plunging into a black hole"}
       - {type: fact, big: "≈12 days", small: "the longest anyone could last inside", source: nasa_svs_plunge, sentences: 1}
       - {type: black, ember: true, sentences: 0.6}
@@ -247,10 +249,10 @@ scenes:
   - id: outside
     chapter: "What Iris saw"
     narration: |
-      IRIS[weak]: I watched him the whole time.
+      IRIS[sad]: I watched him the whole time.
       From the outside, the story looks completely different. Iris never sees Jonah cross.
       His image turns redder, his signal arrives slower and slower, and he grows dimmer and dimmer.
-      IRIS[weak]: He just stopped. Frozen, right at the edge. And then he faded away.
+      IRIS[sad]: He just stopped. [sniff] Frozen, right at the edge. And then he faded away.
       [dramatic]: To the rest of the universe, Jonah never falls in. He is still there, at the edge, fading forever.
     claims:
       - {text: "A distant observer sees an infalling object redden and fade, never seeing it cross the horizon", sources: [astronomy_observer]}

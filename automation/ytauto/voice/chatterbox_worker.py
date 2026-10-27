@@ -16,12 +16,19 @@ warnings.filterwarnings("ignore")
 def main():
     import torch
     import torchaudio as ta
-    from chatterbox.tts import ChatterboxTTS
     torch.set_num_threads(int(os.environ.get("CBX_THREADS", "4")))
     ref = os.environ.get("CBX_REF") or None
-    model = ChatterboxTTS.from_pretrained("cpu")
+    turbo = os.environ.get("CBX_MODEL", "standard") == "turbo"
+    if turbo:  # Chatterbox Turbo: inline paralinguistic / style tags ([sigh], [gasp], [fear], [dramatic], ...)
+        from chatterbox.tts_turbo import ChatterboxTurboTTS
+        model = ChatterboxTurboTTS.from_pretrained(device="cpu")
+        prep = lambda path, exaggeration: model.prepare_conditionals(path, norm_loudness=False)
+    else:
+        from chatterbox.tts import ChatterboxTTS
+        model = ChatterboxTTS.from_pretrained("cpu")
+        prep = lambda path, exaggeration: model.prepare_conditionals(path, exaggeration=exaggeration)
     if ref:
-        model.prepare_conditionals(ref, exaggeration=float(os.environ.get("CBX_EXAG", "0.5")))
+        prep(ref, float(os.environ.get("CBX_EXAG", "0.5")))
     conds = {ref: model.conds} if ref else {}
     current = ref
     print(json.dumps({"ready": True, "sr": model.sr}), flush=True)
@@ -34,15 +41,18 @@ def main():
             want = req.get("ref") or ref
             if want and want != current:  # switch speaker: cache conditionals per reference clip
                 if want not in conds:
-                    model.prepare_conditionals(want, exaggeration=float(req.get("exaggeration", 0.5)))
+                    prep(want, float(req.get("exaggeration", 0.5)))
                     conds[want] = model.conds
                 model.conds = conds[want]
                 current = want
             if "seed" in req:
                 torch.manual_seed(int(req["seed"]))
-            wav = model.generate(req["text"], exaggeration=float(req.get("exaggeration", 0.5)),
-                                 cfg_weight=float(req.get("cfg_weight", 0.4)),
-                                 temperature=float(req.get("temperature", 0.8)))
+            if turbo:
+                wav = model.generate(req["text"], temperature=float(req.get("temperature", 0.8)))
+            else:
+                wav = model.generate(req["text"], exaggeration=float(req.get("exaggeration", 0.5)),
+                                     cfg_weight=float(req.get("cfg_weight", 0.4)),
+                                     temperature=float(req.get("temperature", 0.8)))
             ta.save(req["out"], wav, model.sr)
             print(json.dumps({"ok": True, "out": req["out"], "sr": model.sr}), flush=True)
         except Exception as e:  # report and keep serving

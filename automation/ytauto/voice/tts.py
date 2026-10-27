@@ -69,6 +69,7 @@ class ElevenLabsTTS:
 
 class ChatterboxTTS:
     """Expressive local TTS (Resemble AI Chatterbox, MIT) via a persistent worker in its own venv.
+    `model: turbo` selects Chatterbox Turbo, which reads inline tags such as [sigh], [gasp], [fear] or [dramatic].
 
     `ref` is a reference clip whose timbre is cloned. We use a *synthetic* reference (generated with
     Kokoro) so the channel voice never imitates a real person.
@@ -76,7 +77,8 @@ class ChatterboxTTS:
     name = "chatterbox"
 
     def __init__(self, ref: str | None = None, exaggeration: float = 0.5, cfg_weight: float = 0.35,
-                 temperature: float = 0.75, python: str = "/root/venvs/cbx/bin/python", seed: int = 1234, **_):
+                 temperature: float = 0.75, python: str = "/root/venvs/cbx/bin/python", seed: int = 1234,
+                 model: str = "standard", **_):
         import json as _json
         import os
         import subprocess
@@ -86,6 +88,7 @@ class ChatterboxTTS:
             ref_path = Path(ref) if Path(ref).is_absolute() else config.ROOT / ref
             env["CBX_REF"] = str(ref_path)
         env["CBX_EXAG"] = str(exaggeration)
+        env["CBX_MODEL"] = model
         worker = Path(__file__).with_name("chatterbox_worker.py")
         self.proc = subprocess.Popen([python, str(worker)], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                      stderr=subprocess.DEVNULL, text=True, env=env, bufsize=1)
@@ -172,6 +175,14 @@ def split_sentences(text: str) -> list[str]:
     if buf:
         parts.append(buf)
     return [p for p in parts if p]
+
+
+TAG = re.compile(r"\s*\[(?:[a-z]+(?: [a-z]+)?)\]\s*")
+
+
+def strip_tags(text: str) -> str:
+    """Remove inline voice tags ([sigh], [dramatic], ...) for captions, transcripts and checks."""
+    return re.sub(r"\s{2,}", " ", TAG.sub(" ", text)).strip()
 
 
 def pronounce(text: str, lexicon: dict[str, str]) -> str:
