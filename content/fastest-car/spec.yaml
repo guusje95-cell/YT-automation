@@ -190,7 +190,7 @@ assets:   # Openverse (Flickr-hosted); licence checked at fetch time, credits go
   - {id: thrust_engines, provider: openverse, openverse_id: 2d8e4c56-2f39-4f9d-b03d-c5617d13f339}
   - {id: thrust_helmet, provider: openverse, openverse_id: f2ca36c8-37ae-40f5-aaf8-93c7b3d4f64e}
   - {id: thrust_fin, provider: openverse, openverse_id: bee41994-1b39-4100-8050-9902bdb75f19}
-  - {id: mclaren, provider: openverse, openverse_id: 90b79255-53f0-4f8f-96df-db4fffb5e10a}
+  - {id: mclaren, provider: openverse, openverse_id: 770ddc6d-e663-4bf1-8676-595d53a71886}
   - {id: mclaren_door, provider: openverse, openverse_id: 6285a039-2faf-4a99-ae13-1aceab80f0e3}
   - {id: veyron_ss, provider: openverse, openverse_id: 1eb30a96-e4f5-49db-b178-e38175b2c103}
   - {id: agera, provider: openverse, openverse_id: 542c17c5-fa72-42cc-b260-66f259b3371c}
