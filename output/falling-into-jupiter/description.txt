@@ -1,13 +1,14 @@
-Based on a true story: in 1995 NASA's Galileo probe fell into Jupiter and sent data for 58 minutes. Mara Voss and her capsule are a dramatization; every number in this film is real. We follow her capsule from the top of Jupiter's atmosphere past the exact depth where NASA's Galileo probe went silent in 1995, then down through an ocean of liquid metal to a core nobody expected, using real data from Galileo and Juno. Sources below.
+Based on a true story: in 1995 NASA's Galileo probe fell into Jupiter and sent data for 58 minutes. Mara Voss and her capsule are a dramatization; every fact about Jupiter in this film is real. We follow her capsule from the top of Jupiter's atmosphere past the exact depth where NASA's Galileo probe went silent in 1995, then down through an ocean of liquid metal to a core nobody expected, using real data from Galileo and Juno. Sources below.
 
 
 Chapters
 0:34 The wall of fire
-1:17 Into the storm
-2:11 Where the probe died
-3:01 Storms with roots
-3:28 The ocean with no surface
-4:31 The heart
+1:35 The storm
+3:02 The grave
+3:45 Storms with roots
+4:13 The ocean
+5:25 Liquid metal
+6:00 The heart
 
 Sources
 • Galileo Jupiter Atmospheric Probe (mission page) — NASA Science: https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe
@@ -21,6 +22,11 @@ Sources
 • The formation of Jupiter's diluted core by a giant impact (Liu et al., Nature 572, 2019) — Nature: https://cris.tau.ac.il/en/publications/the-formation-of-jupiters-diluted-core-by-a-giant-impact/
 • The Galileo space probe explored Jupiter's deep atmosphere (Universe, 10th ed., section 12-5) — Macmillan Learning (Freedman, Geller, Kaufmann): https://digfir-published.macmillanusa.com/universe10e/universe10e_ch12_6.html
 • What's It Like Inside Jupiter? — NASA Space Place: https://spaceplace.nasa.gov/jupiter/en/
+• Helium rain on Jupiter explains lack of neon in atmosphere (Wilson & Militzer, 2010) — UC Berkeley Research: https://vcresearch.berkeley.edu/news/helium-rain-jupiter-explains-lack-neon-atmosphere
+• The Man Behind High-Speed Safety Standards (John Paul Stapp) — Smithsonian National Air and Space Museum: https://airandspace.si.edu/stories/editorial/man-behind-high-speed-safety-standards
+• Findings From NASA's Juno Update Jupiter Water Mystery (Feb 2020) — NASA JPL: https://www.jpl.nasa.gov/news/findings-from-nasas-juno-update-jupiter-water-mystery/
+• The water abundance in Jupiter's equatorial zone (Li et al., Nature Astronomy 2020) — arXiv: https://arxiv.org/abs/2012.10305
+• Investigation of Galileo Probe Entry Heating with Coupled Radiation and Ablation (Erb, West & Johnston, 2020) — NASA Technical Reports Server: https://ntrs.nasa.gov/citations/20200003199
 
 Image and video credits
 • NASA Ames / Ken Hodges — https://images.nasa.gov/details/ARC-1981-AC81-0174
@@ -39,11 +45,4 @@ Image and video credits
 • NASA's Goddard Space Flight Center / Scientific Visualization Studio — https://svs.gsfc.nasa.gov/13007
 • NASA's Goddard Space Flight Center / Scientific Visualization Studio — https://svs.gsfc.nasa.gov/4664
 • Planet and star-field textures: Solar System Scope (solarsystemscope.com/textures), CC BY 4.0 — based on NASA imagery
-• Enhanced image by Kevin M. Gill (CC-BY) based on images provided courtesy of NASA/JPL-Caltech/SwRI/MSSS (used as texture/backdrop in rendered visualizations) — https://images.nasa.gov/details/PIA22941
-• Image data: NASA/JPL-Caltech/SwRI/MSSS Image processing: Brian Swift CC BY (used as texture/backdrop in rendered visualizations) — https://images.nasa.gov/details/PIA24972
-• Enhanced image by Roman Tkachenko (CC-BY) based on images provided courtesy of NASA/JPL-Caltech/SwRI/MSSS (used as texture/backdrop in rendered visualizations) — https://images.nasa.gov/details/PIA21388
-NASA material is used under NASA's media guidelines; NASA does not endorse this channel. CC BY images are credited above. 3D scenes, cutaways and interior views are visualizations (schematic, not to scale) built from the data cited in Sources.
-
-Music
-• "The Dark Ages" by zero-project (zero-project.gr), via the ESO Music Archive, CC BY 4.0 (edited: excerpted, faded, mixed under narration) — https://www.eso.org/public/products/music/zero-project-the-dark-ages/
 (Full source list continues in the pinned comment.)

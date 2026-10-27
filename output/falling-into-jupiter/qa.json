@@ -18,12 +18,12 @@
   [
    "script.length",
    "PASS",
-   "814 words, 94 sentences"
+   "976 words, 120 sentences"
   ],
   [
    "script.longest_sentence",
    "PASS",
-   "31 words: It powers a magnetic field up to fifty-four times stronger than Earth's, the same field th..."
+   "24 words: A heat shield designed to burn away as it fell, and braking so violent it felt two hundred..."
   ],
   [
    "script.repetitive_openers",
@@ -38,7 +38,7 @@
   [
    "script.sources_used",
    "PASS",
-   "11 sources cited"
+   "16 sources cited"
   ],
   [
    "script.time_sensitive",
@@ -63,7 +63,7 @@
   [
    "assets.unused",
    "PASS",
-   "unused (fine): ['galileo_orbiter', 'grs_slices', 'white_oval']"
+   "unused (fine): ['galileo_orbiter', 'grs_closeup', 'grs_slices', 'probe_painting2', 'white_oval']"
   ],
   [
    "captions.line_length",
@@ -78,7 +78,7 @@
   [
    "meta.description_length",
    "PASS",
-   "4881 chars"
+   "4706 chars"
   ],
   [
    "meta.tags",
@@ -88,7 +88,7 @@
   [
    "meta.chapters",
    "PASS",
-   "6 chapters"
+   "7 chapters"
   ],
   [
    "meta.privacy_default",
@@ -123,12 +123,12 @@
   [
    "video.duration",
    "PASS",
-   "357.9s (6.0 min)"
+   "441.4s (7.4 min)"
   ],
   [
    "video.av_sync_length",
    "PASS",
-   "video 357.77s / audio 357.85s"
+   "video 441.27s / audio 441.35s"
   ],
   [
    "video.black_frames",
@@ -138,7 +138,7 @@
   [
    "audio.loudness",
    "PASS",
-   "-14.5 LUFS integrated, true peak -1.6 dBFS"
+   "-14.4 LUFS integrated, true peak -1.9 dBFS"
   ],
   [
    "audio.long_silences",
@@ -148,7 +148,7 @@
   [
    "voice.intelligibility",
    "WARN",
-   "ASR word error rate 9.5% (lower is better; includes number formatting differences). Top diffs: 'ten' -> '10'; 'one hundred and seventy thousand kilometres' -> '170000 km'; 'fifty eight' -> '58'; 'centre' -> 'center'; 'shock wave' -> 'shockwave'; 'sixteen thousand' -> '16000'; 'two hundred and twenty eight' -> '228'; 'fifteen tonnes' -> '15 tons'"
+   "ASR word error rate 8.1% (lower is better; includes number formatting differences). Top diffs: 'fifty eight' -> '58'; 'ten' -> '10'; 'noor' -> 'nor'; 'a hundred and seventy thousand kilometres' -> '170000 kilometers'; 'braking' -> 'breaking'; 'two hundred and twenty eight' -> '228'; 'forty six' -> '46'; 'braking' -> 'breaking'"
   ]
  ]
 }
