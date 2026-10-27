@@ -153,13 +153,13 @@ def approach(duration, planet="jupiter", dist=(9.0, 2.2), az=(0.5, 0.1), el=(0.2
 
 
 def starfield(duration, rot=(0.0, 0.06), fov=50, look=(0.3, 0.1, -1.0), streak=False, marker=False, zoom=(1.0, 1.0),
-              **_):
+              gain=0.45, **_):
     """Deep space; optional probe streak crossing the frame, or `marker`: one faint blue-violet dot at the
     centre, found by a pulsing ring (an old photographic-plate discovery), with an optional slow zoom in."""
     def render(t):
         u = t / duration
         sc = r3.Scene(bodies=[], sun_dir=(0.0, -1.0, 0.0), bg_rotation=rot[0] + (rot[1] - rot[0]) * u,
-                      sun_visible_glow=False, bg_gain=0.45)
+                      sun_visible_glow=False, bg_gain=gain)
         cam = r3.Camera(pos=(0, 0, 0), target=look, fov=fov)
         f = r3.render(sc, cam, W, H)
         if streak:

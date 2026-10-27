@@ -14,7 +14,7 @@ thumbnail:
   style: cinematic
   variants:
     - {text: "TOO BIG TO EXIST", shot: black_hole, params: {dist: [45, 45], el: [6, 6], fov: [38, 38]}, at: 0.5, side: left}
-    - {text: "NUMBER 618", shot: starfield, params: {marker: true, fov: 30}, at: 0.8, side: left}
+    - {text: "NUMBER 618", shot: starfield, params: {look: [0.08, 0.06, 1.0], gain: 1.6, marker: true, fov: 30}, at: 0.8, side: left}
     - {text: "HE NEVER CAME BACK", shot: black_hole, params: {dist: [28, 28], el: [2, 2], fov: [62, 62], look: [[-12, 0], [-12, 0]]}, at: 0.5, side: left}
 voice:
   provider: chatterbox
@@ -110,9 +110,9 @@ assets:
   - {id: quasar_art, provider: nasa_images, nasa_id: PIA16114}
   - {id: m87_eht, provider: nasa_images, nasa_id: PIA23122}
   - {id: jets_art, provider: nasa_images, nasa_id: PIA13168}
-  - {id: svs_flyby, provider: nasa_svs, svs_id: 14576, kind: video, file_hint: "14576_BH_FlyBy_Zoom2_1920x1080_30.mp4",
+  - {id: svs_flyby, provider: nasa_svs, svs_id: 14576, kind: video, file_hint: "14576_BHFlyBy_Explainer_1080.mp4",
      credit: "NASA's Goddard Space Flight Center / J. Schnittman and B. Powell"}
-  - {id: svs_plunge, provider: nasa_svs, svs_id: 14576, kind: video, file_hint: "14576_BH_Plunge_Zoom2b_1080.mp4",
+  - {id: svs_plunge, provider: nasa_svs, svs_id: 14576, kind: video, file_hint: "14576_BHPlunge_Explainer_1080.mp4",
      credit: "NASA's Goddard Space Flight Center / J. Schnittman and B. Powell"}
 
 scenes:
@@ -130,7 +130,7 @@ scenes:
       - {text: "Heaviest black hole (Guinness): ~66 billion solar masses", sources: [guinness_ton618]}
       - {text: "Light left ~10.8 billion years ago, when the universe was ~3 billion years old (derived from 13.8 by)", sources: [guinness_ton618, nasa_universe]}
     beats:
-      - {type: r3d, shot: starfield, params: {marker: true, zoom: [1.0, 1.8], fov: 30}, sentences: 2, note: ["BASED ON A TRUE STORY"], note_big: true,
+      - {type: r3d, shot: starfield, params: {look: [0.08, 0.06, 1.0], gain: 1.6, marker: true, zoom: [1.0, 1.8], fov: 30}, sentences: 2, note: ["BASED ON A TRUE STORY"], note_big: true,
          hud: {mission: "TONANTZINTLA OBSERVATORY  ·  1957", status: "PLATE 618"}}
       - {type: r3d, shot: black_hole, params: {dist: [400, 160], el: [14, 9], fov: [16, 24]}, sentences: 2}
       - {type: r3d, shot: black_hole, params: {dist: [70, 55], el: [4, 6], fov: [40, 36], az: [0.6, 0.4]}, sentences: 1.4}
@@ -155,7 +155,7 @@ scenes:
       - {text: "Universe ~13.8 billion years old; 13.8 - 10.8 ≈ 3 (derived)", sources: [nasa_universe]}
       - {text: "Mass estimates ~40.7 billion (Ge et al. 2019) to ~66 billion (Guinness) solar masses", sources: [ge_2019, guinness_ton618]}
     beats:
-      - {type: r3d, shot: starfield, params: {marker: true, zoom: [1.8, 3.0], fov: 30}, sentences: 1, hud: {distance: [10.8, 10.8, "billion ly"], status: "LIGHT TRAVEL TIME"}}
+      - {type: r3d, shot: starfield, params: {look: [0.08, 0.06, 1.0], gain: 1.6, marker: true, zoom: [1.8, 3.0], fov: 30}, sentences: 1, hud: {distance: [10.8, 10.8, "billion ly"], status: "LIGHT TRAVEL TIME"}}
       - {type: fact, big: "10.8 billion years", small: "how long its light has travelled", source: guinness_ton618, sentences: 1}
       - {type: r3d, shot: orbit, params: {planet: earth, dist: [3.2, 2.6], az: [0.3, 0.5], el: [0.15, 0.1], light: [55, 15]}, sentences: 1, label: "Earth: about 4.5 billion years old"}
       - {type: r3d, shot: black_hole, params: {dist: [200, 120], el: [10, 8], fov: [22, 26], az: [1.2, 1.0]}, sentences: 1}
@@ -219,7 +219,7 @@ scenes:
     beats:
       - {type: r3d, shot: black_hole, params: {dist: [26, 22], el: [3, 2], fov: [64, 70], look: [[-12, 0], [-12, 2]]}, sentences: 1, pov: true, heartbeat: 1.0,
          hud: {hull: [86, 86, "%"], distance: [3300, 2600, "AU"], status: "TIDAL SENSORS ARMED"}}
-      - {type: video, asset: svs_flyby, from: 4, sentences: 2, label: "NASA supercomputer simulation of a black hole flyby"}
+      - {type: video, asset: svs_flyby, from: 10, sentences: 2, label: "NASA supercomputer simulation of a black hole flyby"}
       - {type: r3d, shot: black_hole, params: {dist: [24, 20], el: [2, 1], fov: [70, 72]}, sentences: 2, pov: true, hud: {hull: [86, 86, "%"], g: [0.0, 0.0, "g"], status: "TIDAL STRESS: NONE"}}
       - {type: r3d, shot: black_hole, params: {dist: [30, 18], el: [1, 0.5], fov: [66, 80], az: [0.2, 0.6]}, sentences: 1.5}
       - {type: r3d, shot: black_hole, params: {dist: [16, 12], el: [1.5, 0.6], fov: [80, 90], look: [[0, 6], [0, 8]]}, sentences: 1.5, pov: true, shake: 0.2,
@@ -240,7 +240,7 @@ scenes:
       - {type: r3d, shot: black_hole, params: {dist: [12, 10], el: [1, 0.5], fov: [90, 100]}, sentences: 1, pov: true, heartbeat: 1.0, shake: 0.3,
          hud: {hull: [86, 86, "%"], status: "POINT OF NO RETURN"}}
       - {type: r3d, shot: black_hole, params: {dist: [10, 9], el: [0.5, 0.3], fov: [100, 104], look: [[8, 0], [10, 0]]}, sentences: 1.5, pov: true, heartbeat: 0.8}
-      - {type: video, asset: svs_plunge, from: 0, sentences: 3, label: "NASA supercomputer simulation: plunging into a black hole"}
+      - {type: video, asset: svs_plunge, from: 40, sentences: 3, label: "NASA supercomputer simulation: plunging into a black hole"}
       - {type: fact, big: "≈12 days", small: "the longest anyone could last inside", source: nasa_svs_plunge, sentences: 1}
       - {type: black, ember: true, sentences: 0.6}
 
@@ -270,7 +270,7 @@ scenes:
     claims:
       - {text: "UHZ1: black hole seen 470 million years after the Big Bang, evidence it was born massive from a collapsing gas cloud (2023)", sources: [chandra_uhz1]}
     beats:
-      - {type: r3d, shot: starfield, params: {fov: 40, rot: [0.1, 0.16]}, sentences: 1}
+      - {type: r3d, shot: black_hole, params: {dist: [500, 300], el: [16, 12], fov: [14, 18], az: [1.4, 1.1]}, sentences: 1}
       - {type: image, asset: jets_art, motion: in, sentences: 1.5, label: "A feeding supermassive black hole (artist's concept)"}
       - {type: fact, big: "470 million years", small: "after the Big Bang: a black hole already born huge", source: chandra_uhz1, sentences: 1}
       - {type: r3d, shot: black_hole, params: {dist: [140, 100], el: [9, 6], fov: [24, 28], az: [0.8, 0.5]}, sentences: 1.5}
@@ -285,6 +285,6 @@ scenes:
       - {text: "TON 618 catalogued 1957", sources: [wiki_ton618]}
     beats:
       - {type: black, ember: false, sentences: 0.4}
-      - {type: r3d, shot: starfield, params: {marker: true, zoom: [3.0, 1.0], fov: 30}, sentences: 2}
+      - {type: r3d, shot: starfield, params: {look: [0.08, 0.06, 1.0], gain: 1.6, marker: true, zoom: [3.0, 1.0], fov: 30}, sentences: 2}
       - {type: r3d, shot: black_hole, params: {dist: [60, 300], el: [6, 14], fov: [38, 18]}, sentences: 1.5}
       - {type: end, text: "Real images. Real numbers.", sentences: 1}

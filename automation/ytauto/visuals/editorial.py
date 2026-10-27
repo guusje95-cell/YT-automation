@@ -595,7 +595,7 @@ def horizon_scale_beat(duration: float, horizon_au: float = 1300.0, title: str =
     """Zoom out from Earth's orbit until the black hole's event horizon (radius `horizon_au`) fills the frame.
     Log-scaled camera so the move feels steady; labels fade in as each orbit comes into view."""
     cx, cy = W // 2, H // 2
-    bg = (fr.starfield(11).astype(np.float32) * 0.5).astype(np.uint8)
+    bg = (fr.starfield(11).astype(np.float32) * 0.9).astype(np.uint8)
     labels = {n: fr.text_layer(n, "medium", 26, DIM, 0, 0, anchor="lm") for n, _ in orbits}
     hz_label = fr.text_layer("Event horizon", "semibold", 34, AMBER, 0, 0, anchor="mm")
     t_layer = place(tracked(title.upper(), "semibold", 36, TEXT, 0.22), W // 2, int(H * 0.09), "mm") if title else None
