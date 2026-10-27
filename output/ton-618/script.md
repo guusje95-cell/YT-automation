@@ -1,12 +1,12 @@
 # TON 618: The Black Hole That Shouldn't Exist (Based on a True Story)
 
-Video id: `ton-618` · narration 5.4 min · 801 words
+Video id: `ton-618` · narration 5.0 min · 807 words
 
 ## [0:00] None
 
 In 1957, two astronomers in Mexico photographed a faint blue dot. They gave it a number, six hundred and eighteen, and moved on. Years later, astronomers realised what they had actually found. One of the brightest objects in the universe. And at its centre, the heaviest black hole ever weighed. Nothing should be able to grow that big. Not that early. Not that fast.
 
-**JONAH:** Relay, this is Jonah. I can see it. Even from here, it's blinding.
+**JONAH:** [gasp] Relay, this is Jonah. I can see it. Even from here, it's blinding.
 
 **IRIS:** We see you, Jonah. Take it slow. We're right behind you.
 
@@ -17,11 +17,11 @@ These are the recordings they sent back.
 - Heaviest black hole (Guinness): ~66 billion solar masses — [guinness_ton618](https://www.guinnessworldrecords.com/world-records/76251-heaviest-black-hole)
 - Light left ~10.8 billion years ago, when the universe was ~3 billion years old (derived from 13.8 by) — [guinness_ton618](https://www.guinnessworldrecords.com/world-records/76251-heaviest-black-hole), [nasa_universe](https://science.nasa.gov/universe/overview/)
 
-## [0:43] The blue dot
+## [0:41] The blue dot
 
 TON 618 is so far away that its light left it ten point eight billion years ago. Earth is only about four and a half billion years old. The light we see from it is older than our planet. When that light set out, the universe was only about three billion years old. And already, this black hole weighed somewhere between forty and sixty-six billion Suns. That's the mystery. There shouldn't have been enough time.
 
-**JONAH:** Iris, my instruments can't even fit the numbers. What is this thing?
+**JONAH:** Iris, my instruments can't even fit the numbers. [gasp] What is this thing?
 
 **Claims → sources**
 - Distance: light-travel ~10.8 billion light years — [guinness_ton618](https://www.guinnessworldrecords.com/world-records/76251-heaviest-black-hole)
@@ -29,9 +29,9 @@ TON 618 is so far away that its light left it ten point eight billion years ago.
 - Universe ~13.8 billion years old; 13.8 - 10.8 ≈ 3 (derived) — [nasa_universe](https://science.nasa.gov/universe/overview/)
 - Mass estimates ~40.7 billion (Ge et al. 2019) to ~66 billion (Guinness) solar masses — [ge_2019](https://ui.adsabs.harvard.edu/abs/2019AJ....157..148G/abstract), [guinness_ton618](https://www.guinnessworldrecords.com/world-records/76251-heaviest-black-hole)
 
-## [1:19] The glare
+## [1:14] The glare
 
-**JONAH:** Iris, the disk is brighter than anything I've ever seen. I can't look straight at it.
+**JONAH:** [gasp] Iris, the disk is brighter than anything I've ever seen. I can't look straight at it.
 
 TON 618 is a quasar. Gas spiralling into the black hole forms a disk that heats up and shines so brightly that it drowns out the light of its entire galaxy. That's why two astronomers could see it at all, from ten billion light years away.
 
@@ -43,7 +43,7 @@ TON 618 is a quasar. Gas spiralling into the black hole forms a disk that heats 
 - Quasar: infalling matter forms a heated disk that outshines its host galaxy — [astronomy_quasar](https://www.astronomy.com/science/is-there-a-quasar-behind-every-black-hole-and-a-black-hole-behind-every-quasar-are-these-different-faces-of-the-same-object/)
 - TON 618 is among the most luminous quasars known — [wiki_ton618](https://en.wikipedia.org/wiki/TON_618)
 
-## [1:52] The edge
+## [1:46] The edge
 
 Now the black hole itself. Its event horizon, the point of no return, measures about two thousand six hundred times the distance from the Earth to the Sun, from one side to the other. You could fit every planet in our solar system inside it more than forty times over. Our own galaxy's black hole weighs about four million Suns. TON 618 is at least ten thousand times heavier.
 
@@ -53,13 +53,13 @@ Now the black hole itself. Its event horizon, the point of no return, measures a
 - Event horizon ~2600 AU across; swallow all planets of the solar system more than 40 times over — [guinness_ton618](https://www.guinnessworldrecords.com/world-records/76251-heaviest-black-hole)
 - Milky Way's black hole ~4.3 million solar masses; 40.7e9/4.3e6 ≈ 9,500 to 66e9/4.3e6 ≈ 15,000 (derived) — [nasa_svs_plunge](https://svs.gsfc.nasa.gov/14576), [ge_2019](https://ui.adsabs.harvard.edu/abs/2019AJ....157..148G/abstract), [guinness_ton618](https://www.guinnessworldrecords.com/world-records/76251-heaviest-black-hole)
 
-## [2:25] The myth
+## [2:17] The myth
 
 **JONAH:** I'm going closer. Iris, everyone says this is where you get torn apart.
 
 For a small black hole, that's true. Its gravity changes so sharply that your feet are pulled far harder than your head, and you'd be stretched apart before you ever reached the edge. Scientists really call it spaghettification. But TON 618 is so enormous that its gravity changes gently. At the edge, the stretch across a human body is far too small to feel.
 
-**JONAH:** I don't feel anything. Nothing at all. That's the scariest part.
+**JONAH:** I don't feel anything. Nothing at all. [chuckle] That's the scariest part.
 
 Close to the edge, the light behaves even stranger. The black hole bends light from behind it up and over the top, so you can see parts of the disk that should be hidden.
 
@@ -70,11 +70,11 @@ Close to the edge, the light behaves even stranger. The black hole bends light f
 - Tidal stretch across ~2 m at TON 618's horizon ~ c^2 L / r_s^2 ≈ 5e-12 m/s² (derived from general relativity) — [guinness_ton618](https://www.guinnessworldrecords.com/world-records/76251-heaviest-black-hole)
 - Light from behind the black hole is bent over the top, revealing the far side of the disk — [nasa_svs_plunge](https://svs.gsfc.nasa.gov/14576)
 
-## [3:22] The choice
+## [3:09] The choice
 
 **IRIS:** Jonah, you're at the limit. If you cross, there is no coming back. Not even light comes back from there.
 
-**JONAH:** I know. But someone has to see what's on the other side. Tell everyone the blue dot was worth it.
+**JONAH:** I know. [sigh] But someone has to see what's on the other side. Tell everyone the blue dot was worth it.
 
 Crossing the event horizon, Jonah feels nothing special. No wall, no flash. For him, time keeps running normally. But nothing he sends can ever reach us again. And at TON 618's size, he would have at most about twelve days before reaching the centre.
 
@@ -82,27 +82,27 @@ Crossing the event horizon, Jonah feels nothing special. No wall, no flash. For 
 - Nothing, not even light, escapes from inside the event horizon — [nasa_svs_plunge](https://svs.gsfc.nasa.gov/14576)
 - Crossing a supermassive horizon is locally unremarkable; maximum proper time from horizon to singularity = πGM/c³ ≈ 12 days for 66e9 M☉ (derived) — [nasa_svs_plunge](https://svs.gsfc.nasa.gov/14576), [guinness_ton618](https://www.guinnessworldrecords.com/world-records/76251-heaviest-black-hole)
 
-## [3:57] What Iris saw
+## [3:44] What Iris saw
 
 **IRIS:** I watched him the whole time.
 
 From the outside, the story looks completely different. Iris never sees Jonah cross. His image turns redder, his signal arrives slower and slower, and he grows dimmer and dimmer.
 
-**IRIS:** He just stopped. Frozen, right at the edge. And then he faded away.
+**IRIS:** He just stopped. [sniff] Frozen, right at the edge. And then he faded away.
 
 To the rest of the universe, Jonah never falls in. He is still there, at the edge, fading forever.
 
 **Claims → sources**
 - A distant observer sees an infalling object redden and fade, never seeing it cross the horizon — [astronomy_observer](https://astronomy.com/science/ask-astro-can-an-observer-ever-see-something-fall-into-a-black-hole)
 
-## [4:28] The answer?
+## [4:12] The answer?
 
 So how did TON 618 get so big, so early? We still don't know for certain. But in 2023, NASA's Chandra and Webb telescopes found a black hole that seems to have been born huge. Not from a dying star, but from the direct collapse of a giant cloud of gas, just four hundred and seventy million years after the Big Bang. If giants like TON 618 got a head start like that, the mystery of the blue dot may finally have an answer.
 
 **Claims → sources**
 - UHZ1: black hole seen 470 million years after the Big Bang, evidence it was born massive from a collapsing gas cloud (2023) — [chandra_uhz1](https://chandra.si.edu/photo/2023/uhz1/)
 
-## [4:58] None
+## [4:42] None
 
 Jonah's journey was imagined. The blue dot was not. In 1957, two astronomers wrote down number six hundred and eighteen, with no idea they had photographed a monster. Every fact about TON 618 in this story is real. If you want to fall into another world with us, subscribe.
 
