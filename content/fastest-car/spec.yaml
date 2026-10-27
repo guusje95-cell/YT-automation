@@ -191,7 +191,6 @@ assets:   # Openverse (Flickr-hosted); licence checked at fetch time, credits go
   - {id: thrust_helmet, provider: openverse, openverse_id: f2ca36c8-37ae-40f5-aaf8-93c7b3d4f64e}
   - {id: thrust_fin, provider: openverse, openverse_id: bee41994-1b39-4100-8050-9902bdb75f19}
   - {id: mclaren, provider: openverse, openverse_id: 770ddc6d-e663-4bf1-8676-595d53a71886}
-  - {id: mclaren_door, provider: openverse, openverse_id: 6285a039-2faf-4a99-ae13-1aceab80f0e3}
   - {id: veyron_ss, provider: openverse, openverse_id: 1eb30a96-e4f5-49db-b178-e38175b2c103}
   - {id: agera, provider: openverse, openverse_id: 542c17c5-fa72-42cc-b260-66f259b3371c}
   - {id: agera_b, provider: openverse, openverse_id: 2ff7be1e-5c68-4841-b39e-1abe3777e8be}
@@ -307,7 +306,7 @@ scenes:
       - {type: road, sky: day, speed: [0.8, 1.3], label: "Nevada State Route 160", sentences: 1, seed: 11}
       - {type: speed, start: 0, end: 447.19, label: "Koenigsegg Agera RS · 4 November 2017", sub: "two-way average · world record", sentences: 3}
       - {type: image, asset: chiron_ss, motion: in, sentences: 2, label: "Bugatti Chiron Super Sport"}
-      - {type: image, asset: mclaren_door, motion: in, sentences: 1, label: "McLaren F1, 1998: also Andy Wallace"}
+      - {type: image, asset: mclaren, motion: out, focus: [0.5, 0.6], sentences: 1, label: "McLaren F1, 1998: also Andy Wallace"}
       - {type: speed, start: 0, end: 490.48, label: "Chiron Super Sport 300+ prototype · 2019", sub: "one direction only", verdict: "NOT A RECORD", sentences: 2}
       - {type: record_chart, points: *pts, title: "The 500 km/h wall", reveal: [2016, 2019.8], x_range: [[2015, 2022], [2015, 2022]], y_range: [[400, 530], [420, 530]], wall: 500, focus: "Chiron SS 300+", source_label: "Sources: Hagerty, GTPlanet", sentences: 2}
 
