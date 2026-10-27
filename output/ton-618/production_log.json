@@ -138,5 +138,75 @@
    "llm": 0.0,
    "note": "all local/free providers; LLM cost applies only when scripts are drafted via API"
   }
+ },
+ {
+  "video_id": "ton-618",
+  "started": "2026-10-27T08:09:06",
+  "stages": [
+   {
+    "stage": "assets",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "narration",
+    "seconds": 1408.9,
+    "status": "ok"
+   },
+   {
+    "stage": "audio_mix",
+    "seconds": 80.5,
+    "status": "ok"
+   },
+   {
+    "stage": "captions",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "thumbnails",
+    "seconds": 20.9,
+    "status": "ok"
+   },
+   {
+    "stage": "storyboard",
+    "seconds": 169.0,
+    "status": "ok"
+   },
+   {
+    "stage": "render",
+    "seconds": 5172.9,
+    "status": "ok"
+   },
+   {
+    "stage": "mux",
+    "seconds": 29.2,
+    "status": "ok"
+   },
+   {
+    "stage": "metadata",
+    "seconds": 0.0,
+    "status": "ok"
+   },
+   {
+    "stage": "qa",
+    "seconds": 216.0,
+    "status": "ok"
+   }
+  ],
+  "qa": {
+   "PASS": 27,
+   "WARN": 2,
+   "FAIL": 0
+  },
+  "finished": "2026-10-27T10:07:24",
+  "total_seconds": 7097.4,
+  "cost_eur": {
+   "tts": 0.0,
+   "assets": 0.0,
+   "music": 0.0,
+   "llm": 0.0,
+   "note": "all local/free providers; LLM cost applies only when scripts are drafted via API"
+  }
  }
 ]

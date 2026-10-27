@@ -1,7 +1,7 @@
 {
  "summary": {
   "PASS": 27,
-  "WARN": 1,
+  "WARN": 2,
   "FAIL": 0
  },
  "results": [
@@ -123,12 +123,12 @@
   [
    "video.duration",
    "PASS",
-   "321.2s (5.4 min)"
+   "302.7s (5.0 min)"
   ],
   [
    "video.av_sync_length",
    "PASS",
-   "video 321.23s / audio 321.22s"
+   "video 302.60s / audio 302.69s"
   ],
   [
    "video.black_frames",
@@ -138,12 +138,17 @@
   [
    "audio.loudness",
    "PASS",
-   "-14.5 LUFS integrated, true peak -1.8 dBFS"
+   "-14.4 LUFS integrated, true peak -1.4 dBFS"
   ],
   [
    "audio.long_silences",
    "PASS",
    "none"
+  ],
+  [
+   "voice.intelligibility",
+   "WARN",
+   "ASR word error rate 7.2% (lower is better; includes number formatting differences). Top diffs: 'six hundred and eighteen' -> '618'; 'realised' -> 'realized'; 'centre' -> 'center'; '' -> 'ah'; '' -> 'i can see it'; 'ton' -> 'tun'; 'ten point eight' -> '10 8'; 'four and a half' -> '4 5'"
   ]
  ]
 }
