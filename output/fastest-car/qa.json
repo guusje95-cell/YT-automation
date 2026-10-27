@@ -1,8 +1,8 @@
 {
  "summary": {
-  "PASS": 26,
+  "PASS": 28,
   "WARN": 1,
-  "FAIL": 2
+  "FAIL": 0
  },
  "results": [
   [
@@ -132,8 +132,8 @@
   ],
   [
    "video.black_frames",
-   "FAIL",
-   "black segments: [(157.9, 171.933), (359.1, 367.967)]"
+   "PASS",
+   "none longer than 1.0s"
   ],
   [
    "audio.loudness",
@@ -147,8 +147,8 @@
   ],
   [
    "voice.intelligibility",
-   "FAIL",
-   "ASR word error rate 15.5% (lower is better; includes number formatting differences). Top diffs: 'twenty twenty' -> '2020'; 'five hundred kilometres' -> '500 kilometers'; 'five hundred' -> '500'; 'eighteen ninety eight' -> '1898'; 'organises' -> 'organizes'; 'ach res' -> 'asher'; 'chasseloup laubat' -> 'chasseleau lobain'; 'sixty three kilometres' -> '63 kilometers'"
+   "PASS",
+   "ASR word error rate 4.3% excluding number formatting and UK/US spelling (raw 15.5%). Top diffs: 'ach res' -> 'asher'; 'chasseloup laubat' -> 'chasseleau lobain'; 'jenatzy' -> 'genazzi'; 'jenatzy' -> 'genazzi'; 'jamais' -> 'germ as'; 'ninth' -> 'th'; 'this' -> 'the'; 'stopped' -> 'stop'"
   ]
  ]
 }

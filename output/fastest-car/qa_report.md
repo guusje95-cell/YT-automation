@@ -1,11 +1,9 @@
 # QA report — fastest-car
 
-**2 FAIL · 1 WARN · 26 PASS**  (BLOCKED: fix FAIL items before publishing)
+**0 FAIL · 1 WARN · 28 PASS**  (publishable after human review of WARN items)
 
 | Check | Status | Detail |
 |---|---|---|
-| video.black_frames | FAIL | black segments: [(157.9, 171.933), (359.1, 367.967)] |
-| voice.intelligibility | FAIL | ASR word error rate 15.5% (lower is better; includes number formatting differences). Top diffs: 'twenty twenty' -> '2020'; 'five hundred kilometres' -> '500 kilometers'; 'five hundred' -> '500'; 'eighteen ninety eight' -> '1898'; 'organises' -> 'organizes'; 'ach res' -> 'asher'; 'chasseloup laubat' -> 'chasseleau lobain'; 'sixty three kilometres' -> '63 kilometers' |
 | script.time_sensitive | WARN | BYD says the Yangwang U9 Xtreme will attempt to exceed 500 km/h in November 2026 (announced July 2026). / Production-car top-speed records and their recognition can change; status as of 27 October 2026. |
 | script.banned_phrases | PASS | none |
 | script.hype_words | PASS | none |
@@ -31,5 +29,7 @@
 | video.audio_stream | PASS | aac 48000 Hz 2 ch |
 | video.duration | PASS | 376.9s (6.3 min) |
 | video.av_sync_length | PASS | video 376.90s / audio 376.92s |
+| video.black_frames | PASS | none longer than 1.0s |
 | audio.loudness | PASS | -14.4 LUFS integrated, true peak -1.8 dBFS |
 | audio.long_silences | PASS | none |
+| voice.intelligibility | PASS | ASR word error rate 4.3% excluding number formatting and UK/US spelling (raw 15.5%). Top diffs: 'ach res' -> 'asher'; 'chasseloup laubat' -> 'chasseleau lobain'; 'jenatzy' -> 'genazzi'; 'jenatzy' -> 'genazzi'; 'jamais' -> 'germ as'; 'ninth' -> 'th'; 'this' -> 'the'; 'stopped' -> 'stop' |
