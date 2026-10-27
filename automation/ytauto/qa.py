@@ -130,7 +130,7 @@ def check_video(spec) -> list[tuple]:
     blacks = [(float(s), float(e)) for s, e in blacks if float(s) < dur - 3]  # the end-card fade is intended
     tl = spec.build / "timeline.json"
     intended = [(b["start"] - 0.5, b["end"] + 0.5) for b in (json.loads(tl.read_text()) if tl.exists() else [])
-                if b["type"] in ("black", "glitch")]   # deliberate 'into the dark' / signal-lost beats
+                if b["type"] in ("black", "glitch", "horizon_scale")]   # deliberate 'into the dark' / signal-lost beats
     merged = []
     for a, b in sorted(intended):  # adjacent glitch + black beats form one intended window
         if merged and a <= merged[-1][1]:

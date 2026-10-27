@@ -14,5 +14,5 @@
 | quasar_art | nasa-media | NASA/ESA | https://images.nasa.gov/details/PIA16114 | 9517eaeed726 |  |
 | m87_eht | nasa-media | NASA/JPL-Caltech/IPAC/Event Horizon Telescope Collaboration | https://images.nasa.gov/details/PIA23122 | e50893809e50 |  |
 | jets_art | nasa-media | NASA/JPL-Caltech | https://images.nasa.gov/details/PIA13168 | 3772e96aeab8 |  |
-| svs_flyby | nasa-media | NASA's Goddard Space Flight Center / J. Schnittman and B. Powell | https://svs.gsfc.nasa.gov/14576 | 601661bc726b |  |
-| svs_plunge | nasa-media | NASA's Goddard Space Flight Center / J. Schnittman and B. Powell | https://svs.gsfc.nasa.gov/14576 | 03ff00a2266e |  |
+| svs_flyby | nasa-media | NASA's Goddard Space Flight Center / J. Schnittman and B. Powell | https://svs.gsfc.nasa.gov/14576 | a3cd5174a858 |  |
+| svs_plunge | nasa-media | NASA's Goddard Space Flight Center / J. Schnittman and B. Powell | https://svs.gsfc.nasa.gov/14576 | 5be05f0589dd |  |
