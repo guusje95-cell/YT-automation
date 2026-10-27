@@ -17,6 +17,7 @@ import datetime as dt
 import hashlib
 import json
 import re
+import time
 from pathlib import Path
 
 import requests
@@ -216,7 +217,15 @@ def _wikimedia_thumbs(url: str, width: int | None) -> list[str]:
 
 
 def _openverse(a: dict, dest_dir: Path) -> dict:
-    r = _get(f"https://api.openverse.org/v1/images/{a['openverse_id']}/").json()
+    for attempt in range(5):   # the detail endpoint returns sporadic 500s; space out the retries
+        try:
+            r = _get(f"https://api.openverse.org/v1/images/{a['openverse_id']}/").json()
+            break
+        except requests.HTTPError as e:
+            if attempt == 4:
+                raise
+            log.warning("openverse %s unavailable (%s); waiting before retry", a["openverse_id"], e)
+            time.sleep(30 * (attempt + 1))
     lic = _OV_LICENSES.get(r["license"])
     if not lic:
         raise AssetError(f"openverse {a['openverse_id']}: licence {r['license']} not allowed")
