@@ -1,0 +1,121 @@
+key,product,votes,summary,query,cloud_apps_matching,top_app_installs,top_app,created,opportunity
+JRACLOUD-846,jira,1026,Support for subcomponents,subcomponents,5,1417,Subcomponents: Component Hierarchy/Release Packages for Jira,2002-09-26,133.2
+JRACLOUD-78044,jira,1093,Jira desktop app,desktop app,147,702,Desktop Connector for Jira (Windows and Mac),2021-12-20,6.5
+CONFCLOUD-46077,confluence,1275,Ability to adjust font size,adjust font size,205,197,Fonts for Confluence,2017-02-01,6.0
+JRACLOUD-91595,jira,2423,Milestones for Basic Roadmaps,milestones basic roadmaps,244,6256,Gantt Charts for Structure PPM - Jira Roadmaps | Tempo,2019-03-05,4.4
+CONFCLOUD-65454,confluence,624,Reorder pages alphabetically (permanently),reorder alphabetically permanently,97,3850,Render Markdown,2019-01-22,3.6
+CONFCLOUD-1373,confluence,488,"Support RTL languages (e.g. Hebrew, Arabic, Persian) for editing and searching",rtl languages hebrew arabic,128,576,Lango AI Translator: Language & translations for Confluence,2004-06-14,3.4
+CONFCLOUD-58921,confluence,404,Ability to hide sidebar from users from anonymous users,hide sidebar anonymous,99,1443,Easy Heading Macro (Floating Table of Contents),2018-01-29,3.1
+JRACLOUD-10507,jira,1244,Archive project components,archive components,417,1417,Subcomponents: Component Hierarchy/Release Packages for Jira,2006-06-29,2.3
+CONFCLOUD-45480,confluence,436,Disable Notify Watchers By default in Confluence,disable notify watchers default,192,364,Bulk Action Tools,2016-12-02,2.1
+JRACLOUD-91572,jira,1847,Option to drill down to the Subtask level in the Timeline (Formerly Roadmap),drill down subtask level,860,510,Multi-Level Cascading Select,2020-01-16,1.9
+JRACLOUD-4812,jira,2798,Default values of system fields,default values system,1016,2766,"ESU Lite: Epic reports for time, status & resolution values",2004-10-06,1.8
+CONFCLOUD-30449,confluence,653,Hide page author/owner and page history from certain users,hide author owner history,356,19,Page Owner Tools and Reports,2013-08-19,1.8
+CONFCLOUD-78513,confluence,1219,Nest Expand or other Bodied Macros in another Macro,nest expand other bodied,386,4060,AURA Content Formatting Macros Tabs LaTeX HTML in Confluence,2019-10-28,1.7
+JRACLOUD-66760,jira,1280,Ability to pick Version from another Project,pick version another,783,439,Version Manager for Jira,2017-04-19,1.5
+CONFCLOUD-1732,confluence,676,Numbered Headings,numbered headings,222,5040,Numbered Headings,2004-08-27,1.5
+CONFCLOUD-70244,confluence,396,Ability to bulk delete drafts,bulk delete drafts,232,531,"Link Tools - Bulk Editor, Graphs, Audit, Structure",2020-06-17,1.5
+JRACLOUD-85686,jira,1739,Allow multiple boards in team-managed projects,multiple boards,993,1057,Multiple Checklists for Jira,2018-11-29,1.4
+JRACLOUD-85680,jira,1895,Ability to have issues from other projects on a team-managed project/board,have other board,1315,622,Boards of Trello in Jira,2018-11-01,1.3
+CONFCLOUD-36137,confluence,875,Allow customized CSS in Confluence Cloud,customized css,539,1297,Custom Charts for Confluence - Jira Dashboard Report | Tempo,2012-11-08,1.3
+CONFCLOUD-71300,confluence,944,Ability to disable the personal spaces creation automatically,disable personal spaces creation,618,1249,Copy Space for Confluence,2020-12-11,1.2
+CONFCLOUD-68826,confluence,643,Native MacOS App (Catalyst) for Confluence,native macos app catalyst,514,802,GoEdit - Attachment Editing & Collaboration for Confluence,2019-12-10,1.1
+JRACLOUD-3156,jira,1777,Required: Project Group Administrator,required group administrator,1340,1945,Requirements & Test Management for Jira,2004-02-16,1.0
+CONFCLOUD-5095,confluence,974,"Page edit permissions should be inherited by pages, like view permissions are",edit permissions inherited like,747,1553,Excel-like Tables for Confluence (Spreadsheet & Chart),2006-01-09,1.0
+JRACLOUD-85694,jira,2460,Ability to customize the fields shown on cards in team-managed projects (backlog + board),customize shown cards backlog,2214,1310,"Foxly: Requirements Backlog Prioritization, Planning Poker",2018-11-21,0.9
+CONFCLOUD-23015,confluence,802,Extend 'Mentions' to work with groups as well,extend mentions work groups,750,877,AURA Table Filter for Confluence (Views Charts Group - FREE),2011-08-05,0.9
+CONFCLOUD-77328,confluence,764,Allow Manipulation of Confluence Databases using the REST API,manipulation databases using rest,797,877,PocketQuery - Connect SQL Databases & REST in Confluence,2024-01-10,0.8
+CONFCLOUD-7089,confluence,677,create the ability to 'add' page permissions for users and groups,create permissions groups,764,555,Create from Template Pro FREE,2006-10-03,0.8
+CONFCLOUD-26786,confluence,444,Support for assigning a task to multiple users,assigning task multiple,474,841,Task Reminder - Slack & Mail Notifications for Confluence,2012-10-03,0.8
+JSDCLOUD-1511,jira,959,Allow adding Request Participant field into Request Form in Customer Portal,adding request participant request,934,1484,My Requests Extension for Jira Service Management,2015-02-13,0.8
+JSDCLOUD-10000,jira,573,Ability to move objects to another object type within object schema in Assets,move objects another object,711,142,Profit.co OKRs: Objectives & Key Results,2021-05-18,0.8
+JRACLOUD-92565,jira,1591,Ability to create components to team-managed projects,create components,1782,1417,Subcomponents: Component Hierarchy/Release Packages for Jira,2019-02-13,0.7
+JRACLOUD-89585,jira,851,Milestones for Advanced Roadmaps,milestones advanced roadmaps,569,6256,Gantt Charts for Structure PPM - Jira Roadmaps | Tempo,2014-10-19,0.7
+CONFCLOUD-67333,confluence,641,Placeholder text on templates created with the new editor cannot be selected nor edited,placeholder text templates created,811,784,"Page Tree Creator Pro (Blueprint, Template)",2019-07-30,0.7
+CONFCLOUD-30567,confluence,510,Allow for access to common variables in Blueprints templates,access common variables blueprints,639,784,"Page Tree Creator Pro (Blueprint, Template)",2013-08-27,0.7
+JRACLOUD-75868,jira,1493,JQL search for issues added and removed from a sprint,jql search added removed,1374,3819,JQL Search Extensions for Jira,2018-01-03,0.6
+JRACLOUD-72007,jira,1319,Allow sprint start and end dates to be searched by JQL and displayed as columns in filters,sprint start end dates,2158,224,Three Dimensional Date Gadgets,2019-05-07,0.6
+JRACLOUD-71967,jira,1014,Group usage - List of project permission per group,group usage list permission,1568,506,Secure Custom Fields for Jira (Security & Permission),2019-04-30,0.6
+CONFCLOUD-3191,confluence,883,Easily create a copy of an entire space,easily create copy entire,1101,2059,Copy Page Tree,2005-05-10,0.6
+CONFCLOUD-4538,confluence,657,Creating a Space Template ,creating space template,891,1249,Copy Space for Confluence,2005-11-07,0.6
+CONFCLOUD-1882,confluence,462,Restricting access to user names and profiles,restricting access names profiles,716,589,User Profiles for Confluence (Microsoft Attributes Sync),2004-09-28,0.6
+CONFCLOUD-40457,confluence,460,Add REST API endpoint for generating space exports,rest api endpoint generating,497,2841,Open API (Swagger) Integration,2016-01-12,0.6
+JSDCLOUD-4698,jira,1516,Provide an outgoing email logs ,provide outgoing email logs,1297,5560,Email This Issue,2017-01-25,0.6
+JSDCLOUD-4685,jira,1237,Merge issue feature needed,merge feature needed,1787,807,Feature Bundle – Self-Service Extension for JSM,2017-01-23,0.6
+JRACLOUD-72631,jira,1783,Provide users with a plain text markdown editor,provide plain text markdown,1359,7486,Rich Text Gadget for Jira,2019-07-30,0.5
+JRACLOUD-37520,jira,1756,Add cloning as a bulk operation,cloning bulk operation,1020,11459,"Deep Clone for Jira (Copy Projects, Bulk, Templates, Epics)",2014-03-17,0.5
+JRACLOUD-7266,jira,1596,Provide ability to customise email templates that are used for notifications and subscriptions,provide customise email templates,1509,5560,Email This Issue,2005-07-08,0.5
+JRACLOUD-33672,jira,1111,Improve the way Labels can be deleted in JIRA,improve way labels deleted,1942,976,Kanban Analytics: Improve Your Delivery Process,2013-06-28,0.5
+JRACLOUD-34307,jira,1031,Allow Single Project Export - offline backup that can be re-imported,single export offline backup,1529,1273,Rewind Backups for Jira,2013-08-14,0.5
+JRACLOUD-46206,jira,1023,Provide the ability for Cloud Admins to access application logs,provide admins access application,1973,564,Admin Toolbox for Jira,2015-07-08,0.5
+JRACLOUD-9091,jira,990,"Default value for ""Comment Viewable By""",default value comment viewable,1293,2420,Default Values for 'Create Issue' screen - Issue Templates,2006-01-19,0.5
+JRACLOUD-12244,jira,890,Allow control of whether comment field will be shown on Edit and Transition/resolution screens,control whether comment will,1540,709,Threaded Comments for Jira,2007-02-23,0.5
+CONFCLOUD-67862,confluence,831,Bring back the option to add macros within a numbered or bulleted list,bring back macros within,1013,3216,Refined Macro Toolkit (Content Formatting Macros),2019-09-11,0.5
+CONFCLOUD-6373,confluence,562,Option for making page-publish/edit comments mandatory,making publish edit comments,880,1302,Comala Publishing,2006-06-16,0.5
+CONFCLOUD-68272,confluence,532,Edit in Markdown with the new editor,edit markdown editor,769,2216,Markdown for Confluence,2019-10-22,0.5
+CONFCLOUD-20118,confluence,518,Ability to notify a group when a page blog or space is changed (group watches),notify group blog space,642,3102,"Scroll Sites for Confluence (Help Centers, Blogs, Websites)",2010-06-21,0.5
+CONFCLOUD-11740,confluence,505,"Allow news (blog-posts) date change not only at creation, but also when editing...",news blog posts date,677,3102,"Scroll Sites for Confluence (Help Centers, Blogs, Websites)",2008-05-05,0.5
+CONFCLOUD-65756,confluence,408,Support Wiki Markup for the new editor,wiki markup editor,582,1967,Source Editor for Confluence,2019-03-05,0.5
+CONFCLOUD-14368,confluence,393,Let Confluence Admins change user profile pictures,let admins change profile,678,589,User Profiles for Confluence (Microsoft Attributes Sync),2009-02-03,0.5
+CONFCLOUD-7752,confluence,351,Add ability to copy templates,copy templates,536,2059,Copy Page Tree,2007-01-25,0.5
+JSDCLOUD-4328,jira,1726,Add fields (view only) in Customer Portal,view only customer portal,3065,899,"view26 Charts, Portal Reports & Dashboards for JSM",2016-09-27,0.5
+JSDCLOUD-93,jira,1002,Allow Editing of Fields through the Service Desk Request,editing through service desk,1439,2390,"Refined Sites for JSM (Theme ITSM, HR, Help & Service Desks)",2013-10-22,0.5
+JSDCLOUD-7057,jira,588,"Allow Service Desk administrator to disable the ""Share"" feature",service desk administrator disable,733,2390,"Refined Sites for JSM (Theme ITSM, HR, Help & Service Desks)",2018-10-18,0.5
+JSDCLOUD-119,jira,436,Allow to rename an existing SLA,rename existing sla,566,3361,Time to SLA,2013-11-04,0.5
+JRACLOUD-85702,jira,1060,Ability to view subtasks on the Board in team-managed projects (without using grouping),view subtasks board without,2324,259,Subtasks Navigation for Jira,2019-07-26,0.4
+JRACLOUD-1431,jira,1039,Create a separate permission for Create New project.,create separate permission create,1898,2420,Default Values for 'Create Issue' screen - Issue Templates,2003-03-12,0.4
+JRACLOUD-21936,jira,917,Allow nested JQL function calls,nested jql function calls,1390,3819,JQL Search Extensions for Jira,2010-08-04,0.4
+JRACLOUD-75734,jira,909,"Ability to prevent users from using the ""start a team"" option in Jira",prevent using start,2258,343,Snyk Security in Jira Cloud (SNYK-US-02),2020-12-16,0.4
+JRACLOUD-94775,jira,884,Allow the creation of Multiple Sub-task issue types in Team Managed projects,creation multiple sub task,1624,1562,Recurring Tasks for Jira Cloud,2019-08-02,0.4
+JRACLOUD-7990,jira,881,Restrict sub-tasks by issue type,restrict sub tasks type,1822,1562,Recurring Tasks for Jira Cloud,2005-09-19,0.4
+JRACLOUD-62109,jira,854,"Make it possible to summarize Story Points, and other custom fields, in Two Dimensional Gadget or other statistics view",make possible summarize story,1275,3312,"Easy Agile TeamRhythm: Story Map, Insights & Retrospectives",2011-03-07,0.4
+CONFCLOUD-35218,confluence,630,Macro: incoming links,macro incoming links,1022,3216,Refined Macro Toolkit (Content Formatting Macros),2014-10-08,0.4
+CONFCLOUD-32315,confluence,392,Allow users to limit the number of items the change-history macro returns,limit number items change,513,5040,Numbered Headings,2014-01-21,0.4
+CONFCLOUD-34510,confluence,341,View all inline comments at once,view inline comments once,875,480,Tree View,2014-08-07,0.4
+JSDCLOUD-12765,jira,1164,Canned Responses - Resolution/Transition Screen,canned responses resolution transition,2279,1930,Canned Responses Pro Templates for Jira,2023-06-19,0.4
+JSDCLOUD-1422,jira,1143,Sub-tasks as an applicable issue type for Request Types,sub tasks applicable type,1970,1562,Recurring Tasks for Jira Cloud,2015-01-28,0.4
+JSDCLOUD-6989,jira,748,Ability to display screens on Approve/Deny Service Desk Transitions,display screens approve deny,1189,2420,Default Values for 'Create Issue' screen - Issue Templates,2018-10-16,0.4
+JRACLOUD-96247,jira,1812,Allow status field to be moved/placed anywhere on the screen,status moved placed anywhere,1878,10523,Status Time Reports Free - Time in Status,2025-09-19,0.3
+JRACLOUD-40049,jira,1003,Allow translation of custom field options,translation custom options,2381,3211,Jira Misc Custom Fields (JMCF),2014-09-19,0.3
+JRACLOUD-76877,jira,907,Move issues up and down in Epic to any desired position (manual re-order rather than sort),move down epic desired,1077,11459,"Deep Clone for Jira (Copy Projects, Bulk, Templates, Epics)",2021-06-22,0.3
+JRACLOUD-87244,jira,853,Customize visibility of labels in the Backlog view of team-managed projects,customize visibility labels backlog,2487,1368,Advanced Label Manager for Jira,2018-11-29,0.3
+CONFCLOUD-28115,confluence,376,New Macro: Provide Page Break macro,macro provide break macro,910,3216,Refined Macro Toolkit (Content Formatting Macros),2012-07-22,0.3
+CONFCLOUD-39970,confluence,366,As Confluence Admin I would like to configure default Email Settings for users,admin would like configure,860,2148,Gantt Chart Planner for Confluence (Roadmap & Timeline),2015-11-18,0.3
+JSDCLOUD-1914,jira,1051,"As a user, I would like to add Customer Request Type,  Affected Services  field into Dashboard Gadget",would like customer request,2439,1484,My Requests Extension for Jira Service Management,2015-05-22,0.3
+JSDCLOUD-10908,jira,1005,"Hide the ""Share With"" Field at Customer Portal Fields",hide share customer portal,2372,1459,SharePoint Connector in Jira,2022-02-11,0.3
+JSDCLOUD-328,jira,890,Allow Assignee to be Shown on Customer Portal,assignee shown customer portal,2188,1393,Advanced Portal Reports for Jira Service Management,2014-02-13,0.3
+JSDCLOUD-86,jira,607,Several picker field types can't be added to a request type,several picker types added,1673,912,Entra ID (Azure AD) Attributes Sync for Jira,2013-10-21,0.3
+JSDCLOUD-106,jira,550,Assign ticket to group,assign ticket group,1746,381,Ticket Merger,2013-10-25,0.3
+JSDCLOUD-1832,jira,438,Dynamic SLA Goal in JSM,dynamic sla goal jsm,896,3361,Time to SLA,2015-05-01,0.3
+JRACLOUD-6851,jira,1625,Allow more than one custom field context to be associated with the same project but different issue types,more than one custom,2600,7706,"Custom Charts for Jira -Reports, Dashboards, Graphs & Tables",2005-06-01,0.2
+JRACLOUD-85691,jira,942,Custom swimlanes / more Group By options on team-managed projects,custom swimlanes more group,2849,3211,Jira Misc Custom Fields (JMCF),2019-02-07,0.2
+JRACLOUD-92747,jira,889,Customize Resolution field in team-managed projects,customize resolution,2130,7706,"Custom Charts for Jira -Reports, Dashboards, Graphs & Tables",2019-01-14,0.2
+CONFCLOUD-72003,confluence,591,"Allow further customization of the ""Code"" macro in the new editor (Different background color & ability to collapse the code block)",further customization code macro,1178,7934,"Just Add+ Embed Markdown, Diagrams, & Code in Confluence Git",2021-04-18,0.2
+CONFCLOUD-72545,confluence,424,Ability to set floating Table of Contents,set floating table contents,1241,3638,Advanced Tables for Confluence,2021-08-02,0.2
+CONFCLOUD-67089,confluence,398,Page Properties Report Macro - Ability to define column widths,properties report macro define,993,3216,Refined Macro Toolkit (Content Formatting Macros),2019-07-10,0.2
+CONFCLOUD-51696,confluence,367,"Provide API to create, edit and remove events from a calendar",provide api create edit,1046,2841,Open API (Swagger) Integration,2011-08-09,0.2
+JSDCLOUD-4642,jira,1294,Ability To Add Custom Field Values to Customer Notifications,custom values customer notifications,2175,7706,"Custom Charts for Jira -Reports, Dashboards, Graphs & Tables",2017-01-11,0.2
+JSDCLOUD-4636,jira,858,View linked issue in the Customer Portal,view linked customer portal,3223,899,"view26 Charts, Portal Reports & Dashboards for JSM",2017-01-10,0.2
+JSDCLOUD-2044,jira,739,Include request history in customer notifications,include request history customer,2614,3001,Issue History for Jira (Work Item History),2015-06-30,0.2
+JSDCLOUD-3917,jira,667,Create a Linked Issue Screen,create linked screen,2646,2420,Default Values for 'Create Issue' screen - Issue Templates,2016-06-14,0.2
+JSDCLOUD-5981,jira,569,Disable portal automatic responses based on customer notifications settings,disable portal automatic responses,1790,1930,Canned Responses Pro Templates for Jira,2018-02-26,0.2
+JSDCLOUD-8484,jira,551,Ability to change comment order in the new portal design,change comment order portal,1763,1393,Advanced Portal Reports for Jira Service Management,2019-09-27,0.2
+JSDCLOUD-4922,jira,531,Allow JSD to make comment required on transition in Customer Portal,jsd make comment required,2079,2390,"Refined Sites for JSM (Theme ITSM, HR, Help & Service Desks)",2017-03-09,0.2
+JSDCLOUD-10317,jira,504,Ability to hide Assets object custom field in customer portal,hide assets object custom,2075,1533,"IT Assets, License - Asset Management for Jira, JSM, ITSM",2021-08-30,0.2
+JSDCLOUD-7998,jira,490,"Ability to remove/hide the ""Recently used forms"" from portal",remove hide recently used,2096,343,Snyk Security in Jira Cloud (SNYK-US-02),2019-03-11,0.2
+JSDCLOUD-10502,jira,475,Azure Integration for JSM Assets,azure integration jsm assets,1930,1531,TFS4JIRA Azure DevOps integration,2021-10-20,0.2
+JSDCLOUD-4276,jira,469,Request type schemes,request type schemes,1494,1484,My Requests Extension for Jira Service Management,2016-09-09,0.2
+JSDCLOUD-10507,jira,448,JQL search/basic search on ProForma/Forms fields,jql search basic search,1019,3819,JQL Search Extensions for Jira,2021-10-21,0.2
+JSDCLOUD-826,jira,443,"Ability to export all tickets: As a Service Desk Customer, I want to export the Service Desk Requests fields (csv, excel) to be able to follow my interactions with Service Desk Team agents in an offline mode",export tickets service desk,1945,2390,"Refined Sites for JSM (Theme ITSM, HR, Help & Service Desks)",2014-09-18,0.2
+JSDCLOUD-10699,jira,442,Forms: Display/Hide forms by default on an issue,forms display hide forms,1232,2375,Dynamic Forms for Jira,2021-12-21,0.2
+JRACLOUD-91568,jira,968,"As a project manager, in order to have a big picture of my projects, i need to see epic from different projects in the Roadmap",manager order have big,2314,10347,BigPicture PPM & Strategic Portfolio Management for Jira,2018-10-25,0.1
+JSDCLOUD-5746,jira,801,Change the customer e-mail address ,change customer mail address,2484,7706,"Custom Charts for Jira -Reports, Dashboards, Graphs & Tables",2017-11-19,0.1
+JSDCLOUD-325,jira,660,Allow SLA to be viewed from Customer Portal,sla viewed customer portal,2692,3361,Time to SLA,2014-02-13,0.1
+JSDCLOUD-9967,jira,585,Ability to export Assets data from Object Schema,export assets data object,2273,4193,Better Excel Exporter for Jira,2021-05-10,0.1
+JSDCLOUD-6988,jira,494,Approval steps should not bypass workflow validator,approval steps bypass workflow,1702,16325,Jira Misc Workflow Extensions (JMWE),2018-10-16,0.1
+JSDCLOUD-1743,jira,491,Ability to vote on an issue on Customer Portal,vote customer portal,2145,3211,Jira Misc Custom Fields (JMCF),2015-04-06,0.1
+JSDCLOUD-10863,jira,470,Assets integration with Microsoft Intune,assets integration microsoft intune,1696,5965,Microsoft 365 for Jira & JSM (Teams & Outlook Integration),2022-02-07,0.1
+JSDCLOUD-9705,jira,435,Add the ability to display custom fields and other system field to the request page,display custom other system,2409,3211,Jira Misc Custom Fields (JMCF),2021-02-04,0.1
+JSDCLOUD-4867,jira,433,Allow user groups to be added into Service Management organization ,groups added service management,2495,5258,Extension for Jira Service Management,2017-02-28,0.1
+JSDCLOUD-1703,jira,424,"Make ""Request participants"" custom field available to security level configuration",make request participants custom,2463,3211,Jira Misc Custom Fields (JMCF),2015-03-25,0.1
+JRACLOUD-80451,jira,972,Add the ability to disable Atlassian's Advertisement in a site,disable atlassian advertisement site,1354,138414,GitHub for Atlassian,2023-02-06,0.0

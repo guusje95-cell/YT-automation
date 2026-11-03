@@ -5,6 +5,7 @@ client_secret*.json
 config/secrets/
 # large / regenerable
 models/
+!income_lab/models/
 .cache/
 content/*/build/
 output/**/*.mp4
